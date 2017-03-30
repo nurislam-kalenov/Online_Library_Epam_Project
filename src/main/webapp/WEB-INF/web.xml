@@ -8,8 +8,6 @@
         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
         version="3.1"
 >
+
   <display-name>Online Library</display-name>
-  <welcome-file-list>
-    <welcome-file>home.jsp</welcome-file>
-  </welcome-file-list>
 </web-app>

@@ -1,7 +1,6 @@
-package nuris.epam.action;
-
-import nuris.epam.action.manage.Action;
-import nuris.epam.action.manage.ActionResult;
+package nuris.epam.action.post;
+import nuris.epam.action.Action;
+import nuris.epam.action.ActionResult;
 
 import javax.servlet.http.HttpServletRequest;
 

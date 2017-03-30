@@ -1,4 +1,4 @@
-package nuris.epam.action.manage;
+package nuris.epam.action;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

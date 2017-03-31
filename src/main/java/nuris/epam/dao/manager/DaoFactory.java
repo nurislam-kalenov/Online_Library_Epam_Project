@@ -3,7 +3,7 @@ package nuris.epam.dao.manager;
 import nuris.epam.connection.ConnectionPool;
 import nuris.epam.connection.exception.ResourcesException;
 import nuris.epam.dao.BaseDao;
-import nuris.epam.dao.exception.DaoException;
+import nuris.epam.dao.DaoException;
 import nuris.epam.entity.BaseEntity;
 
 import java.sql.Connection;

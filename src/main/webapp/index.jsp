@@ -14,6 +14,6 @@
     <title>Home page</title>
 </head>
 <body>
-<c:redirect url="/do/welcome"/>
+<c:redirect url="/kz/welcome"/>
 </body>
 </html>

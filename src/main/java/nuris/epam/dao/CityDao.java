@@ -1,6 +1,5 @@
 package nuris.epam.dao;
 
-import nuris.epam.dao.exception.DaoException;
 import nuris.epam.entity.City;
 import nuris.epam.entity.Person;
 

@@ -1,6 +1,5 @@
 package nuris.epam.dao;
 
-import nuris.epam.dao.exception.DaoException;
 import nuris.epam.entity.Avatar;
 import nuris.epam.entity.Customer;
 

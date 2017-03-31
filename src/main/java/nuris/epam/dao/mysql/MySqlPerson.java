@@ -1,7 +1,7 @@
 package nuris.epam.dao.mysql;
 
 import nuris.epam.dao.PersonDao;
-import nuris.epam.dao.exception.DaoException;
+import nuris.epam.dao.DaoException;
 import nuris.epam.entity.Customer;
 import nuris.epam.entity.Person;
 

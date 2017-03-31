@@ -4,7 +4,7 @@ import nuris.epam.dao.AuthorDao;
 import nuris.epam.dao.BookDao;
 import nuris.epam.dao.BookInfoDao;
 import nuris.epam.dao.GenreDao;
-import nuris.epam.dao.exception.DaoException;
+import nuris.epam.dao.DaoException;
 import nuris.epam.dao.manager.DaoFactory;
 import nuris.epam.entity.Author;
 import nuris.epam.entity.Book;

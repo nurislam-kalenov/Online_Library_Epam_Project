@@ -16,7 +16,7 @@ import java.io.IOException;
 /**
  * Created by User on 29.03.2017.
  */
-@WebServlet(name = "controller", urlPatterns = "/do/*")
+@WebServlet(name = "controller", urlPatterns = "/kz/*")
 public class ControllerServlet extends HttpServlet {
     ActionFactory actionFactory;
 

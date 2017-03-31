@@ -2,6 +2,7 @@ package nuris.epam.action;
 
 import nuris.epam.action.post.LoginAction;
 import nuris.epam.action.post.LogoutAction;
+import nuris.epam.action.post.RegisterAction;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -15,9 +16,15 @@ public class ActionFactory {
 
     public void init() {
         actions = new HashMap<>();
+        //get request
+        actions.put("GET/welcome", new ShowPageAction("welcome"));
+        actions.put("GET/register", new ShowPageAction("register"));
+        //post request
         actions.put("POST/login", new LoginAction());
         actions.put("POST/logout", new LogoutAction());
-        actions.put("GET/welcome", new ShowPageAction("welcome"));
+        actions.put("POST/register",new RegisterAction());
+
+
 
     }
 

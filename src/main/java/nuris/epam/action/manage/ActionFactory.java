@@ -1,5 +1,6 @@
-package nuris.epam.action;
+package nuris.epam.action.manage;
 
+import nuris.epam.action.get.ShowRegisterPageAction;
 import nuris.epam.action.post.LoginAction;
 import nuris.epam.action.post.LogoutAction;
 import nuris.epam.action.post.RegisterAction;
@@ -18,7 +19,7 @@ public class ActionFactory {
         actions = new HashMap<>();
         //get request
         actions.put("GET/welcome", new ShowPageAction("welcome"));
-        actions.put("GET/register", new ShowPageAction("register"));
+        actions.put("GET/register", new ShowRegisterPageAction());
         //post request
         actions.put("POST/login", new LoginAction());
         actions.put("POST/logout", new LogoutAction());

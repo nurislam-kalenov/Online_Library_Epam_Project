@@ -1,10 +1,10 @@
 package nuris.epam.servlet;
 
 
-import nuris.epam.action.Action;
-import nuris.epam.action.ActionFactory;
-import nuris.epam.action.ActionResult;
-import nuris.epam.action.View;
+import nuris.epam.action.manage.Action;
+import nuris.epam.action.manage.ActionFactory;
+import nuris.epam.action.manage.ActionResult;
+import nuris.epam.action.manage.View;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -13,6 +13,7 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <c:url var="register_url" value="/kz/register"/>
 
+
     <title>Registration customer</title>
 </head>
 <body>
@@ -25,8 +26,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="fn">First name</label>
             <div class="col-md-4">
-                <input id="fn" name="first_name" type="text" placeholder="first name" class="form-control input-md" required="">
-
+                <input id="fn" name="first_name" type="text" placeholder="first name" class="form-control input-md">
             </div>
         </div>
 
@@ -34,7 +34,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="ln">Last name</label>
             <div class="col-md-4">
-                <input id="ln" name="last_name" type="text" placeholder="last name" class="form-control input-md" required="">
+                <input id="ln" name="last_name" type="text" placeholder="last name" class="form-control input-md">
             </div>
         </div>
 
@@ -42,14 +42,14 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="mn">Middle name</label>
             <div class="col-md-4">
-                <input id="mn" name="milddle_name" type="text" placeholder="middle name" class="form-control input-md" required="">
+                <input id="mn" name="middle_name" type="text" placeholder="middle name" class="form-control input-md">
             </div>
         </div>
 
         <div class="form-group">
             <label for="birthDate" class="col-md-4 control-label">Date of Birth</label>
             <div class="col-md-4">
-                <input type="date" id="birthDate"  name="birthday" class="form-control input-md"  required="">
+                <input type="date" id="birthDate"  name="birthday" class="form-control input-md" >
             </div>
         </div>
 
@@ -57,9 +57,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="phone">Text InputPhone</label>
             <div class="col-md-4">
-                <input id="phone" name="phone" type="text" placeholder="Phone#" class="form-control input-md"
-                       required="">
-
+                <input id="phone" name="phone" type="text" placeholder="Phone#" class="form-control input-md">
             </div>
         </div>
 
@@ -94,17 +92,19 @@
             <label class="col-md-4 control-label" for="city">City</label>
             <div class="col-md-4">
                 <select id="city" name="city" class="form-control input-md">
-                    <option>Kostanai</option>
-                    <option>Karaganda</option>
+                    <option disabled></option>
+                    <c:forEach items="${cityList}" var="city">
+                        <option value="${city.id}">${city.name}</option>
+                    </c:forEach>
                 </select>
             </div>
         </div>
 
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="add1">Address</label>
+            <label class="col-md-4 control-label" for="add">Address</label>
             <div class="col-md-4">
-                <input id="add1" name="address" type="text" placeholder="address" class="form-control input-md" required="">
+                <input id="add" name="address" type="text" placeholder="address" class="form-control input-md">
 
             </div>
         </div>
@@ -112,7 +112,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="submit"></label>
             <div class="col-md-4">
-                <button id="submit" name="submit" class="btn btn-primary">SUBMIT</button>
+                <button id="submit" name="submit" class="btn btn-primary">Регистрация</button>
             </div>
         </div>
     </fieldset>

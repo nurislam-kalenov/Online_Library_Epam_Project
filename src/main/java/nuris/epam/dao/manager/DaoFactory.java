@@ -29,6 +29,7 @@ public class DaoFactory implements AutoCloseable {
      */
     private TypeDao typeDao;
 
+
     public DaoFactory() {
         connectionPool = ConnectionPool.getInstance();
         typeDao = TypeDao.getInstance();

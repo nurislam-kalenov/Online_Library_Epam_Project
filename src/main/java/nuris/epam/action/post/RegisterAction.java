@@ -1,7 +1,7 @@
 package nuris.epam.action.post;
 
-import nuris.epam.action.Action;
-import nuris.epam.action.ActionResult;
+import nuris.epam.action.manage.Action;
+import nuris.epam.action.manage.ActionResult;
 import nuris.epam.entity.City;
 import nuris.epam.entity.Customer;
 import nuris.epam.entity.Person;

@@ -25,6 +25,10 @@ public class ConnectionPool {
      */
     private String password;
     /**
+     * Поле  - путь к драйверу.
+     */
+    private String driver;
+    /**
      * Поле  - путь к БД.
      */
     private String url;
@@ -48,17 +52,26 @@ public class ConnectionPool {
     private static ConnectionPool connectionPool;
 
     private ConnectionPool() {
-        init();
+        try {
+            init();
+        } catch (ConnectionException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
      * Инициализирует N-ое количество соедений и добавляет их в список.
      */
-    private void init() {
+    private void init() throws ConnectionException {
         try {
             loadProperties();
             connections = new ResourcesQueue<Connection>(poolSize, timeOut);
             while (connections.size() < poolSize) {
+                try {
+                    Class.forName(driver);
+                } catch (ClassNotFoundException e) {
+                   throw  new ConnectionException("Cant find driver for JDBC MySql" , e);
+                }
                 Connection connection = DriverManager.getConnection(url, user, password);
                 connections.addResource(connection);
             }
@@ -86,6 +99,7 @@ public class ConnectionPool {
             type = properties.getProperty("type");
             poolSize = Integer.parseInt(properties.getProperty("pool_size"));
             timeOut = Integer.parseInt(properties.getProperty("timeout"));
+            driver = properties.getProperty("driver");
         } catch (IOException e) {
             throw new PropertiesException("Not found properties file with connecting settings", e);
         }

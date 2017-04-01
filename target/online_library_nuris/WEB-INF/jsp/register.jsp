@@ -8,12 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-
-     <style>
+    <style>
     <jsp:directive.include file="/WEB-INF/css/bootstrap.min.css"/>
      </style>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <c:url var="register_url" value="/kz/register"/>
+    <c:url var="home_url" value="/kz/welcome"/>
 
 
     <title>Registration customer</title>
@@ -23,7 +23,6 @@
     <fieldset>
         <!-- Form Name -->
         <legend>Регистрация</legend>
-
         <!-- Text input-->
         <div class="form-group">
             <label class="col-md-4 control-label" for="fn">First name</label>
@@ -67,8 +66,7 @@
             <!-- E-mail -->
             <label class="col-md-4 control-label" for="login">E-mail (Login)</label>
             <div class="col-md-4">
-                <input type="text" id="login" name="login" placeholder=""  class="form-control input-md">
-                <p class="help-block">Please provide your E-mail</p>
+                <input type="text" id="login" name="login" placeholder="email" class="form-control input-md">
             </div>
         </div>
 
@@ -114,9 +112,18 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="submit"></label>
             <div class="col-md-4">
-                <button id="submit" name="submit" class="btn btn-primary">Регистрация</button>
+                <button id="submit" name="submit" class="btn btn-primary" >Регистрация</button>
             </div>
         </div>
+
+        <div class="form-group">
+
+        <label class="col-md-4 control-label" ></label>
+        <div class="col-md-4">
+            <a href="${home_url}" class="btn btn-info" role="button">Home</a>
+        </div>
+        </div>
+
     </fieldset>
 </form>
 </body>

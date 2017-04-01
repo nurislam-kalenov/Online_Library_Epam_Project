@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by User on 01.04.2017.
  */
-public class ShowRegisterPageAction implements Action{
+public class PageRegisterAction implements Action{
 
     @Override
     public ActionResult execute(HttpServletRequest request) {

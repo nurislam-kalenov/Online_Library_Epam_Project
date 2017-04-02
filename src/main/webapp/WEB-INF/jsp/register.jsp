@@ -50,7 +50,7 @@
         <div class="form-group">
             <label for="birthDate" class="col-md-4 control-label">Date of Birth</label>
             <div class="col-md-4">
-                <input type="date" id="birthDate"  name="birthday" class="form-control input-md" >
+                <input  id="birthDate"  name="birthday" type="text" placeholder="31/12/1995" class="form-control input-md">
             </div>
         </div>
 
@@ -75,7 +75,7 @@
             <label class="col-md-4 control-label" for="password">Password</label>
             <div class="col-md-4">
                 <input type="password" id="password" name="password" placeholder=""  class="form-control input-md">
-                <p class="help-block">Password should be at least 4 characters</p>
+                <p class="help-block">Password should be at least 6 characters</p>
             </div>
         </div>
 

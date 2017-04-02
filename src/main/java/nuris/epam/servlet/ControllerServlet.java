@@ -1,10 +1,7 @@
 package nuris.epam.servlet;
 
 
-import nuris.epam.action.manage.Action;
-import nuris.epam.action.manage.ActionFactory;
-import nuris.epam.action.manage.ActionResult;
-import nuris.epam.action.manage.View;
+import nuris.epam.action.manage.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,7 +25,12 @@ public class ControllerServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Action action = actionFactory.getAction(req);
-        ActionResult result = action.execute(req);
+        ActionResult result = null;
+        try {
+            result = action.execute(req);
+        } catch (ActionException e) {
+            e.printStackTrace();
+        }
         View view = new View(req, resp);
         view.navigate(result);
     }

@@ -43,8 +43,9 @@ public class Main {
         // System.out.println(connectionPool.size());
         CustomerService customerService = new CustomerService();
         System.out.println(customerService.getAllCity());
-        System.out.println(connectionPool.size());
 
+
+      System.out.println(connectionPool.size());
 
     }
 }

@@ -1,6 +1,7 @@
 package nuris.epam.action.post;
 
 import nuris.epam.action.manage.Action;
+import nuris.epam.action.manage.ActionException;
 import nuris.epam.action.manage.ActionResult;
 import nuris.epam.entity.City;
 import nuris.epam.entity.Customer;
@@ -11,14 +12,28 @@ import nuris.epam.service.util.ConvertString;
 import nuris.epam.service.util.SqlDate;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by User on 30.03.2017.
  */
 public class RegisterAction implements Action {
+
+    private boolean wrong;
+
     @Override
-    public ActionResult execute(HttpServletRequest request) {
+    public ActionResult execute(HttpServletRequest request) throws ActionException {
         CustomerService customerService = new CustomerService();
+        Properties properties = new Properties();
+
+        try {
+            properties.load(RegisterAction.class.getClassLoader().getResourceAsStream("validation.properties"));
+        } catch (IOException e) {
+            throw new ActionException("Can't load properties", e);
+        }
 
         Customer customer = new Customer();
         Person person = new Person();
@@ -26,6 +41,8 @@ public class RegisterAction implements Action {
 
         String login = request.getParameter("login");
         String password = request.getParameter("password");
+        String passwordConfirm = request.getParameter("password_confirm");
+
         String firstName = request.getParameter("first_name");
         String lastName = request.getParameter("last_name");
         String middleName = request.getParameter("middle_name");
@@ -33,6 +50,30 @@ public class RegisterAction implements Action {
         String birthday = request.getParameter("birthday");
         String address = request.getParameter("address");
         String cityName = request.getParameter("city");
+
+        try {
+            if (!customerService.isLoginAvalible(login)) {
+                request.setAttribute("loginError", "exist");
+                wrong = true;
+            } else {
+                checkParamValid("login", login, properties.getProperty("email.valid"), request);
+            }
+        } catch (ServiceException e) {
+            throw new ActionException("can't check login available", e);
+        }
+
+        if (!password.equals(passwordConfirm)) {
+            wrong = true;
+            request.setAttribute("passwordError", "not match");
+        } else {
+            checkParamValid("password", password, properties.getProperty("password.valid"), request);
+        }
+        checkParamValid("first_name", firstName, properties.getProperty("word.valid"), request);
+        checkParamValid("last_name", lastName, properties.getProperty("word.valid"), request);
+        checkParamValid("middle_name", middleName, properties.getProperty("word.valid"), request);
+        checkParamValid("phone", phone, properties.getProperty("phone.number.valid"), request);
+        checkParamValid("birthday", birthday, properties.getProperty("date.valid"), request);
+        checkParamValid("address", address, properties.getProperty("word.valid"), request);
 
         city.setId(ConvertString.toInt(cityName));
         person.setCity(city);
@@ -46,11 +87,27 @@ public class RegisterAction implements Action {
         customer.setLogin(login);
         customer.setPassword(password);
 
-        try {
-            customerService.registerCustomer(customer);
-        } catch (ServiceException e) {
-            e.printStackTrace();
+        if (wrong) {
+            wrong = false;
+            return new ActionResult("register", true);
+        } else {
+            try {
+                customerService.registerCustomer(customer);
+            } catch (ServiceException e) {
+                e.printStackTrace();
+            }
         }
         return new ActionResult("welcome");
+    }
+
+    private void checkParamValid(String paramName, String paramValue, String validator, HttpServletRequest request) {
+        Pattern pattern = Pattern.compile(validator);
+        Matcher matcher = pattern.matcher(paramValue);
+        if (!matcher.matches()) {
+            request.setAttribute(paramName + "Error", "true");
+            wrong = true;
+            System.out.println(paramName + "wrong!");
+        }
+
     }
 }

@@ -26,8 +26,12 @@ public class RegisterAction implements Action {
 
     @Override
     public ActionResult execute(HttpServletRequest request) throws ActionException {
+
         CustomerService customerService = new CustomerService();
         Properties properties = new Properties();
+        Customer customer = new Customer();
+        Person person = new Person();
+        City city = new City();
 
         try {
             properties.load(RegisterAction.class.getClassLoader().getResourceAsStream("validation.properties"));
@@ -35,14 +39,9 @@ public class RegisterAction implements Action {
             throw new ActionException("Can't load properties", e);
         }
 
-        Customer customer = new Customer();
-        Person person = new Person();
-        City city = new City();
-
         String login = request.getParameter("login");
         String password = request.getParameter("password");
         String passwordConfirm = request.getParameter("password_confirm");
-
         String firstName = request.getParameter("first_name");
         String lastName = request.getParameter("last_name");
         String middleName = request.getParameter("middle_name");
@@ -106,7 +105,6 @@ public class RegisterAction implements Action {
         if (!matcher.matches()) {
             request.setAttribute(paramName + "Error", "true");
             wrong = true;
-            System.out.println(paramName + "wrong!");
         }
 
     }

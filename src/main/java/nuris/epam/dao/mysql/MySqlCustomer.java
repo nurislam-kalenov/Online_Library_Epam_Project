@@ -18,19 +18,19 @@ public class MySqlCustomer extends CustomerDao{
     private static final String ID_CUSTOMER = "id_customer";
     private static final String REGISTER_DATE = "register_date";
     private static final String PASSWORD = "password";
-    private static final String LOGIN = "login";
+    private static final String EMAIL = "email";
     private static final String ID_PERSON = "id_person";
     private static final String ID_ROLE = "id_role";
     private static final String ID_AVATAR = "id_avatar";
 
     private static final String FIND_BY_ID = Sql.create().select().allFrom().var(CUSTOMER).whereQs(ID_CUSTOMER).build();
     private static final String INSERT = Sql.create().insert().var(CUSTOMER).valuesNull(ID_CUSTOMER, 5).build();
-    private static final String UPDATE = Sql.create().update().var(CUSTOMER).set().varQs(REGISTER_DATE).c().varQs(PASSWORD).c().varQs(LOGIN).c().varQs(ID_PERSON).c().varQs(ID_ROLE).whereQs(ID_CUSTOMER).build();
+    private static final String UPDATE = Sql.create().update().var(CUSTOMER).set().varQs(REGISTER_DATE).c().varQs(PASSWORD).c().varQs(EMAIL).c().varQs(ID_PERSON).c().varQs(ID_ROLE).whereQs(ID_CUSTOMER).build();
     private static final String DELETE = Sql.create().delete().var(CUSTOMER).whereQs(ID_CUSTOMER).build();
     private static final String COUNT_CUSTOMER = Sql.create().select().count().from().var(CUSTOMER).build();
     private static final String UPDATE_AVATAR = Sql.create().update().var(CUSTOMER).set().varQs(ID_AVATAR).whereQs(ID_CUSTOMER).build();
-    private static final String FIND_BY_LOGIN = Sql.create().select().allFrom().var(CUSTOMER).whereQs(LOGIN).build();
-    private static final String FIND_BY_LOGIN_PASSWORD = Sql.create().select().allFrom().var(CUSTOMER).whereQs(LOGIN).and().varQs(PASSWORD).build();
+    private static final String FIND_BY_LOGIN = Sql.create().select().allFrom().var(CUSTOMER).whereQs(EMAIL).build();
+    private static final String FIND_BY_LOGIN_PASSWORD = Sql.create().select().allFrom().var(CUSTOMER).whereQs(EMAIL).and().varQs(PASSWORD).build();
 
 
     @Override
@@ -161,7 +161,7 @@ public class MySqlCustomer extends CustomerDao{
     private PreparedStatement statementCustomer(PreparedStatement statement, Customer item) throws SQLException {
         statement.setDate(1, item.getRegisterDate());
         statement.setString(2, item.getPassword());
-        statement.setString(3, item.getLogin());
+        statement.setString(3, item.getEmail());
         statement.setInt(4 , item.getPerson().getId());
         statement.setInt(5 , item.getCustomerRole().getId());
         return statement;
@@ -172,7 +172,7 @@ public class MySqlCustomer extends CustomerDao{
         customer.setId(resultSet.getInt(1));
         customer.setRegisterDate(resultSet.getDate(2));
         customer.setPassword(resultSet.getString(3));
-        customer.setLogin(resultSet.getString(4));
+        customer.setEmail(resultSet.getString(4));
         return customer;
     }
 

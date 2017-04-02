@@ -22,7 +22,7 @@ ${login} is login
 </br>
 ${pass} is pass
 </p>
-
+${ first_name_error}  -1111
 <form name="loginForm" method="post" action="${register_url}">
     <input type="submit"  value="log out">
 </form>

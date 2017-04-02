@@ -9,7 +9,7 @@ import nuris.epam.entity.BookInfo;
 import nuris.epam.entity.Management;
 import nuris.epam.entity.Transaction;
 import nuris.epam.service.exception.ServiceException;
-import nuris.epam.service.util.SqlDate;
+import nuris.epam.util.SqlDate;
 
 /**
  * Created by User on 28.03.2017.

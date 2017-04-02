@@ -9,15 +9,23 @@ public class Customer extends BaseEntity {
 
     private Date registerDate;
     private String password;
-    private String login;
+    private String email;
     private Person person;
     private CustomerRole customerRole;
     private Avatar avatar;
+
 
     public Customer() {
         person = new Person();
         customerRole = new CustomerRole();
         avatar = new Avatar();
+    }
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Date getRegisterDate() {
@@ -36,13 +44,6 @@ public class Customer extends BaseEntity {
         this.password = password;
     }
 
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
 
     public Person getPerson() {
         return person;
@@ -70,6 +71,6 @@ public class Customer extends BaseEntity {
 
     @Override
     public String toString() {
-        return getId() + "/" + registerDate + "/" + login + "/" + password +""+person +" "+customerRole ;
+        return getId() + "/" + registerDate + "/" + email + "/" + password +""+person +" "+customerRole ;
     }
 }

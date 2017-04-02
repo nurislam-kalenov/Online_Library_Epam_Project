@@ -1,7 +1,6 @@
-package nuris.epam.service.util;
+package nuris.epam.util;
 
 import java.sql.Date;
-import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -15,10 +14,6 @@ public class SqlDate {
     public static Date currentDateAndTime() {
         Date date = new Date(Calendar.getInstance().getTime().getTime());
         return date;
-    }
-    public static Timestamp currentTime(){
-         Timestamp currentTimestamp = new Timestamp(Calendar.getInstance().getTime().getTime());
-            return currentTimestamp;
     }
 
     public static Date stringToDate(String date) {

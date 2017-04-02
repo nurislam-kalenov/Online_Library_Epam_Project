@@ -11,7 +11,7 @@ import nuris.epam.entity.Customer;
 import nuris.epam.entity.CustomerRole;
 import nuris.epam.entity.Person;
 import nuris.epam.service.exception.ServiceException;
-import nuris.epam.service.util.SqlDate;
+import nuris.epam.util.SqlDate;
 
 import java.util.List;
 

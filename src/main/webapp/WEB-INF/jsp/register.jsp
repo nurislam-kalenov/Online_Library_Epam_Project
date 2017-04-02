@@ -9,13 +9,11 @@
 <html>
 <head>
     <style>
-    <jsp:directive.include file="/WEB-INF/css/bootstrap.min.css"/>
-     </style>
+        <jsp:directive.include file="/WEB-INF/css/bootstrap.min.css"/>
+    </style>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <c:url var="register_url" value="/kz/register"/>
     <c:url var="home_url" value="/kz/welcome"/>
-
-
     <title>Registration customer</title>
 </head>
 <body>
@@ -28,6 +26,10 @@
             <label class="col-md-4 control-label" for="fn">First name</label>
             <div class="col-md-4">
                 <input id="fn" name="first_name" type="text" placeholder="first name" class="form-control input-md">
+                <c:if test="${not empty first_name_error}">
+                    <p class="alert alert-warning"
+                       style="height: 30px;padding: 5px">Введите коректное имя</p>
+                </c:if>
             </div>
         </div>
 
@@ -50,7 +52,8 @@
         <div class="form-group">
             <label for="birthDate" class="col-md-4 control-label">Date of Birth</label>
             <div class="col-md-4">
-                <input  id="birthDate"  name="birthday" type="text" placeholder="31/12/1995" class="form-control input-md">
+                <input id="birthDate" name="birthday" type="text" placeholder="31/12/1995"
+                       class="form-control input-md">
             </div>
         </div>
 
@@ -74,16 +77,17 @@
             <!-- Password-->
             <label class="col-md-4 control-label" for="password">Password</label>
             <div class="col-md-4">
-                <input type="password" id="password" name="password" placeholder=""  class="form-control input-md">
+                <input type="password" id="password" name="password" placeholder="" class="form-control input-md">
                 <p class="help-block">Password should be at least 6 characters</p>
             </div>
         </div>
 
         <div class="form-group">
             <!-- Password -->
-            <label class="col-md-4 control-label"  for="password_confirm">Password (Confirm)</label>
+            <label class="col-md-4 control-label" for="password_confirm">Password (Confirm)</label>
             <div class="col-md-4">
-                <input type="password" id="password_confirm" name="password_confirm" placeholder=""  class="form-control input-md">
+                <input type="password" id="password_confirm" name="password_confirm" placeholder=""
+                       class="form-control input-md">
                 <p class="help-block">Please confirm password</p>
             </div>
         </div>
@@ -105,23 +109,22 @@
             <label class="col-md-4 control-label" for="add">Address</label>
             <div class="col-md-4">
                 <input id="add" name="address" type="text" placeholder="address" class="form-control input-md">
-
             </div>
         </div>
         <!-- Button -->
         <div class="form-group">
             <label class="col-md-4 control-label" for="submit"></label>
             <div class="col-md-4">
-                <button id="submit" name="submit" class="btn btn-primary" >Регистрация</button>
+                <button id="submit" name="submit" class="btn btn-primary">Регистрация</button>
             </div>
         </div>
 
         <div class="form-group">
 
-        <label class="col-md-4 control-label" ></label>
-        <div class="col-md-4">
-            <a href="${home_url}" class="btn btn-info" role="button">Home</a>
-        </div>
+            <label class="col-md-4 control-label"></label>
+            <div class="col-md-4">
+                <a href="${home_url}" class="btn btn-info" role="button">Home</a>
+            </div>
         </div>
 
     </fieldset>

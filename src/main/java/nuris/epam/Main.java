@@ -1,17 +1,11 @@
 package nuris.epam;
 
 import nuris.epam.connection.ConnectionPool;
-import nuris.epam.dao.mysql.Sql;
 import nuris.epam.entity.*;
-import nuris.epam.service.BookService;
 import nuris.epam.service.CustomerService;
-import nuris.epam.service.ManagementService;
-import nuris.epam.service.TransactionService;
 import nuris.epam.service.exception.ServiceException;
-import nuris.epam.service.util.SqlDate;
-
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
+import nuris.epam.util.SqlDate;
+import nuris.epam.util.TextParse;
 
 
 /**
@@ -34,18 +28,20 @@ public class Main {
         person.setBirthday(SqlDate.stringToDate("1995-02-08"));
         person.setPhone("87023876353");
         person.setCity(city);
-        customer.setLogin("nuris");
+        customer.setEmail("nuris@ergreg");
         customer.setPassword("123456");
         customer.setPerson(person);
 
-        //   customerService.registerCustomer(customer);
+      CustomerService customerService = new CustomerService();
+
+   //   customerService.registerCustomer(customer);
         //System.out.println(SqlDate.currentDateAndTime());
         // System.out.println(connectionPool.size());
-        CustomerService customerService = new CustomerService();
         System.out.println(customerService.getAllCity());
-
-
       System.out.println(connectionPool.size());
 
+      String betterIdea, userIdea;
+      userIdea = "Welfnwfwfewfwfeflbwiebi rgere erg erger ergerge Srgreg 56654 ";
+      System.out.println(TextParse.upperCaseFirstLetter(userIdea));
     }
 }

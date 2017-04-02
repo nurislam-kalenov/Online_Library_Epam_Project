@@ -8,8 +8,8 @@ import nuris.epam.entity.Customer;
 import nuris.epam.entity.Person;
 import nuris.epam.service.CustomerService;
 import nuris.epam.service.exception.ServiceException;
-import nuris.epam.service.util.ConvertString;
-import nuris.epam.service.util.SqlDate;
+import nuris.epam.util.TextParse;
+import nuris.epam.util.SqlDate;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
@@ -37,6 +37,12 @@ public class RegisterAction implements Action {
             properties.load(RegisterAction.class.getClassLoader().getResourceAsStream("validation.properties"));
         } catch (IOException e) {
             throw new ActionException("Can't load properties", e);
+        }
+
+        try {
+            request.setAttribute("cityList", customerService.getAllCity());
+        } catch (ServiceException e) {
+            e.printStackTrace();
         }
 
         String login = request.getParameter("login");
@@ -67,14 +73,13 @@ public class RegisterAction implements Action {
         } else {
             checkParamValid("password", password, properties.getProperty("password.valid"), request);
         }
-        checkParamValid("first_name", firstName, properties.getProperty("word.valid"), request);
-        checkParamValid("last_name", lastName, properties.getProperty("word.valid"), request);
-        checkParamValid("middle_name", middleName, properties.getProperty("word.valid"), request);
-        checkParamValid("phone", phone, properties.getProperty("phone.number.valid"), request);
+        checkParamValid("first_name", firstName, properties.getProperty("name.valid"), request);
+        checkParamValid("last_name", lastName, properties.getProperty("name.valid"), request);
+        checkParamValid("middle_name", middleName, properties.getProperty("name.valid"), request);
+        checkParamValid("phone", phone, properties.getProperty("limit.number.valid"), request);
         checkParamValid("birthday", birthday, properties.getProperty("date.valid"), request);
-        checkParamValid("address", address, properties.getProperty("word.valid"), request);
 
-        city.setId(ConvertString.toInt(cityName));
+        city.setId(TextParse.toInt(cityName));
         person.setCity(city);
         person.setFirstName(firstName);
         person.setLastName(lastName);
@@ -83,12 +88,12 @@ public class RegisterAction implements Action {
         person.setPhone(phone);
         person.setAdreess(address);
         customer.setPerson(person);
-        customer.setLogin(login);
+        customer.setEmail(login);
         customer.setPassword(password);
 
         if (wrong) {
             wrong = false;
-            return new ActionResult("register", true);
+            return new ActionResult("register");
         } else {
             try {
                 customerService.registerCustomer(customer);
@@ -96,6 +101,7 @@ public class RegisterAction implements Action {
                 e.printStackTrace();
             }
         }
+
         return new ActionResult("welcome");
     }
 
@@ -103,7 +109,8 @@ public class RegisterAction implements Action {
         Pattern pattern = Pattern.compile(validator);
         Matcher matcher = pattern.matcher(paramValue);
         if (!matcher.matches()) {
-            request.setAttribute(paramName + "Error", "true");
+            request.setAttribute(paramName + "_error", "true");
+            System.out.println(paramName + "_error" + " -wrong");
             wrong = true;
         }
 

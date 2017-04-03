@@ -8,6 +8,7 @@ import nuris.epam.entity.Customer;
 import nuris.epam.entity.Person;
 import nuris.epam.service.CustomerService;
 import nuris.epam.service.exception.ServiceException;
+import nuris.epam.util.Encoder;
 import nuris.epam.util.SqlDate;
 import nuris.epam.util.TextParse;
 
@@ -80,7 +81,7 @@ public class RegisterAction implements Action {
         checkParamValid("phone", phone, properties.getProperty("limit.number.valid"), request);
         checkParamValid("birthday", birthday, properties.getProperty("date.valid"), request);
         checkParamValid("address", address, properties.getProperty("address.valid"), request);
-        System.out.println(SqlDate.stringToDate(birthday + "*******************-------------*********************-"));
+
         city.setId(TextParse.toInt(cityName));
         person.setCity(city);
         person.setFirstName(firstName);
@@ -91,7 +92,7 @@ public class RegisterAction implements Action {
         person.setAdreess(address);
         customer.setPerson(person);
         customer.setEmail(email);
-        customer.setPassword(password);
+        customer.setPassword(Encoder.toEncode(password));
 
         if (wrong) {
             wrong = false;
@@ -112,9 +113,7 @@ public class RegisterAction implements Action {
         Matcher matcher = pattern.matcher(paramValue);
         if (!matcher.matches()) {
             request.setAttribute(paramName + "_error", "true");
-            System.out.println(paramName + "_error" + " -wrong");
             wrong = true;
         }
-
     }
 }

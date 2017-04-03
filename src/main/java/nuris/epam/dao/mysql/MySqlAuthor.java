@@ -1,7 +1,7 @@
 package nuris.epam.dao.mysql;
 
 import nuris.epam.dao.AuthorDao;
-import nuris.epam.dao.DaoException;
+import nuris.epam.dao.exception.DaoException;
 import nuris.epam.entity.Author;
 import nuris.epam.entity.Book;
 
@@ -20,7 +20,7 @@ public class MySqlAuthor extends AuthorDao {
     private static final String MIDDLE_NAME = "middle_name";
 
     private static final String BOOK = "book";
-    public static final String ID_BOOK = "id_book";
+    private static final String ID_BOOK = "id_book";
 
     private static final String FIND_BY_ID = Sql.create().select().allFrom().var(AUTHOR).whereQs(ID_AUTHOR).build();
     private static final String INSERT = Sql.create().insert().var(AUTHOR).values(ID_AUTHOR, 3).build();

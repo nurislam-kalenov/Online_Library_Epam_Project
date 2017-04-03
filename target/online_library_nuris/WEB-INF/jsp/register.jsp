@@ -38,6 +38,10 @@
             <label class="col-md-4 control-label" for="ln">Last name</label>
             <div class="col-md-4">
                 <input id="ln" name="last_name" type="text" placeholder="last name" class="form-control input-md">
+                <c:if test="${not empty last_name_error}">
+                    <p class="alert alert-warning"
+                       style="height: 30px;padding: 5px">Введите коректное имя</p>
+                </c:if>
             </div>
         </div>
 
@@ -46,14 +50,21 @@
             <label class="col-md-4 control-label" for="mn">Middle name</label>
             <div class="col-md-4">
                 <input id="mn" name="middle_name" type="text" placeholder="middle name" class="form-control input-md">
+                <c:if test="${not empty middle_name_error}">
+                    <p class="alert alert-warning"
+                       style="height: 30px;padding: 5px">Введите коректное имя</p>
+                </c:if>
             </div>
         </div>
 
         <div class="form-group">
             <label for="birthDate" class="col-md-4 control-label">Date of Birth</label>
             <div class="col-md-4">
-                <input id="birthDate" name="birthday" type="text" placeholder="31/12/1995"
-                       class="form-control input-md">
+                <input id="birthDate" name="birthday" type="text" placeholder="1995-12-31" class="form-control input-md">
+                <c:if test="${not empty birthday_error}">
+                    <p class="alert alert-warning"
+                       style="height: 30px;padding: 5px">Введите коректное имя</p>
+                </c:if>
             </div>
         </div>
 
@@ -62,14 +73,22 @@
             <label class="col-md-4 control-label" for="phone">Text InputPhone</label>
             <div class="col-md-4">
                 <input id="phone" name="phone" type="text" placeholder="Phone#" class="form-control input-md">
+                <c:if test="${not empty phone_error}">
+                    <p class="alert alert-warning"
+                       style="height: 30px;padding: 5px">Введите коректное имя</p>
+                </c:if>
             </div>
         </div>
 
         <div class="form-group">
             <!-- E-mail -->
-            <label class="col-md-4 control-label" for="login">E-mail (Login)</label>
+            <label class="col-md-4 control-label" for="email">E-mail (Login)</label>
             <div class="col-md-4">
-                <input type="text" id="login" name="login" placeholder="email" class="form-control input-md">
+                <input type="text" id="email" name="email" placeholder="email" class="form-control input-md">
+                <c:if test="${not empty email_error}">
+                    <p class="alert alert-warning"
+                       style="height: 30px;padding: 5px">Введите коректное имя</p>
+                </c:if>
             </div>
         </div>
 
@@ -79,6 +98,10 @@
             <div class="col-md-4">
                 <input type="password" id="password" name="password" placeholder="" class="form-control input-md">
                 <p class="help-block">Password should be at least 6 characters</p>
+                <c:if test="${not empty password_error}">
+                    <p class="alert alert-warning"
+                       style="height: 30px;padding: 5px">Введите коректное имя</p>
+                </c:if>
             </div>
         </div>
 
@@ -109,6 +132,10 @@
             <label class="col-md-4 control-label" for="add">Address</label>
             <div class="col-md-4">
                 <input id="add" name="address" type="text" placeholder="address" class="form-control input-md">
+                <c:if test="${not empty address_error}">
+                    <p class="alert alert-warning"
+                       style="height: 30px;padding: 5px">Введите коректный адрес</p>
+                </c:if>
             </div>
         </div>
         <!-- Button -->

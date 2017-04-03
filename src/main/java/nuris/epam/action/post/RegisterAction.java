@@ -1,15 +1,15 @@
 package nuris.epam.action.post;
 
 import nuris.epam.action.manage.Action;
-import nuris.epam.action.manage.ActionException;
+import nuris.epam.action.exception.ActionException;
 import nuris.epam.action.manage.ActionResult;
 import nuris.epam.entity.City;
 import nuris.epam.entity.Customer;
 import nuris.epam.entity.Person;
 import nuris.epam.service.CustomerService;
 import nuris.epam.service.exception.ServiceException;
-import nuris.epam.util.TextParse;
 import nuris.epam.util.SqlDate;
+import nuris.epam.util.TextParse;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
@@ -45,7 +45,7 @@ public class RegisterAction implements Action {
             e.printStackTrace();
         }
 
-        String login = request.getParameter("login");
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
         String passwordConfirm = request.getParameter("password_confirm");
         String firstName = request.getParameter("first_name");
@@ -57,11 +57,11 @@ public class RegisterAction implements Action {
         String cityName = request.getParameter("city");
 
         try {
-            if (!customerService.isLoginAvalible(login)) {
-                request.setAttribute("loginError", "exist");
+            if (!customerService.isLoginAvalible(email)) {
+                request.setAttribute("email_error", "true");
                 wrong = true;
             } else {
-                checkParamValid("login", login, properties.getProperty("email.valid"), request);
+                checkParamValid("email", email, properties.getProperty("email.valid"), request);
             }
         } catch (ServiceException e) {
             throw new ActionException("can't check login available", e);
@@ -69,16 +69,18 @@ public class RegisterAction implements Action {
 
         if (!password.equals(passwordConfirm)) {
             wrong = true;
-            request.setAttribute("passwordError", "not match");
+            request.setAttribute("password_error", "true");
         } else {
             checkParamValid("password", password, properties.getProperty("password.valid"), request);
         }
+
         checkParamValid("first_name", firstName, properties.getProperty("name.valid"), request);
         checkParamValid("last_name", lastName, properties.getProperty("name.valid"), request);
         checkParamValid("middle_name", middleName, properties.getProperty("name.valid"), request);
         checkParamValid("phone", phone, properties.getProperty("limit.number.valid"), request);
         checkParamValid("birthday", birthday, properties.getProperty("date.valid"), request);
-
+        checkParamValid("address", address, properties.getProperty("address.valid"), request);
+        System.out.println(SqlDate.stringToDate(birthday + "*******************-------------*********************-"));
         city.setId(TextParse.toInt(cityName));
         person.setCity(city);
         person.setFirstName(firstName);
@@ -88,7 +90,7 @@ public class RegisterAction implements Action {
         person.setPhone(phone);
         person.setAdreess(address);
         customer.setPerson(person);
-        customer.setEmail(login);
+        customer.setEmail(email);
         customer.setPassword(password);
 
         if (wrong) {

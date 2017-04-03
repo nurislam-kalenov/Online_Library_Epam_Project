@@ -1,4 +1,4 @@
-package nuris.epam.action.manage;
+package nuris.epam.action.exception;
 
 /**
  * Created by User on 02.04.2017.

@@ -4,7 +4,7 @@ import nuris.epam.dao.CityDao;
 import nuris.epam.dao.CustomerDao;
 import nuris.epam.dao.CustomerRoleDao;
 import nuris.epam.dao.PersonDao;
-import nuris.epam.dao.DaoException;
+import nuris.epam.dao.exception.DaoException;
 import nuris.epam.dao.manager.DaoFactory;
 import nuris.epam.entity.City;
 import nuris.epam.entity.Customer;

@@ -3,7 +3,7 @@ package nuris.epam.service;
 import nuris.epam.dao.BookInfoDao;
 import nuris.epam.dao.ManagementDao;
 import nuris.epam.dao.TransactionDao;
-import nuris.epam.dao.DaoException;
+import nuris.epam.dao.exception.DaoException;
 import nuris.epam.dao.manager.DaoFactory;
 import nuris.epam.entity.BookInfo;
 import nuris.epam.entity.Management;

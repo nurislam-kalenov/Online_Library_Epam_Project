@@ -40,8 +40,8 @@ public class Main {
         System.out.println(customerService.getAllCity());
       System.out.println(connectionPool.size());
 
-      String betterIdea, userIdea;
-      userIdea = "Welfnwfwfewfwfeflbwiebi rgere erg erger ergerge Srgreg 56654 ";
-      System.out.println(TextParse.upperCaseFirstLetter(userIdea));
+      String date = "1995-12-02";
+      System.out.println(SqlDate.stringToDate(date));
+
     }
 }

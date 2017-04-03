@@ -1,7 +1,7 @@
 package nuris.epam.dao.mysql;
 
 import nuris.epam.dao.TransactionDao;
-import nuris.epam.dao.DaoException;
+import nuris.epam.dao.exception.DaoException;
 import nuris.epam.entity.Management;
 import nuris.epam.entity.Transaction;
 

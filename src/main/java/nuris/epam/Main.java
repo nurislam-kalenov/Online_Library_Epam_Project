@@ -14,7 +14,7 @@ public class Main {
 
     public static void main(String[] args) throws ServiceException {
         ConnectionPool connectionPool = ConnectionPool.getInstance();
-      System.out.println(connectionPool.size());
+        System.out.println(connectionPool.size());
         City city = new City();
         Person person = new Person();
         Customer customer = new Customer();
@@ -31,18 +31,16 @@ public class Main {
         customer.setPassword("123456");
         customer.setPerson(person);
 
-      CustomerService customerService = new CustomerService();
+        CustomerService customerService = new CustomerService();
 
-   //   customerService.registerCustomer(customer);
+        //   customerService.registerCustomer(customer);
         //System.out.println(SqlDate.currentDateAndTime());
         // System.out.println(connectionPool.size());
         System.out.println(customerService.getAllCity());
-      System.out.println(connectionPool.size());
+        System.out.println(connectionPool.size());
 
-      String date = "1995-12-02";
-      System.out.println(SqlDate.stringToDate(date));
-
-
+        String date = "1995-12-02";
+        System.out.println(SqlDate.stringToDate(date));
 
 
     }

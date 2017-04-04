@@ -8,14 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:url var="register_url" value="/kz/register"/>
-<style>
-    <jsp:directive.include file="/WEB-INF/css/bootstrap.min.css"/>
-</style>
-<html>
-<head>
-    <title>Login</title>
-</head>
-<body>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="my" %>
+<my:design-pattern />
 
-</body>
-</html>
+

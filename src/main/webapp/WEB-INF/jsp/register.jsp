@@ -6,14 +6,16 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="my" %>
+<c:url var="register_url" value="/kz/register"/>
+<c:url var="home_url" value="/kz/welcome"/>
+
 <html>
 <head>
     <style>
         <jsp:directive.include file="/WEB-INF/css/bootstrap.min.css"/>
     </style>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <c:url var="register_url" value="/kz/register"/>
-    <c:url var="home_url" value="/kz/welcome"/>
     <title>Registration customer</title>
 </head>
 <body>
@@ -60,7 +62,8 @@
         <div class="form-group">
             <label for="birthDate" class="col-md-4 control-label">Date of Birth</label>
             <div class="col-md-4">
-                <input id="birthDate" name="birthday" type="text" placeholder="1995-12-31" class="form-control input-md">
+                <input id="birthDate" name="birthday" type="text" placeholder="1995-12-31"
+                       class="form-control input-md">
                 <c:if test="${not empty birthday_error}">
                     <p class="alert alert-warning"
                        style="height: 30px;padding: 5px">Введите коректное имя</p>

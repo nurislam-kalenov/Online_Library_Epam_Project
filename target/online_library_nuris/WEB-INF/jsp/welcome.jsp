@@ -7,19 +7,13 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="my" %>
-<html>
-<head>
-    <title>Welcome BRO!</title>
-</head>
-<body>
-<form name="loginForm" method="post" action="login">
-    <input type="hidden" name="command" value="login"/>
-    Login:<br/>
-    <input type="text" name="login" value=""/>
-    <br/>Password: <br/>
-    <input type="password" name="password" value=""/>
-    <input type="submit"  value="log in">
-</form>
-
-</body>
-</html>
+<my:design-pattern role="guest">
+    <form name="loginForm" method="post" action="login">
+        <input type="hidden" name="command" value="login"/>
+        Login:<br/>
+        <input type="text" name="login" value=""/>
+        <br/>Password: <br/>
+        <input type="password" name="password" value=""/>
+        <input type="submit" value="log in">
+    </form>
+</my:design-pattern>

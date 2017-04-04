@@ -11,14 +11,7 @@
 <c:url var="register_url" value="/kz/register"/>
 <c:url var="home_url" value="/kz/welcome"/>
 
-<html>
-<head>
-    <style>
-        <jsp:directive.include file="/WEB-INF/css/bootstrap.min.css"/>
-    </style>
-    <title>Registration customer</title>
-</head>
-<body>
+<my:design-pattern role="guest">
 <form class="form-horizontal" action="${register_url}" method="POST">
     <fieldset>
         <!-- Form Name -->
@@ -159,5 +152,5 @@
 
     </fieldset>
 </form>
-</body>
-</html>
+    </my:design-pattern>
+

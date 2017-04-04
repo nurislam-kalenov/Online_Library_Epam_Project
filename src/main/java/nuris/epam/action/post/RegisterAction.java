@@ -13,6 +13,7 @@ import nuris.epam.util.SqlDate;
 import nuris.epam.util.TextParse;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.regex.Matcher;
@@ -26,7 +27,7 @@ public class RegisterAction implements Action {
     private boolean wrong;
 
     @Override
-    public ActionResult execute(HttpServletRequest request) throws ActionException {
+    public ActionResult execute(HttpServletRequest request , HttpServletResponse resp) throws ActionException {
 
         CustomerService customerService = new CustomerService();
         Properties properties = new Properties();

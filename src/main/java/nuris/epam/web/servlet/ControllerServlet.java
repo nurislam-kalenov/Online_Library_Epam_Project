@@ -28,7 +28,7 @@ public class ControllerServlet extends HttpServlet {
         Action action = actionFactory.getAction(req);
         ActionResult result = null;
         try {
-            result = action.execute(req);
+            result = action.execute(req , resp);
         } catch (ActionException e) {
             e.printStackTrace();
         }

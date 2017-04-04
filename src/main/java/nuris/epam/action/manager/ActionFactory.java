@@ -1,6 +1,7 @@
 package nuris.epam.action.manager;
 
 import nuris.epam.action.get.PageRegisterAction;
+import nuris.epam.action.get.SelectLanguageAction;
 import nuris.epam.action.post.LoginAction;
 import nuris.epam.action.post.LogoutAction;
 import nuris.epam.action.post.RegisterAction;
@@ -20,6 +21,9 @@ public class ActionFactory {
         //get request
         actions.put("GET/welcome", new ShowPageAction("welcome"));
         actions.put("GET/register", new PageRegisterAction());
+        actions.put("GET/set-language", new SelectLanguageAction());
+
+
         //post request
         actions.put("POST/login", new LoginAction());
         actions.put("POST/logout", new LogoutAction());

@@ -6,6 +6,7 @@ import nuris.epam.service.CustomerService;
 import nuris.epam.service.exception.ServiceException;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * Created by User on 01.04.2017.
@@ -13,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 public class PageRegisterAction implements Action{
 
     @Override
-    public ActionResult execute(HttpServletRequest request) {
+    public ActionResult execute(HttpServletRequest request, HttpServletResponse resp) {
         CustomerService customerService = new CustomerService();
         try {
             request.setAttribute("cityList" , customerService.getAllCity());

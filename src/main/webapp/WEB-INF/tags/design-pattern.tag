@@ -17,6 +17,7 @@
         <fmt:message key="navbar.management" var="management"/>
         <fmt:message key="navbar.readers" var="readers"/>
         <fmt:message key="navbar.account" var="account"/>
+        <fmt:message key="navbar.mybooks" var ="my_books "/>
     </fmt:bundle>
     <style>
         <jsp:directive.include file="/WEB-INF/css/bootstrap.min.css"/>
@@ -30,7 +31,8 @@
     <c:if test="${role.equals('admin')}">
         <div class="container">
             <div class="navbar-header">
-                <div class="navbar-brand navbar-brand-centered">Онлайн LIB</div>
+                <div class="navbar-brand navbar-brand-centered">Online LIB
+                </div>
             </div>
             <div class="collapse navbar-collapse" id="navbar-brand-admin">
                 <ul class="nav navbar-nav">
@@ -57,16 +59,16 @@
             <div class="collapse navbar-collapse" id="navbar-brand-customer">
 
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Книги</a></li>
-                    <li><a href="#">Личный кабинет</a></li>
-                    <li><a href="#">Мои книги</a></li>
+                    <li><a href="#">${books}</a></li>
+                    <li><a href="#">${my_books}</a></li>
+                    <li><a href="#">${account}</a></li>
 
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a >English</a></li>
-                    <li><a >Руский</a></li>
-                    <li><a href="#">Выйти</a></li>
+                    <li><a href="set-language?lang=en">English</a></li>
+                    <li><a href="set-language?lang=ru">Руский</a></li>
+                    <li><a href="#">${logout}</a></li>
                 </ul>
             </div>
 
@@ -75,12 +77,14 @@
     <c:if test="${role.equals('guest')}">
         <div class="container">
             <div class="navbar-header">
-                <div class="navbar-brand navbar-brand-centered">Онлайн LIB</div>
+                <div class="navbar-brand navbar-brand-centered">
+                    Online LIB
+                </div>
             </div>
             <div class="collapse navbar-collapse" id="navbar-brand-centered">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">English</a></li>
-                    <li><a href="#">Руский</a></li>
+                    <li><a href="set-language?lang=en">English</a></li>
+                    <li><a href="set-language?lang=ru">Руский</a></li>
                 </ul>
             </div>
 

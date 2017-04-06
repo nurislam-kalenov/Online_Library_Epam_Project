@@ -167,6 +167,20 @@ public class BookService {
         }
     }
 
+
+    public int getBookCountByGenre(Genre genre) throws ServiceException {
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            try {
+                BookDao bookDao = (BookDao) daoFactory.getDao(daoFactory.typeDao().getBookDao());
+                int count = bookDao.getBookCountByGenre(genre);
+                return count;
+            } catch (DaoException e) {
+                throw new ServiceException("can't get count book", e);
+            }
+        }
+    }
+
+
     public Book getBookByName(String name) throws ServiceException {
         try (DaoFactory daoFactory = new DaoFactory()) {
             try {

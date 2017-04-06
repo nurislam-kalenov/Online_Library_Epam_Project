@@ -1,6 +1,7 @@
 package nuris.epam;
 
 import nuris.epam.connection.ConnectionPool;
+import nuris.epam.dao.mysql.MySqlBook;
 import nuris.epam.entity.*;
 import nuris.epam.service.BookService;
 import nuris.epam.service.CustomerService;
@@ -37,12 +38,15 @@ public class Main {
         //   customerService.registerCustomer(customer);
         //System.out.println(SqlDate.currentDateAndTime());
         // System.out.println(connectionPool.size());
-        System.out.println(customerService.getAllCity());
-        Customer customer1 = customerService.findByLoginPassword("kl@gmail.com" , "");
 
+        Customer customer1 = customerService.findByLoginPassword("kl@gmail.com", "");
+        Genre genre = new Genre();
         BookService bookService = new BookService();
-        System.out.println(bookService.getListBook(1 , 5));
+        int i = bookService.getBookCountByGenre(genre);
+        System.out.println(i + "количество книжек");
         System.out.println(connectionPool.size());
+        MySqlBook mySqlBook = new MySqlBook();
+        mySqlBook.sql();
 
     }
 }

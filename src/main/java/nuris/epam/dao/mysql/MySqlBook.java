@@ -35,11 +35,15 @@ public class MySqlBook extends BookDao {
     private static final String UPDATE = Sql.create().update().var(BOOK).set().varQs(NAME).c().varQs(YEAR).c().varQs(ISBN).c().varQs(DESCRIPTION).c().varQs(ID_GENRE).c().varQs(ID_AUTHOR).c().whereQs(ID_BOOK).build();
     private static final String DELETE = Sql.create().delete().var(BOOK).whereQs(ID_BOOK).build();
     private static final String COUNT_BOOK = Sql.create().select().count().from().var(BOOK).build();
+    private static final String COUNT_BOOK_BY_GENRE =Sql.create().select().count().from().var(BOOK).whereQs(ID_GENRE).build();
     private static final String LIMIT_BOOK = Sql.create().select().allFrom().var(BOOK).limit().build();
     private static final String LIMIT_BOOK_BY_GENRE = Sql.create().select().allFrom().var(BOOK).whereQs(ID_GENRE).limit().build();
     private static final String FIND_BY_NAME = Sql.create().select().allFrom().var(BOOK).whereQs(NAME).build();
     private static final String FIND_BY_BOOK = Sql.create().select().varS(BOOK, ID_BOOK).c().varS(BOOK, NAME).c().varS(BOOK, YEAR).c().varS(BOOK, ISBN).c().varS(BOOK, DESCRIPTION).c().varS(BOOK, ID_GENRE).c().varS(BOOK, ID_AUTHOR).from().var(BOOK).join(BOOK_INFO).varS(BOOK_INFO, ID_BOOK).eq().varS(BOOK, ID_BOOK).whereQs(BOOK_INFO, ID_BOOK_INFO).build();
 
+public void sql(){
+    System.out.println(COUNT_BOOK_BY_GENRE);
+}
 
 
     @Override
@@ -114,6 +118,24 @@ public class MySqlBook extends BookDao {
             }
         } catch (SQLException e) {
             throw new DaoException("can't get book count "+ this.getClass().getSimpleName(), e);
+        }
+        return count;
+    }
+
+    @Override
+    public int getBookCountByGenre(Genre genre) throws DaoException {
+        int count = 0;
+        try {
+            try (PreparedStatement statement = getConnection().prepareStatement(COUNT_BOOK_BY_GENRE)) {
+                statement.setInt(1, genre.getId());
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    while (resultSet.next()) {
+                        count = resultSet.getInt(1);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            throw new DaoException("can't find by genre id " + this.getClass().getSimpleName(), e);
         }
         return count;
     }

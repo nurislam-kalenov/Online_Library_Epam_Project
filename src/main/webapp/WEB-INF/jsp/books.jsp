@@ -11,12 +11,22 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <my:design-pattern role="user">
     <table>
+        <tr>
+            <c:forEach items="${genres}" var="genre">
+            <td><a href="books?genre_id=${genre.id}">${genre.name}</a></td>
+        </tr>
+        </c:forEach>
+    </table>
+    </br>
+    </br>
+
+    <table>
         <c:forEach items="${books}" var="book">
             <tr>
-                <td><c:out value="${book.id}" /></td>
-                <td><c:out value="${book.name}" /></td>
-                <td><c:out value="${book.date}" /></td>
-                <td><c:out value="${book.description}" /></td>
+                <td><c:out value="${book.id}"/></td>
+                <td><c:out value="${book.name}"/></td>
+                <td><c:out value="${book.date}"/></td>
+                <td><c:out value="${book.description}"/></td>
             </tr>
         </c:forEach>
     </table>

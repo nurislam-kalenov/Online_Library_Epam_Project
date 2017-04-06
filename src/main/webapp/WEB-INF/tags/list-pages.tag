@@ -6,7 +6,7 @@
 <%@ attribute name="books_url" required="true" %>
 
 <c:if test="${currentPage != 1}">
-    <td><a href="books?page=${currentPage - 1}">Privios</a></td>
+    <td><a href="${books_url}${currentPage - 1}">Privios</a></td>
 </c:if>
 <table border="1" cellpadding="5" cellspacing="5">
     <tr>

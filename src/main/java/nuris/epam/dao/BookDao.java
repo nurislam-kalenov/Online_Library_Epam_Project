@@ -14,6 +14,8 @@ public abstract class BookDao extends BaseDao<Book>{
 
     public abstract int getBookCount() throws DaoException;
 
+    public abstract int getBookCountByGenre(Genre genre) throws DaoException;
+
     public abstract List<Book> getLimitBook(int start , int count) throws DaoException;
 
     public abstract List<Book> getLimitBookByGenre(Genre genre , int start , int count) throws DaoException;

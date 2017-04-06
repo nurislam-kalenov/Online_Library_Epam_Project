@@ -9,6 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <c:url var="register_url" value="/kz/register"/>
+<c:url var="login_url" value="/kz/login"/>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="my" %>
 
 <fmt:bundle basename="i18n">
@@ -21,7 +22,7 @@
 
 <my:design-pattern role="guest">
     <div class="login-box">
-        <form id="loginForm" action="${register_url}" method="POST">
+        <form id="loginForm" action="${login_url}" method="POST">
             <div class="panel panel-default">
                 <div class="panel-heading"><b>${sign_in}</b></div>
                 <div class="panel-body">

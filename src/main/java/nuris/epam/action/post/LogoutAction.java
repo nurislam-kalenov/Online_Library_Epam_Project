@@ -6,6 +6,7 @@ import nuris.epam.action.manager.ActionResult;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Created by User on 29.03.2017.
@@ -13,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 public class LogoutAction implements Action {
     @Override
     public ActionResult execute(HttpServletRequest request, HttpServletResponse resp) {
+        HttpSession session = request.getSession();
+        session.invalidate();
         return new ActionResult("welcome");
     }
 }

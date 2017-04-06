@@ -6,6 +6,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 
 <c:url var="register_url" value="/kz/register"/>
+<c:url var="books_url" value="/kz/books"/>
+<c:url var="logout_url" value="/kz/logout"/>
 
 <html lang=en>
 <head>
@@ -17,8 +19,9 @@
         <fmt:message key="navbar.management" var="management"/>
         <fmt:message key="navbar.readers" var="readers"/>
         <fmt:message key="navbar.account" var="account"/>
-        <fmt:message key="navbar.mybooks" var ="my_books "/>
+        <fmt:message key="navbar.mybooks" var ="my_books"/>
     </fmt:bundle>
+
     <style>
         <jsp:directive.include file="/WEB-INF/css/bootstrap.min.css"/>
         <jsp:directive.include file="/WEB-INF/css/header.css"/>
@@ -36,7 +39,7 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar-brand-admin">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">${books}</a></li>
+                    <li><a href="${books_url}">${books}</a></li>
                     <li><a href="#">${readers}</a></li>
                     <li><a href="#">${management}</a></li>
                     <li><a href="#">${account}</a></li>
@@ -45,13 +48,15 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="set-language?lang=en">English</a></li>
                     <li><a href="set-language?lang=ru">Руский</a></li>
-                    <li><a href="#">${logout}</a></li>
+                    <li><form action="${logout_url}"  class="button_header" method="post">
+                        <input type="submit" value="${logout}" />
+                    </form></li>
                 </ul>
             </div>
 
         </div>
     </c:if>
-    <c:if test="${role.equals('customer')}">
+    <c:if test="${role.equals('user')}">
         <div class="container">
             <div class="navbar-header">
                 <div class="navbar-brand navbar-brand-centered">Онлайн LIB</div>
@@ -59,7 +64,7 @@
             <div class="collapse navbar-collapse" id="navbar-brand-customer">
 
                 <ul class="nav navbar-nav">
-                    <li><a href="#">${books}</a></li>
+                    <li><a href="${books_url}">${books}</a></li>
                     <li><a href="#">${my_books}</a></li>
                     <li><a href="#">${account}</a></li>
 
@@ -68,7 +73,9 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="set-language?lang=en">English</a></li>
                     <li><a href="set-language?lang=ru">Руский</a></li>
-                    <li><a href="#">${logout}</a></li>
+                    <li><form action="${logout_url}"  class="button_header" method="post">
+                        <input type="submit" value="${logout}" />
+                    </form></li>
                 </ul>
             </div>
 
@@ -108,7 +115,7 @@
             </div>
         </footer>
     </c:if>
-    <c:if test="${role.equals('admin') || role.equals('customer')}">
+    <c:if test="${role.equals('admin') || role.equals('user')}">
         <footer class="container-fluid text-center bg-lightgray" style="margin-top:-150px;">
 
             <div class="copyrights" style="margin-top:25px;">

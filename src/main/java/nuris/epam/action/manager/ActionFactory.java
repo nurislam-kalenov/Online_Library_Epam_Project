@@ -1,5 +1,6 @@
 package nuris.epam.action.manager;
 
+import nuris.epam.action.get.PageBookAction;
 import nuris.epam.action.get.PageRegisterAction;
 import nuris.epam.action.get.SelectLanguageAction;
 import nuris.epam.action.post.LoginAction;
@@ -21,6 +22,7 @@ public class ActionFactory {
         //get request
         actions.put("GET/welcome", new ShowPageAction("welcome"));
         actions.put("GET/register", new PageRegisterAction());
+        actions.put("GET/books",new PageBookAction());
         actions.put("GET/set-language", new SelectLanguageAction());
 
 

@@ -34,5 +34,7 @@
 }
 .button_header{
     margin-top: 12px;
-
 }
+
+
+.pagination>li>a, .pagination>li>span { border-radius: 50% !important;margin: 0 5px;}

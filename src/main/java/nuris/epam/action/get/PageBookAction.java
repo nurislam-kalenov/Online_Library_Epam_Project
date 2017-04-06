@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class PageBookAction implements Action {
     private int genreId = 0;
-    private int genreState = 0;
+    private int genreState = 1;
 
     @Override
     public ActionResult execute(HttpServletRequest request, HttpServletResponse response) throws ActionException {
@@ -31,12 +31,11 @@ public class PageBookAction implements Action {
             if (request.getParameter("page") != null) {
                 page = Integer.parseInt(request.getParameter("page"));
             }
-            if (request.getParameter("genre_id") != null ) {
+            if (request.getParameter("genre_id") != null) {
                 genreId = Integer.parseInt(request.getParameter("genre_id"));
                 genre.setId(genreId);
                 genreState = genreId;
-            }
-            else {
+            } else {
                 genre.setId(genreState);
             }
 

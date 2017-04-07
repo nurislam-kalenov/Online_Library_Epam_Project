@@ -1,11 +1,13 @@
 package nuris.epam.action.manager;
 
+import nuris.epam.action.get.PageAvatarAction;
 import nuris.epam.action.get.PageBookAction;
 import nuris.epam.action.get.PageRegisterAction;
 import nuris.epam.action.get.SelectLanguageAction;
 import nuris.epam.action.post.LoginAction;
 import nuris.epam.action.post.LogoutAction;
 import nuris.epam.action.post.RegisterAction;
+import nuris.epam.action.post.UploadPictureAction;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -24,12 +26,15 @@ public class ActionFactory {
         actions.put("GET/register", new PageRegisterAction());
         actions.put("GET/books",new PageBookAction());
         actions.put("GET/set-language", new SelectLanguageAction());
+        actions.put("GET/picture", new PageAvatarAction());
 
 
         //post request
         actions.put("POST/login", new LoginAction());
         actions.put("POST/logout", new LogoutAction());
         actions.put("POST/register",new RegisterAction());
+        actions.put("POST/upload", new UploadPictureAction());
+
 
 
 

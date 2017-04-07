@@ -8,6 +8,8 @@ import nuris.epam.service.CustomerService;
 import nuris.epam.service.exception.ServiceException;
 import nuris.epam.util.SqlDate;
 
+import javax.accessibility.AccessibleAction;
+
 
 /**
  * Created by User on 09.03.2017.
@@ -47,6 +49,5 @@ public class Main {
         System.out.println(connectionPool.size());
         MySqlBook mySqlBook = new MySqlBook();
         mySqlBook.sql();
-
     }
 }

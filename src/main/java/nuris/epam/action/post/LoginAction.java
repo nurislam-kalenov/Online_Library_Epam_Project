@@ -29,10 +29,10 @@ public class LoginAction implements Action {
                 HttpSession session = request.getSession();
                 session.setAttribute("customerId" , customer.getId());
                 session.setAttribute("role" , customer.getCustomerRole().getName());
-                session.setAttribute("login" , customer.getEmail());
-                return new ActionResult("books");
+                session.setAttribute("name" , customer.getPerson().getFirstName());
+                return new ActionResult("books" , true);
             }else{
-                return new ActionResult("welcome");
+                return new ActionResult("welcome", true);
             }
         } catch (ServiceException e) {
             new ActionException("can't find customer by login and password", e);

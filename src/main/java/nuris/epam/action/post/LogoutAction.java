@@ -16,6 +16,6 @@ public class LogoutAction implements Action {
     public ActionResult execute(HttpServletRequest request, HttpServletResponse resp) {
         HttpSession session = request.getSession();
         session.invalidate();
-        return new ActionResult("welcome");
+        return new ActionResult("welcome", true);
     }
 }

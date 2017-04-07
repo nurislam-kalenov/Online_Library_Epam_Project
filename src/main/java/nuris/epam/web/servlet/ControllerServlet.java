@@ -5,6 +5,7 @@ import nuris.epam.action.exception.ActionException;
 import nuris.epam.action.manager.*;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,6 +16,7 @@ import java.io.IOException;
  * Created by User on 29.03.2017.
  */
 @WebServlet(name = "controller", urlPatterns = "/kz/*")
+@MultipartConfig
 public class ControllerServlet extends HttpServlet {
     ActionFactory actionFactory;
 

@@ -46,6 +46,7 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Привет, ${sessionScope.name}!</a></li>
                     <li><a href="set-language?lang=en">English</a></li>
                     <li><a href="set-language?lang=ru">Руский</a></li>
                     <li><form action="${logout_url}"  class="button_header" method="post">
@@ -71,6 +72,7 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Привет, ${sessionScope.name}!</a></li>
                     <li><a href="set-language?lang=en">English</a></li>
                     <li><a href="set-language?lang=ru">Руский</a></li>
                     <li><form action="${logout_url}"  class="button_header" method="post">
@@ -116,7 +118,7 @@
         </footer>
     </c:if>
     <c:if test="${role.equals('admin') || role.equals('user')}">
-        <footer class="container-fluid text-center bg-lightgray" style="margin-top:-150px;">
+        <footer class="container-fluid text-center bg-lightgray">
 
             <div class="copyrights" style="margin-top:25px;">
                 <p>Epam System Lab21 © 2017, All Rights Reserved

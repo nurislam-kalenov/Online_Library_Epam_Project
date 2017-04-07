@@ -167,7 +167,6 @@ public class BookService {
         }
     }
 
-
     public int getBookCountByGenre(Genre genre) throws ServiceException {
         try (DaoFactory daoFactory = new DaoFactory()) {
             try {

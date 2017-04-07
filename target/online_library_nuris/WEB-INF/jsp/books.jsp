@@ -10,26 +10,49 @@
 <%@ taglib tagdir="/WEB-INF/tags" prefix="my" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <my:design-pattern role="user">
-    <table>
-        <tr>
-            <c:forEach items="${genres}" var="genre">
-            <td><a href="books?genre_id=${genre.id}">${genre.name}</a></td>
-        </tr>
-        </c:forEach>
-    </table>
-    </br>
-    </br>
 
-    <table>
-        <c:forEach items="${books}" var="book">
-            <tr>
-                <td><c:out value="${book.id}"/></td>
-                <td><c:out value="${book.name}"/></td>
-                <td><c:out value="${book.date}"/></td>
-                <td><c:out value="${book.description}"/></td>
-            </tr>
-        </c:forEach>
-    </table>
-    <my:list-pages currentPage="${currentPage}" noOfPages="${noOfPages}" books_url="books?page="/>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    Жанр</h3>
+                            </div>
+                            <ul class="list-group">
+                                <c:forEach items="${genres}" var="genre">
+                                    <a href="books?genre_id=${genre.id}"  class="list-group-item">${genre.name}</a>
+                                </c:forEach>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <table>
+                            <c:forEach items="${books}" var="book">
+                                <tr>
+                                    <td><c:out value="${book.id}"/></td>
+                                    <td><c:out value="${book.name}"/></td>
+                                    <td><c:out value="${book.date}"/></td>
+                                    <td><c:out value="${book.description}"/></td>
+                                </tr>
+                            </c:forEach>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-offset-5">
+                        <my:list-pages currentPage="${currentPage}" noOfPages="${noOfPages}" books_url="books?page="/>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
 
 </my:design-pattern>

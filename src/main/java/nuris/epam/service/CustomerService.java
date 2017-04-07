@@ -1,15 +1,9 @@
 package nuris.epam.service;
 
-import nuris.epam.dao.CityDao;
-import nuris.epam.dao.CustomerDao;
-import nuris.epam.dao.CustomerRoleDao;
-import nuris.epam.dao.PersonDao;
+import nuris.epam.dao.*;
 import nuris.epam.dao.exception.DaoException;
 import nuris.epam.dao.manager.DaoFactory;
-import nuris.epam.entity.City;
-import nuris.epam.entity.Customer;
-import nuris.epam.entity.CustomerRole;
-import nuris.epam.entity.Person;
+import nuris.epam.entity.*;
 import nuris.epam.service.exception.ServiceException;
 import nuris.epam.util.SqlDate;
 
@@ -174,7 +168,28 @@ public class CustomerService {
         } else {
             return true;
         }
-
+    }
+    public void uploadAvatar(Avatar avatar) throws ServiceException{
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            try {
+                AvatarDao avatarDao = (AvatarDao) daoFactory.getDao(daoFactory.typeDao().getAvatarDao());
+                avatarDao.insert(avatar);
+            } catch (DaoException e) {
+                throw new ServiceException("can't upload avatar", e);
+            }
+        }
     }
 
+    public Avatar findByIdAvatar(int id) throws ServiceException{
+        Avatar avatar = null;
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            try {
+                AvatarDao avatarDao = (AvatarDao) daoFactory.getDao(daoFactory.typeDao().getAvatarDao());
+             avatar =  avatarDao.findById(id);
+            } catch (DaoException e) {
+                throw new ServiceException("can't upload avatar", e);
+            }
+        }
+        return avatar;
+    }
 }

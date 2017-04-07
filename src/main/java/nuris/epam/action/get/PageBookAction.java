@@ -5,8 +5,8 @@ import nuris.epam.action.manager.Action;
 import nuris.epam.action.manager.ActionResult;
 import nuris.epam.entity.Book;
 import nuris.epam.entity.Genre;
-import nuris.epam.service.BookService;
-import nuris.epam.service.exception.ServiceException;
+import nuris.epam.services.BookService;
+import nuris.epam.services.exception.ServiceException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

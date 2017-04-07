@@ -109,7 +109,7 @@
     <c:if test="${role.equals('guest')}">
         <footer class="container-fluid text-center bg-lightgray" style="margin-top:90px;">
             <div class="copyrights" style="margin-top:25px;">
-                <p>Epam System Lab21 © 2017, All Rights Reserved
+                <p>Epam Systems Lab21 © 2017, All Rights Reserved
                     <br>
                     <span>Web Design By: Kalenov Nurislam</span></p>
                 <p><a href="https://vk.com/chaknuris" target="_blank">VKontakte<i class="fa fa-linkedin-square"
@@ -119,9 +119,8 @@
     </c:if>
     <c:if test="${role.equals('admin') || role.equals('user')}">
         <footer class="container-fluid text-center bg-lightgray">
-
             <div class="copyrights" style="margin-top:25px;">
-                <p>Epam System Lab21 © 2017, All Rights Reserved
+                <p>Epam Systems Lab21 © 2017, All Rights Reserved
                     <br>
                     <span>Web Design By: Kalenov Nurislam</span></p>
                 <p><a href="https://vk.com/chaknuris" target="_blank">VKontakte<i class="fa fa-linkedin-square"

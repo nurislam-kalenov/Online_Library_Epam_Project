@@ -3,8 +3,8 @@ package nuris.epam.action.get;
 import nuris.epam.action.exception.ActionException;
 import nuris.epam.action.manager.Action;
 import nuris.epam.action.manager.ActionResult;
-import nuris.epam.service.BookService;
-import nuris.epam.service.exception.ServiceException;
+import nuris.epam.services.BookService;
+import nuris.epam.services.exception.ServiceException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

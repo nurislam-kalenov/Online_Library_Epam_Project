@@ -4,9 +4,9 @@ import nuris.epam.action.exception.ActionException;
 import nuris.epam.action.manager.Action;
 import nuris.epam.action.manager.ActionResult;
 import nuris.epam.entity.Customer;
-import nuris.epam.service.CustomerService;
-import nuris.epam.service.exception.ServiceException;
-import nuris.epam.util.Encoder;
+import nuris.epam.services.CustomerService;
+import nuris.epam.services.exception.ServiceException;
+import nuris.epam.utils.Encoder;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

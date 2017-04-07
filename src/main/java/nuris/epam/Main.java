@@ -1,14 +1,11 @@
 package nuris.epam;
 
 import nuris.epam.connection.ConnectionPool;
-import nuris.epam.dao.mysql.MySqlBook;
 import nuris.epam.entity.*;
-import nuris.epam.service.BookService;
-import nuris.epam.service.CustomerService;
-import nuris.epam.service.exception.ServiceException;
-import nuris.epam.util.SqlDate;
-
-import javax.accessibility.AccessibleAction;
+import nuris.epam.services.BookService;
+import nuris.epam.services.exception.ServiceException;
+import nuris.epam.utils.Encoder;
+import nuris.epam.utils.SqlDate;
 
 
 /**
@@ -37,9 +34,11 @@ public class Main {
         bookInfo.setAmount(5);
         bookInfo.setPrice(100);
         bookInfo.setBook(book);
-        bookService.registerBook(bookInfo);
+
 
         System.out.println(connectionPool.size());
+
+        System.out.println(Encoder.toEncode("7654321Yy"));
 
     }
 }

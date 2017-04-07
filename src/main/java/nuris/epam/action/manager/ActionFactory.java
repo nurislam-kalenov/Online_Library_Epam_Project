@@ -4,6 +4,7 @@ import nuris.epam.action.get.PageBookAction;
 import nuris.epam.action.get.PageBookRegisterAction;
 import nuris.epam.action.get.PageRegisterAction;
 import nuris.epam.action.get.SelectLanguageAction;
+import nuris.epam.action.post.BookRegisterAction;
 import nuris.epam.action.post.LoginAction;
 import nuris.epam.action.post.LogoutAction;
 import nuris.epam.action.post.RegisterAction;
@@ -31,6 +32,8 @@ public class ActionFactory {
         actions.put("POST/login", new LoginAction());
         actions.put("POST/logout", new LogoutAction());
         actions.put("POST/register",new RegisterAction());
+        actions.put("POST/register-book",new BookRegisterAction());
+
     }
 
     public Action getAction(HttpServletRequest request) {

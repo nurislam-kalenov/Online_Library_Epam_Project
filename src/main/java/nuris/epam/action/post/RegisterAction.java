@@ -6,11 +6,11 @@ import nuris.epam.action.manager.ActionResult;
 import nuris.epam.entity.City;
 import nuris.epam.entity.Customer;
 import nuris.epam.entity.Person;
-import nuris.epam.service.CustomerService;
-import nuris.epam.service.exception.ServiceException;
-import nuris.epam.util.Encoder;
-import nuris.epam.util.SqlDate;
-import nuris.epam.util.TextParse;
+import nuris.epam.services.CustomerService;
+import nuris.epam.services.exception.ServiceException;
+import nuris.epam.utils.Encoder;
+import nuris.epam.utils.SqlDate;
+import nuris.epam.utils.TextParse;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

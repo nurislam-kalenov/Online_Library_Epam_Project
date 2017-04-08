@@ -35,15 +35,14 @@
     <fmt:message key="register.head" var ="registration"/>
     <fmt:message key="register.hblock.password" var ="hblock_password"/>
     <fmt:message key="register.hblock.confirm.password" var ="hblock_confirm_password"/>
-
-
 </fmt:bundle>
+
 <my:design-pattern role="guest">
     <form class="form-horizontal" action="${register_url}" method="POST">
     <fieldset>
-        <!-- Form Name -->
+
         <legend>${registration}</legend>
-        <!-- Text input-->
+
         <div class="form-group">
             <label class="col-md-4 control-label" for="fn">${first_name}</label>
             <div class="col-md-4">
@@ -55,7 +54,6 @@
             </div>
         </div>
 
-        <!-- Text input-->
         <div class="form-group">
             <label class="col-md-4 control-label" for="ln">${last_name}</label>
             <div class="col-md-4">
@@ -67,7 +65,6 @@
             </div>
         </div>
 
-        <!-- Text input-->
         <div class="form-group">
             <label class="col-md-4 control-label" for="mn">${middle_name}</label>
             <div class="col-md-4">
@@ -91,7 +88,6 @@
             </div>
         </div>
 
-        <!-- Text input-->
         <div class="form-group">
             <label class="col-md-4 control-label" for="phone">${phone}</label>
             <div class="col-md-4">
@@ -104,7 +100,6 @@
         </div>
 
         <div class="form-group">
-            <!-- E-mail -->
             <label class="col-md-4 control-label" for="email">${email}</label>
             <div class="col-md-4">
                 <input type="text" id="email" name="email" placeholder="${pholder_email}" class="form-control input-md">
@@ -116,7 +111,6 @@
         </div>
 
         <div class="form-group">
-            <!-- Password-->
             <label class="col-md-4 control-label" for="password">${password}</label>
             <div class="col-md-4">
                 <input type="password" id="password" name="password" class="form-control input-md">
@@ -129,7 +123,6 @@
         </div>
 
         <div class="form-group">
-            <!-- Password -->
             <label class="col-md-4 control-label" for="password_confirm">${confirm_password}</label>
             <div class="col-md-4">
                 <input type="password" id="password_confirm" name="password_confirm" placeholder=""
@@ -137,7 +130,7 @@
                 <p class="help-block">${hblock_confirm_password}</p>
             </div>
         </div>
-        <!-- Select Basic -->
+
         <div class="form-group">
             <label class="col-md-4 control-label" for="city">${choise_city}</label>
             <div class="col-md-4">
@@ -150,7 +143,6 @@
             </div>
         </div>
 
-        <!-- Text input-->
         <div class="form-group">
             <label class="col-md-4 control-label" for="add">${input_address}</label>
             <div class="col-md-4">
@@ -161,7 +153,7 @@
                 </c:if>
             </div>
         </div>
-        <!-- Button -->
+
         <div class="form-group">
             <label class="col-md-4 control-label" for="submit"></label>
             <div class="col-md-4">
@@ -170,7 +162,6 @@
         </div>
 
         <div class="form-group">
-
             <label class="col-md-4 control-label"></label>
             <div class="col-md-4">
                 <a href="${home_url}" class="btn btn-info" role="button">${button_home}</a>

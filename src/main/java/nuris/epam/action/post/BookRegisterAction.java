@@ -76,12 +76,12 @@ public class BookRegisterAction implements Action {
         checkParamValid("first_name", firstName, properties.getProperty("name.valid"), request);
         checkParamValid("last_name", lastName, properties.getProperty("name.valid"), request);
         checkParamValid("middle_name", middleName, properties.getProperty("name.valid"), request);
-        checkParamValid("isbn", isbn, properties.getProperty("isbn.valid"), request);
-        checkParamValid("description", isbn, properties.getProperty("description.book.valid"), request);
-        checkParamValid("book_name", name, properties.getProperty("name.valid"), request);
+        checkParamValid("isbn", isbn, properties.getProperty("book.isbn.valid"), request);
+        checkParamValid("description", isbn, properties.getProperty("book.description.valid"), request);
+        checkParamValid("book_name", name, properties.getProperty("book.name.valid"), request);
         checkParamValid("year", year, properties.getProperty("date.valid"), request);
-        checkParamValid("book_amount", amount, properties.getProperty("count.book.valid"), request);
-        checkParamValid("book_price", price, properties.getProperty("price.book.valid"), request);
+        checkParamValid("book_amount", amount, properties.getProperty("book.count.valid"), request);
+        checkParamValid("book_price", price, properties.getProperty("book.price.valid"), request);
 
         if (wrong) {
             wrong = false;

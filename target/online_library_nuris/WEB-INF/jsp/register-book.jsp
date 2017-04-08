@@ -9,44 +9,72 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="my" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
+<c:url var="home_url" value="/kz/welcome"/>
+
+<fmt:bundle basename="i18n">
+    <fmt:message key="register.firstname" var="first_name"/>
+    <fmt:message key="register.lastname" var="last_name"/>
+    <fmt:message key="register.middlename" var="middle_name"/>
+    <fmt:message key="register.book.name" var="book_name"/>
+    <fmt:message key="register.book.description" var="description"/>
+    <fmt:message key="register.book.genre" var="book_genre"/>
+    <fmt:message key="register.book.count" var="book_count"/>
+    <fmt:message key="register.book.price" var="book_price"/>
+    <fmt:message key="register.book.year" var="book_year"/>
+    <fmt:message key="register.book.legend.about.author" var="legend_about_book"/>
+    <fmt:message key="register.book.legend.about.author" var="legend_about_author"/>
+    <fmt:message key="register.book.legend.economic.part" var="legend_econ_part"/>
+    <fmt:message key="register.book.pholder.description" var="ph_about_book"/>
+    <fmt:message key="register.book.pholder.isbn" var="ph_isbn"/>
+    <fmt:message key="register.book.pholder.description" var="ph_descrip_book"/>
+    <fmt:message key="register.book.pholder.year" var="ph_year_book"/>
+    <fmt:message key="register.book.pholder.name" var="ph_name_book"/>
+    <fmt:message key="register.button.home" var="button_back"/>
+    <fmt:message key="register.book.button.save" var="button_save"/>
+    <fmt:message key="register.error.data" var="error_data"/>
+</fmt:bundle>
+
+
 <my:design-pattern role="admin">
-    <!-- Name Section -->
     <div class="row">
         <div class="col-md-8 col-md-offset-1">
             <form class="form-horizontal" action="register-book" method="POST">
                 <fieldset>
-                    <legend><font color="teal"> О книге</font></legend>
+                    <legend><font color="teal">${legend_about_book}</font></legend>
+
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <label>Название книги</label>
-                            <input type="text" name="book_name" placeholder="Название" class="form-control">
+                            <label>${book_name}</label>
+                            <input type="text" name="book_name" placeholder="${ph_name_book}" class="form-control">
                             <c:if test="${not empty book_name_error}">
                                 <p class="alert alert-warning"
                                    style="height: 30px;padding: 5px">${error_data}</p>
                             </c:if>
                         </div>
-
                     </div>
+
                     <div class="form-group">
                         <div class="col-sm-4">
                             <label>ISBN</label>
-                            <input type="text" name="isbn" placeholder="ISBN" class="form-control">
+                            <input type="text" name="isbn" placeholder="${ph_isbn}" class="form-control">
                             <c:if test="${not empty isbn_error}">
                                 <p class="alert alert-warning"
                                    style="height: 30px;padding: 5px">${error_data}</p>
                             </c:if>
                         </div>
+
                         <div class="col-sm-3">
-                            <label>Год</label>
-                            <input type="text" name="year" placeholder="Год публикаций" class="form-control">
+                            <label>${book_year}</label>
+                            <input type="text" name="year" placeholder="${ph_year_book}" class="form-control">
                             <c:if test="${not empty year_error}">
                                 <p class="alert alert-warning"
                                    style="height: 30px;padding: 5px">${error_data}</p>
                             </c:if>
                         </div>
+
                         <div class="col-sm-3">
-                            <label>Жанр</label>
-                            <select id="city" name="genre_name" class="form-control input-md">
+                            <label>${book_genre}</label>
+                            <select id="genre_id" name="genre_name" class="form-control input-md">
                                 <option disabled></option>
                                 <c:forEach items="${genreList}" var="genre">
                                     <option value="${genre.id}">${genre.name}</option>
@@ -54,10 +82,12 @@
                             </select>
                         </div>
                     </div>
+
                     <div class="form-group">
                         <div class="col-sm-10">
-                            <label>Описание</label>
-                            <textarea placeholder="О книге" name="description" rows="4" class="form-control"></textarea>
+                            <label>${description}</label>
+                            <textarea placeholder="${ph_descrip_book}" name="description" rows="4"
+                                      class="form-control"></textarea>
                             <c:if test="${not empty description_error}">
                                 <p class="alert alert-warning"
                                    style="height: 30px;padding: 5px">${error_data}</p>
@@ -65,48 +95,50 @@
                         </div>
                     </div>
 
-                    <legend><font color="teal">Экономическая часть</font></legend>
-
+                    <legend><font color="teal">${legend_econ_part}</font></legend>
                     <div class="form-group">
                         <div class="col-sm-5">
-                            <label>Количесвто книг</label>
-                            <input type="text" name="book_amount" placeholder="Количесвто книг" class="form-control">
+                            <label>${book_count}</label>
+                            <input type="text" name="book_amount" class="form-control">
                             <c:if test="${not empty book_amount_error}">
                                 <p class="alert alert-warning"
                                    style="height: 30px;padding: 5px">${error_data}</p>
                             </c:if>
                         </div>
+
                         <div class="col-sm-5">
-                            <label>Цена за штуку</label>
-                            <input type="text" name="book_price" placeholder="Цена за штуку" class="form-control">
+                            <label>${book_price}</label>
+                            <input type="text" name="book_price" class="form-control">
                             <c:if test="${not empty book_price_error}">
                                 <p class="alert alert-warning"
                                    style="height: 30px;padding: 5px">${error_data}</p>
                             </c:if>
                         </div>
-
                     </div>
-                    <legend><font color="teal"> Об авторе</font></legend>
+
+                    <legend><font color="teal">${legend_about_author}</font></legend>
                     <div class="form-group">
                         <div class="col-sm-3">
-                            <label>Имя</label>
-                            <input type="text" name="first_name" placeholder="Имя" class="form-control">
+                            <label>${first_name}</label>
+                            <input type="text" name="first_name" class="form-control">
                             <c:if test="${not empty first_name_error}">
                                 <p class="alert alert-warning"
                                    style="height: 30px;padding: 5px">${error_data}</p>
                             </c:if>
                         </div>
+
                         <div class="col-sm-4">
-                            <label>Фамилия</label>
-                            <input type="text" name="last_name" placeholder="Фамилия" class="form-control">
+                            <label>${last_name}</label>
+                            <input type="text" name="last_name" class="form-control">
                             <c:if test="${not empty last_name_error}">
                                 <p class="alert alert-warning"
                                    style="height: 30px;padding: 5px">${error_data}</p>
                             </c:if>
                         </div>
+
                         <div class="col-sm-3">
-                            <label>Отчество</label>
-                            <input type="text" name="middle_name" placeholder="Отчество" class="form-control">
+                            <label>${middle_name}</label>
+                            <input type="text" name="middle_name" class="form-control">
                             <c:if test="${not empty middle_name_error}">
                                 <p class="alert alert-warning"
                                    style="height: 30px;padding: 5px">${error_data}</p>
@@ -117,17 +149,14 @@
                     <div class="form-group">
                         <div class="col-sm-5 col-sm-offset-1">
                             <div class="pull-right">
-                                <button type="submit" class="btn btn-default">Cancel</button>
-                                <button type="submit" class="btn btn-primary">Save</button>
+                                <a href="${home_url}" class="btn btn-info" role="button">${button_back}</a>
+                                <button type="submit" class="btn btn-primary">${button_save}</button>
                             </div>
                         </div>
                     </div>
 
                 </fieldset>
             </form>
-        </div><!-- /.col-lg-12 -->
+        </div>
     </div>
-    <!-- /.row -->
-
-
 </my:design-pattern>

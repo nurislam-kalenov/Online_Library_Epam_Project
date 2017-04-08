@@ -8,6 +8,8 @@ import nuris.epam.services.CustomerService;
 import nuris.epam.services.exception.ServiceException;
 import nuris.epam.utils.Encoder;
 
+import static nuris.epam.action.constants.Constants.*;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -19,20 +21,19 @@ public class LoginAction implements Action {
     @Override
     public ActionResult execute(HttpServletRequest request, HttpServletResponse resp) {
         CustomerService customerService = new CustomerService();
-        String login = request.getParameter("login");
-        String password = request.getParameter("password");
-
+        String login = request.getParameter(LOGIN);
+        String password = request.getParameter(PASSWORD);
         try {
-             Customer customer = customerService.findByLoginPassword(login, Encoder.toEncode(password));
+            Customer customer = customerService.findByLoginPassword(login, Encoder.toEncode(password));
 
-            if(customer != null){
+            if (customer != null) {
                 HttpSession session = request.getSession();
-                session.setAttribute("customerId" , customer.getId());
-                session.setAttribute("role" , customer.getCustomerRole().getName());
-                session.setAttribute("name" , customer.getPerson().getFirstName());
-                return new ActionResult("books" , true);
-            }else{
-                return new ActionResult("welcome", true);
+                session.setAttribute(CUSTOMER_ID, customer.getId());
+                session.setAttribute(ROLE, customer.getCustomerRole().getName());
+                session.setAttribute(NAME, customer.getPerson().getFirstName());
+                return new ActionResult(BOOKS, true);
+            } else {
+                return new ActionResult(WELCOME, true);
             }
         } catch (ServiceException e) {
             new ActionException("can't find customer by login and password", e);

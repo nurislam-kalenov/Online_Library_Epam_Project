@@ -4,6 +4,7 @@ import nuris.epam.action.manager.Action;
 import nuris.epam.action.manager.ActionResult;
 import nuris.epam.services.CustomerService;
 import nuris.epam.services.exception.ServiceException;
+import static nuris.epam.action.constants.Constants.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,10 +18,10 @@ public class PageRegisterAction implements Action{
     public ActionResult execute(HttpServletRequest request, HttpServletResponse resp) {
         CustomerService customerService = new CustomerService();
         try {
-            request.setAttribute("cityList" , customerService.getAllCity());
+            request.setAttribute(CITY_LIST , customerService.getAllCity());
         } catch (ServiceException e) {
             e.printStackTrace();
         }
-        return new ActionResult("register");
+        return new ActionResult(REGISTER);
     }
 }

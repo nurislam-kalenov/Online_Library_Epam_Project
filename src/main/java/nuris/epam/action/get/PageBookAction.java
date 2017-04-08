@@ -7,6 +7,7 @@ import nuris.epam.entity.Book;
 import nuris.epam.entity.Genre;
 import nuris.epam.services.BookService;
 import nuris.epam.services.exception.ServiceException;
+import static nuris.epam.action.constants.Constants.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -28,11 +29,11 @@ public class PageBookAction implements Action {
         int recordPerPage = 3;
 
         try {
-            if (request.getParameter("page") != null) {
-                page = Integer.parseInt(request.getParameter("page"));
+            if (request.getParameter(PAGE) != null) {
+                page = Integer.parseInt(request.getParameter(PAGE));
             }
-            if (request.getParameter("genre_id") != null) {
-                genreId = Integer.parseInt(request.getParameter("genre_id"));
+            if (request.getParameter(GENRE_ID) != null) {
+                genreId = Integer.parseInt(request.getParameter(GENRE_ID));
                 genre.setId(genreId);
                 genreState = genreId;
             } else {
@@ -45,14 +46,14 @@ public class PageBookAction implements Action {
             int noOfRecords = bookService.getBookCountByGenre(genre);
             int noOfPages = (int) Math.ceil(noOfRecords * 1.0 / recordPerPage);
 
-            request.setAttribute("books", books);
-            request.setAttribute("noOfPages", noOfPages);
-            request.setAttribute("currentPage", page);
-            request.setAttribute("genres", genres);
+            request.setAttribute(ATT_BOOKS, books);
+            request.setAttribute(ATT_NO_PAGES, noOfPages);
+            request.setAttribute(ATT_CURRENT_PAGE, page);
+            request.setAttribute(ATT_GENRES, genres);
 
         } catch (ServiceException e) {
             e.printStackTrace();
         }
-        return new ActionResult("books");
+        return new ActionResult(BOOKS);
     }
 }

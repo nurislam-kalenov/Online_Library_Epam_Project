@@ -12,6 +12,8 @@ import nuris.epam.services.exception.ServiceException;
 import nuris.epam.utils.SqlDate;
 import nuris.epam.utils.TextParse;
 
+import static nuris.epam.action.constants.Constants.*;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -37,27 +39,27 @@ public class BookRegisterAction implements Action {
         Book book = new Book();
 
         try {
-            properties.load(RegisterAction.class.getClassLoader().getResourceAsStream("validation.properties"));
+            properties.load(RegisterAction.class.getClassLoader().getResourceAsStream(VALIDATION_PROPERTIES));
         } catch (IOException e) {
             throw new ActionException("Can't load properties", e);
         }
 
         try {
-            request.setAttribute("genreList", bookService.getAllGenre());
+            request.setAttribute(GENRE_LIST, bookService.getAllGenre());
         } catch (ServiceException e) {
             e.printStackTrace();
         }
 
-        String firstName = request.getParameter("first_name");
-        String lastName = request.getParameter("last_name");
-        String middleName = request.getParameter("middle_name");
-        String isbn = request.getParameter("isbn");
-        String description = request.getParameter("description");
-        String name = request.getParameter("book_name");
-        String year = request.getParameter("year");
-        String genreName = request.getParameter("genre_name");
-        String amount = request.getParameter("book_amount");
-        String price = request.getParameter("book_price");
+        String firstName = request.getParameter(FIRST_NAME);
+        String lastName = request.getParameter(LAST_NAME);
+        String middleName = request.getParameter(MIDDLE_NAME);
+        String isbn = request.getParameter(ISBN);
+        String description = request.getParameter(DESCRIPTION);
+        String name = request.getParameter(BOOK_NAME);
+        String year = request.getParameter(YEAR);
+        String genreName = request.getParameter(GENRE_NAME);
+        String amount = request.getParameter(BOOK_AMOUNT);
+        String price = request.getParameter(BOOK_PRICE);
 
         genre.setId(TextParse.toInt(genreName));
         author.setFirstName(firstName);
@@ -73,19 +75,19 @@ public class BookRegisterAction implements Action {
         bookInfo.setAmount(TextParse.toInt(amount));
         bookInfo.setPrice(TextParse.toInt(price));
 
-        checkParamValid("first_name", firstName, properties.getProperty("name.valid"), request);
-        checkParamValid("last_name", lastName, properties.getProperty("name.valid"), request);
-        checkParamValid("middle_name", middleName, properties.getProperty("name.valid"), request);
-        checkParamValid("isbn", isbn, properties.getProperty("book.isbn.valid"), request);
-        checkParamValid("description", isbn, properties.getProperty("book.description.valid"), request);
-        checkParamValid("book_name", name, properties.getProperty("book.name.valid"), request);
-        checkParamValid("year", year, properties.getProperty("date.valid"), request);
-        checkParamValid("book_amount", amount, properties.getProperty("book.count.valid"), request);
-        checkParamValid("book_price", price, properties.getProperty("book.price.valid"), request);
+        checkParamValid(FIRST_NAME, firstName, properties.getProperty(NAME_VALID), request);
+        checkParamValid(LAST_NAME, lastName, properties.getProperty(NAME_VALID), request);
+        checkParamValid(MIDDLE_NAME, middleName, properties.getProperty(NAME_VALID), request);
+        checkParamValid(ISBN, isbn, properties.getProperty(ISBN_VALID), request);
+        checkParamValid(DESCRIPTION, isbn, properties.getProperty(DESCRIPTION_VALID), request);
+        checkParamValid(BOOK_NAME, name, properties.getProperty(BOOK_NAME_VALID), request);
+        checkParamValid(YEAR, year, properties.getProperty(DATE_VALID), request);
+        checkParamValid(BOOK_AMOUNT, amount, properties.getProperty(BOOK_COUNT_VALID), request);
+        checkParamValid(BOOK_PRICE, price, properties.getProperty(BOOK_PRICE_VALID), request);
 
         if (wrong) {
             wrong = false;
-            return new ActionResult("register-book");
+            return new ActionResult(REGISTER_BOOK);
         } else {
             try {
                 bookService.registerBook(bookInfo);
@@ -93,15 +95,14 @@ public class BookRegisterAction implements Action {
                 e.printStackTrace();
             }
         }
-        return new ActionResult("welcome");
+        return new ActionResult(WELCOME);
     }
 
     private void checkParamValid(String paramName, String paramValue, String validator, HttpServletRequest request) {
         Pattern pattern = Pattern.compile(validator);
         Matcher matcher = pattern.matcher(paramValue);
         if (!matcher.matches()) {
-            request.setAttribute(paramName + "_error", "true");
-            System.out.println(paramName + "_error");
+            request.setAttribute(paramName + ERROR, TRUE);
             wrong = true;
         }
     }

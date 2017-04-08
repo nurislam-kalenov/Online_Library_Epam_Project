@@ -5,10 +5,6 @@ package nuris.epam.action.exception;
  */
 public class ActionException extends Exception{
 
-    public ActionException(Exception e) {
-        super(e);
-    }
-
     public ActionException(String message, Throwable cause) {
         super(message, cause);
     }

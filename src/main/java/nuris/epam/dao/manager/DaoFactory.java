@@ -92,7 +92,6 @@ public class DaoFactory implements AutoCloseable {
     public void rollbackTransaction() throws DaoException {
         try {
             connection.rollback();
-            System.out.println("this is roolBack");
         } catch (SQLException e) {
             throw new DaoException("Cannot rollback date transaction", e);
         }

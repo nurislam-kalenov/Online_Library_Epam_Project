@@ -3,6 +3,7 @@ package nuris.epam.action.get;
 import nuris.epam.action.exception.ActionException;
 import nuris.epam.action.manager.Action;
 import nuris.epam.action.manager.ActionResult;
+import static nuris.epam.action.constants.Constants.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,11 +15,6 @@ import java.util.Locale;
  * Created by User on 04.04.2017.
  */
 public class SelectLanguageAction implements Action{
-    private static final String LANG = "lang";
-    private static final String REFERER = "referer";
-    private static final String CHARACTER_ENCODING = "UTF-8";
-
-
     @Override
     public ActionResult execute(HttpServletRequest req , HttpServletResponse response) throws ActionException {
         String language = req.getParameter(LANG);

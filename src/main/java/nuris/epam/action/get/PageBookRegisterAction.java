@@ -5,6 +5,7 @@ import nuris.epam.action.manager.Action;
 import nuris.epam.action.manager.ActionResult;
 import nuris.epam.services.BookService;
 import nuris.epam.services.exception.ServiceException;
+import static nuris.epam.action.constants.Constants.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,10 +18,10 @@ public class PageBookRegisterAction implements Action{
     public ActionResult execute(HttpServletRequest request, HttpServletResponse response) throws ActionException {
         BookService bookService = new BookService();
         try {
-            request.setAttribute("genreList" , bookService.getAllGenre());
+            request.setAttribute(GENRE_LIST , bookService.getAllGenre());
         } catch (ServiceException e) {
             e.printStackTrace();
         }
-        return new ActionResult("register-book");
+        return new ActionResult(REGISTER_BOOK);
     }
 }

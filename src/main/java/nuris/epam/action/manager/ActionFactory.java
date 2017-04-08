@@ -1,9 +1,6 @@
 package nuris.epam.action.manager;
 
-import nuris.epam.action.get.PageBookAction;
-import nuris.epam.action.get.PageBookRegisterAction;
-import nuris.epam.action.get.PageRegisterAction;
-import nuris.epam.action.get.SelectLanguageAction;
+import nuris.epam.action.get.*;
 import nuris.epam.action.post.BookRegisterAction;
 import nuris.epam.action.post.LoginAction;
 import nuris.epam.action.post.LogoutAction;

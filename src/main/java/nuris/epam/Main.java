@@ -35,10 +35,8 @@ public class Main {
         bookInfo.setPrice(100);
         bookInfo.setBook(book);
 
-
         System.out.println(connectionPool.size());
 
-        System.out.println(Encoder.toEncode("7654321Yy"));
 
     }
 }

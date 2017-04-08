@@ -83,3 +83,13 @@
     background-color: #DDD;
     border-color: #DDD;
 }
+
+.clear {
+    clear:both;
+}
+
+.more.label {
+    float:right;
+}
+
+

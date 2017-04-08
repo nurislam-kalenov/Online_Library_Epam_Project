@@ -180,12 +180,13 @@ public class BookService {
     }
 
 
-    public Book getBookByName(String name) throws ServiceException {
+    public List<Book> getBookByName(String name) throws ServiceException {
+        List<Book> books;
         try (DaoFactory daoFactory = new DaoFactory()) {
             try {
                 BookDao bookDao = (BookDao) daoFactory.getDao(daoFactory.typeDao().getBookDao());
-                Book book = bookDao.findByName(name);
-                return book;
+                books = bookDao.findByName(name);
+                return books;
             } catch (DaoException e) {
                 throw new ServiceException("can't find book by name", e);
             }

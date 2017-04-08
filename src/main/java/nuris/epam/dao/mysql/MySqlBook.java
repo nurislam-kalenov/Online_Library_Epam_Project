@@ -179,7 +179,8 @@ public class MySqlBook extends BookDao {
     }
 
     @Override
-    public Book findByName(String name) throws DaoException {
+    public List<Book> findByName(String name) throws DaoException {
+        List<Book> list = new ArrayList<>();
         Book book = null;
         try {
             try (PreparedStatement statement = getConnection().prepareStatement(FIND_BY_NAME)) {
@@ -187,13 +188,14 @@ public class MySqlBook extends BookDao {
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
                         book = itemBook(book, resultSet);
+                        list.add(book);
                     }
                 }
             }
         } catch (SQLException e) {
             throw new DaoException("can't find by name " + this.getClass().getSimpleName(), e);
         }
-        return book;
+        return list;
     }
 
     @Override

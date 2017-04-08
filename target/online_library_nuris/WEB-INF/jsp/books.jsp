@@ -11,48 +11,54 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <my:design-pattern role="user">
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">
-                                    Жанр</h3>
-                            </div>
-                            <ul class="list-group">
-                                <c:forEach items="${genres}" var="genre">
-                                    <a href="books?genre_id=${genre.id}"  class="list-group-item">${genre.name}</a>
-                                </c:forEach>
-                            </ul>
-                        </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            Жанр</h3>
                     </div>
-                    <div class="col-md-4">
-                        <table>
-                            <c:forEach items="${books}" var="book">
-                                <tr>
-                                    <td><c:out value="${book.id}"/></td>
-                                    <td><c:out value="${book.name}"/></td>
-                                    <td><c:out value="${book.date}"/></td>
-                                    <td><c:out value="${book.description}"/></td>
-                                </tr>
-                            </c:forEach>
-                        </table>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-offset-5">
-                        <my:list-pages currentPage="${currentPage}" noOfPages="${noOfPages}" books_url="books?page="/>
-                    </div>
+
+                    <ul class="list-group">
+                        <c:forEach items="${genres}" var="genre">
+                            <a href="books?genre_id=${genre.id}" class="list-group-item">${genre.name}</a>
+                        </c:forEach>
+                    </ul>
                 </div>
             </div>
+            <div class="col-md-8">
+                <form role="form">
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input class="form-control" type="text" name="search" placeholder="Search"/>
+                                <span class="input-group-btn">
+                            <button class="btn btn-success" type="submit"><span style="margin-left:10px;">Search</span></button>
+                        </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
 
 
-
-
-
-
-
-
-
-
+                    <c:forEach items="${books}" var="book">
+                    <hr>
+                    <h1><font color="#5f9ea0"><c:out value="${book.name}"/></font></h1>
+                    <p><c:out value="${book.description}"/></p>
+                    <div>
+                        <div class="more label"><a href="#">Read more</a></div>
+                    </div>
+                    <hr>
+                    </c:forEach>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-5">
+                <my:list-pages currentPage="${currentPage}" noOfPages="${noOfPages}" books_url="books?page="/>
+            </div>
+        </div>
+    </div>
 </my:design-pattern>
+
+

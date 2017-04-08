@@ -12,6 +12,7 @@ import nuris.epam.services.exception.ServiceException;
 import nuris.epam.utils.Encoder;
 import nuris.epam.utils.SqlDate;
 import nuris.epam.utils.TextParse;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -24,6 +25,7 @@ import java.util.regex.Pattern;
  */
 public class RegisterAction implements Action {
     private boolean wrong;
+
     @Override
     public ActionResult execute(HttpServletRequest request, HttpServletResponse resp) throws ActionException {
 
@@ -103,7 +105,6 @@ public class RegisterAction implements Action {
                 e.printStackTrace();
             }
         }
-
         return new ActionResult(WELCOME);
     }
 

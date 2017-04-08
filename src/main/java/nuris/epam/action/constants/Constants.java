@@ -67,10 +67,12 @@ public final class Constants {
     public static final String ATT_NO_PAGES="noOfPages";
     public static final String ATT_CURRENT_PAGE = "currentPage";
     public static final String ATT_GENRES="genres";
+    public static final String SEARCH = "search";
 
     //Session
     public static final String CUSTOMER_ID = "customerId";
     public static final String ROLE = "role";
     public static final String NAME = "name";
+
     private Constants() {}
 }

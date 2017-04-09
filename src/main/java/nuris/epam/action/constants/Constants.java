@@ -9,7 +9,7 @@ public final class Constants {
     public static final String WELCOME = "welcome";
     public static final String BOOKS = "books";
     public static final String REGISTER_BOOK = "register-book";
-
+    public static final String ACCOUNT = "account";
     //Validation regular expressions
     public static final String VALIDATION_PROPERTIES = "validation.properties";
 
@@ -68,6 +68,9 @@ public final class Constants {
     public static final String ATT_CURRENT_PAGE = "currentPage";
     public static final String ATT_GENRES="genres";
     public static final String SEARCH = "search";
+
+    //PageCustomerAccountAction
+    public static final String ATT_CUSTOMER_INFO = "customer_info";
 
     //Session
     public static final String CUSTOMER_ID = "customerId";

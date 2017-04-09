@@ -24,6 +24,7 @@ public class ActionFactory {
         actions.put("GET/books",new PageBookAction());
         actions.put("GET/register-book",new PageBookRegisterAction());
         actions.put("GET/set-language", new SelectLanguageAction());
+        actions.put("GET/account" ,new PageCustomerAccountAction());
 
         //post request
         actions.put("POST/login", new LoginAction());

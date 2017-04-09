@@ -90,7 +90,7 @@ public class RegisterAction implements Action {
         person.setMiddleName(middleName);
         person.setBirthday(SqlDate.stringToDate(birthday));
         person.setPhone(phone);
-        person.setAdreess(address);
+        person.setAddress(address);
         customer.setPerson(person);
         customer.setEmail(email);
         customer.setPassword(Encoder.toEncode(password));

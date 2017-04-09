@@ -65,11 +65,11 @@ public class Person extends BaseEntity {
         this.birthday = birthday;
     }
 
-    public String getAdreess() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAdreess(String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 

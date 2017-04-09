@@ -8,7 +8,7 @@
 <c:url var="register_url" value="/kz/register"/>
 <c:url var="books_url" value="/kz/books"/>
 <c:url var="logout_url" value="/kz/logout"/>
-
+<c:url var="account_url" value="/kz/account"/>
 <html lang=en>
 <head>
     <meta charset="UTF-8">
@@ -20,6 +20,8 @@
         <fmt:message key="navbar.readers" var="readers"/>
         <fmt:message key="navbar.account" var="account"/>
         <fmt:message key="navbar.mybooks" var ="my_books"/>
+        <fmt:message key="navbar.hello" var ="hello"/>
+
     </fmt:bundle>
 
     <style>
@@ -46,7 +48,7 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Привет, ${sessionScope.name}!</a></li>
+                    <li><a href="#">${hello}, ${sessionScope.name}!</a></li>
                     <li><a href="set-language?lang=en">English</a></li>
                     <li><a href="set-language?lang=ru">Руский</a></li>
                     <li><form action="${logout_url}"  class="button_header" method="post">
@@ -67,12 +69,12 @@
                 <ul class="nav navbar-nav">
                     <li><a href="${books_url}">${books}</a></li>
                     <li><a href="#">${my_books}</a></li>
-                    <li><a href="#">${account}</a></li>
+                    <li><a href="${account_url}">${account}</a></li>
 
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Привет, ${sessionScope.name}!</a></li>
+                    <li><a href="#">${hello}, ${sessionScope.name}!</a></li>
                     <li><a href="set-language?lang=en">English</a></li>
                     <li><a href="set-language?lang=ru">Руский</a></li>
                     <li><form action="${logout_url}"  class="button_header" method="post">

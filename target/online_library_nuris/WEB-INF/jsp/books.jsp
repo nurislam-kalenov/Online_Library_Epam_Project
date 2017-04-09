@@ -9,15 +9,20 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="my" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
-<my:design-pattern role="user">
 
+<fmt:bundle basename="i18n">
+    <fmt:message key="book.info.genre" var="book_info_genre"/>
+    <fmt:message key="book.info.search" var="book_info_search"/>
+    <fmt:message key="book.info.pholder.search" var="book_info_ph_search"/>
+</fmt:bundle>
+
+<my:design-pattern role="user">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">
-                            Жанр</h3>
+                        <h3 class="panel-title">${book_info_genre}</h3>
                     </div>
 
                     <ul class="list-group">
@@ -27,14 +32,15 @@
                     </ul>
                 </div>
             </div>
+
             <div class="col-md-8">
                 <form role="form">
                     <div class="row">
                         <div class="form-group">
                             <div class="input-group">
-                                <input class="form-control" type="text" name="search" placeholder="Search"/>
+                                <input class="form-control" type="text" name="search" placeholder=${book_info_ph_search}/>
                                 <span class="input-group-btn">
-                            <button class="btn btn-success" type="submit"><span style="margin-left:10px;">Search</span></button>
+                            <button class="btn btn-success" type="submit"><span style="margin-left:10px;">${book_info_search}</span></button>
                         </span>
                                 </span>
                             </div>

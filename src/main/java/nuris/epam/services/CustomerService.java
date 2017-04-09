@@ -50,11 +50,24 @@ public class CustomerService {
                 fillCustomer(customer);
                 return customer;
             } catch (DaoException e) {
-                throw new ServiceException("can't find bu login customer", e);
+                throw new ServiceException("can't find by login customer", e);
             }
         }
     }
 
+    public Customer findCustomerById(int id) throws ServiceException {
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            Customer customer;
+            try {
+                CustomerDao customerDao = (CustomerDao) daoFactory.getDao(daoFactory.typeDao().getCustomerDao());
+                customer = customerDao.findById(id);
+                fillCustomer(customer);
+                return customer;
+            } catch (DaoException e) {
+                throw new ServiceException("can't find by customer id customer", e);
+            }
+        }
+    }
     public Customer findByLoginPassword(String login, String password) throws ServiceException {
         try (DaoFactory daoFactory = new DaoFactory()) {
             Customer customer;

@@ -41,8 +41,7 @@ public class Main {
         customer.setId(391);
         CustomerService customerService = new CustomerService();
         customer = customerService.findCustomerById(customer.getId());
-        customer.getPerson().setFirstName("Alex");
-        customerService.updatePerson(customer);
-
+        Person person = customer.getPerson();
+        System.out.println(person);
     }
 }

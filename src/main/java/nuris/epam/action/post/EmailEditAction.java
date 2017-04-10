@@ -40,28 +40,28 @@ public class EmailEditAction implements Action {
             throw new ActionException("Can't load properties", e);
         }
 
+        String email = request.getParameter(EMAIL);
+
         try {
             if (availableParam(EMAIL, request)) {
-
                 customer = customerService.findCustomerById(id);
-                String email = request.getParameter(EMAIL);
-
-                if (!customerService.isLoginAvalible(email)) {
-                    wrong = true;
-                    request.setAttribute(EMAIL_ERROR, TRUE);
-
-                } else {
-                    checkParamValid(EMAIL, email, properties.getProperty(EMAIL_VALID), request);
-                }
-                customer.setEmail(email);
+            }
+            if (!customerService.isLoginAvalible(email)) {
+                wrong = true;
+                request.setAttribute(EMAIL_ERROR, TRUE);
+            }
+            else {
+                checkParamValid(EMAIL, email, properties.getProperty(EMAIL_VALID), request);
             }
         } catch (ServiceException e) {
             e.printStackTrace();
         }
 
+        customer.setEmail(email);
+
         if (wrong) {
             wrong = false;
-            return new ActionResult("profile-user-edit");
+            return new ActionResult(PROFILE_EDIT);
         } else {
             try {
                 customerService.updateCustomer(customer);
@@ -70,7 +70,7 @@ public class EmailEditAction implements Action {
             }
         }
 
-        return new ActionResult("account", true);
+        return new ActionResult(ACCOUNT, true);
     }
 
 

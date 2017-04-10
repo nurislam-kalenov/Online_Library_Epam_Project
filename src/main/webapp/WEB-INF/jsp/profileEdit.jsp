@@ -30,7 +30,6 @@
                     <button id="submit_date" name="submit" class="btn btn-primary">Сохранить</button>
                 </div>
             </div>
-
         </fieldset>
     </form>
 

@@ -44,6 +44,7 @@ public class PageBookAction implements Action {
             } else {
                 genre.setId(genreState);
             }
+
             List<Book> books = bookService.getListBook(genre, page, recordPerPage);
             List<Genre> genres = bookService.getAllGenre();
             List<Book> book = bookService.getBookByName(name);

@@ -11,7 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import static nuris.epam.action.constants.Constants.CUSTOMER_ID;
+import static nuris.epam.action.constants.Constants.*;
+
 
 /**
  * Created by User on 09.04.2017.
@@ -24,11 +25,10 @@ public class PageProfileEditAction implements Action{
         int id = (int) session.getAttribute(CUSTOMER_ID);
         try {
             Customer customer = customerService.findCustomerById(id);
-            System.out.println(customer);
-            request.setAttribute("email" , customer.getEmail());
+            request.setAttribute(EMAIL , customer.getEmail());
         } catch (ServiceException e) {
             e.printStackTrace();
         }
-        return new ActionResult("profile-user-edit");
+        return new ActionResult(PROFILE_EDIT);
     }
 }

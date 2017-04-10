@@ -10,6 +10,7 @@ public final class Constants {
     public static final String BOOKS = "books";
     public static final String REGISTER_BOOK = "register-book";
     public static final String ACCOUNT = "account";
+    public static final String PROFILE_EDIT = "profileEdit";
     //Validation regular expressions
     public static final String VALIDATION_PROPERTIES = "validation.properties";
 

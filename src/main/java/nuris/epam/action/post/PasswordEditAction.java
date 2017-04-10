@@ -68,7 +68,7 @@ public class PasswordEditAction implements Action {
 
         if (wrong) {
             wrong = false;
-            return new ActionResult("profile-user-edit");
+            return new ActionResult(PROFILE_EDIT);
         } else {
             try {
                 customerService.updateCustomer(customer);
@@ -77,7 +77,7 @@ public class PasswordEditAction implements Action {
             }
         }
 
-        return new ActionResult("account", true);
+        return new ActionResult(ACCOUNT, true);
     }
 
 

@@ -2,8 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@attribute name="role" required="true" rtexprvalue="true" type="java.lang.String" %>
-<c:url var="profile_edit_url" value="/kz/profile-user-edit"/>
-
+<c:url var="profile_edit_url" value="/kz/profileEdit"/>
+<c:url var="personal_date_edit_url" value="/kz/personalDataEdit"/>
 <c:if test="${role.equals('user')}">
 <div class="col-md-12 column ">
     <div class="row clearfix ">
@@ -94,7 +94,7 @@
 
                     </div>
                 </div>
-                <button type="button" class="btn btn-warning col-md-6 pull-right">Изменить данные</button>
+                <a href="${personal_date_edit_url}" class="btn btn-warning col-md-6 pull-right" role="button">Изменить данные</a>
 
             </div>
             <div class="col-md-3 column">

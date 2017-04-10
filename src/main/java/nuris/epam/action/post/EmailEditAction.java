@@ -73,7 +73,6 @@ public class EmailEditAction implements Action {
         return new ActionResult(ACCOUNT, true);
     }
 
-
     private boolean availableParam(String param, HttpServletRequest request) {
         if (request.getParameter(param) != null && !request.getParameter(param).isEmpty()) {
             return true;

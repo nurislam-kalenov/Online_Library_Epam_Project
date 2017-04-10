@@ -38,6 +38,6 @@ public class PagePersonalDataEditAction implements Action {
         } catch (ServiceException e) {
             e.printStackTrace();
         }
-        return new ActionResult("personalDataEdit");
+        return new ActionResult(PESONAL_DATA_EDIT);
     }
 }

@@ -29,6 +29,6 @@ public class PageCustomerAccountAction implements Action {
             e.printStackTrace();
         }
         request.setAttribute(ATT_CUSTOMER_INFO , customer);
-        return new ActionResult("account");
+        return new ActionResult(ACCOUNT);
     }
 }

@@ -8,9 +8,10 @@ public final class Constants {
     public static final String REGISTER = "register";
     public static final String WELCOME = "welcome";
     public static final String BOOKS = "books";
-    public static final String REGISTER_BOOK = "register-book";
+    public static final String REGISTER_BOOK = "registerBook";
     public static final String ACCOUNT = "account";
     public static final String PROFILE_EDIT = "profileEdit";
+    public static final String PESONAL_DATA_EDIT = "personalDataEdit";
     //Validation regular expressions
     public static final String VALIDATION_PROPERTIES = "validation.properties";
 
@@ -73,10 +74,19 @@ public final class Constants {
     //PageCustomerAccountAction
     public static final String ATT_CUSTOMER_INFO = "customer_info";
 
+    //PasswordEditAction
+    public static final String OLD_PASSWORD = "old_pass";
+    public static final String OLD_PASSWORD_ERROR = "old_pass_error";
+
     //Session
     public static final String CUSTOMER_ID = "customerId";
     public static final String ROLE = "role";
     public static final String NAME = "name";
+
+    //View
+    public static final String PATH_TO_JSP = "/WEB-INF/jsp/";
+    public static final String JSP_FORMAT = ".jsp";
+
 
     private Constants() {}
 }

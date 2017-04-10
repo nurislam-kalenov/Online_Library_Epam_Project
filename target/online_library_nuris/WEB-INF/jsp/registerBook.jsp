@@ -35,10 +35,10 @@
 </fmt:bundle>
 
 
-<my:design-pattern role="admin">
+<my:designPattern role="admin">
     <div class="row">
         <div class="col-md-8 col-md-offset-1">
-            <form class="form-horizontal" action="register-book" method="POST">
+            <form class="form-horizontal" action="registerBook" method="POST">
                 <fieldset>
                     <legend><font color="teal">${legend_about_book}</font></legend>
 
@@ -159,4 +159,4 @@
             </form>
         </div>
     </div>
-</my:design-pattern>
+</my:designPattern>

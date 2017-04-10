@@ -19,7 +19,7 @@ public class ActionFactory {
         actions.put("GET/welcome", new ShowPageAction("welcome"));
         actions.put("GET/register", new PageRegisterAction());
         actions.put("GET/books", new PageBookAction());
-        actions.put("GET/register-book", new PageBookRegisterAction());
+        actions.put("GET/registerBook", new PageBookRegisterAction());
         actions.put("GET/set-language", new SelectLanguageAction());
         actions.put("GET/account", new PageCustomerAccountAction());
         actions.put("GET/profileEdit", new PageProfileEditAction());
@@ -29,7 +29,7 @@ public class ActionFactory {
         actions.put("POST/login", new LoginAction());
         actions.put("POST/logout", new LogoutAction());
         actions.put("POST/register", new RegisterAction());
-        actions.put("POST/register-book", new BookRegisterAction());
+        actions.put("POST/registerBook", new BookRegisterAction());
         actions.put("POST/email-edit", new EmailEditAction());
         actions.put("POST/password-edit", new PasswordEditAction());
         actions.put("POST/personalDataEdit", new PersonalDataEditAction());

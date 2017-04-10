@@ -37,7 +37,7 @@
     <fmt:message key="register.hblock.confirm.password" var ="hblock_confirm_password"/>
 </fmt:bundle>
 
-<my:design-pattern role="guest">
+<my:designPattern role="guest">
     <form class="form-horizontal" action="${register_url}" method="POST">
     <fieldset>
 
@@ -170,5 +170,5 @@
 
     </fieldset>
 </form>
-    </my:design-pattern>
+    </my:designPattern>
 

@@ -40,7 +40,7 @@ public class PasswordEditAction implements Action {
             throw new ActionException("Can't load properties", e);
         }
 
-        String oldPassword = req.getParameter("old_pass");
+        String oldPassword = req.getParameter(OLD_PASSWORD);
         String password = req.getParameter(PASSWORD);
         String passwordConfirm = req.getParameter(PASSWORD_CONFIRM);
 
@@ -49,7 +49,7 @@ public class PasswordEditAction implements Action {
 
             if (!customer.getPassword().equals(Encoder.toEncode(oldPassword))) {
                 wrong = true;
-                req.setAttribute("old_pass_error", TRUE);
+                req.setAttribute(OLD_PASSWORD_ERROR, TRUE);
             }
             if (!password.equals(passwordConfirm)) {
                 wrong = true;

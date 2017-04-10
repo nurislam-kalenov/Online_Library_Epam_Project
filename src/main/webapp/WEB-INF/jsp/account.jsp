@@ -10,6 +10,6 @@
 <%@ taglib tagdir="/WEB-INF/tags" prefix="my" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 
-<my:design-pattern role="${sessionScope.role}">
- <my:role-account role="${sessionScope.role}"/>
-</my:design-pattern>
+<my:designPattern role="${sessionScope.role}">
+ <my:roleAccount role="${sessionScope.role}"/>
+</my:designPattern>

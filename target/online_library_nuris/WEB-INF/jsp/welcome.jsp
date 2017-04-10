@@ -20,7 +20,7 @@
     <fmt:message key="register.password" var="password"/>
 </fmt:bundle>
 
-<my:design-pattern role="guest">
+<my:designPattern role="guest">
     <div class="login-box">
         <form id="loginForm" action="${login_url}" method="POST">
             <div class="panel panel-default">
@@ -45,5 +45,5 @@
         </form>
     </div>
 
-</my:design-pattern>
+</my:designPattern>
 

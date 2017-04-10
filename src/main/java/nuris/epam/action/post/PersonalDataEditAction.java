@@ -89,7 +89,7 @@ public class PersonalDataEditAction implements Action {
 
         if (wrong) {
             wrong = false;
-            return new ActionResult("personalDataEdit", true);
+            return new ActionResult(PESONAL_DATA_EDIT, true);
         } else {
             try {
                 customer.setPerson(person);

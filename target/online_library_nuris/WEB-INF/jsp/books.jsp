@@ -16,7 +16,7 @@
     <fmt:message key="book.info.pholder.search" var="book_info_ph_search"/>
 </fmt:bundle>
 
-<my:design-pattern role="${sessionScope.role}">
+<my:designPattern role="${sessionScope.role}">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -61,10 +61,10 @@
         </div>
         <div class="row">
             <div class="col-md-offset-5">
-                <my:list-pages currentPage="${currentPage}" noOfPages="${noOfPages}" books_url="books?page="/>
+                <my:listPages currentPage="${currentPage}" noOfPages="${noOfPages}" books_url="books?page="/>
             </div>
         </div>
     </div>
-</my:design-pattern>
+</my:designPattern>
 
 

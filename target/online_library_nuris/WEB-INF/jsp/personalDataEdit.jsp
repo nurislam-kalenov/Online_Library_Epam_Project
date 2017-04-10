@@ -9,7 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="my" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
-<my:design-pattern role="${sessionScope.role}">
+<my:designPattern role="${sessionScope.role}">
     <form class="form-horizontal" action="personalDataEdit" method="POST">
     <fieldset>
     <legend>Изменить паспортные данные</legend>
@@ -73,4 +73,4 @@
         </div>
     </fieldset>
     </form>
-</my:design-pattern>
+</my:designPattern>

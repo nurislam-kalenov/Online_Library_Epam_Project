@@ -3,6 +3,7 @@ package nuris.epam;
 import nuris.epam.connection.ConnectionPool;
 import nuris.epam.entity.*;
 import nuris.epam.services.BookService;
+import nuris.epam.services.CustomerService;
 import nuris.epam.services.exception.ServiceException;
 import nuris.epam.utils.Encoder;
 import nuris.epam.utils.SqlDate;
@@ -34,9 +35,14 @@ public class Main {
         bookInfo.setAmount(5);
         bookInfo.setPrice(100);
         bookInfo.setBook(book);
-
         System.out.println(connectionPool.size());
 
+        Customer customer = new Customer();
+        customer.setId(391);
+        CustomerService customerService = new CustomerService();
+        customer = customerService.findCustomerById(customer.getId());
+        customer.getPerson().setFirstName("Alex");
+        customerService.updatePerson(customer);
 
     }
 }

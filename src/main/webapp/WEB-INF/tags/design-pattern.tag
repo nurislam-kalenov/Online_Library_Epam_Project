@@ -44,7 +44,7 @@
                     <li><a href="${books_url}">${books}</a></li>
                     <li><a href="#">${readers}</a></li>
                     <li><a href="#">${management}</a></li>
-                    <li><a href="#">${account}</a></li>
+                    <li><a href="${account_url}">${account}</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">

@@ -16,7 +16,7 @@
     <fmt:message key="book.info.pholder.search" var="book_info_ph_search"/>
 </fmt:bundle>
 
-<my:design-pattern role="user">
+<my:design-pattern role="${sessionScope.role}">
     <div class="container">
         <div class="row">
             <div class="col-md-4">

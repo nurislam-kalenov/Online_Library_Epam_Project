@@ -13,6 +13,7 @@ import java.util.List;
  * Created by User on 21.03.2017.
  */
 public class CustomerService {
+
     private String USER_ROLE = "user";
 
     public void registerCustomer(Customer customer) throws ServiceException {
@@ -68,6 +69,7 @@ public class CustomerService {
             }
         }
     }
+
     public Customer findByLoginPassword(String login, String password) throws ServiceException {
         try (DaoFactory daoFactory = new DaoFactory()) {
             Customer customer;
@@ -182,6 +184,7 @@ public class CustomerService {
             return true;
         }
     }
+
     public void uploadAvatar(Avatar avatar) throws ServiceException{
         try (DaoFactory daoFactory = new DaoFactory()) {
             try {

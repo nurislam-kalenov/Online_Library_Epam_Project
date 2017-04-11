@@ -59,7 +59,7 @@ public class RegisterAction implements Action {
         String cityName = request.getParameter(CITY);
 
         try {
-            if (!customerService.isLoginAvalible(email)) {
+            if (!customerService.isLoginAvailable(email)) {
                 request.setAttribute(EMAIL_ERROR, TRUE);
                 wrong = true;
             } else {

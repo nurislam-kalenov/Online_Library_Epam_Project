@@ -177,7 +177,7 @@ public class CustomerService {
         }
     }
 
-    public boolean isLoginAvalible(String login) throws ServiceException {
+    public boolean isLoginAvailable(String login) throws ServiceException {
         if (findByLogin(login) != null) {
             return false;
         } else {

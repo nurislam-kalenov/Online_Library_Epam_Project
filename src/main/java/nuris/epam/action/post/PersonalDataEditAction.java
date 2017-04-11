@@ -30,6 +30,7 @@ public class PersonalDataEditAction implements Action {
 
     @Override
     public ActionResult execute(HttpServletRequest req, HttpServletResponse resp) throws ActionException {
+
         CustomerService customerService = new CustomerService();
         Customer customer = new Customer();
         Person person = new Person();

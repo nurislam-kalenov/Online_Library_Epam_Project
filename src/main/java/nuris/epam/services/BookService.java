@@ -87,7 +87,6 @@ public class BookService {
         }
     }
 
-
     public void updateBook(Book book) throws ServiceException {
         try (DaoFactory daoFactory = new DaoFactory()) {
             try {
@@ -179,7 +178,6 @@ public class BookService {
         }
     }
 
-
     public List<Book> getBookByName(String name) throws ServiceException {
         List<Book> books;
         try (DaoFactory daoFactory = new DaoFactory()) {
@@ -223,7 +221,4 @@ public class BookService {
         }
     }
 
-    public boolean isBookNameAvalible(){
-        return false;
-    }
 }

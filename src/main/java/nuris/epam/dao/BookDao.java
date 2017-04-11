@@ -24,4 +24,7 @@ public abstract class BookDao extends BaseDao<Book>{
 
     public abstract Book findByBookInfo(BookInfo bookInfo) throws  DaoException;
 
+    public abstract Book findByIsbn(String isbn) throws  DaoException;
+
+
 }

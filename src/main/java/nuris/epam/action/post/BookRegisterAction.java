@@ -61,6 +61,17 @@ public class BookRegisterAction implements Action {
         String amount = request.getParameter(BOOK_AMOUNT);
         String price = request.getParameter(BOOK_PRICE);
 
+        try {
+            if (bookService.isBookIsbnAvailable(isbn)) {
+                request.setAttribute(ISBN_ERROR, TRUE);
+                wrong = true;
+            }else {
+                checkParamValid(ISBN, isbn, properties.getProperty(ISBN_VALID), request);
+            }
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+
         genre.setId(TextParse.toInt(genreName));
         author.setFirstName(firstName);
         author.setLastName(lastName);
@@ -78,7 +89,6 @@ public class BookRegisterAction implements Action {
         checkParamValid(FIRST_NAME, firstName, properties.getProperty(NAME_VALID), request);
         checkParamValid(LAST_NAME, lastName, properties.getProperty(NAME_VALID), request);
         checkParamValid(MIDDLE_NAME, middleName, properties.getProperty(NAME_VALID), request);
-        checkParamValid(ISBN, isbn, properties.getProperty(ISBN_VALID), request);
         checkParamValid(DESCRIPTION, isbn, properties.getProperty(DESCRIPTION_VALID), request);
         checkParamValid(BOOK_NAME, name, properties.getProperty(BOOK_NAME_VALID), request);
         checkParamValid(YEAR, year, properties.getProperty(DATE_VALID), request);

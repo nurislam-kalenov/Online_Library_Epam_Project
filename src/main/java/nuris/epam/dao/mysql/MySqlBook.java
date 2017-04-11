@@ -40,6 +40,7 @@ public class MySqlBook extends BookDao {
     private static final String LIMIT_BOOK_BY_GENRE = Sql.create().select().allFrom().var(BOOK).whereQs(ID_GENRE).limit().build();
     private static final String FIND_BY_NAME = Sql.create().select().allFrom().var(BOOK).whereQs(NAME).build();
     private static final String FIND_BY_BOOK = Sql.create().select().varS(BOOK, ID_BOOK).c().varS(BOOK, NAME).c().varS(BOOK, YEAR).c().varS(BOOK, ISBN).c().varS(BOOK, DESCRIPTION).c().varS(BOOK, ID_GENRE).c().varS(BOOK, ID_AUTHOR).from().var(BOOK).join(BOOK_INFO).varS(BOOK_INFO, ID_BOOK).eq().varS(BOOK, ID_BOOK).whereQs(BOOK_INFO, ID_BOOK_INFO).build();
+    private static final String FIND_BY_ISBN =  Sql.create().select().allFrom().var(BOOK).whereQs(ISBN).build();
 
     @Override
     public Book insert(Book item) throws DaoException {
@@ -212,6 +213,24 @@ public class MySqlBook extends BookDao {
             }
         } catch (SQLException e) {
             throw new DaoException("can't find by bookInfo " + this.getClass().getSimpleName(), e);
+        }
+        return book;
+    }
+
+    @Override
+    public Book findByIsbn(String isbn) throws DaoException {
+        Book book = null;
+        try {
+            try (PreparedStatement statement = getConnection().prepareStatement(FIND_BY_ISBN)) {
+                statement.setString(1, isbn);
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    while (resultSet.next()) {
+                        book = itemBook(book, resultSet);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            throw new DaoException("can't find by isbn " + this.getClass().getSimpleName(), e);
         }
         return book;
     }

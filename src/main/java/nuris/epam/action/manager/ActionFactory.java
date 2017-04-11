@@ -24,6 +24,7 @@ public class ActionFactory {
         actions.put("GET/account", new PageCustomerAccountAction());
         actions.put("GET/profileEdit", new PageProfileEditAction());
         actions.put("GET/personalDataEdit", new PagePersonalDataEditAction());
+        actions.put("GET/aboutBook", new PageAboutBookAction());
 
         //post request
         actions.put("POST/login", new LoginAction());

@@ -51,11 +51,24 @@ public class BookService {
                 BookInfo book = bookInfoDao.findById(id);
                 return book;
             } catch (DaoException e) {
-                try {
-                    daoFactory.rollbackTransaction();
-                } catch (DaoException e1) {
-                    throw new ServiceException("doesn't work rollback", e);
-                }
+                throw new ServiceException("can't find by id book", e);
+            }
+        }
+    }
+
+    public BookInfo findByBook(int id) throws ServiceException {
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            try {
+                BookInfoDao bookInfoDao = (BookInfoDao) daoFactory.getDao(daoFactory.typeDao().getBookInfoDao());
+                BookDao bookDao = (BookDao) daoFactory.getDao(daoFactory.typeDao().getBookDao());
+
+                BookInfo bookInfo = bookInfoDao.findByBook(id);
+                Book book = bookDao.findByBookInfo(bookInfo);
+
+                fillBook(book);
+                bookInfo.setBook(book);
+                return bookInfo;
+            } catch (DaoException e) {
                 throw new ServiceException("can't find by id book", e);
             }
         }
@@ -221,4 +234,24 @@ public class BookService {
         }
     }
 
+    private Book getBookByIsbn(String isbn) throws ServiceException {
+        Book book;
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            try {
+                BookDao bookDao = (BookDao) daoFactory.getDao(daoFactory.typeDao().getBookDao());
+                book = bookDao.findByIsbn(isbn);
+                return book;
+            } catch (DaoException e) {
+                throw new ServiceException("can't find book by name", e);
+            }
+        }
+    }
+
+    public boolean isBookIsbnAvailable(String isbn) throws ServiceException {
+        if (getBookByIsbn(isbn) != null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

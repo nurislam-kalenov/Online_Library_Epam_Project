@@ -21,7 +21,6 @@
     <fmt:message key="profile.button.edit" var="loc_edit"/>
     <fmt:message key="register.button.home" var="loc_back"/>
     <fmt:message key="profile.button.delete" var="loc_delete"/>
-
 </fmt:bundle>
 
 <c:if test="${role.equals('user')}">

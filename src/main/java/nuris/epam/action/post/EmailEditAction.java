@@ -46,7 +46,7 @@ public class EmailEditAction implements Action {
             if (availableParam(EMAIL, request)) {
                 customer = customerService.findCustomerById(id);
             }
-            if (!customerService.isLoginAvalible(email)) {
+            if (!customerService.isLoginAvailable(email)) {
                 wrong = true;
                 request.setAttribute(EMAIL_ERROR, TRUE);
             }

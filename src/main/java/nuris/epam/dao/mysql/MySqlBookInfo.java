@@ -29,13 +29,12 @@ public class MySqlBookInfo extends BookInfoDao {
     private static final String INSERT = Sql.create().insert().var(BOOK_INFO).values(ID_BOOK_INFO, 3).build();
     private static final String UPDATE = Sql.create().update().var(BOOK_INFO).set().varQs(AMOUNT).c().varQs(PRICE).c().varQs(ID_BOOK).whereQs(ID_BOOK_INFO).build();
     private static final String DELETE = Sql.create().delete().var(BOOK_INFO).whereQs(ID_BOOK_INFO).build();
-    private static final String FIND_BY_BOOK = Sql.create().select().varS(BOOK_INFO, ID_BOOK_INFO).c().varS(BOOK_INFO, AMOUNT).c().varS(BOOK_INFO, PRICE).c().varS(BOOK_INFO, ID_BOOK).from().var(BOOK_INFO).join(BOOK).varS(BOOK, ID_BOOK_INFO).eq().varS(BOOK_INFO, ID_BOOK_INFO).whereQs(BOOK, ID_BOOK).build();
+    private static final String FIND_BY_BOOK = Sql.create().select().varS(BOOK_INFO, ID_BOOK_INFO).c().varS(BOOK_INFO, AMOUNT).c().varS(BOOK_INFO ,PRICE).from().var(BOOK_INFO).join(BOOK).varS(BOOK, ID_BOOK).eq().varS(BOOK_INFO, ID_BOOK).whereQs(BOOK, ID_BOOK).build();
     private static final String FIND_BY_TRANSACTION = Sql.create().select().varS(BOOK_INFO, ID_BOOK_INFO).c().varS(BOOK_INFO, AMOUNT).c().varS(BOOK_INFO, PRICE).from().var(BOOK_INFO).join(TRANSACTION).varS(TRANSACTION, ID_BOOK_INFO).eq().varS(BOOK_INFO, ID_BOOK_INFO).whereQs(TRANSACTION, ID_TRANSACTION).build();
 
     public void sql(){
-        System.out.println(FIND_BY_TRANSACTION);
+        System.out.println(FIND_BY_BOOK);
     }
-
     @Override
     public BookInfo insert(BookInfo item) throws DaoException {
         try {
@@ -112,14 +111,14 @@ public class MySqlBookInfo extends BookInfoDao {
     }
 
     @Override
-    public BookInfo findByBook(Book book) throws DaoException {
+    public BookInfo findByBook(int id) throws DaoException {
         BookInfo bookInfo = null;
         try {
             try (PreparedStatement statement = getConnection().prepareStatement(FIND_BY_BOOK)) {
-                statement.setInt(1, book.getId());
+                statement.setInt(1, id);
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
-                        bookInfo = itemBookInfo(bookInfo, resultSet);
+                        bookInfo = itemBookInfo(bookInfo , resultSet);
                     }
                 }
             }

@@ -11,5 +11,5 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 
 <my:designPattern role="${sessionScope.role}">
- <my:roleAccount role="${sessionScope.role}"/>
+ <my:userAccount role="${sessionScope.role}"/>
 </my:designPattern>

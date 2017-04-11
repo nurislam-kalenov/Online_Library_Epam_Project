@@ -1,6 +1,8 @@
 package nuris.epam;
 
 import nuris.epam.connection.ConnectionPool;
+import nuris.epam.dao.BookInfoDao;
+import nuris.epam.dao.mysql.MySqlBookInfo;
 import nuris.epam.entity.*;
 import nuris.epam.services.BookService;
 import nuris.epam.services.CustomerService;
@@ -35,13 +37,14 @@ public class Main {
         bookInfo.setAmount(5);
         bookInfo.setPrice(100);
         bookInfo.setBook(book);
-        System.out.println(connectionPool.size());
+
+        MySqlBookInfo mySqlBookInfo = new MySqlBookInfo();
 
         Customer customer = new Customer();
         customer.setId(391);
-        CustomerService customerService = new CustomerService();
-        customer = customerService.findCustomerById(customer.getId());
-        Person person = customer.getPerson();
-        System.out.println(person);
+       BookInfo bookInfo1 = bookService.findByBook(67);
+        System.out.println(bookInfo1);
+        System.out.println(connectionPool.size());
+
     }
 }

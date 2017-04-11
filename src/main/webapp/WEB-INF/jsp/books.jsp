@@ -53,7 +53,7 @@
                     <h1><font color="#5f9ea0"><c:out value="${book.name}"/></font></h1>
                     <p><c:out value="${book.description}"/></p>
                     <div>
-                        <div class="more label"><a href="#">Read more</a></div>
+                        <div class="more label"><a href="aboutBook?book_id=${book.id}">Read more</a></div>
                     </div>
                     <hr>
                     </c:forEach>

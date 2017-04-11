@@ -11,7 +11,7 @@ public final class Constants {
     public static final String REGISTER_BOOK = "registerBook";
     public static final String ACCOUNT = "account";
     public static final String PROFILE_EDIT = "profileEdit";
-    public static final String PESONAL_DATA_EDIT = "personalDataEdit";
+    public static final String PERSONAL_DATA_EDIT = "personalDataEdit";
     //Validation regular expressions
     public static final String VALIDATION_PROPERTIES = "validation.properties";
 
@@ -56,6 +56,7 @@ public final class Constants {
     public static final String BOOK_AMOUNT="book_amount";
     public static final String BOOK_PRICE="book_price";
     public static final String GENRE_LIST="genreList";
+    public static final String ISBN_ERROR = "isbn_error";
 
     //SelectLanguageAction
     public static final String LANG = "lang";

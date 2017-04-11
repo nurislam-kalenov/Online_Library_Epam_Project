@@ -32,7 +32,7 @@ public class MySqlBook extends BookDao {
 
     private static final String FIND_BY_ID = Sql.create().select().allFrom().var(BOOK).whereQs(ID_BOOK).build();
     private static final String INSERT = Sql.create().insert().var(BOOK).values(ID_BOOK, 6).build();
-    private static final String UPDATE = Sql.create().update().var(BOOK).set().varQs(NAME).c().varQs(YEAR).c().varQs(ISBN).c().varQs(DESCRIPTION).c().varQs(ID_GENRE).c().varQs(ID_AUTHOR).c().whereQs(ID_BOOK).build();
+    private static final String UPDATE = Sql.create().update().var(BOOK).set().varQs(NAME).c().varQs(YEAR).c().varQs(ISBN).c().varQs(DESCRIPTION).c().varQs(ID_GENRE).c().varQs(ID_AUTHOR).whereQs(ID_BOOK).build();
     private static final String DELETE = Sql.create().delete().var(BOOK).whereQs(ID_BOOK).build();
     private static final String COUNT_BOOK = Sql.create().select().count().from().var(BOOK).build();
     private static final String COUNT_BOOK_BY_GENRE =Sql.create().select().count().from().var(BOOK).whereQs(ID_GENRE).build();
@@ -41,6 +41,10 @@ public class MySqlBook extends BookDao {
     private static final String FIND_BY_NAME = Sql.create().select().allFrom().var(BOOK).whereQs(NAME).build();
     private static final String FIND_BY_BOOK = Sql.create().select().varS(BOOK, ID_BOOK).c().varS(BOOK, NAME).c().varS(BOOK, YEAR).c().varS(BOOK, ISBN).c().varS(BOOK, DESCRIPTION).c().varS(BOOK, ID_GENRE).c().varS(BOOK, ID_AUTHOR).from().var(BOOK).join(BOOK_INFO).varS(BOOK_INFO, ID_BOOK).eq().varS(BOOK, ID_BOOK).whereQs(BOOK_INFO, ID_BOOK_INFO).build();
     private static final String FIND_BY_ISBN =  Sql.create().select().allFrom().var(BOOK).whereQs(ISBN).build();
+
+    public void sql(){
+        System.out.println(UPDATE);
+    }
 
     @Override
     public Book insert(Book item) throws DaoException {
@@ -82,7 +86,7 @@ public class MySqlBook extends BookDao {
         try {
             try (PreparedStatement statement = getConnection().prepareStatement(UPDATE)) {
                 statementBook(statement, item);
-                statement.setInt(6, item.getId());
+                statement.setInt(7, item.getId());
                 statement.executeUpdate();
             }
         } catch (SQLException e) {

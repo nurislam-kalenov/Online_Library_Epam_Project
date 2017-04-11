@@ -69,7 +69,7 @@
                 </div>
 
             </div>
-            <a href="#" class="btn btn-warning col-md-6 pull-right" role="button">Изменеить</a>
+            <a href="bookEdit?book_id=${book_info.book.id}" class="btn btn-warning col-md-6 pull-right" role="button">Изменеить</a>
         </div>
     </div>
 </div>

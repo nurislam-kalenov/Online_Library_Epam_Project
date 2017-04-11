@@ -68,6 +68,7 @@ public class MySqlAvatar extends AvatarDao {
             try (PreparedStatement statement = getConnection().prepareStatement(UPDATE)) {
                 statement.setBlob(1, item.getPicture());
                 statement.setInt(2, item.getId());
+
                 statement.executeUpdate();
             }
         } catch (SQLException e) {

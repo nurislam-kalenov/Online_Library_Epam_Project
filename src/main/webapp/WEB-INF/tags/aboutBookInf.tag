@@ -2,7 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-
 <div class="col-md-12 column ">
     <div class="row clearfix ">
         <div class="col-md-3 column">
@@ -69,7 +68,7 @@
                 </div>
 
             </div>
-            <a href="#" class="btn btn-warning col-md-6 pull-right" role="button">Изменеить</a>
+            <a href="bookEdit?book_id=${book_info.book.id}" class="btn btn-warning col-md-6 pull-right" role="button">Изменеить</a>
         </div>
     </div>
 </div>

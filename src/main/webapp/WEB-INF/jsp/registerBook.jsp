@@ -21,7 +21,7 @@
     <fmt:message key="register.book.count" var="book_count"/>
     <fmt:message key="register.book.price" var="book_price"/>
     <fmt:message key="register.book.year" var="book_year"/>
-    <fmt:message key="register.book.legend.about.author" var="legend_about_book"/>
+    <fmt:message key="register.book.legend.about.book" var="legend_about_book"/>
     <fmt:message key="register.book.legend.about.author" var="legend_about_author"/>
     <fmt:message key="register.book.legend.economic.part" var="legend_econ_part"/>
     <fmt:message key="register.book.pholder.description" var="ph_about_book"/>
@@ -41,7 +41,6 @@
             <form class="form-horizontal" action="registerBook" method="POST">
                 <fieldset>
                     <legend><font color="teal">${legend_about_book}</font></legend>
-
                     <div class="form-group">
                         <div class="col-sm-10">
                             <label>${book_name}</label>

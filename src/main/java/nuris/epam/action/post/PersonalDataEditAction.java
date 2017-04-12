@@ -66,7 +66,7 @@ public class PersonalDataEditAction implements Action {
         if (availableParam(MIDDLE_NAME, req)) {
             String middleName = req.getParameter(MIDDLE_NAME);
             checkParamValid(MIDDLE_NAME, middleName, properties.getProperty(NAME_VALID), req);
-            person.setPhone(middleName);
+            person.setMiddleName(middleName);
         }
         if (availableParam(PHONE, req)) {
             String phone = req.getParameter(PHONE);

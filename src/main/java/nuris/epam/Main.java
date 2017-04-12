@@ -22,13 +22,12 @@ public class Main {
         System.out.println(connectionPool.size());
         BookService bookService = new BookService();
 
-        BookInfo bookInfo1 = bookService.findByBook(38);
+        BookInfo bookInfo1 = bookService.findByBook(80);
 
         Author author = bookInfo1.getBook().getAuthor();
         author.setFirstName("Pushkin");
 
-        bookService.updateBook(bookInfo1);
-
+        System.out.println(bookInfo1);
 
         System.out.println(connectionPool.size());
 

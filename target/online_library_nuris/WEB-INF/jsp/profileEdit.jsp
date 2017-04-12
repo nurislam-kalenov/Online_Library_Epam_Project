@@ -19,9 +19,9 @@
     <fmt:message key="profile.edit.confirm.password" var="confirm_pass"/>
     <fmt:message key="register.book.button.save" var="passport_save"/>
     <fmt:message key="register.button.home" var ="button_home"/>
-
     <fmt:message key="register.error.data" var="data_error"/>
 </fmt:bundle>
+
 <my:designPattern role="${sessionScope.role}">
     <form class="form-horizontal" action="email-edit" method="POST">
         <fieldset>

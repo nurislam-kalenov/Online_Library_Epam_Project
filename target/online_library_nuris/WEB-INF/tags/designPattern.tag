@@ -9,6 +9,8 @@
 <c:url var="books_url" value="/kz/books"/>
 <c:url var="logout_url" value="/kz/logout"/>
 <c:url var="account_url" value="/kz/account"/>
+<c:url var="customer_book_url" value="/kz/customerBook"/>
+
 <html lang=en>
 <head>
     <meta charset="UTF-8">
@@ -68,7 +70,7 @@
 
                 <ul class="nav navbar-nav">
                     <li><a href="${books_url}">${books}</a></li>
-                    <li><a href="#">${my_books}</a></li>
+                    <li><a href="${customer_book_url}">${my_books}</a></li>
                     <li><a href="${account_url}">${account}</a></li>
 
                 </ul>

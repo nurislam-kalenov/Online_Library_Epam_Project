@@ -120,7 +120,6 @@ public class BookEditAction implements Action {
         return new ActionResult(req.getHeader(REFERER), true);
     }
 
-
     private void checkParamValid(String paramValue, String validator, HttpServletRequest request) {
         Pattern pattern = Pattern.compile(validator);
         Matcher matcher = pattern.matcher(paramValue);

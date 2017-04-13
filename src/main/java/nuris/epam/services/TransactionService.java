@@ -1,14 +1,12 @@
 package nuris.epam.services;
 
+import nuris.epam.dao.BookDao;
 import nuris.epam.dao.BookInfoDao;
 import nuris.epam.dao.ManagementDao;
 import nuris.epam.dao.TransactionDao;
 import nuris.epam.dao.exception.DaoException;
 import nuris.epam.dao.manager.DaoFactory;
-import nuris.epam.entity.BookInfo;
-import nuris.epam.entity.Customer;
-import nuris.epam.entity.Management;
-import nuris.epam.entity.Transaction;
+import nuris.epam.entity.*;
 import nuris.epam.services.exception.ServiceException;
 import nuris.epam.utils.SqlDate;
 
@@ -27,13 +25,20 @@ public class TransactionService {
             try {
                 BookService bookService = new BookService();
                 BookInfo bookInfo = bookService.findById(transaction.getBookInfo().getId());
+                BookInfoDao bookInfoDao = (BookInfoDao) daoFactory.getDao(daoFactory.typeDao().getBookInfoDao());
                 TransactionDao transactionDao = (TransactionDao) daoFactory.getDao(daoFactory.typeDao().getTransactionDao());
+                BookDao bookDao = (BookDao) daoFactory.getDao(daoFactory.typeDao().getBookDao());
+                Book book = bookDao.findByBookInfo(bookInfo);
+                bookInfo.setBook(book);
+
                 if (bookInfo.getAmount() > 0) {
                     bookInfo.setAmount(bookInfo.getAmount() - 1);
+
                     daoFactory.startTransaction();
-                    bookService.updateBookInfo(bookInfo);
+                    bookInfoDao.update(bookInfo);
                     transaction = transactionDao.insert(transaction);
                     daoFactory.commitTransaction();
+
                 } else {
                     System.out.println("Книг нет");
                 }
@@ -70,7 +75,6 @@ public class TransactionService {
                     transactionDao.update(transaction);
                     managementDao.insert(management);
                     daoFactory.commitTransaction();
-
                 } else {
                     System.out.println("Operation already executed");
                 }
@@ -85,8 +89,6 @@ public class TransactionService {
             }
         }
     }
-
-
 
     public List<Transaction> findByCustomer(Transaction transaction) throws ServiceException {
         try (DaoFactory daoFactory = new DaoFactory()) {

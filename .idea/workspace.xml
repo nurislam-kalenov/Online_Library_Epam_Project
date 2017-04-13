@@ -2,25 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6472644-ffba-4160-a15d-efe07d03f84e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/services/ManagementService.class" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/CustomerTakeBookAction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/Main.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/mysql/MySqlBook.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/mysql/MySqlBook.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/action/manager/ActionFactory.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/action/manager/ActionFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/action/post/BookEditAction.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/action/post/BookEditAction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/action/post/RegisterAction.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/action/post/RegisterAction.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/mysql/MySqlTransaction.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/mysql/MySqlTransaction.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/mysql/Sql$Builder.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/mysql/Sql$Builder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/entity/Transaction.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/entity/Transaction.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/services/TransactionService.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/services/TransactionService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/Main.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/manager/ActionFactory.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/manager/ActionFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/post/BookEditAction.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/post/BookEditAction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/post/RegisterAction.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/post/RegisterAction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlTransaction.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlTransaction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/Sql$Builder.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/Sql$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/services/TransactionService.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/services/TransactionService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/Main.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/action/manager/ActionFactory.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/action/manager/ActionFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/BookEditAction.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/BookEditAction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/RegisterAction.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/RegisterAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlBook.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlBook.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlManagement.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlManagement.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlTransaction.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlTransaction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/Sql.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/Sql.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/entity/Management.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/entity/Management.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/entity/Transaction.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/entity/Transaction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/services/ManagementService.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/services/ManagementService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/services/TransactionService.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/services/TransactionService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/css/header.css" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/css/header.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/aboutBookInf.tag" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/aboutBookInf.tag" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/designPattern.tag" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/designPattern.tag" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/css/header.css" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/css/header.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/tags/aboutBookInf.tag" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/tags/aboutBookInf.tag" />
     </list>
     <ignored path="Online_Library_Project_Epam.iws" />
@@ -52,41 +60,105 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TransactionService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/services/TransactionService.java">
+      <file leaf-file-name="ActionFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/manager/ActionFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-74">
-              <caret line="68" column="50" selection-start-line="68" selection-start-column="50" selection-end-line="68" selection-end-column="50" />
+            <state relative-caret-position="307">
+              <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Encoder.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/utils/Encoder.java">
+      <file leaf-file-name="listPages.tag" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/listPages.tag">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TextParse.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/utils/TextParse.java">
+      <file leaf-file-name="header.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/css/header.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="489">
+              <caret line="185" column="1" selection-start-line="185" selection-start-column="1" selection-end-line="185" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SqlDate.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/utils/SqlDate.java">
+      <file leaf-file-name="customerBook.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/customerBook.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="268">
+              <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PageCustomerBookAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageCustomerBookAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomerTakeBookAction.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/post/CustomerTakeBookAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="303">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PageCustomerAccountAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageCustomerAccountAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="aboutBookInf.tag" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/aboutBookInf.tag">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="362">
+              <caret line="165" column="49" selection-start-line="165" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="designPattern.tag" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/designPattern.tag">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="72" column="52" selection-start-line="72" selection-start-column="52" selection-end-line="72" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="aboutBook.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/aboutBook.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="14" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -115,12 +187,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/manager/Action.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/profile-user-edit.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/personalDateEdit.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageProfileEditAction.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/role-account.tag" />
-        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageBookAction.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/account.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/PasswordEditAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/manager/View.java" />
@@ -128,7 +194,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/personalDataEdit.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/services/CustomerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/dao/BookDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/EmailEditAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/BookRegisterAction.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/roleBookInfo.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/aboutBook.jsp" />
@@ -147,25 +212,32 @@
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/constants/Constants.java" />
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/services/BookService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/bookEdit.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/BookEditAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/PersonalDataEditAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageCustomerAccountAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/connection/ConnectionPool.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/userAccount.tag" />
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/DeleteProfileAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/manager/ActionFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/DeleteBookAction.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/aboutBookInf.tag" />
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlBook.java" />
-        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/Sql.java" />
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/entity/Transaction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlTransaction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/services/TransactionService.java" />
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/entity/Management.java" />
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlManagement.java" />
-        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/services/ManagementService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/BookEditAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/Sql.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlTransaction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/aboutBookInf.tag" />
+        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/TakeBookAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/services/TransactionService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/EmailEditAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/CustomerTakeBookAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/RegisterAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/manager/ActionFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/css/header.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/designPattern.tag" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/customerBook.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageCustomerBookAction.java" />
       </list>
     </option>
   </component>
@@ -264,6 +336,96 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Online_Library_Project_Epam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Online_Library_Project_Epam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Online_Library_Project_Epam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Online_Library_Project_Epam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tags" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Online_Library_Project_Epam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Online_Library_Project_Epam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -339,7 +501,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
+              <option name="myItemId" value="action" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="post" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -369,7 +535,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="entity" />
+              <option name="myItemId" value="action" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manager" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -399,41 +569,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Online_Library_Project_Epam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Online_Library_Project_Epam" />
+              <option name="myItemId" value="action" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="epam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mysql" />
+              <option name="myItemId" value="get" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -482,18 +622,18 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\IdeaProjects\Online_Library_Project_Epam\src\main\webapp\WEB-INF\images" />
+      <recent name="C:\Users\User\IdeaProjects\Online_Library_Project_Epam\src\main\webapp\WEB-INF\tags" />
+      <recent name="C:\Users\User\IdeaProjects\Online_Library_Project_Epam\src\main\webapp\WEB-INF" />
+      <recent name="C:\Users\User\IdeaProjects\Online_Library_Project_Epam\src\main\webapp" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User\IdeaProjects\Online_Library_Project_Epam\src\main\webapp\WEB-INF\tags" />
       <recent name="C:\Users\User\IdeaProjects\Online_Library_Project_Epam\src\main\webapp\WEB-INF\image" />
       <recent name="C:\Users\User\IdeaProjects\Online_Library_Project_Epam\src\main\resources" />
       <recent name="C:\Users\User\IdeaProjects\Online_Library_Project_Epam\src\main\java\nuris\epam" />
       <recent name="C:\Users\User\IdeaProjects\Online_Library_Project_Epam\src\main\webapp\WEB-INF" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\User\IdeaProjects\Online_Library_Project_Epam\src\main\webapp\WEB-INF\images" />
-      <recent name="C:\Users\User\IdeaProjects\Online_Library_Project_Epam\src\main\webapp\WEB-INF\tags" />
-      <recent name="C:\Users\User\IdeaProjects\Online_Library_Project_Epam\src\main\webapp\WEB-INF" />
-      <recent name="C:\Users\User\IdeaProjects\Online_Library_Project_Epam\src\main\webapp" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat">
@@ -1072,12 +1212,12 @@
       <workItem from="1491969494622" duration="13400000" />
       <workItem from="1491983186009" duration="15297000" />
       <workItem from="1492023943747" duration="648000" />
-      <workItem from="1492057388323" duration="16512000" />
+      <workItem from="1492057388323" duration="28282000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="408266000" />
+    <option name="totallyTimeSpent" value="420036000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1102,11 +1242,11 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.07026144" sideWeight="0.49394855" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.4969743" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20751634" sideWeight="0.7360061" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.057189543" sideWeight="0.7360061" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23600605" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27458397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1176,82 +1316,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/constants/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="59" column="45" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageBookEditAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageBookRegisterAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/services/CustomerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/dao/BookDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlAuthor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1020">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/validation.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/i18n_ru.properties">
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="69" column="69" selection-start-line="69" selection-start-column="69" selection-end-line="69" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/i18n.properties">
-      <provider editor-type-id="ResourceBundle">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/bookEdit.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
@@ -1271,24 +1335,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/post/BookRegisterAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="59" column="60" selection-start-line="59" selection-start-column="60" selection-end-line="59" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/post/BookEditAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="62" column="60" selection-start-line="62" selection-start-column="60" selection-end-line="62" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1324,44 +1370,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageCustomerAccountAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="30" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/designPattern.tag">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/register.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="159" column="22" selection-start-line="159" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/post/LoginAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/post/EmailEditAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1390,44 +1402,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/services/BookService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="143" column="4" selection-start-line="143" selection-start-column="4" selection-end-line="143" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/post/DeleteProfileAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="31" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/manager/ActionFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="33" column="36" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/post/DeleteBookAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/aboutBookInf.tag">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="85" column="22" selection-start-line="85" selection-start-column="22" selection-end-line="85" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1456,14 +1434,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/Sql.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1355">
-          <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -1480,30 +1450,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/dao/TransactionDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlTransaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="31" column="91" selection-start-line="31" selection-start-column="91" selection-end-line="31" selection-end-column="91" />
-          <folding>
-            <marker date="1492071120884" expanded="true" signature="1118:1181" ph="insert into transaction... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/entity/Transaction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1521,56 +1473,8 @@
         <state relative-caret-position="340">
           <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlManagement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="82" column="56" selection-start-line="82" selection-start-column="56" selection-end-line="82" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/services/ManagementService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/post/RegisterAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="107" column="39" selection-start-line="107" selection-start-column="39" selection-end-line="107" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/services/TransactionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-74">
-          <caret line="68" column="50" selection-start-line="68" selection-start-column="50" selection-end-line="68" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/utils/SqlDate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1584,9 +1488,249 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/utils/Encoder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        <state relative-caret-position="306">
+          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/utils/SqlDate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlManagement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1114">
+          <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlPerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="30" column="104" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="104" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/Sql.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="155" column="47" selection-start-line="155" selection-start-column="47" selection-end-line="155" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlTransaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/dao/TransactionDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/services/CustomerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2933">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/services/ManagementService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/services/BookService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="132" column="28" selection-start-line="132" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="33" column="19" selection-start-line="33" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/post/LoginAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/post/BookEditAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/post/BookRegisterAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="59" column="60" selection-start-line="59" selection-start-column="60" selection-end-line="59" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/post/DeleteBookAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/post/EmailEditAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="33" column="3" selection-start-line="33" selection-start-column="3" selection-end-line="34" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/post/RegisterAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="107" column="43" selection-start-line="107" selection-start-column="43" selection-end-line="107" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/services/TransactionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="22" column="55" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="55" />
+          <folding>
+            <element signature="method#takeBook#0;class#TransactionService#0" expanded="false" />
+            <element signature="method#returnBook#0;class#TransactionService#0" expanded="false" />
+            <element signature="method#deleteTransaction#0;class#TransactionService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/validation.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/listPages.tag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/aboutBook.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="14" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/manager/ActionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/css/header.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="185" column="1" selection-start-line="185" selection-start-column="1" selection-end-line="185" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/aboutBookInf.tag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="165" column="49" selection-start-line="165" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/designPattern.tag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="72" column="52" selection-start-line="72" selection-start-column="52" selection-end-line="72" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/customerBook.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageCustomerAccountAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageCustomerBookAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/post/CustomerTakeBookAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

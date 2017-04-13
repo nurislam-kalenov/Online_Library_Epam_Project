@@ -105,7 +105,7 @@ public class RegisterAction implements Action {
                 e.printStackTrace();
             }
         }
-        return new ActionResult(BOOKS);
+        return new ActionResult(BOOKS ,true);
     }
 
     private void checkParamValid(String paramName, String paramValue, String validator, HttpServletRequest request) {

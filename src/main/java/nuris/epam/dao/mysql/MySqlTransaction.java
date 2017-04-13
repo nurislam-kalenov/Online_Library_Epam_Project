@@ -28,11 +28,12 @@ public class MySqlTransaction extends TransactionDao {
     private static final String ID_MANAGEMENT = "id_management";
 
     private static final String FIND_BY_ID = Sql.create().select().allFrom().var(TRANSACTION).whereQs(ID_TRANSACTION).build();
-    private static final String INSERT =  "insert into transaction(id_book_info , id_customer) values(?,?)";
+    private static final String INSERT =  Sql.create().insert().var(TRANSACTION).value(ID_BOOK_INFO , ID_CUSTOMER).values(2).build();
     private static final String UPDATE = Sql.create().update().var(TRANSACTION).set().varQs(END_DATE).c().varQs(ID_BOOK_INFO).c().varQs(ID_CUSTOMER).whereQs(ID_TRANSACTION).build();
     private static final String DELETE = Sql.create().delete().var(TRANSACTION).whereQs(ID_TRANSACTION).build();
     private static final String FIND_BY_CUSTOMER = Sql.create().select().allFrom().var(TRANSACTION).whereQs(ID_CUSTOMER).build();
     private static final String FIND_BY_MANAGEMENT = Sql.create().select().varS(TRANSACTION, ID_TRANSACTION).c().varS(TRANSACTION, START_DATE).c().varS(TRANSACTION, END_DATE).from().var(TRANSACTION).join(MANAGEMENT).varS(MANAGEMENT, ID_TRANSACTION).eq().varS(TRANSACTION, ID_TRANSACTION).whereQs(MANAGEMENT, ID_MANAGEMENT).build();
+
 
     @Override
     public Transaction insert(Transaction item) throws DaoException {

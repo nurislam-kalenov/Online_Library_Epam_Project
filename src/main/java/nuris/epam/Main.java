@@ -35,7 +35,6 @@ public class Main {
         bookInfo.setId(11);
         Customer customer = new Customer();
         customer.setId(7);
-
         Transaction transaction = new Transaction();
         transaction.setId(43);
         transaction.setBookInfo(bookInfo);

@@ -104,6 +104,10 @@ public class Sql {
             return this;
         }
 
+        public Builder value(String one , String two) {
+            Sql.this.setStringBuilder("(" +one+","+two+")");
+            return this;
+        }
 
 
         public Builder varQs(String column) {
@@ -143,6 +147,13 @@ public class Sql {
 
         public Builder values(String var, int count) {
             Sql.this.setStringBuilder("values(" + var + ",");
+             questionCount(count);
+            Sql.this.setStringBuilder(")");
+            return this;
+        }
+
+        public Builder values(int count) {
+            Sql.this.setStringBuilder("values(");
             questionCount(count);
             Sql.this.setStringBuilder(")");
             return this;
@@ -170,7 +181,6 @@ public class Sql {
                 }
             }
         }
-
 
 
         public String build() {

@@ -158,7 +158,11 @@
                     </div>
                 </div>
                 <a href="${books_url}" class="btn btn-info col-md-3" role="button">${button_back}</a>
-                <a href="#" class="btn btn-warning col-md-5" role="button">${button_take}</a>
+
+                <form action="takeBook" method="POST">
+                    <input type="hidden" name="book_id" value="${book_info.id}">
+                    <button  name="submit" class="btn btn-warning col-md-5">${button_take}</button>
+                </form>
                 <a href="#" class="btn btn-danger col-md-4" role="button">${button_card}</a>
 
             </div>

@@ -112,7 +112,8 @@
 
                     </div>
                 </div>
-                <a href="${personal_date_edit_url}" class="btn btn-warning col-md-6 pull-right" role="button">${loc_edit}</a>
+                <a href="${personal_date_edit_url}" class="btn btn-warning col-md-6 pull-right"
+                   role="button">${loc_edit}</a>
 
             </div>
             <div class="col-md-3 column">
@@ -134,7 +135,12 @@
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn btn-danger col-md-6 pull-right">${loc_delete}</button>
+
+                <form action="deleteProfile" method="POST">
+                    <input type="hidden" name="delete_id" value="${customer_info.id}">
+                    <button id="submit" name="submit" class="btn btn-danger col-md-6 pull-right">${loc_delete}</button>
+                </form>
+
                 <a href="${profile_edit_url}" class="btn btn-warning col-md-6 pull-right" role="button">${loc_edit}</a>
 
             </div>

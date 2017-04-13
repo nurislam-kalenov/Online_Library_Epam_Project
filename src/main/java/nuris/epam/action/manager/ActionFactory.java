@@ -36,6 +36,9 @@ public class ActionFactory {
         actions.put("POST/password-edit", new PasswordEditAction());
         actions.put("POST/personalDataEdit", new PersonalDataEditAction());
         actions.put("POST/bookEdit", new BookEditAction());
+        actions.put("POST/deleteProfile", new DeleteProfileAction());
+        actions.put("POST/deleteBook", new DeleteBookAction());
+
 
     }
 

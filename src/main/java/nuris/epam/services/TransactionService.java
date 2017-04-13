@@ -12,6 +12,8 @@ import nuris.epam.entity.Transaction;
 import nuris.epam.services.exception.ServiceException;
 import nuris.epam.utils.SqlDate;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
 
 
@@ -26,12 +28,10 @@ public class TransactionService {
                 BookService bookService = new BookService();
                 BookInfo bookInfo = bookService.findById(transaction.getBookInfo().getId());
                 TransactionDao transactionDao = (TransactionDao) daoFactory.getDao(daoFactory.typeDao().getTransactionDao());
-
                 if (bookInfo.getAmount() > 0) {
                     bookInfo.setAmount(bookInfo.getAmount() - 1);
                     daoFactory.startTransaction();
                     bookService.updateBookInfo(bookInfo);
-                    transaction.setStartDate(SqlDate.currentDateAndTime());
                     transaction = transactionDao.insert(transaction);
                     daoFactory.commitTransaction();
                 } else {
@@ -65,7 +65,7 @@ public class TransactionService {
                 transaction.setCustomer(customer);
 
                 if (transaction.getEndDate() == null) {
-                    transaction.setEndDate(SqlDate.currentDateAndTime());
+                    transaction.setEndDate(Timestamp.valueOf(LocalDateTime.now()));
                     daoFactory.startTransaction();
                     transactionDao.update(transaction);
                     managementDao.insert(management);
@@ -85,6 +85,8 @@ public class TransactionService {
             }
         }
     }
+
+
 
     public List<Transaction> findByCustomer(Transaction transaction) throws ServiceException {
         try (DaoFactory daoFactory = new DaoFactory()) {

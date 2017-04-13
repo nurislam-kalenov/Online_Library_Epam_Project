@@ -80,7 +80,7 @@ public class MySqlManagement extends ManagementDao {
     private Management itemManagement(Management management, ResultSet resultSet) throws SQLException {
         management = new Management();
         management.setId(resultSet.getInt(1));
-        management.setReturnDate(resultSet.getDate(2));
+        management.setReturnDate(resultSet.getTimestamp(2));
         return management;
     }
 
@@ -88,7 +88,7 @@ public class MySqlManagement extends ManagementDao {
         if (item.getReturnDate() == null) {
             statement.setNull(1, Types.DATE);
         } else {
-            statement.setDate(1, item.getReturnDate());
+            statement.setTimestamp(1, item.getReturnDate());
         }
         statement.setInt(2, item.getTransaction().getId());
         return statement;

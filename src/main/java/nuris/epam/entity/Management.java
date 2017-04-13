@@ -1,6 +1,7 @@
 package nuris.epam.entity;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  * Created by User on 28.03.2017.
@@ -8,7 +9,7 @@ import java.sql.Date;
 public class Management extends BaseEntity {
 
     private Transaction transaction;
-    private Date returnDate;
+    private Timestamp returnDate;
 
     public Management() {
         transaction = new Transaction();
@@ -22,11 +23,11 @@ public class Management extends BaseEntity {
         this.transaction = transaction;
     }
 
-    public Date getReturnDate() {
+    public Timestamp getReturnDate() {
         return returnDate;
     }
 
-    public void setReturnDate(Date returnDate) {
+    public void setReturnDate(Timestamp returnDate) {
         this.returnDate = returnDate;
     }
 

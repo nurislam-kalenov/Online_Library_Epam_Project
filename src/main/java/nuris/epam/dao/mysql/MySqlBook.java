@@ -43,7 +43,7 @@ public class MySqlBook extends BookDao {
     private static final String FIND_BY_ISBN =  Sql.create().select().allFrom().var(BOOK).whereQs(ISBN).build();
 
     public void sql(){
-        System.out.println(UPDATE);
+        System.out.println(INSERT);
     }
 
     @Override

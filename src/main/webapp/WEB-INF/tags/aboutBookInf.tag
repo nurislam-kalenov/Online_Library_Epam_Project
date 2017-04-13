@@ -87,10 +87,9 @@
                 <a href="${books_url}" class="btn btn-info col-md-3" role="button">${button_back}</a>
                 <a href="bookEdit?book_id=${book_info.book.id}" class="btn btn-warning col-md-6 "
                    role="button">${button_edit}</a>
-                <a href="#" class="btn btn-danger col-md-3 pull-right" role="button">${button_delete}</a>
                 <form action="deleteBook" method="POST">
                     <input type="hidden" name="delete_id" value="${book_info.id}">
-                    <button id="submit" name="submit" class="btn btn-danger col-md-6 pull-right">${button_delete}</button>
+                    <button id="submit" name="submit" class="btn btn-danger col-md-3 pull-right">${button_delete}</button>
                 </form>
             </div>
         </div>

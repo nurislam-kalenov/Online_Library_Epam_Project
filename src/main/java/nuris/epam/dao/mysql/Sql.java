@@ -104,6 +104,8 @@ public class Sql {
             return this;
         }
 
+
+
         public Builder varQs(String column) {
             Sql.this.setStringBuilder(column + " = ?");
             return this;

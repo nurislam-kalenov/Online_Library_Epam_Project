@@ -28,18 +28,18 @@ public class MySqlTransaction extends TransactionDao {
     private static final String ID_MANAGEMENT = "id_management";
 
     private static final String FIND_BY_ID = Sql.create().select().allFrom().var(TRANSACTION).whereQs(ID_TRANSACTION).build();
-    private static final String INSERT = Sql.create().insert().var(TRANSACTION).values(ID_TRANSACTION, 4).build();
-    private static final String UPDATE = Sql.create().update().var(TRANSACTION).set().varQs(START_DATE).c().varQs(END_DATE).c().varQs(ID_BOOK_INFO).c().varQs(ID_CUSTOMER).whereQs(ID_TRANSACTION).build();
+    private static final String INSERT =  "insert into transaction(id_book_info , id_customer) values(?,?)";
+    private static final String UPDATE = Sql.create().update().var(TRANSACTION).set().varQs(END_DATE).c().varQs(ID_BOOK_INFO).c().varQs(ID_CUSTOMER).whereQs(ID_TRANSACTION).build();
     private static final String DELETE = Sql.create().delete().var(TRANSACTION).whereQs(ID_TRANSACTION).build();
     private static final String FIND_BY_CUSTOMER = Sql.create().select().allFrom().var(TRANSACTION).whereQs(ID_CUSTOMER).build();
     private static final String FIND_BY_MANAGEMENT = Sql.create().select().varS(TRANSACTION, ID_TRANSACTION).c().varS(TRANSACTION, START_DATE).c().varS(TRANSACTION, END_DATE).from().var(TRANSACTION).join(MANAGEMENT).varS(MANAGEMENT, ID_TRANSACTION).eq().varS(TRANSACTION, ID_TRANSACTION).whereQs(MANAGEMENT, ID_MANAGEMENT).build();
-
 
     @Override
     public Transaction insert(Transaction item) throws DaoException {
         try {
             try (PreparedStatement statement = getConnection().prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS)) {
-                statementTransaction(statement, item);
+                statement.setInt(1, item.getBookInfo().getId());
+                statement.setInt(2, item.getCustomer().getId());
                 statement.executeUpdate();
                 try (ResultSet resultSet = statement.getGeneratedKeys()) {
                     resultSet.next();
@@ -75,7 +75,7 @@ public class MySqlTransaction extends TransactionDao {
         try {
             try (PreparedStatement statement = getConnection().prepareStatement(UPDATE)) {
                 statementTransaction(statement, item);
-                statement.setInt(5, item.getId());
+                statement.setInt(4, item.getId());
                 statement.executeUpdate();
             }
         } catch (SQLException e) {
@@ -136,19 +136,18 @@ public class MySqlTransaction extends TransactionDao {
         transaction = new Transaction();
         transaction.setId(resultSet.getInt(1));
         transaction.setStartDate(resultSet.getDate(2));
-        transaction.setEndDate(resultSet.getDate(3));
+        transaction.setEndDate(resultSet.getTimestamp(3));
         return transaction;
     }
 
     private PreparedStatement statementTransaction(PreparedStatement statement, Transaction item) throws SQLException {
-        statement.setDate(1, item.getStartDate());
         if (item.getEndDate() == null) {
-            statement.setNull(2, Types.DATE);
+            statement.setNull(1, Types.DATE);
         } else {
-            statement.setDate(2, item.getEndDate());
+            statement.setTimestamp(1, item.getEndDate());
         }
-        statement.setInt(3, item.getBookInfo().getId());
-        statement.setInt(4, item.getCustomer().getId());
+        statement.setInt(2, item.getBookInfo().getId());
+        statement.setInt(3, item.getCustomer().getId());
         return statement;
     }
 

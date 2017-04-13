@@ -11,6 +11,9 @@ import nuris.epam.entity.Transaction;
 import nuris.epam.services.exception.ServiceException;
 import nuris.epam.utils.SqlDate;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 /**
  * Created by User on 28.03.2017.
  */
@@ -33,7 +36,7 @@ public class ManagementService {
                 management.setTransaction(transaction);
 
                 if (management.getReturnDate() == null) {
-                    management.setReturnDate(SqlDate.currentDateAndTime());
+                    management.setReturnDate( Timestamp.valueOf(LocalDateTime.now()));
                     daoFactory.startTransaction();
                     bookService.updateBookInfo(bookInfo);
                     managementDao.update(management);

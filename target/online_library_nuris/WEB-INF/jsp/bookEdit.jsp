@@ -32,8 +32,6 @@
     <fmt:message key="register.book.button.save" var="button_save"/>
     <fmt:message key="register.error.data" var="error_data"/>
 </fmt:bundle>
-
-
 <my:designPattern role="${sessionScope.role}">
     <div class="row">
         <div class="col-md-8 col-md-offset-1">
@@ -44,6 +42,7 @@
                     <legend><font color="teal">Редактор книг</font></legend>
                     <div class="form-group">
                         <div class="col-sm-10">
+                            <label>${book_name}</label>
                             <input type="text" name="book_name" placeholder="${book_info.book.name}"
                                    class="form-control">
                         </div>

@@ -131,8 +131,8 @@ public class ConnectionPool {
      *
      * @return возвращяет единсвенный экземпляр класса.(Pattern Singleton).
      */
-    public static ConnectionPool getInstance() {
-        if (null == connectionPool) {
+    public static synchronized ConnectionPool getInstance() {
+        if (connectionPool == null) {
             connectionPool = new ConnectionPool();
         }
         return connectionPool;

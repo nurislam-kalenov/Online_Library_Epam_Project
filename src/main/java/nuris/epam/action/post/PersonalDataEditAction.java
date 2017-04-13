@@ -55,32 +55,32 @@ public class PersonalDataEditAction implements Action {
 
         if (availableParam(FIRST_NAME, req)) {
             String firstName = req.getParameter(FIRST_NAME);
-            checkParamValid(FIRST_NAME, firstName, properties.getProperty(NAME_VALID), req);
+            checkParamValid(firstName, properties.getProperty(NAME_VALID), req);
             person.setFirstName(firstName);
         }
         if (availableParam(LAST_NAME, req)) {
             String lastName = req.getParameter(LAST_NAME);
-            checkParamValid(LAST_NAME, lastName, properties.getProperty(NAME_VALID), req);
+            checkParamValid(lastName, properties.getProperty(NAME_VALID), req);
             person.setLastName(lastName);
         }
         if (availableParam(MIDDLE_NAME, req)) {
             String middleName = req.getParameter(MIDDLE_NAME);
-            checkParamValid(MIDDLE_NAME, middleName, properties.getProperty(NAME_VALID), req);
+            checkParamValid(middleName, properties.getProperty(NAME_VALID), req);
             person.setMiddleName(middleName);
         }
         if (availableParam(PHONE, req)) {
             String phone = req.getParameter(PHONE);
-            checkParamValid(PHONE, phone, properties.getProperty(LIMIT_NUMBER_VALID), req);
+            checkParamValid(phone, properties.getProperty(LIMIT_NUMBER_VALID), req);
             person.setPhone(phone);
         }
         if (availableParam(BIRTHDAY, req)) {
             String birthday = req.getParameter(BIRTHDAY);
-            checkParamValid(BIRTHDAY, birthday, properties.getProperty(DATE_VALID), req);
+            checkParamValid(birthday, properties.getProperty(DATE_VALID), req);
             person.setBirthday(SqlDate.stringToDate(birthday));
         }
         if (availableParam(ADDRESS, req)) {
             String address = req.getParameter(ADDRESS);
-            checkParamValid(ADDRESS, address, properties.getProperty(ADDRESS_VALID), req);
+            checkParamValid(address, properties.getProperty(ADDRESS_VALID), req);
             person.setAddress(address);
         }
 
@@ -102,11 +102,10 @@ public class PersonalDataEditAction implements Action {
         return new ActionResult(ACCOUNT, true);
     }
 
-    private void checkParamValid(String paramName, String paramValue, String validator, HttpServletRequest request) {
+    private void checkParamValid(String paramValue, String validator, HttpServletRequest request) {
         Pattern pattern = Pattern.compile(validator);
         Matcher matcher = pattern.matcher(paramValue);
         if (!matcher.matches()) {
-            request.setAttribute(paramName + ERROR, TRUE);
             wrong = true;
         }
     }

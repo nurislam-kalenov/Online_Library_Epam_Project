@@ -127,21 +127,7 @@ public class BookService {
 
     }
 
-    public void updateBook(Book book) throws ServiceException {
-        try (DaoFactory daoFactory = new DaoFactory()) {
-            try {
-                BookDao bookDao = (BookDao) daoFactory.getDao(daoFactory.typeDao().getBookDao());
-                AuthorDao authorDao = (AuthorDao) daoFactory.getDao(daoFactory.typeDao().getAuthorDao());
-                Author author = authorDao.findByBook(book);
-                book.setAuthor(author);
-                bookDao.update(book);
-            } catch (DaoException e) {
-                throw new ServiceException("can't update book", e);
-            }
-        }
-    }
-
-   public void updateBookInfo(BookInfo bookInfo) throws ServiceException {
+    public void updateBookInfo(BookInfo bookInfo) throws ServiceException {
         try (DaoFactory daoFactory = new DaoFactory()) {
             try {
                 BookInfoDao bookInfoDao = (BookInfoDao) daoFactory.getDao(daoFactory.typeDao().getBookInfoDao());
@@ -154,19 +140,6 @@ public class BookService {
             }
         }
     }
-
-
-  /*  public void updateAuthor(Book book) throws ServiceException {
-        try (DaoFactory daoFactory = new DaoFactory()) {
-            try {
-                AuthorDao authorDao = (AuthorDao) daoFactory.getDao(daoFactory.typeDao().getAuthorDao());
-                authorDao.update(book.getAuthor());
-            } catch (DaoException e) {
-                throw new ServiceException("can't update author", e);
-            }
-        }
-    }*/
-
 
     private void fillBook(Book book) throws ServiceException {
         try {

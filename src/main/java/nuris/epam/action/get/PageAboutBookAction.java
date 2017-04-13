@@ -1,5 +1,6 @@
 package nuris.epam.action.get;
 
+import nuris.epam.action.constants.Constants;
 import nuris.epam.action.exception.ActionException;
 import nuris.epam.action.manager.Action;
 import nuris.epam.action.manager.ActionResult;
@@ -7,6 +8,7 @@ import nuris.epam.entity.BookInfo;
 import nuris.epam.services.BookService;
 import nuris.epam.services.exception.ServiceException;
 import nuris.epam.utils.TextParse;
+import static nuris.epam.action.constants.Constants.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 public class PageAboutBookAction implements Action {
     @Override
     public ActionResult execute(HttpServletRequest req, HttpServletResponse resp) throws ActionException {
-        String id = req.getParameter("book_id");
+        String id = req.getParameter(BOOK_ID);
         BookService bookService = new BookService();
         BookInfo bookInfo = null;
         try {
@@ -25,8 +27,8 @@ public class PageAboutBookAction implements Action {
         } catch (ServiceException e) {
             e.printStackTrace();
         }
-        req.setAttribute("book_info" , bookInfo);
+        req.setAttribute(BOOK_INFO , bookInfo);
 
-        return new ActionResult("aboutBook");
+        return new ActionResult(ABOUT_BOOK);
     }
 }

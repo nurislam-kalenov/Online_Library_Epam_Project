@@ -12,9 +12,11 @@ public final class Constants {
     public static final String ACCOUNT = "account";
     public static final String PROFILE_EDIT = "profileEdit";
     public static final String PERSONAL_DATA_EDIT = "personalDataEdit";
+    public static final String ABOUT_BOOK= "aboutBook";
+    public static final String BOOK_EDIT= "bookEdit";
+
     //Validation regular expressions
     public static final String VALIDATION_PROPERTIES = "validation.properties";
-
     public static final String NAME_VALID = "name.valid";
     public static final String LIMIT_NUMBER_VALID = "limit.number.valid";
     public static final String DATE_VALID = "date.valid";
@@ -74,6 +76,10 @@ public final class Constants {
 
     //PageCustomerAccountAction
     public static final String ATT_CUSTOMER_INFO = "customer_info";
+
+    //AboutBookAction
+    public static final String BOOK_ID = "book_id";
+    public static final String BOOK_INFO = "book_info";
 
     //PasswordEditAction
     public static final String OLD_PASSWORD = "old_pass";

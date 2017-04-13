@@ -16,9 +16,12 @@
     <fmt:message key="register.book.legend.about.book" var="legend_about_book"/>
     <fmt:message key="register.book.legend.about.author" var="legend_about_author"/>
     <fmt:message key="register.book.legend.economic.part" var="legend_econ_part"/>
-
     <fmt:message key="register.button.home" var="button_back"/>
     <fmt:message key="register.book.button.save" var="button_save"/>
+    <fmt:message key="about.book.button.card" var="button_card"/>
+    <fmt:message key="about.book.button.take" var="button_take"/>
+    <fmt:message key="about.book.button.delete" var="button_delete"/>
+    <fmt:message key="profile.button.edit" var="button_edit"/>
 </fmt:bundle>
 
 <c:if test="${role.equals('admin')}">
@@ -83,8 +86,8 @@
                 </div>
                 <a href="${books_url}" class="btn btn-info col-md-3" role="button">${button_back}</a>
                 <a href="bookEdit?book_id=${book_info.book.id}" class="btn btn-warning col-md-6 "
-                   role="button">Изменеить</a>
-                <a href="#" class="btn btn-danger col-md-3 pull-right" role="button">Удалить</a>
+                   role="button">${button_edit}</a>
+                <a href="#" class="btn btn-danger col-md-3 pull-right" role="button">${button_delete}</a>
 
             </div>
         </div>
@@ -153,8 +156,8 @@
                     </div>
                 </div>
                 <a href="${books_url}" class="btn btn-info col-md-3" role="button">${button_back}</a>
-                <a href="#" class="btn btn-warning col-md-5" role="button">Взять книгу</a>
-                <a href="#" class="btn btn-danger col-md-4" role="button">В карзину</a>
+                <a href="#" class="btn btn-warning col-md-5" role="button">${button_take}</a>
+                <a href="#" class="btn btn-danger col-md-4" role="button">${button_card}</a>
 
             </div>
         </div>

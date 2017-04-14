@@ -26,7 +26,7 @@ public class ActionFactory {
         actions.put("GET/personalDataEdit", new PagePersonalDataEditAction());
         actions.put("GET/aboutBook", new PageAboutBookAction());
         actions.put("GET/bookEdit", new PageBookEditAction());
-        actions.put("GET/customerBook", new ShowPageAction("customerBook"));
+        actions.put("GET/customerBook", new PageCustomerBookAction());
 
 
         //post request
@@ -41,6 +41,7 @@ public class ActionFactory {
         actions.put("POST/deleteProfile", new DeleteProfileAction());
         actions.put("POST/deleteBook", new DeleteBookAction());
         actions.put("POST/takeBook", new CustomerTakeBookAction());
+        actions.put("POST/returnBook", new CustomerBookAction());
 
 
     }

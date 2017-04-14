@@ -1,9 +1,6 @@
 package nuris.epam.services;
 
-import nuris.epam.dao.BookDao;
-import nuris.epam.dao.BookInfoDao;
-import nuris.epam.dao.ManagementDao;
-import nuris.epam.dao.TransactionDao;
+import nuris.epam.dao.*;
 import nuris.epam.dao.exception.DaoException;
 import nuris.epam.dao.manager.DaoFactory;
 import nuris.epam.entity.*;
@@ -12,6 +9,7 @@ import nuris.epam.utils.SqlDate;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -31,16 +29,15 @@ public class TransactionService {
                 Book book = bookDao.findByBookInfo(bookInfo);
                 bookInfo.setBook(book);
 
-                if (bookInfo.getAmount() > 0) {
+                if (bookInfo.getAmount() > 0 && !isAlreadyTaken(transaction)) {
                     bookInfo.setAmount(bookInfo.getAmount() - 1);
 
                     daoFactory.startTransaction();
                     bookInfoDao.update(bookInfo);
                     transaction = transactionDao.insert(transaction);
                     daoFactory.commitTransaction();
-
                 } else {
-                    System.out.println("Книг нет");
+                    System.out.println("Книг нет или уже он у пользователя");
                 }
                 return transaction;
             } catch (DaoException e) {
@@ -95,6 +92,9 @@ public class TransactionService {
             try {
                 TransactionDao transactionDao = (TransactionDao) daoFactory.getDao(daoFactory.typeDao().getTransactionDao());
                 List<Transaction> list = transactionDao.findByCustomer(transaction);
+                for (Transaction tran : list) {
+                    fillTransaction(tran);
+                }
                 return list;
             } catch (DaoException e) {
                 throw new ServiceException("can't get list of customer", e);
@@ -113,26 +113,56 @@ public class TransactionService {
         }
     }
 
-    //проверка на наличие книг
     public boolean isAlreadyTaken(Transaction transaction) throws ServiceException {
-        try (DaoFactory daoFactory = new DaoFactory()) {
-            try {
-                TransactionDao transactionDao = (TransactionDao) daoFactory.getDao(daoFactory.typeDao().getTransactionDao());
-                BookInfoDao bookInfoDao = (BookInfoDao) daoFactory.getDao(daoFactory.typeDao().getBookInfoDao());
+        List<Transaction> transactions = getActiveCustomerTransaction(transaction,true);
+        for (Transaction tran : transactions) {
+            if (tran.getBookInfo().getId() == transaction.getBookInfo().getId()) {
                 return true;
-            } catch (DaoException e) {
-                throw new ServiceException("can't find similar value", e);
             }
         }
+        return false;
     }
 
-    // статистика активыных
+    public List<Transaction> getActiveCustomerTransaction(Transaction transaction, boolean active) throws ServiceException {
+        List<Transaction> transactions = new ArrayList<>();
+        List<Transaction> allTransactions = findByCustomer(transaction);
+        if (active == true) {
+            for (Transaction tran : allTransactions) {
+                if (tran.getEndDate() == null) {
+                    transactions.add(tran);
+                }
+            }
+        }
+        if (active == false) {
+            for (Transaction tran : allTransactions) {
+                if (tran.getEndDate()!= null) {
+                    transactions.add(tran);
+                }
+            }
+        }
+        return transactions;
+    }
+
     public int getActiveTransaction() {
         return 0;
     }
 
-    //что бы выводить название книг
-    public int findByBookInfo() {
-        return 0;
+    private void fillTransaction(Transaction transaction) throws ServiceException {
+        BookInfo bookInfo;
+        Book book;
+        try {
+            if (transaction != null) {
+                try (DaoFactory daoFactory = new DaoFactory()) {
+                    BookInfoDao bookInfoDao = (BookInfoDao) daoFactory.getDao(daoFactory.typeDao().getBookInfoDao());
+                    BookDao bookDao = (BookDao) daoFactory.getDao(daoFactory.typeDao().getBookDao());
+                    bookInfo = bookInfoDao.findByTransaction(transaction);
+                    book = bookDao.findByBookInfo(bookInfo);
+                    bookInfo.setBook(book);
+                    transaction.setBookInfo(bookInfo);
+                }
+            }
+        } catch (DaoException e) {
+            throw new ServiceException("can't fill transaction", e);
+        }
     }
 }

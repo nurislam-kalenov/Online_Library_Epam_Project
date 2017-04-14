@@ -16,27 +16,32 @@
             <thead>
             <tr>
                 <th>Название книги</th>
-                <th>Жанр</th>
                 <th>Стоимость</th>
                 <th>Взял</th>
-                <th>Прошло времени</th>
+                <th>Вернул</th>
+
                 <th>Вернуть</th>
                 <th>Одобрение</th>
-
             </tr>
             </thead>
+
             <tbody>
-            <tr>
-                <td>Шантарам</td>
-                <td>Приключение</td>
-                <td>2500 тг</td>
-                <td>2017-08-02</td>
-                <td>6 дн</td>
-                <td>
-                    <a href="#" class="btn btn-danger" role="button">Вернуть</a>
-                </td>
-                <td>Подтверждение</td>
-            </tr>
+            <c:forEach items="${customer_book}" var="book">
+                <tr>
+                    <td>${book.bookInfo.book.name}</td>
+                    <td>${book.bookInfo.price} тг.</td>
+                    <td>${book.startDate}</td>
+                    <td>${book.endDate}</td>
+
+                    <td>
+                        <form action="returnBook" method="POST">
+                            <input type="hidden" name="return_book" value="${book.id}">
+                            <button id="submit" name="submit" class="btn btn-danger" >Вернуть</button>
+                        </form>
+                    </td>
+                    <td>Подтверждение</td>
+                </tr>
+            </c:forEach>
             </tbody>
         </table>
     </div>

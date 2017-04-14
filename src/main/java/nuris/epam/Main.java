@@ -14,8 +14,11 @@ import nuris.epam.services.exception.ServiceException;
 import nuris.epam.utils.Encoder;
 import nuris.epam.utils.SqlDate;
 
+import java.sql.Date;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 
 /**
@@ -34,15 +37,23 @@ public class Main {
         BookInfo bookInfo = new BookInfo();
         bookInfo.setId(11);
         Customer customer = new Customer();
-        customer.setId(7);
+        customer.setId(395);
         Transaction transaction = new Transaction();
         transaction.setId(43);
         transaction.setBookInfo(bookInfo);
         transaction.setCustomer(customer);
 
-        transactionService.returnBook(transaction , customer);
-        managementService.returnBook(management);
-        System.out.println(connectionPool.size());
+
+
+        List<Transaction> transactions =  transactionService.getActiveCustomerTransaction(transaction , true);
+
+        System.out.println(transactions);
+
 
     }
+
+
+
+
+
 }

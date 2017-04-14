@@ -41,7 +41,6 @@ public class EmailEditAction implements Action {
         }
 
         String email = request.getParameter(EMAIL);
-
         try {
             if (availableParam(EMAIL, request)) {
                 customer = customerService.findCustomerById(id);
@@ -49,8 +48,7 @@ public class EmailEditAction implements Action {
             if (!customerService.isLoginAvailable(email)) {
                 wrong = true;
                 request.setAttribute(EMAIL_ERROR, TRUE);
-            }
-            else {
+            } else {
                 checkParamValid(EMAIL, email, properties.getProperty(EMAIL_VALID), request);
             }
         } catch (ServiceException e) {

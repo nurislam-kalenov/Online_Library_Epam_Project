@@ -4,6 +4,7 @@ import nuris.epam.connection.ConnectionPool;
 import nuris.epam.dao.BookInfoDao;
 import nuris.epam.dao.mysql.MySqlBook;
 import nuris.epam.dao.mysql.MySqlBookInfo;
+import nuris.epam.dao.mysql.MySqlManagement;
 import nuris.epam.dao.mysql.MySqlTransaction;
 import nuris.epam.entity.*;
 import nuris.epam.services.BookService;
@@ -44,16 +45,12 @@ public class Main {
         transaction.setCustomer(customer);
 
 
+        List<Management> list = managementService.findByCustomer(395);
 
-        List<Transaction> transactions =  transactionService.getActiveCustomerTransaction(transaction , true);
 
-        System.out.println(transactions);
-
+        System.out.println(list);
 
     }
-
-
-
 
 
 }

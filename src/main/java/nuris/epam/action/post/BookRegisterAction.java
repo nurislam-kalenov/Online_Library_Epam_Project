@@ -65,7 +65,7 @@ public class BookRegisterAction implements Action {
             if (bookService.isBookIsbnAvailable(isbn)) {
                 request.setAttribute(ISBN_ERROR, TRUE);
                 wrong = true;
-            }else {
+            } else {
                 checkParamValid(ISBN, isbn, properties.getProperty(ISBN_VALID), request);
             }
         } catch (ServiceException e) {
@@ -105,7 +105,7 @@ public class BookRegisterAction implements Action {
                 e.printStackTrace();
             }
         }
-        return new ActionResult(WELCOME);
+        return new ActionResult(BOOKS, true);
     }
 
     private void checkParamValid(String paramName, String paramValue, String validator, HttpServletRequest request) {

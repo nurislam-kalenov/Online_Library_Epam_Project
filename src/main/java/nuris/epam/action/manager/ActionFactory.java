@@ -42,8 +42,6 @@ public class ActionFactory {
         actions.put("POST/deleteBook", new DeleteBookAction());
         actions.put("POST/takeBook", new CustomerTakeBookAction());
         actions.put("POST/returnBook", new CustomerBookAction());
-
-
     }
 
     public Action getAction(HttpServletRequest request) {

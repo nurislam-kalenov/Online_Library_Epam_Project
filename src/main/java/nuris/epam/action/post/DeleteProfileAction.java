@@ -8,6 +8,8 @@ import nuris.epam.services.CustomerService;
 import nuris.epam.services.exception.ServiceException;
 import nuris.epam.utils.TextParse;
 
+import static nuris.epam.action.constants.Constants.*;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -19,7 +21,7 @@ public class DeleteProfileAction implements Action {
     public ActionResult execute(HttpServletRequest req, HttpServletResponse resp) throws ActionException {
         CustomerService customerService = new CustomerService();
         Customer customer = new Customer();
-        String id = req.getParameter("delete_id");
+        String id = req.getParameter(DELETE_ID);
         customer.setId(TextParse.toInt(id));
 
         try {
@@ -28,6 +30,6 @@ public class DeleteProfileAction implements Action {
             e.printStackTrace();
         }
 
-        return new ActionResult("welcome");
+        return new ActionResult(WELCOME);
     }
 }

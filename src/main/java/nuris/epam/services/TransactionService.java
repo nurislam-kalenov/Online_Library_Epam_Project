@@ -29,9 +29,8 @@ public class TransactionService {
                 Book book = bookDao.findByBookInfo(bookInfo);
                 bookInfo.setBook(book);
 
-                if (bookInfo.getAmount() > 0 && !isAlreadyTaken(transaction)) {
+                if (bookInfo.getAmount() > 0 && !isAlreadyTaken(transaction) && countActiveTransaction(transaction)<5) {
                     bookInfo.setAmount(bookInfo.getAmount() - 1);
-
                     daoFactory.startTransaction();
                     bookInfoDao.update(bookInfo);
                     transaction = transactionDao.insert(transaction);
@@ -40,6 +39,7 @@ public class TransactionService {
                     System.out.println("Книг нет или уже он у пользователя");
                 }
                 return transaction;
+
             } catch (DaoException e) {
                 try {
                     daoFactory.rollbackTransaction();
@@ -147,7 +147,7 @@ public class TransactionService {
         return 0;
     }
 
-    private void fillTransaction(Transaction transaction) throws ServiceException {
+    public void fillTransaction(Transaction transaction) throws ServiceException {
         BookInfo bookInfo;
         Book book;
         try {
@@ -164,5 +164,15 @@ public class TransactionService {
         } catch (DaoException e) {
             throw new ServiceException("can't fill transaction", e);
         }
+    }
+
+    private int countActiveTransaction(Transaction transaction){
+        int size = 0;
+        try {
+            size = getActiveCustomerTransaction(transaction , true).size();
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+        return size;
     }
 }

@@ -5,16 +5,13 @@ import nuris.epam.action.manager.Action;
 import nuris.epam.action.manager.ActionResult;
 import nuris.epam.entity.Customer;
 import nuris.epam.entity.Transaction;
-import nuris.epam.services.ManagementService;
 import nuris.epam.services.TransactionService;
 import nuris.epam.services.exception.ServiceException;
 import nuris.epam.utils.TextParse;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import static nuris.epam.action.constants.Constants.CUSTOMER_ID;
+import static nuris.epam.action.constants.Constants.*;
 
 /**
  * Created by User on 14.04.2017.
@@ -28,9 +25,9 @@ public class CustomerBookAction implements Action{
 
         HttpSession session = req.getSession();
         int id = (int) session.getAttribute(CUSTOMER_ID);
-        String transNum = req.getParameter("return_book");
+        String transactionId = req.getParameter(RETURN_BOOK);
 
-        transaction.setId(TextParse.toInt(transNum));
+        transaction.setId(TextParse.toInt(transactionId));
         customer.setId(id);
 
         try {
@@ -38,6 +35,6 @@ public class CustomerBookAction implements Action{
         } catch (ServiceException e) {
             e.printStackTrace();
         }
-        return new ActionResult("books",true);
+        return new ActionResult(BOOKS,true);
     }
 }

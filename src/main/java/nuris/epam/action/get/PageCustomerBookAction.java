@@ -31,11 +31,11 @@ public class PageCustomerBookAction implements Action {
 
         try {
             List<Transaction> transactions = transactionService.getActiveCustomerTransaction(transaction, true);
-            req.setAttribute("customer_book", transactions);
+            req.setAttribute(ATT_CUSTOMER_BOOK, transactions);
         } catch (ServiceException e) {
             e.printStackTrace();
         }
-        return new ActionResult("customerBook");
+        return new ActionResult(CUSTOMER_BOOK);
     }
 
 }

@@ -34,6 +34,9 @@ public class MySqlTransaction extends TransactionDao {
     private static final String FIND_BY_CUSTOMER = Sql.create().select().allFrom().var(TRANSACTION).whereQs(ID_CUSTOMER).build();
     private static final String FIND_BY_MANAGEMENT = Sql.create().select().varS(TRANSACTION, ID_TRANSACTION).c().varS(TRANSACTION, START_DATE).c().varS(TRANSACTION, END_DATE).from().var(TRANSACTION).join(MANAGEMENT).varS(MANAGEMENT, ID_TRANSACTION).eq().varS(TRANSACTION, ID_TRANSACTION).whereQs(MANAGEMENT, ID_MANAGEMENT).build();
 
+    public void sql(){
+        System.out.println(FIND_BY_CUSTOMER);
+    }
 
     @Override
     public Transaction insert(Transaction item) throws DaoException {

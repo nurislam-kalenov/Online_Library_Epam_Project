@@ -13,6 +13,7 @@ import nuris.epam.utils.SqlDate;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * Created by User on 28.03.2017.
@@ -36,7 +37,7 @@ public class ManagementService {
                 management.setTransaction(transaction);
 
                 if (management.getReturnDate() == null) {
-                    management.setReturnDate( Timestamp.valueOf(LocalDateTime.now()));
+                    management.setReturnDate(Timestamp.valueOf(LocalDateTime.now()));
                     daoFactory.startTransaction();
                     bookService.updateBookInfo(bookInfo);
                     managementDao.update(management);
@@ -55,9 +56,36 @@ public class ManagementService {
         }
     }
 
-    public Management findByCustomer() {
-        return null;
+    public List<Management> findByCustomer(int id) throws ServiceException {
+        List<Management> list = null;
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            try {
+                ManagementDao managementDao = (ManagementDao) daoFactory.getDao(daoFactory.typeDao().getManagementDao());
+                list = managementDao.findByCustomer(id);
+                for (Management management : list) {
+                    fillManagement(management);
+                }
+            } catch (DaoException e) {
+                e.printStackTrace();
+            }
+        }
+        return list;
     }
+
+    public void fillManagement(Management management) throws ServiceException {
+        TransactionService transactionService = new TransactionService();
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            try {
+                TransactionDao transactionDao = (TransactionDao) daoFactory.getDao(daoFactory.typeDao().getTransactionDao());
+                Transaction transaction = transactionDao.findByManagement(management);
+                transactionService.fillTransaction(transaction);
+                management.setTransaction(transaction);
+            } catch (DaoException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 
     // статистика активыных
     public int getActiveTransaction() {

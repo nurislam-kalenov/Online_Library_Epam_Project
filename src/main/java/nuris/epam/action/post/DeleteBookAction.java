@@ -8,6 +8,8 @@ import nuris.epam.services.BookService;
 import nuris.epam.services.exception.ServiceException;
 import nuris.epam.utils.TextParse;
 
+import static nuris.epam.action.constants.Constants.*;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -19,7 +21,7 @@ public class DeleteBookAction implements Action {
     public ActionResult execute(HttpServletRequest req, HttpServletResponse resp) throws ActionException {
         BookService bookService = new BookService();
         BookInfo bookInfo = new BookInfo();
-        String id = req.getParameter("delete_id");
+        String id = req.getParameter(DELETE_ID);
         bookInfo.setId(TextParse.toInt(id));
 
         try {
@@ -28,6 +30,6 @@ public class DeleteBookAction implements Action {
             e.printStackTrace();
         }
 
-        return new ActionResult("books" , true);
+        return new ActionResult(BOOKS, true);
     }
 }

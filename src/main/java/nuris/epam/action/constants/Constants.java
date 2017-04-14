@@ -14,6 +14,7 @@ public final class Constants {
     public static final String PERSONAL_DATA_EDIT = "personalDataEdit";
     public static final String ABOUT_BOOK= "aboutBook";
     public static final String BOOK_EDIT= "bookEdit";
+    public static final String CUSTOMER_BOOK = "customerBook";
 
     //Validation regular expressions
     public static final String VALIDATION_PROPERTIES = "validation.properties";
@@ -84,6 +85,15 @@ public final class Constants {
     //PasswordEditAction
     public static final String OLD_PASSWORD = "old_pass";
     public static final String OLD_PASSWORD_ERROR = "old_pass_error";
+
+    //PageCustomerBookAction
+    public static final String ATT_CUSTOMER_BOOK = "customer_book";
+
+    //CustomerAction
+    public static final String RETURN_BOOK = "return_book";
+
+    //DeleteBookAction
+    public static final String DELETE_ID = "delete_id";
 
     //Session
     public static final String CUSTOMER_ID = "customerId";

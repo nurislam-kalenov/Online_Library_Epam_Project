@@ -3,6 +3,7 @@ package nuris.epam.dao.mysql;
 import nuris.epam.dao.CustomerDao;
 import nuris.epam.dao.exception.DaoException;
 import nuris.epam.entity.Customer;
+import nuris.epam.entity.Management;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,6 +24,11 @@ public class MySqlCustomer extends CustomerDao{
     private static final String ID_ROLE = "id_role";
     private static final String ID_AVATAR = "id_avatar";
 
+    private static final String MANAGEMENT = "management";
+    private static final String ID_MANAGEMENT = "id_management";
+    private static final String TRANSACTION = "transaction";
+    private static final String ID_TRANSACTION = "id_transaction";
+
     private static final String FIND_BY_ID = Sql.create().select().allFrom().var(CUSTOMER).whereQs(ID_CUSTOMER).build();
     private static final String INSERT = Sql.create().insert().var(CUSTOMER).valuesNull(ID_CUSTOMER, 5).build();
     private static final String UPDATE = Sql.create().update().var(CUSTOMER).set().varQs(REGISTER_DATE).c().varQs(PASSWORD).c().varQs(EMAIL).c().varQs(ID_PERSON).c().varQs(ID_ROLE).whereQs(ID_CUSTOMER).build();
@@ -31,7 +37,7 @@ public class MySqlCustomer extends CustomerDao{
     private static final String UPDATE_AVATAR = Sql.create().update().var(CUSTOMER).set().varQs(ID_AVATAR).whereQs(ID_CUSTOMER).build();
     private static final String FIND_BY_LOGIN = Sql.create().select().allFrom().var(CUSTOMER).whereQs(EMAIL).build();
     private static final String FIND_BY_LOGIN_PASSWORD = Sql.create().select().allFrom().var(CUSTOMER).whereQs(EMAIL).and().varQs(PASSWORD).build();
-
+    private static final String FIND_BY_MANAGEMENT = Sql.create().select().varS(CUSTOMER, ID_CUSTOMER).c().varS(CUSTOMER, EMAIL).from().var(CUSTOMER).join(TRANSACTION).varS(CUSTOMER, ID_CUSTOMER).eq().varS(TRANSACTION, ID_CUSTOMER).join(MANAGEMENT).varS(MANAGEMENT, ID_TRANSACTION).eq().varS(TRANSACTION, ID_TRANSACTION).whereQs(MANAGEMENT, ID_MANAGEMENT).build();
 
     @Override
     public Customer insert(Customer item) throws DaoException {
@@ -154,6 +160,25 @@ public class MySqlCustomer extends CustomerDao{
             }
         } catch (SQLException e) {
             throw new DaoException("can't get by login and pasdword " + this.getClass().getSimpleName(), e);
+        }
+        return customer;
+    }
+
+    @Override
+    public Customer findByManagement(Management management) throws DaoException {
+        Customer customer = new Customer();
+        try {
+            try (PreparedStatement statement = getConnection().prepareStatement(FIND_BY_MANAGEMENT)) {
+                statement.setInt(1, management.getId());
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    while (resultSet.next()) {
+                        customer.setId(resultSet.getInt(1));
+                        customer.setEmail(resultSet.getString(2));
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            throw new DaoException("can't find by management " + this.getClass().getSimpleName(), e);
         }
         return customer;
     }

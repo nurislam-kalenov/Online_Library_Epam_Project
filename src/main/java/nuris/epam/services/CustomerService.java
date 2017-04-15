@@ -132,26 +132,6 @@ public class CustomerService {
         }
     }
 
-    private void fillCustomer(Customer customer) throws ServiceException {
-        try {
-            if (customer != null) {
-                try (DaoFactory daoFactory = new DaoFactory()) {
-
-                    PersonDao personDao = (PersonDao) daoFactory.getDao(daoFactory.typeDao().getPersonDao());
-                    CustomerRoleDao customerRoleDao = (CustomerRoleDao) daoFactory.getDao(daoFactory.typeDao().getCustomerRoleDao());
-                    CityDao cityDao = (CityDao) daoFactory.getDao(daoFactory.typeDao().getCityDao());
-
-                    Person person = personDao.findByCustomer(customer);
-                    person.setCity(cityDao.findByPerson(person));
-                    customer.setPerson(person);
-                    customer.setCustomerRole(customerRoleDao.findByCustomer(customer));
-                }
-            }
-        } catch (DaoException e) {
-            throw new ServiceException("Can't fill customer ", e);
-        }
-    }
-
     public List<City> getAllCity() throws ServiceException {
         List<City> list;
         try {
@@ -208,4 +188,38 @@ public class CustomerService {
         }
         return avatar;
     }
+
+    public Customer findByManagement(Management management) throws ServiceException{
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            Customer customer;
+            try {
+                CustomerDao customerDao = (CustomerDao) daoFactory.getDao(daoFactory.typeDao().getCustomerDao());
+                customer = customerDao.findByManagement(management);
+                fillCustomer(customer);
+                return customer;
+            } catch (DaoException e) {
+                throw new ServiceException("can't find by customer id customer", e);
+            }
+        }
+    }
+    private void fillCustomer(Customer customer) throws ServiceException {
+        try {
+            if (customer != null) {
+                try (DaoFactory daoFactory = new DaoFactory()) {
+
+                    PersonDao personDao = (PersonDao) daoFactory.getDao(daoFactory.typeDao().getPersonDao());
+                    CustomerRoleDao customerRoleDao = (CustomerRoleDao) daoFactory.getDao(daoFactory.typeDao().getCustomerRoleDao());
+                    CityDao cityDao = (CityDao) daoFactory.getDao(daoFactory.typeDao().getCityDao());
+
+                    Person person = personDao.findByCustomer(customer);
+                    person.setCity(cityDao.findByPerson(person));
+                    customer.setPerson(person);
+                    customer.setCustomerRole(customerRoleDao.findByCustomer(customer));
+                }
+            }
+        } catch (DaoException e) {
+            throw new ServiceException("Can't fill customer ", e);
+        }
+    }
+
 }

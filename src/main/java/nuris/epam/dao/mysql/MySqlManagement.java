@@ -40,10 +40,6 @@ public class MySqlManagement extends ManagementDao {
     private static final String MANAGEMENT_ACTIVE_COUNT = Sql.create().select().count().from().var(MANAGEMENT).whereIsNull(RETURN_DATE , true).build();
     private static final String MANAGEMENT_INACTIVE_COUNT = Sql.create().select().count().from().var(MANAGEMENT).whereIsNull(RETURN_DATE , false).build();
 
-    public void sql(){
-        System.out.println(MANAGEMENT_INACTIVE_COUNT);
-    }
-
     @Override
     public Management insert(Management item) throws DaoException {
         try {

@@ -17,10 +17,13 @@
             <tr>
                 <th>Название книги</th>
 
-                <th>Одобрить</th>
 
                 <th>Поступило</th>
-                <th>Одобрение</th>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>email</th>
+                <th>Одобрить</th>
+
             </tr>
             </thead>
 
@@ -28,15 +31,16 @@
             <c:forEach items="${managements}" var="manage">
                 <tr>
                     <td>${manage.transaction.bookInfo.book.name}</td>
-
-
+                    <td>${manage.transaction.endDate}</td>
+                    <td>${manage.transaction.customer.person.firstName}</td>
+                    <td>${manage.transaction.customer.person.lastName}</td>
+                    <td>${manage.transaction.customer.email}</td>
                     <td>
                         <form action="returnBook" method="POST">
                             <input type="hidden" name="return_book" value="${book.id}">
-                            <button id="submit" name="submit" class="btn btn-danger" >Вернуть</button>
+                            <button id="submit" name="submit" class="btn btn-danger" >Одобрить</button>
                         </form>
                     </td>
-                    <td>${manage.transaction.endDate}</td>
                 </tr>
             </c:forEach>
             </tbody>

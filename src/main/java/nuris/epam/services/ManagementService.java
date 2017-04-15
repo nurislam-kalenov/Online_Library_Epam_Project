@@ -6,6 +6,7 @@ import nuris.epam.dao.TransactionDao;
 import nuris.epam.dao.exception.DaoException;
 import nuris.epam.dao.manager.DaoFactory;
 import nuris.epam.entity.BookInfo;
+import nuris.epam.entity.Customer;
 import nuris.epam.entity.Management;
 import nuris.epam.entity.Transaction;
 import nuris.epam.services.exception.ServiceException;
@@ -88,12 +89,16 @@ public class ManagementService {
 
     private void fillManagement(Management management) throws ServiceException {
         TransactionService transactionService = new TransactionService();
+        CustomerService customerService = new CustomerService();
+        Customer customer = null;
         if (management != null) {
             try (DaoFactory daoFactory = new DaoFactory()) {
                 try {
                     TransactionDao transactionDao = (TransactionDao) daoFactory.getDao(daoFactory.typeDao().getTransactionDao());
+                    customer = customerService.findByManagement(management);
                     Transaction transaction = transactionDao.findByManagement(management);
                     transactionService.fillTransaction(transaction);
+                    transaction.setCustomer(customer);
                     management.setTransaction(transaction);
                 } catch (DaoException e) {
                     e.printStackTrace();
@@ -101,6 +106,7 @@ public class ManagementService {
             }
         }
     }
+
 
     public Management findByTransaction(Transaction transaction) throws ServiceException {
         Management management = null;

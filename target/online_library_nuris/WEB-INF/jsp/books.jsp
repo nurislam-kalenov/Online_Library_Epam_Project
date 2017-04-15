@@ -14,7 +14,6 @@
     <fmt:message key="book.info.genre" var="book_info_genre"/>
     <fmt:message key="book.info.search" var="book_info_search"/>
     <fmt:message key="book.info.read.more" var="book_info_read_more"/>
-
     <fmt:message key="book.info.pholder.search" var="book_info_ph_search"/>
 </fmt:bundle>
 

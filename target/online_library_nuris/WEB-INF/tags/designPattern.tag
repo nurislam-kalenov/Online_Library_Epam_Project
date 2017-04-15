@@ -10,6 +10,7 @@
 <c:url var="logout_url" value="/kz/logout"/>
 <c:url var="account_url" value="/kz/account"/>
 <c:url var="customer_book_url" value="/kz/customerBook"/>
+<c:url var="management_url" value="/kz/management"/>
 
 <html lang=en>
 <head>
@@ -23,7 +24,6 @@
         <fmt:message key="navbar.account" var="account"/>
         <fmt:message key="navbar.mybooks" var ="my_books"/>
         <fmt:message key="navbar.hello" var ="hello"/>
-
     </fmt:bundle>
 
     <style>
@@ -45,7 +45,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="${books_url}">${books}</a></li>
                     <li><a href="#">${readers}</a></li>
-                    <li><a href="#">${management}</a></li>
+                    <li><a href="${management_url}">${management}</a></li>
                     <li><a href="${account_url}">${account}</a></li>
                 </ul>
 

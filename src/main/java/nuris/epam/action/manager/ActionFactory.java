@@ -27,6 +27,7 @@ public class ActionFactory {
         actions.put("GET/aboutBook", new PageAboutBookAction());
         actions.put("GET/bookEdit", new PageBookEditAction());
         actions.put("GET/customerBook", new PageCustomerBookAction());
+        actions.put("GET/management", new PageManagementAction());
 
 
         //post request

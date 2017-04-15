@@ -36,9 +36,9 @@ public class MySqlPerson extends PersonDao {
     @Override
     public Person insert(Person item) throws DaoException {
         try {
-            try (PreparedStatement statement = getConnection().prepareStatement(INSERT,PreparedStatement.RETURN_GENERATED_KEYS)) {
+            try (PreparedStatement statement = getConnection().prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS)) {
                 statementPerson(statement, item).executeUpdate();
-                try(ResultSet resultSet = statement.getGeneratedKeys()){
+                try (ResultSet resultSet = statement.getGeneratedKeys()) {
                     resultSet.next();
                     item.setId(resultSet.getInt(1));
                 }
@@ -118,9 +118,10 @@ public class MySqlPerson extends PersonDao {
         statement.setString(4, item.getPhone());
         statement.setDate(5, item.getBirthday());
         statement.setString(6, item.getAddress());
-        statement.setInt(7 , item.getCity().getId());
+        statement.setInt(7, item.getCity().getId());
         return statement;
     }
+
     private Person itemPerson(Person person, ResultSet resultSet) throws SQLException {
         person = new Person();
         person.setId(resultSet.getInt(1));

@@ -64,8 +64,33 @@ public class Sql {
             return this;
         }
 
-        public Builder where(String str) {
-            Sql.this.setStringBuilder("where " + str + " = ");
+        public Builder whereIsNull(String str, boolean isNull) {
+            Sql.this.setStringBuilder("where " + str);
+            if (isNull == true){
+                Sql.this.setStringBuilder(" is null ");
+            }else{
+                Sql.this.setStringBuilder(" is not null ");
+            }
+                return this;
+        }
+
+        public Builder whereIsNull(String first,String second, boolean isNull) {
+            Sql.this.setStringBuilder("where " + first+"."+second);
+            if (isNull == true){
+                Sql.this.setStringBuilder(" is null ");
+            }else{
+                Sql.this.setStringBuilder(" is not null ");
+            }
+            return this;
+        }
+
+        public Builder IsNull(String first,String second, boolean isNull) {
+            Sql.this.setStringBuilder( first+"."+second);
+            if (isNull == true){
+                Sql.this.setStringBuilder(" is null ");
+            }else{
+                Sql.this.setStringBuilder(" is not null ");
+            }
             return this;
         }
 
@@ -89,23 +114,14 @@ public class Sql {
             return this;
         }
 
-        public Builder qs() {
-            Sql.this.setStringBuilder("?");
-            return this;
-        }
-
-        public Builder eqqs() {
-            Sql.this.setStringBuilder("=?");
-            return this;
-        }
 
         public Builder var(String s) {
             Sql.this.setStringBuilder(s + " ");
             return this;
         }
 
-        public Builder value(String one , String two) {
-            Sql.this.setStringBuilder("(" +one+","+two+")");
+        public Builder value(String one, String two) {
+            Sql.this.setStringBuilder("(" + one + "," + two + ")");
             return this;
         }
 
@@ -147,7 +163,7 @@ public class Sql {
 
         public Builder values(String var, int count) {
             Sql.this.setStringBuilder("values(" + var + ",");
-             questionCount(count);
+            questionCount(count);
             Sql.this.setStringBuilder(")");
             return this;
         }
@@ -166,10 +182,21 @@ public class Sql {
             return this;
         }
 
-        public Builder and(){
+        public Builder and() {
             Sql.this.setStringBuilder(" and ");
             return this;
         }
+
+        public Builder where(String value) {
+            Sql.this.setStringBuilder("where " +value+" ");
+            return this;
+        }
+
+        public Builder between() {
+            Sql.this.setStringBuilder(" between ? and ? ");
+            return this;
+        }
+
 
         private void questionCount(int count) {
             for (int i = 1; i <= count; i++) {
@@ -181,6 +208,7 @@ public class Sql {
                 }
             }
         }
+
 
 
         public String build() {

@@ -56,6 +56,66 @@ public class ManagementService {
         }
     }
 
+    public List<Management> getListManagement(int start, int end, boolean isActive) throws ServiceException {
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            try {
+                ManagementDao managementDao = (ManagementDao) daoFactory.getDao(daoFactory.typeDao().getManagementDao());
+                List<Management> list = managementDao.getListManagement(start, end, isActive);
+                for (Management management : list) {
+                    fillManagement(management);
+                }
+                return list;
+            } catch (DaoException e) {
+                throw new ServiceException("can't get list management", e);
+            }
+        }
+    }
+
+    public List<Management> getListManagementByDate(String startDate, String endDate, int start, int end, boolean isActive) throws ServiceException {
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            try {
+                ManagementDao managementDao = (ManagementDao) daoFactory.getDao(daoFactory.typeDao().getManagementDao());
+                List<Management> list = managementDao.getListManagementByDateRange(startDate, endDate, start, end, isActive);
+                for (Management management : list) {
+                    fillManagement(management);
+                }
+                return list;
+            } catch (DaoException e) {
+                throw new ServiceException("can't get list management by date", e);
+            }
+        }
+    }
+
+    private void fillManagement(Management management) throws ServiceException {
+        TransactionService transactionService = new TransactionService();
+        if (management != null) {
+            try (DaoFactory daoFactory = new DaoFactory()) {
+                try {
+                    TransactionDao transactionDao = (TransactionDao) daoFactory.getDao(daoFactory.typeDao().getTransactionDao());
+                    Transaction transaction = transactionDao.findByManagement(management);
+                    transactionService.fillTransaction(transaction);
+                    management.setTransaction(transaction);
+                } catch (DaoException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public Management findByTransaction(Transaction transaction) throws ServiceException {
+        Management management = null;
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            try {
+                ManagementDao managementDao = (ManagementDao) daoFactory.getDao(daoFactory.typeDao().getManagementDao());
+                management = managementDao.findByTransaction(transaction);
+                return management;
+            } catch (DaoException e) {
+                e.printStackTrace();
+            }
+            return management;
+        }
+    }
+
     public List<Management> findByCustomer(int id) throws ServiceException {
         List<Management> list = null;
         try (DaoFactory daoFactory = new DaoFactory()) {
@@ -72,23 +132,16 @@ public class ManagementService {
         return list;
     }
 
-    public void fillManagement(Management management) throws ServiceException {
-        TransactionService transactionService = new TransactionService();
+    public int getManagementCount(boolean isActive) throws ServiceException {
         try (DaoFactory daoFactory = new DaoFactory()) {
             try {
-                TransactionDao transactionDao = (TransactionDao) daoFactory.getDao(daoFactory.typeDao().getTransactionDao());
-                Transaction transaction = transactionDao.findByManagement(management);
-                transactionService.fillTransaction(transaction);
-                management.setTransaction(transaction);
+                ManagementDao managementDao = (ManagementDao) daoFactory.getDao(daoFactory.typeDao().getManagementDao());
+                int count = managementDao.getManagementCount(isActive);
+                return count;
             } catch (DaoException e) {
-                e.printStackTrace();
+                throw new ServiceException("can't get count book", e);
             }
         }
     }
 
-
-    // статистика активыных
-    public int getActiveTransaction() {
-        return 0;
-    }
 }

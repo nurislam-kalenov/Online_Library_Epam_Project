@@ -29,7 +29,7 @@ public class Main {
 
     public static void main(String[] args) throws ServiceException {
         ConnectionPool connectionPool = ConnectionPool.getInstance();
-        System.out.println(connectionPool.size());
+        System.out.println(connectionPool.size() + " размер пула до");
         BookService bookService = new BookService();
         TransactionService transactionService = new TransactionService();
         ManagementService managementService = new ManagementService();
@@ -44,12 +44,7 @@ public class Main {
         transaction.setBookInfo(bookInfo);
         transaction.setCustomer(customer);
 
-
-        List<Management> list = managementService.findByCustomer(395);
-
-
-        System.out.println(list);
-
+        System.out.println(connectionPool.size() + " размер пула после");
     }
 
 

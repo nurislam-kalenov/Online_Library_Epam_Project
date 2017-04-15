@@ -29,7 +29,7 @@ public class TransactionService {
                 Book book = bookDao.findByBookInfo(bookInfo);
                 bookInfo.setBook(book);
 
-                if (bookInfo.getAmount() > 0 && !isAlreadyTaken(transaction) && countActiveTransaction(transaction)<5) {
+                if (bookInfo.getAmount() > 0 && !isAlreadyTaken(transaction) && countActiveTransaction(transaction) < 5) {
                     bookInfo.setAmount(bookInfo.getAmount() - 1);
                     daoFactory.startTransaction();
                     bookInfoDao.update(bookInfo);
@@ -113,38 +113,23 @@ public class TransactionService {
         }
     }
 
-    public boolean isAlreadyTaken(Transaction transaction) throws ServiceException {
-        List<Transaction> transactions = getActiveCustomerTransaction(transaction,true);
-        for (Transaction tran : transactions) {
-            if (tran.getBookInfo().getId() == transaction.getBookInfo().getId()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public List<Transaction> getActiveCustomerTransaction(Transaction transaction, boolean active) throws ServiceException {
         List<Transaction> transactions = new ArrayList<>();
-        List<Transaction> allTransactions = findByCustomer(transaction);
-        if (active == true) {
-            for (Transaction tran : allTransactions) {
+        List<Transaction> list = findByCustomer(transaction);
+        if (active) {
+            for (Transaction tran : list) {
                 if (tran.getEndDate() == null) {
                     transactions.add(tran);
                 }
             }
-        }
-        if (active == false) {
-            for (Transaction tran : allTransactions) {
-                if (tran.getEndDate()!= null) {
+        } else {
+            for (Transaction tran : list) {
+                if (tran.getEndDate() != null) {
                     transactions.add(tran);
                 }
             }
         }
         return transactions;
-    }
-
-    public int getActiveTransaction() {
-        return 0;
     }
 
     public void fillTransaction(Transaction transaction) throws ServiceException {
@@ -166,10 +151,20 @@ public class TransactionService {
         }
     }
 
-    private int countActiveTransaction(Transaction transaction){
+    public boolean isAlreadyTaken(Transaction transaction) throws ServiceException {
+        List<Transaction> transactions = getActiveCustomerTransaction(transaction, true);
+        for (Transaction tran : transactions) {
+            if (tran.getBookInfo().getId() == transaction.getBookInfo().getId()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private int countActiveTransaction(Transaction transaction) {
         int size = 0;
         try {
-            size = getActiveCustomerTransaction(transaction , true).size();
+            size = getActiveCustomerTransaction(transaction, true).size();
         } catch (ServiceException e) {
             e.printStackTrace();
         }

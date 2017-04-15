@@ -43,7 +43,7 @@ public class MySqlBook extends BookDao {
     private static final String FIND_BY_ISBN =  Sql.create().select().allFrom().var(BOOK).whereQs(ISBN).build();
 
     public void sql(){
-        System.out.println(INSERT);
+        System.out.println(COUNT_BOOK_BY_GENRE);
     }
 
     @Override
@@ -135,7 +135,7 @@ public class MySqlBook extends BookDao {
                 }
             }
         } catch (SQLException e) {
-            throw new DaoException("can't find by genre id " + this.getClass().getSimpleName(), e);
+            throw new DaoException("can't count by genre " + this.getClass().getSimpleName(), e);
         }
         return count;
     }

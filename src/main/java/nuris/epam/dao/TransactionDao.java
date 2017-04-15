@@ -15,7 +15,4 @@ public abstract class TransactionDao extends BaseDao<Transaction> {
 
     public abstract Transaction findByManagement(Management management) throws DaoException;
 
-
-
-
 }

@@ -180,7 +180,25 @@ table#acrylic {
 #acrylic tbody:hover > tr:hover td {
     text-shadow: none;
     color: #2d2d2d;
-    filter: progid: DXImageTransform.Microsoft.Alpha(enabled=false);
     opacity: 1;
     transition: 0.2s all;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+}
+
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 23px 5px;
+    font-size: 17px;
+    line-height: 1.33;
+    border-radius: 35px;
 }

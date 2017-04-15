@@ -50,11 +50,7 @@ public class Main {
         Management id = new Management();
         id.setId(22);
 
-        List<Management> listManagement = managementService.getListManagement(1 , 1 , true);
-
-        System.out.println(listManagement);
-
-        management.getTransaction().getCustomer().getPerson().getFirstName();
+        System.out.println(Boolean.valueOf("true"));
 
         System.out.println(connectionPool.size() + " размер пула после");
 

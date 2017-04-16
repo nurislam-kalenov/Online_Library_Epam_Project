@@ -29,6 +29,7 @@
     <style>
         <jsp:directive.include file="/WEB-INF/css/bootstrap.min.css"/>
         <jsp:directive.include file="/WEB-INF/css/header.css"/>
+
     </style>
     <title>Online Library</title>
 </head>

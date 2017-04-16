@@ -22,36 +22,42 @@ import static nuris.epam.action.constants.Constants.*;
  * Created by User on 13.04.2017.
  */
 public class PageCustomerBookAction implements Action {
+    boolean isActive;
+    boolean isActiveState = false;
 
     @Override
     public ActionResult execute(HttpServletRequest req, HttpServletResponse resp) throws ActionException {
+        int page = 1;
+        int recordPerPage = 3;
+
+        if (req.getParameter(PAGE) != null) {
+            page = Integer.parseInt(req.getParameter(PAGE));
+        }
+
+        if(req.getParameter("active")!=null){
+            isActive = Boolean.valueOf(req.getParameter("active"));
+            isActiveState = isActive;
+        }
+
         HttpSession session = req.getSession();
         int id = (int) session.getAttribute(CUSTOMER_ID);
 
         TransactionService transactionService = new TransactionService();
-        ManagementService managementService = new ManagementService();
         Transaction transaction = new Transaction();
-        Management management = null;
         Customer customer = new Customer();
-        List<Transaction> transactions = new ArrayList<>();
         customer.setId(id);
         transaction.setCustomer(customer);
 
         try {
-            List<Transaction> list = transactionService.getActiveCustomerTransaction(transaction, false);
+            List<Transaction> list = transactionService.getListTransaction(transaction , page , recordPerPage , isActiveState);
+            int noOfRecords = transactionService.getTransactionCount(transaction ,isActiveState);
+            int noOfPages = (int) Math.ceil(noOfRecords * 1.0 / recordPerPage);
 
-            for (Transaction trans : list) {
-                management = managementService.findByTransaction(trans);
-                if (trans.getEndDate() != null && management.getReturnDate() == null) {
-                    trans.setReturned(true);
-                    transactions.add(trans);
-                } else if (trans.getEndDate() == null) {
-                    trans.setReturned(false);
-                    transactions.add(trans);
-                }
-            }
+            req.setAttribute(ATT_NO_PAGES, noOfPages);
+            req.setAttribute(ATT_CURRENT_PAGE, page);
+            req.setAttribute(ATT_CUSTOMER_BOOK, list);
+            req.setAttribute("isActiveState" , isActiveState);
 
-            req.setAttribute(ATT_CUSTOMER_BOOK, transactions);
         } catch (ServiceException e) {
             e.printStackTrace();
         }

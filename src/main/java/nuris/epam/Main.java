@@ -39,8 +39,9 @@ public class Main {
 
         MySqlCustomer mySqlCustomer = new MySqlCustomer();
 
+        List<Transaction> list = transactionService.getListTransaction(transaction , 1, 5, true);
 
-
+        System.out.println(list);
         System.out.println(connectionPool.size() + " размер пула после");
 
 

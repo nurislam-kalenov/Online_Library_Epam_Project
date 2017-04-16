@@ -112,22 +112,14 @@ public class TransactionService {
         }
     }
 
-    public List<Transaction> getActiveCustomerTransaction(Transaction transaction, boolean active) throws ServiceException {
+    public List<Transaction> getActiveCustomerTransaction(Transaction transaction) throws ServiceException {
         List<Transaction> transactions = new ArrayList<>();
         List<Transaction> list = findByCustomer(transaction);
-        if (active) {
-            for (Transaction tran : list) {
+        for (Transaction tran : list) {
                 if (tran.getEndDate() == null) {
                     transactions.add(tran);
                 }
             }
-        } else {
-            for (Transaction tran : list) {
-                if (tran.getEndDate() != null) {
-                    transactions.add(tran);
-                }
-            }
-        }
         return transactions;
     }
 
@@ -138,7 +130,7 @@ public class TransactionService {
                 TransactionDao transactionDao = (TransactionDao)daoFactory.getDao(daoFactory.typeDao().getTransactionDao());
                 list = transactionDao.getListTransactionByCustomer(transaction ,start, end, isActive);
                 for (Transaction trans : list) {
-                    fillTransaction(transaction);
+                    fillTransaction(trans);
                 }
                 return list;
             } catch (DaoException e) {
@@ -179,7 +171,7 @@ public class TransactionService {
     }
 
     public boolean isAlreadyTaken(Transaction transaction) throws ServiceException {
-        List<Transaction> transactions = getActiveCustomerTransaction(transaction, true);
+        List<Transaction> transactions = getActiveCustomerTransaction(transaction);
         for (Transaction tran : transactions) {
             if (tran.getBookInfo().getId() == transaction.getBookInfo().getId()) {
                 return true;
@@ -191,7 +183,7 @@ public class TransactionService {
     private int countActiveTransaction(Transaction transaction) {
         int size = 0;
         try {
-            size = getActiveCustomerTransaction(transaction, true).size();
+            size = getActiveCustomerTransaction(transaction).size();
         } catch (ServiceException e) {
             e.printStackTrace();
         }

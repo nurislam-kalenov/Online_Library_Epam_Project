@@ -27,15 +27,22 @@ public class MySqlTransaction extends TransactionDao {
     private static final String MANAGEMENT = "management";
     private static final String ID_MANAGEMENT = "id_management";
 
+    private static final String RETURN_DATE = "return_date";
+
+
     private static final String FIND_BY_ID = Sql.create().select().allFrom().var(TRANSACTION).whereQs(ID_TRANSACTION).build();
-    private static final String INSERT =  Sql.create().insert().var(TRANSACTION).value(ID_BOOK_INFO , ID_CUSTOMER).values(2).build();
+    private static final String INSERT = Sql.create().insert().var(TRANSACTION).value(ID_BOOK_INFO, ID_CUSTOMER).values(2).build();
     private static final String UPDATE = Sql.create().update().var(TRANSACTION).set().varQs(END_DATE).c().varQs(ID_BOOK_INFO).c().varQs(ID_CUSTOMER).whereQs(ID_TRANSACTION).build();
     private static final String DELETE = Sql.create().delete().var(TRANSACTION).whereQs(ID_TRANSACTION).build();
     private static final String FIND_BY_CUSTOMER = Sql.create().select().allFrom().var(TRANSACTION).whereQs(ID_CUSTOMER).build();
     private static final String FIND_BY_MANAGEMENT = Sql.create().select().varS(TRANSACTION, ID_TRANSACTION).c().varS(TRANSACTION, START_DATE).c().varS(TRANSACTION, END_DATE).from().var(TRANSACTION).join(MANAGEMENT).varS(MANAGEMENT, ID_TRANSACTION).eq().varS(TRANSACTION, ID_TRANSACTION).whereQs(MANAGEMENT, ID_MANAGEMENT).build();
+    private static final String ACTIVE_CUSTOMER = Sql.create().select().varS(TRANSACTION, ID_TRANSACTION).c().varS(TRANSACTION, START_DATE).c().varS(TRANSACTION, END_DATE).c().varS(TRANSACTION, ID_BOOK_INFO).c().varS(TRANSACTION, ID_CUSTOMER).from().var(TRANSACTION).join(MANAGEMENT).varS(TRANSACTION, ID_TRANSACTION).eq().varS(MANAGEMENT, ID_TRANSACTION).whereIsNull(MANAGEMENT, RETURN_DATE, false).and().varQs(TRANSACTION, ID_CUSTOMER).limit().build();
+    private static final String INACTIVE_CUSTOMER = Sql.create().select().varS(TRANSACTION, ID_TRANSACTION).c().varS(TRANSACTION, START_DATE).c().varS(TRANSACTION, END_DATE).c().varS(TRANSACTION, ID_BOOK_INFO).c().varS(TRANSACTION, ID_CUSTOMER).from().var(TRANSACTION).join(MANAGEMENT).varS(TRANSACTION, ID_TRANSACTION).eq().varS(MANAGEMENT, ID_TRANSACTION).whereIsNull(MANAGEMENT, RETURN_DATE, true).and().varQs(TRANSACTION, ID_CUSTOMER).limit().build();
+    private static final String ACTIVE_CUSTOMER_COUNT = Sql.create().select().count().from().var(MANAGEMENT).join(TRANSACTION).varS(TRANSACTION, ID_TRANSACTION).eq().varS(MANAGEMENT, ID_TRANSACTION).whereIsNull(MANAGEMENT, RETURN_DATE, false).and().varQs(TRANSACTION, ID_CUSTOMER).build();
+    private static final String INACTIVE_CUSTOMER_COUNT = Sql.create().select().count().from().var(MANAGEMENT).join(TRANSACTION).varS(TRANSACTION, ID_TRANSACTION).eq().varS(MANAGEMENT, ID_TRANSACTION).whereIsNull(MANAGEMENT, RETURN_DATE, true).and().varQs(TRANSACTION, ID_CUSTOMER).build();
 
-    public void sql(){
-        System.out.println(FIND_BY_CUSTOMER);
+    public void sql() {
+        System.out.println(ACTIVE_CUSTOMER_COUNT);
     }
 
     @Override
@@ -119,6 +126,27 @@ public class MySqlTransaction extends TransactionDao {
     }
 
     @Override
+    public List<Transaction> getListTransactionByCustomer(Transaction transaction, int start, int count, boolean isActive) throws DaoException {
+        List<Transaction> list = new ArrayList<>();
+        try {
+            try (PreparedStatement statement = getConnection().prepareStatement(isActive ? INACTIVE_CUSTOMER : ACTIVE_CUSTOMER)) {
+                statement.setInt(1, transaction.getCustomer().getId());
+                statement.setInt(2, ((start - 1) * count));
+                statement.setInt(3, count);
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    while (resultSet.next()) {
+                        transaction = itemTransaction(transaction, resultSet);
+                        list.add(transaction);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            throw new DaoException("can't get list of transaction by customer " + this.getClass().getSimpleName(), e);
+        }
+        return list;
+    }
+
+    @Override
     public Transaction findByManagement(Management management) throws DaoException {
         Transaction transaction = null;
         try {
@@ -134,6 +162,24 @@ public class MySqlTransaction extends TransactionDao {
             throw new DaoException("can't find by management " + this.getClass().getSimpleName(), e);
         }
         return transaction;
+    }
+
+    @Override
+    public int getTransactionCountByCustomer(Transaction transaction, boolean isActive) throws DaoException {
+        int count = 0;
+        try {
+            try (PreparedStatement statement = getConnection().prepareStatement(isActive?INACTIVE_CUSTOMER_COUNT:ACTIVE_CUSTOMER_COUNT)) {
+                statement.setInt(1, transaction.getCustomer().getId());
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    while (resultSet.next()) {
+                        count = resultSet.getInt(1);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            throw new DaoException("can't count by active/inactive " + this.getClass().getSimpleName(), e);
+        }
+        return count;
     }
 
     private Transaction itemTransaction(Transaction transaction, ResultSet resultSet) throws SQLException {

@@ -29,7 +29,7 @@ public class Main {
         Customer customer = new Customer();
         customer.setId(395);
         Transaction transaction = new Transaction();
-        transaction.setId(43);
+        transaction.setId(48);
         transaction.setBookInfo(bookInfo);
         transaction.setCustomer(customer);
         MySqlManagement mySqlManagement = new MySqlManagement();
@@ -39,10 +39,7 @@ public class Main {
 
         MySqlCustomer mySqlCustomer = new MySqlCustomer();
 
-        Management id = new Management();
-        id.setId(22);
 
-        System.out.println(Boolean.valueOf("true"));
 
         System.out.println(connectionPool.size() + " размер пула после");
 

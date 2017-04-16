@@ -16,10 +16,13 @@ public class Transaction extends BaseEntity {
 
     private Customer customer;
 
+    private boolean isReturned;
+
     public Transaction() {
         bookInfo = new BookInfo();
         customer = new Customer();
     }
+
 
     public Date getStartDate() {
         return startDate;
@@ -53,8 +56,16 @@ public class Transaction extends BaseEntity {
         this.customer = customer;
     }
 
+    public boolean isReturned() {
+        return isReturned;
+    }
+
+    public void setReturned(boolean returned) {
+        isReturned = returned;
+    }
+
     @Override
     public String toString() {
-        return getId() + "/"+startDate+ "/"+endDate+"/"+bookInfo+"/"+customer;
+        return getId() + "/" + startDate + "/" + endDate + "/" + bookInfo + "/" + customer;
     }
 }

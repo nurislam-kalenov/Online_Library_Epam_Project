@@ -5,6 +5,7 @@ import nuris.epam.action.manager.Action;
 import nuris.epam.action.manager.ActionResult;
 import nuris.epam.entity.Customer;
 import nuris.epam.entity.Transaction;
+import nuris.epam.services.ManagementService;
 import nuris.epam.services.TransactionService;
 import nuris.epam.services.exceptions.ServiceException;
 import nuris.epam.utils.TextParse;
@@ -35,6 +36,7 @@ public class CustomerReturnBookAction implements Action{
         } catch (ServiceException e) {
             e.printStackTrace();
         }
-        return new ActionResult(BOOKS,true);
+
+        return new ActionResult("customerBook",true);
     }
 }

@@ -13,6 +13,11 @@ public abstract class TransactionDao extends BaseDao<Transaction> {
 
     public abstract List<Transaction> findByCustomer(Transaction transaction) throws DaoException;
 
+    public abstract List<Transaction> getListTransactionByCustomer(Transaction transaction , int start, int count, boolean isActive) throws DaoException;
+
     public abstract Transaction findByManagement(Management management) throws DaoException;
+
+    public abstract int getTransactionCountByCustomer(Transaction transaction, boolean isActive) throws DaoException;
+
 
 }

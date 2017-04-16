@@ -131,6 +131,34 @@ public class TransactionService {
         return transactions;
     }
 
+    public List<Transaction> getListTransaction(Transaction transaction ,int start, int end, boolean isActive) throws ServiceException {
+        List<Transaction> list = null;
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            try {
+                TransactionDao transactionDao = (TransactionDao)daoFactory.getDao(daoFactory.typeDao().getTransactionDao());
+                list = transactionDao.getListTransactionByCustomer(transaction ,start, end, isActive);
+                for (Transaction trans : list) {
+                    fillTransaction(transaction);
+                }
+                return list;
+            } catch (DaoException e) {
+                throw new ServiceException("can't get list management", e);
+            }
+        }
+    }
+
+    public int getTransactionCount(Transaction transaction , boolean isActive) throws ServiceException {
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            try {
+                TransactionDao transactionDao = (TransactionDao)daoFactory.getDao(daoFactory.typeDao().getTransactionDao());
+                int count = transactionDao.getTransactionCountByCustomer(transaction ,isActive);
+                return count;
+            } catch (DaoException e) {
+                throw new ServiceException("can't get count transaction by customer", e);
+            }
+        }
+    }
+
     public void fillTransaction(Transaction transaction) throws ServiceException {
         BookInfo bookInfo;
         Book book;

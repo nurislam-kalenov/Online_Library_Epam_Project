@@ -130,6 +130,10 @@ public class Sql {
             Sql.this.setStringBuilder(column + " = ?");
             return this;
         }
+        public Builder varQs(String table , String column) {
+            Sql.this.setStringBuilder(table + "."+column + " = ? ");
+            return this;
+        }
 
         public Builder join(String table) {
             Sql.this.setStringBuilder("join " + table + " on ");

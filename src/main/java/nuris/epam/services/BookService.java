@@ -10,7 +10,7 @@ import nuris.epam.entity.Author;
 import nuris.epam.entity.Book;
 import nuris.epam.entity.BookInfo;
 import nuris.epam.entity.Genre;
-import nuris.epam.services.exception.ServiceException;
+import nuris.epam.services.exceptions.ServiceException;
 
 import java.util.List;
 

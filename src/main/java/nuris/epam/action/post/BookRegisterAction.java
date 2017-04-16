@@ -8,7 +8,7 @@ import nuris.epam.entity.Book;
 import nuris.epam.entity.BookInfo;
 import nuris.epam.entity.Genre;
 import nuris.epam.services.BookService;
-import nuris.epam.services.exception.ServiceException;
+import nuris.epam.services.exceptions.ServiceException;
 import nuris.epam.utils.SqlDate;
 import nuris.epam.utils.TextParse;
 

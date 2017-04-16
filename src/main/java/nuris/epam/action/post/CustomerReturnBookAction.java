@@ -6,7 +6,7 @@ import nuris.epam.action.manager.ActionResult;
 import nuris.epam.entity.Customer;
 import nuris.epam.entity.Transaction;
 import nuris.epam.services.TransactionService;
-import nuris.epam.services.exception.ServiceException;
+import nuris.epam.services.exceptions.ServiceException;
 import nuris.epam.utils.TextParse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +16,7 @@ import static nuris.epam.action.constants.Constants.*;
 /**
  * Created by User on 14.04.2017.
  */
-public class CustomerBookAction implements Action{
+public class CustomerReturnBookAction implements Action{
     @Override
     public ActionResult execute(HttpServletRequest req, HttpServletResponse resp) throws ActionException {
         TransactionService transactionService = new TransactionService();

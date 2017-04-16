@@ -9,8 +9,7 @@ import nuris.epam.entity.BookInfo;
 import nuris.epam.entity.Customer;
 import nuris.epam.entity.Management;
 import nuris.epam.entity.Transaction;
-import nuris.epam.services.exception.ServiceException;
-import nuris.epam.utils.SqlDate;
+import nuris.epam.services.exceptions.ServiceException;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
@@ -87,27 +86,6 @@ public class ManagementService {
         }
     }
 
-    private void fillManagement(Management management) throws ServiceException {
-        TransactionService transactionService = new TransactionService();
-        CustomerService customerService = new CustomerService();
-        Customer customer = null;
-        if (management != null) {
-            try (DaoFactory daoFactory = new DaoFactory()) {
-                try {
-                    TransactionDao transactionDao = (TransactionDao) daoFactory.getDao(daoFactory.typeDao().getTransactionDao());
-                    customer = customerService.findByManagement(management);
-                    Transaction transaction = transactionDao.findByManagement(management);
-                    transactionService.fillTransaction(transaction);
-                    transaction.setCustomer(customer);
-                    management.setTransaction(transaction);
-                } catch (DaoException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
-
     public Management findByTransaction(Transaction transaction) throws ServiceException {
         Management management = null;
         try (DaoFactory daoFactory = new DaoFactory()) {
@@ -146,6 +124,26 @@ public class ManagementService {
                 return count;
             } catch (DaoException e) {
                 throw new ServiceException("can't get count book", e);
+            }
+        }
+    }
+
+    private void fillManagement(Management management) throws ServiceException {
+        TransactionService transactionService = new TransactionService();
+        CustomerService customerService = new CustomerService();
+        Customer customer = null;
+        if (management != null) {
+            try (DaoFactory daoFactory = new DaoFactory()) {
+                try {
+                    TransactionDao transactionDao = (TransactionDao) daoFactory.getDao(daoFactory.typeDao().getTransactionDao());
+                    customer = customerService.findByManagement(management);
+                    Transaction transaction = transactionDao.findByManagement(management);
+                    transactionService.fillTransaction(transaction);
+                    transaction.setCustomer(customer);
+                    management.setTransaction(transaction);
+                } catch (DaoException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }

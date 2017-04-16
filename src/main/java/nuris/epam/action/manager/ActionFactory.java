@@ -42,7 +42,9 @@ public class ActionFactory {
         actions.put("POST/deleteProfile", new DeleteProfileAction());
         actions.put("POST/deleteBook", new DeleteBookAction());
         actions.put("POST/takeBook", new CustomerTakeBookAction());
-        actions.put("POST/returnBook", new CustomerBookAction());
+        actions.put("POST/returnBook", new CustomerReturnBookAction());
+        actions.put("POST/adminReturnBook", new AdminReturnBookAction());
+
     }
 
     public Action getAction(HttpServletRequest request) {

@@ -23,33 +23,61 @@
         <div class="col-md-8">
             <div class="wrapper">
                 <table id="acrylic">
-                    <thead>
-                    <tr>
-                        <th class="col-md-3">Название книги</th>
-                        <th class="col-md-2">Поступило</th>
-                        <th class="col-md-2">Имя</th>
-                        <th class="col-md-2">Фамилия</th>
-                        <th class="col-md-2">email</th>
-                        <th class="col-md-2">Одобрить</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach items="${managements}" var="manage">
+                    <c:if test="${isActiveState eq false}">
+
+                        <thead>
                         <tr>
-                            <td>${manage.transaction.bookInfo.book.name}</td>
-                            <td>${manage.transaction.endDate}</td>
-                            <td>${manage.transaction.customer.person.firstName}</td>
-                            <td>${manage.transaction.customer.person.lastName}</td>
-                            <td>${manage.transaction.customer.email}</td>
-                            <td>
-                                <form action="returnBook" method="POST">
-                                    <input type="hidden" name="return_book" value="${book.id}">
-                                    <button id="submit" name="submit" class="btn btn-danger">Одобрить</button>
-                                </form>
-                            </td>
+                            <th class="col-md-2">Название книги</th>
+                            <th class="col-md-2">Поступило</th>
+                            <th class="col-md-2">Имя</th>
+                            <th class="col-md-2">Фамилия</th>
+                            <th class="col-md-3">email</th>
+                            <th class="col-md-2">Одобрить</th>
                         </tr>
-                    </c:forEach>
-                    </tbody>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="${managements}" var="manage">
+                            <tr>
+                                <td>${manage.transaction.bookInfo.book.name}</td>
+                                <td>${manage.transaction.endDate}</td>
+                                <td>${manage.transaction.customer.person.firstName}</td>
+                                <td>${manage.transaction.customer.person.lastName}</td>
+                                <td>${manage.transaction.customer.email}</td>
+                                <td>
+                                    <form action="adminReturnBook" method="POST">
+                                        <input type="hidden" name="management_id" value="${manage.id}">
+                                        <button id="submit" name="submit" class="btn btn-danger">Одобрить</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </c:if>
+
+                    <c:if test="${isActiveState eq true}">
+                        <thead>
+                        <tr>
+                            <th class="col-md-2">Название книги</th>
+                            <th class="col-md-2">Поступило</th>
+                            <th class="col-md-2">Имя</th>
+                            <th class="col-md-2">Фамилия</th>
+                            <th class="col-md-3">email</th>
+                            <th class="col-md-2">Одобренно</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="${managements}" var="manage">
+                            <tr>
+                                <td>${manage.transaction.bookInfo.book.name}</td>
+                                <td>${manage.transaction.endDate}</td>
+                                <td>${manage.transaction.customer.person.firstName}</td>
+                                <td>${manage.transaction.customer.person.lastName}</td>
+                                <td>${manage.transaction.customer.email}</td>
+                                <td>${manage.returnDate}</td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </c:if>
                 </table>
             </div>
             <div class="col-md-10">

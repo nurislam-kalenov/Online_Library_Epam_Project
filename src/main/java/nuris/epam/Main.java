@@ -1,21 +1,13 @@
 package nuris.epam;
 
 import nuris.epam.connection.ConnectionPool;
-import nuris.epam.dao.BookInfoDao;
 import nuris.epam.dao.mysql.*;
 import nuris.epam.entity.*;
 import nuris.epam.services.BookService;
-import nuris.epam.services.CustomerService;
 import nuris.epam.services.ManagementService;
 import nuris.epam.services.TransactionService;
-import nuris.epam.services.exception.ServiceException;
-import nuris.epam.utils.Encoder;
-import nuris.epam.utils.SqlDate;
+import nuris.epam.services.exceptions.ServiceException;
 
-import java.sql.Date;
-import java.sql.Timestamp;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 

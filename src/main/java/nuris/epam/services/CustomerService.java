@@ -4,7 +4,7 @@ import nuris.epam.dao.*;
 import nuris.epam.dao.exception.DaoException;
 import nuris.epam.dao.manager.DaoFactory;
 import nuris.epam.entity.*;
-import nuris.epam.services.exception.ServiceException;
+import nuris.epam.services.exceptions.ServiceException;
 import nuris.epam.utils.SqlDate;
 
 import java.util.List;
@@ -202,6 +202,7 @@ public class CustomerService {
             }
         }
     }
+
     private void fillCustomer(Customer customer) throws ServiceException {
         try {
             if (customer != null) {

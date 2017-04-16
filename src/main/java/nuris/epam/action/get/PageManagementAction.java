@@ -5,7 +5,7 @@ import nuris.epam.action.manager.Action;
 import nuris.epam.action.manager.ActionResult;
 import nuris.epam.entity.Management;
 import nuris.epam.services.ManagementService;
-import nuris.epam.services.exception.ServiceException;
+import nuris.epam.services.exceptions.ServiceException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,7 +24,6 @@ public class PageManagementAction implements Action{
     @Override
     public ActionResult execute(HttpServletRequest req, HttpServletResponse resp) throws ActionException {
         ManagementService managementService = new ManagementService();
-        String name = null;
         int page = 1;
         int recordPerPage = 3;
 
@@ -45,6 +44,7 @@ public class PageManagementAction implements Action{
             req.setAttribute("managements", managements);
             req.setAttribute(ATT_NO_PAGES, noOfPages);
             req.setAttribute(ATT_CURRENT_PAGE, page);
+            req.setAttribute("isActiveState" , isActiveState);
 
         } catch (ServiceException e) {
 

@@ -7,7 +7,7 @@ import nuris.epam.entity.BookInfo;
 import nuris.epam.entity.Customer;
 import nuris.epam.entity.Transaction;
 import nuris.epam.services.TransactionService;
-import nuris.epam.services.exception.ServiceException;
+import nuris.epam.services.exceptions.ServiceException;
 import nuris.epam.utils.TextParse;
 
 import javax.servlet.http.HttpServletRequest;

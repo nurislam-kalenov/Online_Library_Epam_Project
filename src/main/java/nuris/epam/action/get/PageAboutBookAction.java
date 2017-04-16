@@ -1,12 +1,11 @@
 package nuris.epam.action.get;
 
-import nuris.epam.action.constants.Constants;
 import nuris.epam.action.exception.ActionException;
 import nuris.epam.action.manager.Action;
 import nuris.epam.action.manager.ActionResult;
 import nuris.epam.entity.BookInfo;
 import nuris.epam.services.BookService;
-import nuris.epam.services.exception.ServiceException;
+import nuris.epam.services.exceptions.ServiceException;
 import nuris.epam.utils.TextParse;
 import static nuris.epam.action.constants.Constants.*;
 

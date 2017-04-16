@@ -6,7 +6,7 @@ import nuris.epam.action.manager.ActionResult;
 import nuris.epam.entity.Book;
 import nuris.epam.entity.Genre;
 import nuris.epam.services.BookService;
-import nuris.epam.services.exception.ServiceException;
+import nuris.epam.services.exceptions.ServiceException;
 
 import static nuris.epam.action.constants.Constants.*;
 

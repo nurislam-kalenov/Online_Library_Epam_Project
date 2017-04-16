@@ -8,7 +8,7 @@ import nuris.epam.entity.City;
 import nuris.epam.entity.Customer;
 import nuris.epam.entity.Person;
 import nuris.epam.services.CustomerService;
-import nuris.epam.services.exception.ServiceException;
+import nuris.epam.services.exceptions.ServiceException;
 import nuris.epam.utils.Encoder;
 import nuris.epam.utils.SqlDate;
 import nuris.epam.utils.TextParse;

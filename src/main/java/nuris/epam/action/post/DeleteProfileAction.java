@@ -5,7 +5,7 @@ import nuris.epam.action.manager.Action;
 import nuris.epam.action.manager.ActionResult;
 import nuris.epam.entity.Customer;
 import nuris.epam.services.CustomerService;
-import nuris.epam.services.exception.ServiceException;
+import nuris.epam.services.exceptions.ServiceException;
 import nuris.epam.utils.TextParse;
 
 import static nuris.epam.action.constants.Constants.*;

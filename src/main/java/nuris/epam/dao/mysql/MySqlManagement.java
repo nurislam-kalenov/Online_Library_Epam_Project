@@ -31,8 +31,8 @@ public class MySqlManagement extends ManagementDao {
     private static final String FIND_BY_ID = Sql.create().select().allFrom().var(MANAGEMENT).whereQs(ID_MANAGEMENT).build();
     private static final String INSERT = Sql.create().insert().var(MANAGEMENT).values(ID_MANAGEMENT, 2).build();
     private static final String UPDATE = Sql.create().update().var(MANAGEMENT).set().varQs(RETURN_DATE).c().varQs(ID_TRANSACTION).whereQs(ID_MANAGEMENT).build();
-    private static final String ACTIVE_LIMIT_MANAGEMENT = Sql.create().select().allFrom().var(MANAGEMENT).whereIsNull(RETURN_DATE, true).limit().build();
-    private static final String INACTIVE_LIMIT_MANAGEMENT = Sql.create().select().allFrom().var(MANAGEMENT).whereIsNull(RETURN_DATE, false).limit().build();
+    private static final String ACTIVE_MANAGEMENT = Sql.create().select().allFrom().var(MANAGEMENT).whereIsNull(RETURN_DATE, true).limit().build();
+    private static final String INACTIVE_MANAGEMENT = Sql.create().select().allFrom().var(MANAGEMENT).whereIsNull(RETURN_DATE, false).limit().build();
     private static final String RANGE_DATE_INACTIVE = Sql.create().select().allFrom().var(MANAGEMENT).where(RETURN_DATE).between().limit().build();
     private static final String RANGE_DATE_ACTIVE = Sql.create().select().varS(MANAGEMENT, ID_MANAGEMENT).c().varS(MANAGEMENT, RETURN_DATE).c().varS(MANAGEMENT, ID_TRANSACTION).from().var(MANAGEMENT).join(TRANSACTION).varS(MANAGEMENT, ID_TRANSACTION).eq().varS(TRANSACTION, ID_TRANSACTION).whereIsNull(TRANSACTION, END_DATE, false).and().IsNull(MANAGEMENT, RETURN_DATE, true).and().varS(TRANSACTION, END_DATE).between().limit().build();
     private static final String FIND_BY_CUSTOMER = Sql.create().select().varS(MANAGEMENT, ID_MANAGEMENT).c().varS(MANAGEMENT, RETURN_DATE).c().varS(MANAGEMENT, ID_TRANSACTION).from().var(MANAGEMENT).join(TRANSACTION).varS(MANAGEMENT, ID_TRANSACTION).eq().varS(TRANSACTION, ID_TRANSACTION).join(CUSTOMER).varS(CUSTOMER, ID_CUSTOMER).eq().varS(TRANSACTION, ID_CUSTOMER).whereQs(CUSTOMER, ID_CUSTOMER).build();
@@ -97,7 +97,7 @@ public class MySqlManagement extends ManagementDao {
         List<Management> list = new ArrayList<>();
         Management management = null;
         try {
-            try (PreparedStatement statement = getConnection().prepareStatement(isActive ? INACTIVE_LIMIT_MANAGEMENT : ACTIVE_LIMIT_MANAGEMENT)) {
+            try (PreparedStatement statement = getConnection().prepareStatement(isActive ? INACTIVE_MANAGEMENT : ACTIVE_MANAGEMENT)) {
                 statement.setInt(1, ((start - 1) * count));
                 statement.setInt(2, count);
                 try (ResultSet resultSet = statement.executeQuery()) {

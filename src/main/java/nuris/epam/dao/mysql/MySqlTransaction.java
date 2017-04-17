@@ -35,8 +35,8 @@ public class MySqlTransaction extends TransactionDao {
     private static final String FIND_BY_MANAGEMENT = Sql.create().select().varS(TRANSACTION, ID_TRANSACTION).c().varS(TRANSACTION, START_DATE).c().varS(TRANSACTION, END_DATE).from().var(TRANSACTION).join(MANAGEMENT).varS(MANAGEMENT, ID_TRANSACTION).eq().varS(TRANSACTION, ID_TRANSACTION).whereQs(MANAGEMENT, ID_MANAGEMENT).build();
     private static final String ACTIVE_CUSTOMER = Sql.create().select().varS(TRANSACTION, ID_TRANSACTION).c().varS(TRANSACTION, START_DATE).c().varS(TRANSACTION, END_DATE).c().varS(TRANSACTION, ID_BOOK_INFO).c().varS(TRANSACTION, ID_CUSTOMER).from().var(TRANSACTION).join(MANAGEMENT).varS(TRANSACTION, ID_TRANSACTION).eq().varS(MANAGEMENT, ID_TRANSACTION).whereIsNull(MANAGEMENT, RETURN_DATE, false).and().varQs(TRANSACTION, ID_CUSTOMER).limit().build();
     private static final String INACTIVE_CUSTOMER = Sql.create().select().varS(TRANSACTION, ID_TRANSACTION).c().varS(TRANSACTION, START_DATE).c().varS(TRANSACTION, END_DATE).c().varS(TRANSACTION, ID_BOOK_INFO).c().varS(TRANSACTION, ID_CUSTOMER).from().var(TRANSACTION).join(MANAGEMENT).varS(TRANSACTION, ID_TRANSACTION).eq().varS(MANAGEMENT, ID_TRANSACTION).whereIsNull(MANAGEMENT, RETURN_DATE, true).and().varQs(TRANSACTION, ID_CUSTOMER).limit().build();
-    private static final String ACTIVE_CUSTOMER_COUNT = Sql.create().select().count().from().var(MANAGEMENT).join(TRANSACTION).varS(TRANSACTION, ID_TRANSACTION).eq().varS(MANAGEMENT, ID_TRANSACTION).whereIsNull(MANAGEMENT, RETURN_DATE, false).and().varQs(TRANSACTION, ID_CUSTOMER).build();
-    private static final String INACTIVE_CUSTOMER_COUNT = Sql.create().select().count().from().var(MANAGEMENT).join(TRANSACTION).varS(TRANSACTION, ID_TRANSACTION).eq().varS(MANAGEMENT, ID_TRANSACTION).whereIsNull(MANAGEMENT, RETURN_DATE, true).and().varQs(TRANSACTION, ID_CUSTOMER).build();
+    private static final String TRANSACTION_ACTIVE_COUNT = Sql.create().select().count().from().var(MANAGEMENT).join(TRANSACTION).varS(TRANSACTION, ID_TRANSACTION).eq().varS(MANAGEMENT, ID_TRANSACTION).whereIsNull(MANAGEMENT, RETURN_DATE, false).and().varQs(TRANSACTION, ID_CUSTOMER).build();
+    private static final String TRANSACTION_INACTIVE_COUNT  = Sql.create().select().count().from().var(MANAGEMENT).join(TRANSACTION).varS(TRANSACTION, ID_TRANSACTION).eq().varS(MANAGEMENT, ID_TRANSACTION).whereIsNull(MANAGEMENT, RETURN_DATE, true).and().varQs(TRANSACTION, ID_CUSTOMER).build();
 
     @Override
     public Transaction insert(Transaction item) throws DaoException {
@@ -161,7 +161,7 @@ public class MySqlTransaction extends TransactionDao {
     public int getTransactionCountByCustomer(Transaction transaction, boolean isActive) throws DaoException {
         int count = 0;
         try {
-            try (PreparedStatement statement = getConnection().prepareStatement(isActive ? ACTIVE_CUSTOMER_COUNT : INACTIVE_CUSTOMER_COUNT)) {
+            try (PreparedStatement statement = getConnection().prepareStatement(isActive ? TRANSACTION_ACTIVE_COUNT : TRANSACTION_INACTIVE_COUNT)) {
                 statement.setInt(1, transaction.getCustomer().getId());
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {

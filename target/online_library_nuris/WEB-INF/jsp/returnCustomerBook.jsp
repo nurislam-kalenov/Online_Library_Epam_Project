@@ -16,9 +16,9 @@
         <div class="col-md-1">
         </div>
         <div class="col-md-1" style="margin-top: 50px">
-            <a href="customerBook?active=false" class="btn btn-danger btn-circle btn-xl" role="button">На руках</a>
-            <a href="customerBook?active=false" class="btn btn-warning btn-circle btn-xl" role="button">Ждем</a>
-            <a href="customerBook?active=true" class="btn btn-success danger btn-circle btn-xl" role="button">История</a>
+            <a href="deptCustomerBook" class="btn btn-danger btn-circle btn-xl" role="button">На руках</a>
+            <a href="returnCustomerBook?active=false" class="btn btn-warning btn-circle btn-xl" role="button">Ждем</a>
+            <a href="returnCustomerBook?active=true" class="btn btn-success danger btn-circle btn-xl" role="button">История</a>
         </div>
         <div class="col-md-8">
             <div class="wrapper">
@@ -78,7 +78,7 @@
                     </c:if>
                 </table>
                 <div class="col-md-10">
-                    <my:listPages currentPage="${currentPage}" noOfPages="${noOfPages}" books_url="customerBook?page="/>
+                    <my:listPages currentPage="${currentPage}" noOfPages="${noOfPages}" books_url="returnCustomerBook?page="/>
                 </div>
             </div>
         </div>

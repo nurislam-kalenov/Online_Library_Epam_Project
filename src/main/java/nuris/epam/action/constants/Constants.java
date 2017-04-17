@@ -14,7 +14,7 @@ public final class Constants {
     public static final String PERSONAL_DATA_EDIT = "personalDataEdit";
     public static final String ABOUT_BOOK= "aboutBook";
     public static final String BOOK_EDIT= "bookEdit";
-    public static final String CUSTOMER_BOOK = "customerBook";
+    public static final String CUSTOMER_BOOK = "returnCustomerBook";
 
     //Validation regular expressions
     public static final String VALIDATION_PROPERTIES = "validation.properties";

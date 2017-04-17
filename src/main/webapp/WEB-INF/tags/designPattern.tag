@@ -9,7 +9,7 @@
 <c:url var="books_url" value="/kz/books"/>
 <c:url var="logout_url" value="/kz/logout"/>
 <c:url var="account_url" value="/kz/account"/>
-<c:url var="customer_book_url" value="/kz/customerBook"/>
+<c:url var="customer_book_url" value="/kz/deptCustomerBook"/>
 <c:url var="management_url" value="/kz/management"/>
 
 <html lang=en>

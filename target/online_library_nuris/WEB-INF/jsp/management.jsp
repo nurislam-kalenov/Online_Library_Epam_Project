@@ -10,14 +10,31 @@
 <%@ taglib tagdir="/WEB-INF/tags" prefix="my" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 
+<fmt:bundle basename="i18n">
+    <fmt:message key="register.book.name" var="book_name"/>
+    <fmt:message key="register.book.price" var="book_price"/>
+    <fmt:message key="register.firstname" var="first_name"/>
+    <fmt:message key="register.lastname" var="last_name"/>
+    <fmt:message key="register.email" var ="email"/>
+    <fmt:message key="management.book.received" var ="book_recived"/>
+    <fmt:message key="management.book.processed" var ="book_proccesed"/>
+    <fmt:message key="management.book.button.active" var ="book_active"/>
+    <fmt:message key="management.book.button.inactive" var ="book_inactive"/>
+    <fmt:message key="management.book.button.search" var ="book_search"/>
+    <fmt:message key="management.book.button.confirmed" var ="book_conf"/>
+    <fmt:message key="management.book.button.approve" var ="book_approve"/>
+    <fmt:message key="customer.book.state" var ="book_state"/>
+
+</fmt:bundle>
+
 <my:designPattern role="${sessionScope.role}">
     <div class="row">
         <div class="col-md-1">
         </div>
         <div class="col-md-1" style="margin-top: 50px">
-            <a href="management?active=false" class="btn btn-success btn-circle btn-xl" role="button">Active</a>
-            <a href="management?active=true" class="btn btn-warning danger btn-circle btn-xl" role="button">Inactive</a>
-            <a href="#" class="btn btn-info danger btn-circle btn-xl" role="button">Поиск</a>
+            <a href="management?active=false" class="btn btn-success btn-circle btn-xl" role="button">${book_active}</a>
+            <a href="management?active=true" class="btn btn-warning danger btn-circle btn-xl" role="button">${book_inactive}</a>
+            <a href="#" class="btn btn-info danger btn-circle btn-xl" role="button">${book_search}</a>
         </div>
 
         <div class="col-md-8">
@@ -27,12 +44,12 @@
 
                         <thead>
                         <tr>
-                            <th class="col-md-2">Название книги</th>
-                            <th class="col-md-2">Поступило</th>
-                            <th class="col-md-2">Имя</th>
-                            <th class="col-md-2">Фамилия</th>
-                            <th class="col-md-3">email</th>
-                            <th class="col-md-2">Одобрить</th>
+                            <th class="col-md-2">${book_name}</th>
+                            <th class="col-md-2">${book_recived}</th>
+                            <th class="col-md-2">${first_name}</th>
+                            <th class="col-md-2">${last_name}</th>
+                            <th class="col-md-3">${email}</th>
+                            <th class="col-md-2">${book_state}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -46,7 +63,7 @@
                                 <td>
                                     <form action="adminReturnBook" method="POST">
                                         <input type="hidden" name="management_id" value="${manage.id}">
-                                        <button id="submit" name="submit" class="btn btn-danger">Одобрить</button>
+                                        <button id="submit" name="submit" class="btn btn-danger">${book_approve}</button>
                                     </form>
                                 </td>
                             </tr>
@@ -57,12 +74,13 @@
                     <c:if test="${isActiveState eq true}">
                         <thead>
                         <tr>
-                            <th class="col-md-2">Название книги</th>
-                            <th class="col-md-2">Поступило</th>
-                            <th class="col-md-2">Имя</th>
-                            <th class="col-md-2">Фамилия</th>
-                            <th class="col-md-3">email</th>
-                            <th class="col-md-2">Одобренно</th>
+                            <th class="col-md-2">${book_name}</th>
+                            <th class="col-md-2">${book_recived}</th>
+                            <th class="col-md-2">${first_name}</th>
+                            <th class="col-md-2">${last_name}</th>
+                            <th class="col-md-3">${email}</th>
+                            <th class="col-md-2">${book_proccesed}</th>
+                            <th class="col-md-2">${book_state}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -74,6 +92,10 @@
                                 <td>${manage.transaction.customer.person.lastName}</td>
                                 <td>${manage.transaction.customer.email}</td>
                                 <td>${manage.returnDate}</td>
+                                <td>
+                                    <button id="button1id" name="button1id"
+                                            class="btn btn-success">${book_conf}</button>
+                                </td>
                             </tr>
                         </c:forEach>
                         </tbody>

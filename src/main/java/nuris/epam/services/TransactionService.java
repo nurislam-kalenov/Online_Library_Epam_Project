@@ -124,7 +124,7 @@ public class TransactionService {
     }
 
     public List<Transaction> getListTransaction(Transaction transaction ,int start, int end, boolean isActive) throws ServiceException {
-        List<Transaction> list = null;
+        List<Transaction> list;
         try (DaoFactory daoFactory = new DaoFactory()) {
             try {
                 TransactionDao transactionDao = (TransactionDao)daoFactory.getDao(daoFactory.typeDao().getTransactionDao());

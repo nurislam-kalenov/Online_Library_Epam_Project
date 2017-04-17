@@ -21,9 +21,9 @@ import static nuris.epam.action.constants.Constants.*;
 /**
  * Created by User on 13.04.2017.
  */
-public class PageCustomerBookAction implements Action {
-    boolean isActive;
-    boolean isActiveState = false;
+public class PageReturnCustomerBookAction implements Action {
+    private boolean isActive;
+    private boolean isActiveState = false;
 
     @Override
     public ActionResult execute(HttpServletRequest req, HttpServletResponse resp) throws ActionException {
@@ -34,8 +34,8 @@ public class PageCustomerBookAction implements Action {
             page = Integer.parseInt(req.getParameter(PAGE));
         }
 
-        if(req.getParameter("active")!=null){
-            isActive = Boolean.valueOf(req.getParameter("active"));
+        if(req.getParameter(ACTIVE)!=null){
+            isActive = Boolean.valueOf(req.getParameter(ACTIVE));
             isActiveState = isActive;
         }
 
@@ -56,7 +56,7 @@ public class PageCustomerBookAction implements Action {
             req.setAttribute(ATT_NO_PAGES, noOfPages);
             req.setAttribute(ATT_CURRENT_PAGE, page);
             req.setAttribute(ATT_CUSTOMER_BOOK, list);
-            req.setAttribute("isActiveState" , isActiveState);
+            req.setAttribute(ATT_IS_ACTIVE_STATE, isActiveState);
 
         } catch (ServiceException e) {
             e.printStackTrace();

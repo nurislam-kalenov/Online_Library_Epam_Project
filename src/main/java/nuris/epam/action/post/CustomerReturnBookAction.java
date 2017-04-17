@@ -20,12 +20,14 @@ import static nuris.epam.action.constants.Constants.*;
 public class CustomerReturnBookAction implements Action{
     @Override
     public ActionResult execute(HttpServletRequest req, HttpServletResponse resp) throws ActionException {
+
         TransactionService transactionService = new TransactionService();
-        Customer customer = new Customer();
         Transaction transaction = new Transaction();
+        Customer customer = new Customer();
 
         HttpSession session = req.getSession();
         int id = (int) session.getAttribute(CUSTOMER_ID);
+
         String transactionId = req.getParameter(RETURN_BOOK);
 
         transaction.setId(TextParse.toInt(transactionId));
@@ -37,6 +39,6 @@ public class CustomerReturnBookAction implements Action{
             e.printStackTrace();
         }
 
-        return new ActionResult("deptCustomerBook",true);
+        return new ActionResult(DEPT_CUSTOMER_BOOK,true);
     }
 }

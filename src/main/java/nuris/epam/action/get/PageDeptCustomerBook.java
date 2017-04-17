@@ -16,6 +16,7 @@ import java.util.List;
 
 import static nuris.epam.action.constants.Constants.ATT_CUSTOMER_BOOK;
 import static nuris.epam.action.constants.Constants.CUSTOMER_ID;
+import static nuris.epam.action.constants.Constants.DEPT_CUSTOMER_BOOK;
 
 /**
  * Created by User on 17.04.2017.
@@ -39,7 +40,7 @@ public class PageDeptCustomerBook implements Action {
         } catch (ServiceException e) {
             e.printStackTrace();
         }
-        return new ActionResult("deptCustomerBook");
+        return new ActionResult(DEPT_CUSTOMER_BOOK);
     }
 
 }

@@ -17,9 +17,9 @@ import static nuris.epam.action.constants.Constants.*;
 /**
  * Created by User on 15.04.2017.
  */
-public class PageManagementAction implements Action{
-    boolean isActive;
-    boolean isActiveState = false;
+public class PageManagementAction implements Action {
+    private boolean isActive;
+    private boolean isActiveState = false;
 
     @Override
     public ActionResult execute(HttpServletRequest req, HttpServletResponse resp) throws ActionException {
@@ -30,28 +30,25 @@ public class PageManagementAction implements Action{
         if (req.getParameter(PAGE) != null) {
             page = Integer.parseInt(req.getParameter(PAGE));
         }
-        if(req.getParameter("active")!=null){
-            isActive = Boolean.valueOf(req.getParameter("active"));
+        if (req.getParameter(ACTIVE) != null) {
+            isActive = Boolean.valueOf(req.getParameter(ACTIVE));
             isActiveState = isActive;
         }
 
         try {
-            List<Management> managements = managementService.getListManagement(page , recordPerPage , isActiveState);
+            List<Management> managements = managementService.getListManagement(page, recordPerPage, isActiveState);
 
             int noOfRecords = managementService.getManagementCount(isActiveState);
             int noOfPages = (int) Math.ceil(noOfRecords * 1.0 / recordPerPage);
 
-            req.setAttribute("managements", managements);
+            req.setAttribute(ATT_MANAGEMENTS, managements);
             req.setAttribute(ATT_NO_PAGES, noOfPages);
             req.setAttribute(ATT_CURRENT_PAGE, page);
-            req.setAttribute("isActiveState" , isActiveState);
+            req.setAttribute(ATT_IS_ACTIVE_STATE, isActiveState);
 
         } catch (ServiceException e) {
-
-
+            e.printStackTrace();
         }
-
-
-        return new ActionResult("management");
+        return new ActionResult(MANAGEMENT);
     }
 }

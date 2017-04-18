@@ -157,36 +157,45 @@ public class CustomerService {
         }
     }
 
+    public List<Customer> getListCustomers(int start, int end) throws ServiceException {
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            try {
+                CustomerDao customerDao = (CustomerDao) daoFactory.getDao(daoFactory.typeDao().getCustomerDao());
+                List<Customer> list = customerDao.getLimitCustomers(start, end);
+                for (Customer customer : list) {
+                    fillCustomer(customer);
+                }
+                return list;
+            } catch (DaoException e) {
+                throw new ServiceException("can't get list of customer ", e);
+            }
+        }
+    }
+
+    public Customer getCustomersByFirstNameAndLastName(String firstName , String lastName) throws ServiceException {
+        Customer customer = new Customer();
+        Person person = new Person();
+        person.setFirstName(firstName);
+        person.setLastName(lastName);
+        customer.setPerson(person);
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            try {
+                CustomerDao customerDao = (CustomerDao) daoFactory.getDao(daoFactory.typeDao().getCustomerDao());
+                Customer onePerson = customerDao.findByFirstNameAndLastName(customer);
+                    fillCustomer(onePerson);
+                return onePerson;
+            } catch (DaoException e) {
+                throw new ServiceException("can't get customer by firstName and lastName ", e);
+            }
+        }
+    }
+
     public boolean isLoginAvailable(String login) throws ServiceException {
         if (findByLogin(login) != null) {
             return false;
         } else {
             return true;
         }
-    }
-
-    public void uploadAvatar(Avatar avatar) throws ServiceException{
-        try (DaoFactory daoFactory = new DaoFactory()) {
-            try {
-                AvatarDao avatarDao = (AvatarDao) daoFactory.getDao(daoFactory.typeDao().getAvatarDao());
-                avatarDao.insert(avatar);
-            } catch (DaoException e) {
-                throw new ServiceException("can't upload avatar", e);
-            }
-        }
-    }
-
-    public Avatar findByIdAvatar(int id) throws ServiceException{
-        Avatar avatar = null;
-        try (DaoFactory daoFactory = new DaoFactory()) {
-            try {
-                AvatarDao avatarDao = (AvatarDao) daoFactory.getDao(daoFactory.typeDao().getAvatarDao());
-             avatar =  avatarDao.findById(id);
-            } catch (DaoException e) {
-                throw new ServiceException("can't upload avatar", e);
-            }
-        }
-        return avatar;
     }
 
     public Customer findByManagement(Management management) throws ServiceException{

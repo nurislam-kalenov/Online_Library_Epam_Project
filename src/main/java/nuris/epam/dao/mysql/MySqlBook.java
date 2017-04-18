@@ -42,10 +42,6 @@ public class MySqlBook extends BookDao {
     private static final String FIND_BY_BOOK = Sql.create().select().varS(BOOK, ID_BOOK).c().varS(BOOK, NAME).c().varS(BOOK, YEAR).c().varS(BOOK, ISBN).c().varS(BOOK, DESCRIPTION).c().varS(BOOK, ID_GENRE).c().varS(BOOK, ID_AUTHOR).from().var(BOOK).join(BOOK_INFO).varS(BOOK_INFO, ID_BOOK).eq().varS(BOOK, ID_BOOK).whereQs(BOOK_INFO, ID_BOOK_INFO).build();
     private static final String FIND_BY_ISBN =  Sql.create().select().allFrom().var(BOOK).whereQs(ISBN).build();
 
-    public void sql(){
-        System.out.println(COUNT_BOOK_BY_GENRE);
-    }
-
     @Override
     public Book insert(Book item) throws DaoException {
         try {
@@ -141,7 +137,7 @@ public class MySqlBook extends BookDao {
     }
 
     @Override
-    public List<Book> getLimitBook(int start, int count) throws DaoException {
+    public List<Book> getLimitBooks(int start, int count) throws DaoException {
         List<Book> list = new ArrayList<>();
         Book book = null;
         try {

@@ -210,7 +210,7 @@ public class BookService {
         try (DaoFactory daoFactory = new DaoFactory()) {
             try {
                 BookDao bookDao = (BookDao) daoFactory.getDao(daoFactory.typeDao().getBookDao());
-                List<Book> list = bookDao.getLimitBook(start, end);
+                List<Book> list = bookDao.getLimitBooks(start, end);
                 for (Book book : list) {
                     fillBook(book);
                 }

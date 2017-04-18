@@ -177,13 +177,6 @@ public class Sql {
             return this;
         }
 
-        public Builder valuesNull(String var, int count) {
-            Sql.this.setStringBuilder("values(" + var + ",");
-            questionCount(count);
-            Sql.this.setStringBuilder(",null)");
-            return this;
-        }
-
         public Builder and() {
             Sql.this.setStringBuilder(" and ");
             return this;
@@ -198,7 +191,6 @@ public class Sql {
             Sql.this.setStringBuilder(" between ? and ? ");
             return this;
         }
-
 
         private void questionCount(int count) {
             for (int i = 1; i <= count; i++) {

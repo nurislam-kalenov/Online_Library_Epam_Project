@@ -9,6 +9,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by User on 18.03.2017.
@@ -20,25 +22,32 @@ public class MySqlCustomer extends CustomerDao{
     private static final String REGISTER_DATE = "register_date";
     private static final String PASSWORD = "password";
     private static final String EMAIL = "email";
-    private static final String ID_PERSON = "id_person";
     private static final String ID_ROLE = "id_role";
-    private static final String ID_AVATAR = "id_avatar";
 
     private static final String MANAGEMENT = "management";
     private static final String ID_MANAGEMENT = "id_management";
     private static final String TRANSACTION = "transaction";
     private static final String ID_TRANSACTION = "id_transaction";
 
+    private static final String PERSON = "person";
+    private static final String ID_PERSON = "id_person";
+    private static final String FIRST_NAME = "first_name";
+    private static final String LAST_NAME = "last_name";
+
     private static final String FIND_BY_ID = Sql.create().select().allFrom().var(CUSTOMER).whereQs(ID_CUSTOMER).build();
-    private static final String INSERT = Sql.create().insert().var(CUSTOMER).valuesNull(ID_CUSTOMER, 5).build();
+    private static final String INSERT = Sql.create().insert().var(CUSTOMER).values(ID_CUSTOMER, 5).build();
     private static final String UPDATE = Sql.create().update().var(CUSTOMER).set().varQs(REGISTER_DATE).c().varQs(PASSWORD).c().varQs(EMAIL).c().varQs(ID_PERSON).c().varQs(ID_ROLE).whereQs(ID_CUSTOMER).build();
     private static final String DELETE = Sql.create().delete().var(CUSTOMER).whereQs(ID_CUSTOMER).build();
     private static final String COUNT_CUSTOMER = Sql.create().select().count().from().var(CUSTOMER).build();
-    private static final String UPDATE_AVATAR = Sql.create().update().var(CUSTOMER).set().varQs(ID_AVATAR).whereQs(ID_CUSTOMER).build();
     private static final String FIND_BY_LOGIN = Sql.create().select().allFrom().var(CUSTOMER).whereQs(EMAIL).build();
+    private static final String FIND_BY_FIRST_NAME_AND_LAST_NAME =  Sql.create().select().varS(CUSTOMER, ID_CUSTOMER).c().varS(CUSTOMER, EMAIL).from().var(CUSTOMER).join(PERSON).varS(PERSON, ID_PERSON).eq().varS(CUSTOMER, ID_PERSON).whereQs(PERSON, FIRST_NAME).and().varQs(PERSON,LAST_NAME).build();
     private static final String FIND_BY_LOGIN_PASSWORD = Sql.create().select().allFrom().var(CUSTOMER).whereQs(EMAIL).and().varQs(PASSWORD).build();
     private static final String FIND_BY_MANAGEMENT = Sql.create().select().varS(CUSTOMER, ID_CUSTOMER).c().varS(CUSTOMER, EMAIL).from().var(CUSTOMER).join(TRANSACTION).varS(CUSTOMER, ID_CUSTOMER).eq().varS(TRANSACTION, ID_CUSTOMER).join(MANAGEMENT).varS(MANAGEMENT, ID_TRANSACTION).eq().varS(TRANSACTION, ID_TRANSACTION).whereQs(MANAGEMENT, ID_MANAGEMENT).build();
+    private static final String LIMIT_CUSTOMER = Sql.create().select().allFrom().var(CUSTOMER).limit().build();
 
+    public void sql(){
+        System.out.println(FIND_BY_FIRST_NAME_AND_LAST_NAME);
+    }
     @Override
     public Customer insert(Customer item) throws DaoException {
         try {
@@ -114,18 +123,6 @@ public class MySqlCustomer extends CustomerDao{
         return count;
     }
 
-    @Override
-    public void updateAvatar(Customer item) throws DaoException {
-        try {
-            try (PreparedStatement statement = getConnection().prepareStatement(UPDATE_AVATAR)) {
-                statement.setInt(1, item.getAvatar().getId());
-                statement.setInt(2, item.getId());
-                statement.executeUpdate();
-            }
-        } catch (SQLException e) {
-            throw new DaoException("can't update avatar " + this.getClass().getSimpleName() + "/" + item, e);
-        }
-    }
 
     @Override
     public Customer getCustomer(String login) throws DaoException {
@@ -179,6 +176,47 @@ public class MySqlCustomer extends CustomerDao{
             }
         } catch (SQLException e) {
             throw new DaoException("can't find by management " + this.getClass().getSimpleName(), e);
+        }
+        return customer;
+    }
+
+    @Override
+    public List<Customer> getLimitCustomers(int start, int count) throws DaoException {
+        List<Customer> list = new ArrayList<>();
+        Customer customer = null;
+        try {
+            try (PreparedStatement statement = getConnection().prepareStatement(LIMIT_CUSTOMER)) {
+                statement.setInt(1, ((start - 1) * count));
+                statement.setInt(2, count);
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    while (resultSet.next()) {
+                        customer = itemCustomer(customer, resultSet);
+                        list.add(customer);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            throw new DaoException("can't get list of customer " + this.getClass().getSimpleName(), e);
+        }
+        return list;
+    }
+
+    @Override
+    public Customer findByFirstNameAndLastName(Customer customer) throws DaoException {
+        try {
+            try (PreparedStatement statement = getConnection().prepareStatement(FIND_BY_FIRST_NAME_AND_LAST_NAME)) {
+                statement.setString(1 , customer.getPerson().getFirstName());
+                statement.setString(2,  customer.getPerson().getLastName());
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    while (resultSet.next()) {
+                        customer.setId(resultSet.getInt(1));
+                        customer.setEmail(resultSet.getString(2));
+
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            throw new DaoException("can't get list of customer by first name and second name " + this.getClass().getSimpleName(), e);
         }
         return customer;
     }

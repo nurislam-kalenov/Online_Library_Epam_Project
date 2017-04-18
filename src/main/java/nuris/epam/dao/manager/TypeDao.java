@@ -60,13 +60,6 @@ public class TypeDao {
         }
     }
 
-    public Class getAvatarDao() {
-        if (connectType.getType().equalsIgnoreCase("mysql")) {
-            return MySqlAvatar.class;
-        } else {
-            return MySqlAvatar.class;
-        }
-    }
 
     public Class getCustomerDao() {
         if (connectType.getType().equalsIgnoreCase("mysql")) {

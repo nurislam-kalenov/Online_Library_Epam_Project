@@ -4,6 +4,7 @@ import nuris.epam.connection.ConnectionPool;
 import nuris.epam.dao.mysql.*;
 import nuris.epam.entity.*;
 import nuris.epam.services.BookService;
+import nuris.epam.services.CustomerService;
 import nuris.epam.services.ManagementService;
 import nuris.epam.services.TransactionService;
 import nuris.epam.services.exceptions.ServiceException;
@@ -38,12 +39,11 @@ public class Main {
         managements.add( managementService.findByTransaction(managements.get(0).getTransaction()));
 
         MySqlCustomer mySqlCustomer = new MySqlCustomer();
+        mySqlCustomer.sql();
 
-        List<Transaction> list = transactionService.getListTransaction(transaction , 1, 5, true);
-
-        System.out.println(list);
-        System.out.println(connectionPool.size() + " размер пула после");
-
+        CustomerService customerService = new CustomerService();
+        Customer customers = customerService.getCustomersByFirstNameAndLastName("Nurislam" , "Kalenov");
+        System.out.println(customers);
 
     }
 

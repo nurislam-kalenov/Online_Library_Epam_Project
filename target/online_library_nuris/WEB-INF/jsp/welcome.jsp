@@ -41,6 +41,10 @@
                     <input type="submit" class="btn btn-success" id="goToChat" value="${sign_in}"/>
                     <a class="btn btn-warning pull-right" href="${register_url}">${registration}</a>
                 </div>
+                <c:if test="${not empty login_error}">
+                    <p class="alert alert-warning"
+                       style="height: 30px;padding: 5px">Ошибка входа</p>
+                </c:if>
             </div>
         </form>
     </div>

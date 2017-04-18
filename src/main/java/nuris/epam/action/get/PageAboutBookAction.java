@@ -40,10 +40,10 @@ public class PageAboutBookAction implements Action {
             e.printStackTrace();
         }
         if(transactionService.countActiveTransaction(transaction)>4){
-            req.setAttribute("count_error" ,true);
+            req.setAttribute(ATT_COUNT_ERROR ,true);
         }
         if(bookInfo.getAmount() <= 0){
-            req.setAttribute("over_error" ,true);
+            req.setAttribute(ATT_OVER_ERROR ,true);
 
         }
 

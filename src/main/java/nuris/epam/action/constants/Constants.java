@@ -17,6 +17,8 @@ public final class Constants {
     public static final String CUSTOMER_BOOK = "returnCustomerBook";
     public static final String DEPT_CUSTOMER_BOOK = "deptCustomerBook";
     public static final String MANAGEMENT = "management";
+    public static final String ABOUT_READER = "aboutReader";
+    public static final String READERS = "readers";
 
     //Validation regular expressions
     public static final String VALIDATION_PROPERTIES = "validation.properties";
@@ -51,6 +53,7 @@ public final class Constants {
 
     //LoginAction
     public static final String LOGIN = "login";
+    public static final String LOGIN_ERROR = "login_error";
 
     //BookRegisterAction
     public static final String ISBN = "isbn";
@@ -80,9 +83,11 @@ public final class Constants {
     //PageCustomerAccountAction
     public static final String ATT_CUSTOMER_INFO = "customer_info";
 
-    //AboutBookAction
+    //PageAboutBookAction
     public static final String BOOK_ID = "book_id";
     public static final String BOOK_INFO = "book_info";
+    public static final String ATT_COUNT_ERROR = "count_error";
+    public static final String ATT_OVER_ERROR = "over_error";
 
     //PasswordEditAction
     public static final String OLD_PASSWORD = "old_pass";
@@ -104,6 +109,17 @@ public final class Constants {
 
     //AdminReturnBookAction
     public static final String MANAGEMENT_ID= "management_id";
+
+    //PageAboutReaderAction
+    public static final String READER_ID = "customer_id";
+    public static final String TRANSACTIONS = "transactions";
+
+    //PageReadersAction
+    public static final String ATT_READERS = "readers";
+
+    //DeleteProfileAction
+    public static final String ADMIN = "admin";
+
 
     //Session
     public static final String CUSTOMER_ID = "customerId";

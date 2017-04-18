@@ -11,6 +11,7 @@
 <c:url var="account_url" value="/kz/account"/>
 <c:url var="customer_book_url" value="/kz/deptCustomerBook"/>
 <c:url var="management_url" value="/kz/management"/>
+<c:url var="readers_url" value="/kz/readers"/>
 
 <html lang=en>
 <head>
@@ -45,7 +46,7 @@
             <div class="collapse navbar-collapse" id="navbar-brand-admin">
                 <ul class="nav navbar-nav">
                     <li><a href="${books_url}">${books}</a></li>
-                    <li><a href="#">${readers}</a></li>
+                    <li><a href="${readers_url}">${readers}</a></li>
                     <li><a href="${management_url}">${management}</a></li>
                     <li><a href="${account_url}">${account}</a></li>
                 </ul>

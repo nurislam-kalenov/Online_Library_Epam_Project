@@ -34,14 +34,13 @@
         <div class="col-md-1" style="margin-top: 50px">
             <a href="management?active=false" class="btn btn-success btn-circle btn-xl" role="button">${book_active}</a>
             <a href="management?active=true" class="btn btn-warning danger btn-circle btn-xl" role="button">${book_inactive}</a>
-            <a href="#" class="btn btn-info danger btn-circle btn-xl" role="button">${book_search}</a>
+            <a href="registerBook" class="btn btn-info danger btn-circle btn-xlll" style="font-size: 30px" role="button">+</a>
         </div>
 
         <div class="col-md-8">
             <div class="wrapper">
                 <table id="acrylic">
                     <c:if test="${isActiveState eq false}">
-
                         <thead>
                         <tr>
                             <th class="col-md-2">${book_name}</th>

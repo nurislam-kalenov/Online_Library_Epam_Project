@@ -25,9 +25,9 @@ public class ManagementService {
             try {
                 BookService bookService = new BookService();
 
+                TransactionDao transactionDao = (TransactionDao) daoFactory.getDao(daoFactory.typeDao().getTransactionDao());
                 ManagementDao managementDao = (ManagementDao) daoFactory.getDao(daoFactory.typeDao().getManagementDao());
                 BookInfoDao bookInfoDao = (BookInfoDao) daoFactory.getDao(daoFactory.typeDao().getBookInfoDao());
-                TransactionDao transactionDao = (TransactionDao) daoFactory.getDao(daoFactory.typeDao().getTransactionDao());
 
                 Transaction transaction = transactionDao.findByManagement(management);
                 BookInfo bookInfo = bookInfoDao.findByTransaction(transaction);

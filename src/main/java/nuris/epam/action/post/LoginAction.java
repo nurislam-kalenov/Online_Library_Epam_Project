@@ -19,21 +19,22 @@ import javax.servlet.http.HttpSession;
  */
 public class LoginAction implements Action {
     @Override
-    public ActionResult execute(HttpServletRequest request, HttpServletResponse resp) {
+    public ActionResult execute(HttpServletRequest req, HttpServletResponse resp) {
         CustomerService customerService = new CustomerService();
-        String login = request.getParameter(LOGIN);
-        String password = request.getParameter(PASSWORD);
+        String login = req.getParameter(LOGIN);
+        String password = req.getParameter(PASSWORD);
         try {
             Customer customer = customerService.findByLoginPassword(login, Encoder.toEncode(password));
 
             if (customer != null) {
-                HttpSession session = request.getSession();
+                HttpSession session = req.getSession();
                 session.setAttribute(CUSTOMER_ID, customer.getId());
                 session.setAttribute(ROLE, customer.getCustomerRole().getName());
                 session.setAttribute(NAME, customer.getPerson().getFirstName());
                 return new ActionResult(BOOKS, true);
             } else {
-                return new ActionResult(WELCOME, true);
+                req.setAttribute(LOGIN_ERROR ,true);
+                return new ActionResult(WELCOME);
             }
         } catch (ServiceException e) {
             new ActionException("can't find customer by login and password", e);

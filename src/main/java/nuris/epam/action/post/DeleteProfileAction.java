@@ -4,7 +4,9 @@ import nuris.epam.action.exception.ActionException;
 import nuris.epam.action.manager.Action;
 import nuris.epam.action.manager.ActionResult;
 import nuris.epam.entity.Customer;
+import nuris.epam.entity.Transaction;
 import nuris.epam.services.CustomerService;
+import nuris.epam.services.TransactionService;
 import nuris.epam.services.exceptions.ServiceException;
 import nuris.epam.utils.TextParse;
 
@@ -22,14 +24,19 @@ public class DeleteProfileAction implements Action {
         CustomerService customerService = new CustomerService();
         Customer customer = new Customer();
         String id = req.getParameter(DELETE_ID);
-        customer.setId(TextParse.toInt(id));
 
         try {
+            customer = customerService.findCustomerById(TextParse.toInt(id));
             customerService.deleteCustomer(customer);
         } catch (ServiceException e) {
             e.printStackTrace();
         }
 
-        return new ActionResult(WELCOME);
+        if (customer.getCustomerRole().getName().equals(ADMIN)) {
+            return new ActionResult(WELCOME);
+        }
+
+        return new ActionResult(READERS, true);
+
     }
 }

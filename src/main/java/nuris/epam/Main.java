@@ -42,8 +42,8 @@ public class Main {
         mySqlCustomer.sql();
 
         CustomerService customerService = new CustomerService();
-        Customer customers = customerService.getCustomersByFirstNameAndLastName("Nurislam" , "Kalenov");
-        System.out.println(customers);
+        customer = customerService.findCustomerById(391);
+        System.out.println(customer.getCustomerRole().getName());
 
     }
 

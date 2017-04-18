@@ -16,7 +16,6 @@ public class Sql {
     }
 
     private Sql() {
-
     }
 
     public static Builder create() {
@@ -24,9 +23,7 @@ public class Sql {
     }
 
     public class Builder {
-
         private Builder() {
-
         }
 
         public Builder select() {
@@ -66,29 +63,29 @@ public class Sql {
 
         public Builder whereIsNull(String str, boolean isNull) {
             Sql.this.setStringBuilder("where " + str);
-            if (isNull == true){
+            if (isNull == true) {
                 Sql.this.setStringBuilder(" is null ");
-            }else{
-                Sql.this.setStringBuilder(" is not null ");
-            }
-                return this;
-        }
-
-        public Builder whereIsNull(String first,String second, boolean isNull) {
-            Sql.this.setStringBuilder("where " + first+"."+second);
-            if (isNull == true){
-                Sql.this.setStringBuilder(" is null ");
-            }else{
+            } else {
                 Sql.this.setStringBuilder(" is not null ");
             }
             return this;
         }
 
-        public Builder IsNull(String first,String second, boolean isNull) {
-            Sql.this.setStringBuilder( first+"."+second);
-            if (isNull == true){
+        public Builder whereIsNull(String first, String second, boolean isNull) {
+            Sql.this.setStringBuilder("where " + first + "." + second);
+            if (isNull == true) {
                 Sql.this.setStringBuilder(" is null ");
-            }else{
+            } else {
+                Sql.this.setStringBuilder(" is not null ");
+            }
+            return this;
+        }
+
+        public Builder IsNull(String first, String second, boolean isNull) {
+            Sql.this.setStringBuilder(first + "." + second);
+            if (isNull == true) {
+                Sql.this.setStringBuilder(" is null ");
+            } else {
                 Sql.this.setStringBuilder(" is not null ");
             }
             return this;
@@ -130,8 +127,9 @@ public class Sql {
             Sql.this.setStringBuilder(column + " = ?");
             return this;
         }
-        public Builder varQs(String table , String column) {
-            Sql.this.setStringBuilder(table + "."+column + " = ? ");
+
+        public Builder varQs(String table, String column) {
+            Sql.this.setStringBuilder(table + "." + column + " = ? ");
             return this;
         }
 
@@ -192,7 +190,7 @@ public class Sql {
         }
 
         public Builder where(String value) {
-            Sql.this.setStringBuilder("where " +value+" ");
+            Sql.this.setStringBuilder("where " + value + " ");
             return this;
         }
 
@@ -212,7 +210,6 @@ public class Sql {
                 }
             }
         }
-
 
 
         public String build() {

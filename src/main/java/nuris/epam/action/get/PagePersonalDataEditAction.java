@@ -19,13 +19,13 @@ public class PagePersonalDataEditAction implements Action {
     @Override
     public ActionResult execute(HttpServletRequest req, HttpServletResponse resp) throws ActionException {
         CustomerService customerService = new CustomerService();
+
         HttpSession session = req.getSession();
-        Person person ;
         int id = (int) session.getAttribute(CUSTOMER_ID);
 
         try {
             Customer customer = customerService.findCustomerById(id);
-            person = customer.getPerson();
+            Person person = customer.getPerson();
 
             req.setAttribute(FIRST_NAME, person.getFirstName());
             req.setAttribute(LAST_NAME, person.getLastName());

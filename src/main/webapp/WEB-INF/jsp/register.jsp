@@ -115,7 +115,7 @@
             <div class="col-md-4">
                 <input type="password" id="password" name="password" class="form-control input-md">
                 <p class="help-block">${hblock_password}</p>
-                <c:if test="${not empty password_error}">
+                <c:if test="${ empty password_error}">
                     <p class="alert alert-warning"
                        style="height: 30px;padding: 5px">${error_data}</p>
                 </c:if>

@@ -22,6 +22,9 @@
     <fmt:message key="about.book.button.take" var="button_take"/>
     <fmt:message key="about.book.button.delete" var="button_delete"/>
     <fmt:message key="profile.button.edit" var="button_edit"/>
+    <fmt:message key="book.info.notify.book.already.taken" var="notif_already_taken"/>
+    <fmt:message key="book.info.notify.book.count" var="notif_count"/>
+    <fmt:message key="book.info.notify.book.over" var="notif_over"/>
 </fmt:bundle>
 
 <c:if test="${role.equals('admin')}">
@@ -89,7 +92,8 @@
                    role="button">${button_edit}</a>
                 <form action="deleteBook" method="POST">
                     <input type="hidden" name="delete_id" value="${book_info.id}">
-                    <button id="submit" name="submit" class="btn btn-danger col-md-3 pull-right">${button_delete}</button>
+                    <button id="submit" name="submit"
+                            class="btn btn-danger col-md-3 pull-right">${button_delete}</button>
                 </form>
             </div>
         </div>
@@ -161,9 +165,18 @@
 
                 <form action="takeBook" method="POST">
                     <input type="hidden" name="book_id" value="${book_info.id}">
-                    <button  name="submit" class="btn btn-warning col-md-5">${button_take}</button>
+                    <button name="submit" class="btn btn-warning col-md-5">${button_take}</button>
                 </form>
+
                 <a href="#" class="btn btn-danger col-md-4" role="button">${button_card}</a>
+
+                <c:if test="${not empty count_error}">
+                    <p class="alert alert-danger ">${notif_count}</p>
+                </c:if>
+
+                <c:if test="${not empty over_error}">
+                    <p class="alert alert-danger ">${notif_over}</p>
+                </c:if>
 
             </div>
         </div>

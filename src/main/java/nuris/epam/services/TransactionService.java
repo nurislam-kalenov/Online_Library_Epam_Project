@@ -116,19 +116,19 @@ public class TransactionService {
         List<Transaction> transactions = new ArrayList<>();
         List<Transaction> list = findByCustomer(transaction);
         for (Transaction tran : list) {
-                if (tran.getEndDate() == null) {
-                    transactions.add(tran);
-                }
+            if (tran.getEndDate() == null) {
+                transactions.add(tran);
             }
+        }
         return transactions;
     }
 
-    public List<Transaction> getListTransaction(Transaction transaction ,int start, int end, boolean isActive) throws ServiceException {
+    public List<Transaction> getListTransaction(Transaction transaction, int start, int end, boolean isActive) throws ServiceException {
         List<Transaction> list;
         try (DaoFactory daoFactory = new DaoFactory()) {
             try {
-                TransactionDao transactionDao = (TransactionDao)daoFactory.getDao(daoFactory.typeDao().getTransactionDao());
-                list = transactionDao.getListTransactionByCustomer(transaction ,start, end, isActive);
+                TransactionDao transactionDao = (TransactionDao) daoFactory.getDao(daoFactory.typeDao().getTransactionDao());
+                list = transactionDao.getListTransactionByCustomer(transaction, start, end, isActive);
                 for (Transaction trans : list) {
                     fillTransaction(trans);
                 }
@@ -139,11 +139,11 @@ public class TransactionService {
         }
     }
 
-    public int getTransactionCount(Transaction transaction , boolean isActive) throws ServiceException {
+    public int getTransactionCount(Transaction transaction, boolean isActive) throws ServiceException {
         try (DaoFactory daoFactory = new DaoFactory()) {
             try {
-                TransactionDao transactionDao = (TransactionDao)daoFactory.getDao(daoFactory.typeDao().getTransactionDao());
-                int count = transactionDao.getTransactionCountByCustomer(transaction ,isActive);
+                TransactionDao transactionDao = (TransactionDao) daoFactory.getDao(daoFactory.typeDao().getTransactionDao());
+                int count = transactionDao.getTransactionCountByCustomer(transaction, isActive);
                 return count;
             } catch (DaoException e) {
                 throw new ServiceException("can't get count transaction by customer", e);
@@ -170,17 +170,22 @@ public class TransactionService {
         }
     }
 
-    public boolean isAlreadyTaken(Transaction transaction) throws ServiceException {
-        List<Transaction> transactions = getActiveCustomerTransaction(transaction);
-        for (Transaction tran : transactions) {
-            if (tran.getBookInfo().getId() == transaction.getBookInfo().getId()) {
-                return true;
+    public boolean isAlreadyTaken(Transaction transaction) {
+        List<Transaction> transactions;
+        try {
+            transactions = getActiveCustomerTransaction(transaction);
+            for (Transaction tran : transactions) {
+                if (tran.getBookInfo().getId() == transaction.getBookInfo().getId()) {
+                    return true;
+                }
             }
+        } catch (ServiceException e) {
+            e.printStackTrace();
         }
         return false;
     }
 
-    private int countActiveTransaction(Transaction transaction) {
+    public int countActiveTransaction(Transaction transaction) {
         int size = 0;
         try {
             size = getActiveCustomerTransaction(transaction).size();

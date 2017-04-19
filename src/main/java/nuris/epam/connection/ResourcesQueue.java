@@ -41,6 +41,8 @@ public class ResourcesQueue<T> {
      * Метод котрый позволяет брать соедение из списка если оно доступно
      *
      * @return иницилизированный коннект
+     *
+     * @throws ResourcesException
      */
     public T takeResource() throws ResourcesException {
         try {

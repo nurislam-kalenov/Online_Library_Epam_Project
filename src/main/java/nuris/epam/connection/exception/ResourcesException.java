@@ -5,7 +5,7 @@ package nuris.epam.connection.exception;
  */
 public class ResourcesException extends Exception {
 
-    public ResourcesException(String message, Throwable cause) {
+    public ResourcesException(String message, Exception cause) {
         super(message, cause);
     }
 

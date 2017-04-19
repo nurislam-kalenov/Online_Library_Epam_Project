@@ -120,7 +120,6 @@ public final class Constants {
     //DeleteProfileAction
     public static final String ADMIN = "admin";
 
-
     //Session
     public static final String CUSTOMER_ID = "customerId";
     public static final String ROLE = "role";

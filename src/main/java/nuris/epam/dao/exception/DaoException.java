@@ -5,7 +5,7 @@ package nuris.epam.dao.exception;
  */
 public class DaoException extends Exception {
 
-    public DaoException(String message, Throwable cause) {
+    public DaoException(String message, Exception cause) {
         super(message, cause);
     }
 

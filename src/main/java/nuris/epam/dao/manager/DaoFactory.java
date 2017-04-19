@@ -10,7 +10,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 /**
- * Класс служит для управленеи коннектами, а именно раздача и закрытие коннектов.
+ * Класс служит для управления коннектами, а именно раздача и закрытие коннектов.
  * Также создает экземпляры Dao обектов и  кладет в них коннект.
  *
  * @author Kalenov Nurislam
@@ -45,6 +45,7 @@ public class DaoFactory implements AutoCloseable {
      *
      * @param clazz - Тип обекта. (Рефлексия)
      * @return Dao обьект.
+     * @throws DaoException
      */
     public <T extends BaseDao<BaseEntity>> T getDao(Class<T> clazz) throws DaoException {
         T t;
@@ -72,6 +73,11 @@ public class DaoFactory implements AutoCloseable {
         return typeDao;
     }
 
+    /**
+     * Метод позволяет начать транзакию.
+     *
+     * @throws DaoException
+     */
     public void startTransaction() throws DaoException {
         try {
             connection.setAutoCommit(false);
@@ -80,6 +86,11 @@ public class DaoFactory implements AutoCloseable {
         }
     }
 
+    /**
+     * Метод позволяет выполнить транзакию.
+     *
+     * @throws DaoException
+     */
     public void commitTransaction() throws DaoException {
         try {
             connection.commit();
@@ -89,6 +100,11 @@ public class DaoFactory implements AutoCloseable {
         }
     }
 
+    /**
+     * Метод отменить транзакию.
+     *
+     * @throws DaoException
+     */
     public void rollbackTransaction() throws DaoException {
         try {
             connection.rollback();
@@ -97,9 +113,11 @@ public class DaoFactory implements AutoCloseable {
         }
     }
 
+    /**
+     * Метод возвращает коннект обратно в пул коннетов
+     */
     @Override
     public void close() {
         returnConnect();
-        System.out.println("Return Connect");
     }
 }

@@ -5,7 +5,7 @@ package nuris.epam.connection.exception;
  */
 public class ConnectionException extends Exception{
 
-    public ConnectionException(String message , Throwable cause){
+    public ConnectionException(String message , Exception cause){
         super(message , cause);
     }
 

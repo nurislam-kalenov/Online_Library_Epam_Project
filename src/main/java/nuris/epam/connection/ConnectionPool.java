@@ -61,6 +61,8 @@ public class ConnectionPool {
 
     /**
      * Инициализирует N-ое количество соедений и добавляет их в список.
+     *
+     * @throws ConnectionException
      */
     private void init() throws ConnectionException {
         try {
@@ -88,6 +90,8 @@ public class ConnectionPool {
      * {@link ConnectionPool#type}
      * {@link ConnectionPool#poolSize}
      * {@link ConnectionPool#timeOut}
+     *
+     * @throws PropertiesException
      */
     private void loadProperties() throws PropertiesException {
         Properties properties = new Properties();
@@ -110,12 +114,14 @@ public class ConnectionPool {
      * {@link ConnectionPool#type}
      *
      * @return возвращяет соедение к БД.
+     *
+     * @throws ResourcesException
      */
     public Connection getConnection() throws ResourcesException {
         try {
             return connections.takeResource();
         } catch (ResourcesException e) {
-            throw new ResourcesException("Error in a getConnection() , don't avalible connect", e);
+            throw new ResourcesException("Error in a getConnection() , don't available connect", e);
         }
     }
 
@@ -140,6 +146,8 @@ public class ConnectionPool {
 
     /**
      * Закрывает все коннекты
+     *
+     * @throws ConnectionException
      */
     public void closeAllConnections() throws ConnectionException {
         for (Connection connection : connections.getResources()) {

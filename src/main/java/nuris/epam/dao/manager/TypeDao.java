@@ -4,7 +4,7 @@ import nuris.epam.connection.ConnectionPool;
 import nuris.epam.dao.mysql.*;
 
 /**
- * Класс служить для иницивлизаций обьектов , в зависимости от типа БД.
+ * Класс служит для иницивлизаций обьектов , в зависимости от типа БД.
  *
  * @author Kalenov Nurislam
  */
@@ -15,7 +15,7 @@ public class TypeDao {
      * */
     private ConnectionPool connectType;
     /**
-     * Наименованте (тип) БД.
+     * Наименование (тип) БД.
      * */
     private static final String MYSQL = "mysql";
 

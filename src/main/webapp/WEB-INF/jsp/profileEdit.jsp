@@ -13,10 +13,10 @@
 
 <fmt:bundle basename="i18n">
     <fmt:message key="profile.edit.address" var="address_edit"/>
-    <fmt:message key="profile.edit.old.password" var="change_pass"/>
+    <fmt:message key="profile.edit.confirm.password" var="change_pass"/>
     <fmt:message key="profile.edit.new.password" var="new_pass"/>
     <fmt:message key="profile.edit.old.password" var="old_pass"/>
-    <fmt:message key="profile.edit.confirm.password" var="confirm_pass"/>
+    <fmt:message key="profile.edit.password" var="confirm_pass"/>
     <fmt:message key="register.book.button.save" var="passport_save"/>
     <fmt:message key="register.button.home" var ="button_home"/>
     <fmt:message key="register.error.data" var="data_error"/>
@@ -47,7 +47,7 @@
 
     <form class="form-horizontal" action="password-edit" method="POST">
         <fieldset>
-            <legend>${change_pass}</legend>
+            <legend>${confirm_pass}</legend>
 
             <div class="form-group">
                 <label class="col-md-4 control-label" for="password">${old_pass}</label>

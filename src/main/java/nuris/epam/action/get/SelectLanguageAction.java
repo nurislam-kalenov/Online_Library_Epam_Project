@@ -3,8 +3,10 @@ package nuris.epam.action.get;
 import nuris.epam.action.exception.ActionException;
 import nuris.epam.action.manager.Action;
 import nuris.epam.action.manager.ActionResult;
+
 import static nuris.epam.action.constants.Constants.*;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.jsp.jstl.core.Config;
@@ -14,11 +16,14 @@ import java.util.Locale;
 /**
  * Created by User on 04.04.2017.
  */
-public class SelectLanguageAction implements Action{
+public class SelectLanguageAction implements Action {
     @Override
-    public ActionResult execute(HttpServletRequest req , HttpServletResponse response) throws ActionException {
+    public ActionResult execute(HttpServletRequest req, HttpServletResponse resp) throws ActionException {
         String language = req.getParameter(LANG);
         Config.set(req.getSession(), Config.FMT_LOCALE, new Locale(language));
+        Cookie cookie = new Cookie(LANG, language);
+        cookie.setMaxAge(HOUR * MINUTE * SEC);
+        resp.addCookie(cookie);
         try {
             req.setCharacterEncoding(CHARACTER_ENCODING);
         } catch (UnsupportedEncodingException e) {

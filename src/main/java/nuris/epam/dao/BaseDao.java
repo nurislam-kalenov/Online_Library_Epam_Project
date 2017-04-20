@@ -14,7 +14,7 @@ public abstract class BaseDao<T extends BaseEntity> implements Dao<T> {
     private Connection connection;
 
     /**
-     * Метод предоставляет  соедение с БД.
+     * Метод предоставляет соедение с БД.
      *
      * @return Возвращаят соедение с БД.
      */

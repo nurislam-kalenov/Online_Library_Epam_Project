@@ -1,4 +1,4 @@
-package nuris.epam.web.servlet;
+package nuris.epam.web.servlets;
 
 
 import nuris.epam.action.exception.ActionException;
@@ -16,9 +16,9 @@ import java.io.IOException;
  * Created by User on 29.03.2017.
  */
 @WebServlet(name = "controller", urlPatterns = "/kz/*")
-@MultipartConfig
+
 public class ControllerServlet extends HttpServlet {
-    ActionFactory actionFactory;
+     private ActionFactory actionFactory;
 
     @Override
     public void init() throws ServletException {
@@ -37,4 +37,6 @@ public class ControllerServlet extends HttpServlet {
         View view = new View(req, resp);
         view.navigate(result);
     }
+
+
 }

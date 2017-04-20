@@ -27,7 +27,7 @@ public abstract class TransactionDao extends BaseDao<Transaction> {
      *
      * @param start    - начало поле в талице в БД
      * @param count    - количесвто поле в БД, которую необходимо прогрузить.
-     * @param isActive - состаяние сущности Transaction
+     * @param isActive - состояние сущности Transaction
      * @return Возвращает конкретное число Transaction
      * @throws DaoException
      */

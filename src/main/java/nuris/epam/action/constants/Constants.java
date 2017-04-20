@@ -70,6 +70,9 @@ public final class Constants {
     public static final String LANG = "lang";
     public static final String REFERER = "referer";
     public static final String CHARACTER_ENCODING = "UTF-8";
+    public static final int HOUR = 24;
+    public static final int MINUTE = 60;
+    public static final int SEC = 60;
 
     //PageBookAction
     public static final String PAGE = "page";

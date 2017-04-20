@@ -14,7 +14,7 @@ import java.util.List;
 public abstract class AuthorDao extends BaseDao<Author> {
 
     /**
-     * Метод ищет при помощи сущности Book и возаращает сущность Author.
+     * Метод ищет при помощи сущности Book и возвращает сущность Author.
      *
      * @param book - сущность.
      * @return Возвращает конкрную сущность.

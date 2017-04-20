@@ -14,7 +14,7 @@ public abstract class CustomerRoleDao extends BaseDao<CustomerRole>{
      * Метод, ищет роль с учетом сущности Customer.
      *
      * @param customer - сущность.
-     * @return Возвращяает конкретную роль.
+     * @return Возвращает конкретную роль.
      * @throws DaoException
      */
     public abstract CustomerRole findByCustomer(Customer customer) throws DaoException;
@@ -22,7 +22,7 @@ public abstract class CustomerRoleDao extends BaseDao<CustomerRole>{
      * Метод, ищет роль по наименованю роли.
      *
      * @param nameRole - наименование роли.
-     * @return Возвращяает конкретную роль.
+     * @return Возвращает конкретную роль.
      * @throws DaoException
      */
     public abstract CustomerRole findRoleByName(String nameRole) throws DaoException;

@@ -30,6 +30,7 @@ public class LoginAction implements Action {
                 HttpSession session = req.getSession();
                 session.setAttribute(CUSTOMER_ID, customer.getId());
                 session.setAttribute(ROLE, customer.getCustomerRole().getName());
+                session.setAttribute("role_id", customer.getCustomerRole().getId());
                 session.setAttribute(NAME, customer.getPerson().getFirstName());
                 return new ActionResult(BOOKS, true);
             } else {

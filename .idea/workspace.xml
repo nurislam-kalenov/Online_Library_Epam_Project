@@ -2,76 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6472644-ffba-4160-a15d-efe07d03f84e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/web/filters/FilterException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/web/filters/LocaleFilter.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/web/filter/EncodingFilter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/web/servlet/ControllerServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/web/filter/EncodingFilter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/web/servlet/ControllerServlet.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/web/filter/EncodingFilter.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/web/filters/EncodingFilter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/web/servlet/ControllerServlet.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/web/servlets/ControllerServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/action/constants/Constants.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/action/constants/Constants.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/action/get/PageRegisterAction.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/action/get/PageRegisterAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/action/get/SelectLanguageAction.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/action/get/SelectLanguageAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/action/post/LoginAction.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/action/post/LoginAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/AuthorDao.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/AuthorDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/BaseDao.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/BaseDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/BookDao.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/BookDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/BookInfoDao.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/BookInfoDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/CityDao.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/CityDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/CustomerDao.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/CustomerDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/CustomerRoleDao.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/CustomerRoleDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/GenreDao.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/GenreDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/ManagementDao.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/ManagementDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/PersonDao.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/PersonDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/TransactionDao.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/TransactionDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/manager/DaoFactory.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/manager/DaoFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/manager/TypeDao.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/manager/TypeDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/constants/Constants.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/constants/Constants.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/get/PageRegisterAction.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/get/PageRegisterAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/get/SelectLanguageAction.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/get/SelectLanguageAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/post/LoginAction.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/post/LoginAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/connection/ConnectionPool.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/connection/ConnectionPool.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/connection/ResourcesQueue.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/connection/ResourcesQueue.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/connection/exception/ConnectionException.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/connection/exception/ConnectionException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/connection/exception/PropertiesException.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/connection/exception/PropertiesException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/connection/exception/ResourcesException.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/connection/exception/ResourcesException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/AuthorDao.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/AuthorDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/BaseDao.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/BaseDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/BookDao.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/BookDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/BookInfoDao.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/BookInfoDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/CityDao.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/CityDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/CustomerDao.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/CustomerDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/CustomerRoleDao.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/CustomerRoleDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/GenreDao.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/GenreDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/ManagementDao.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/ManagementDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/PersonDao.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/PersonDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/TransactionDao.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/TransactionDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/exception/DaoException.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/exception/DaoException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/manager/DaoFactory.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/manager/DaoFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/manager/TypeDao.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/manager/TypeDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlAuthor.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlAuthor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlBook.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlBook.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlBookInfo.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlBookInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlCity.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlCity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlCustomer.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlCustomer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlCustomerRole.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlCustomerRole.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlGenre.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlGenre.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlManagement.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlManagement.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlPerson.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlPerson.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlTransaction.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlTransaction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/action/constants/Constants.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/action/constants/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageRegisterAction.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageRegisterAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/action/get/SelectLanguageAction.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/action/get/SelectLanguageAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/LoginAction.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/LoginAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/AuthorDao.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/AuthorDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/BaseDao.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/BaseDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/CustomerRoleDao.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/CustomerRoleDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/TransactionDao.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/TransactionDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/manager/TypeDao.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/manager/TypeDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/profileEdit.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/profileEdit.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/jsp/profileEdit.jsp" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/jsp/profileEdit.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/web/filters/SecurityFilter.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/web/filters/SecurityFilter.java" />
     </list>
     <ignored path="Online_Library_Project_Epam.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -115,8 +46,8 @@
       <file leaf-file-name="SecurityFilter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/web/filters/SecurityFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="88" column="33" selection-start-line="88" selection-start-column="33" selection-end-line="88" selection-end-column="33" />
+            <state relative-caret-position="1139">
+              <caret line="79" column="44" selection-start-line="79" selection-start-column="44" selection-end-line="79" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -1331,12 +1262,12 @@
       <workItem from="1492487356255" duration="36716000" />
       <workItem from="1492575224048" duration="5074000" />
       <workItem from="1492580362238" duration="19992000" />
-      <workItem from="1492659812037" duration="28322000" />
+      <workItem from="1492659812037" duration="30195000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="644796000" />
+    <option name="totallyTimeSpent" value="646669000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1361,7 +1292,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.07026144" sideWeight="0.49394855" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.4969743" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13725491" sideWeight="0.7223903" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31862745" sideWeight="0.7223903" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1842,8 +1773,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/web/filters/SecurityFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="88" column="33" selection-start-line="88" selection-start-column="33" selection-end-line="88" selection-end-column="33" />
+        <state relative-caret-position="1139">
+          <caret line="79" column="44" selection-start-line="79" selection-start-column="44" selection-end-line="79" selection-end-column="44" />
           <folding />
         </state>
       </provider>

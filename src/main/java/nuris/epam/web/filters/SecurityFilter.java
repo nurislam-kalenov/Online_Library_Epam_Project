@@ -67,11 +67,9 @@ public class SecurityFilter implements Filter {
         String path = req.getPathInfo();
 
         if (req.getSession().getAttribute("role") == null) {
-            for (String customerPath : guestAccess) {
-                if (path.startsWith(customerPath)) {
-                    filterChain.doFilter(req, resp);
-                    return;
-                }
+            if (guestAccess.contains(path)) {
+                filterChain.doFilter(req, resp);
+                return;
             }
             resp.sendRedirect(req.getContextPath() + "/kz/welcome");
             return;
@@ -79,22 +77,24 @@ public class SecurityFilter implements Filter {
 
 
         if (req.getSession().getAttribute("role").equals("user")) {
-            for (String customerPath : userAccess) {
-                if (path.startsWith(customerPath)) {
-                    filterChain.doFilter(req, resp);
-                    return;
-                }
+            if (userAccess.contains(path)) {
+                filterChain.doFilter(req, resp);
+                return;
             }
-            HttpSession session = req.getSession();
-            session.invalidate();
-            resp.sendRedirect(req.getContextPath() + "/kz/welcome");
+            resp.sendRedirect(req.getContextPath() + "/welcome");
             return;
         }
 
-
+        if (req.getSession().getAttribute("role").equals("admin")) {
+            if (adminAccess.contains(path)) {
+                filterChain.doFilter(req, resp);
+                return;
+            }
+            resp.sendRedirect(req.getContextPath() + "/welcome");
+            return;
+        }
+        filterChain.doFilter(req, resp);
     }
-
-
 
 
     @Override

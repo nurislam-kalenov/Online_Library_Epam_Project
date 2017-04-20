@@ -9,7 +9,6 @@ import nuris.epam.entity.Person;
 import nuris.epam.services.CustomerService;
 import nuris.epam.services.exceptions.ServiceException;
 import nuris.epam.utils.SqlDate;
-import nuris.epam.utils.TextParse;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -85,7 +84,7 @@ public class PersonalDataEditAction implements Action {
         }
 
         String cityName = req.getParameter(CITY);
-        city.setId(TextParse.toInt(cityName));
+        city.setId(Integer.parseInt(cityName));
         person.setCity(city);
 
         if (wrong) {

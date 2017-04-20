@@ -11,7 +11,6 @@ import nuris.epam.services.CustomerService;
 import nuris.epam.services.exceptions.ServiceException;
 import nuris.epam.utils.Encoder;
 import nuris.epam.utils.SqlDate;
-import nuris.epam.utils.TextParse;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -83,7 +82,7 @@ public class RegisterAction implements Action {
         checkParamValid(BIRTHDAY, birthday, properties.getProperty(DATE_VALID), request);
         checkParamValid(ADDRESS, address, properties.getProperty(ADDRESS_VALID), request);
 
-        city.setId(TextParse.toInt(cityName));
+        city.setId(Integer.parseInt(cityName));
         person.setCity(city);
         person.setFirstName(firstName);
         person.setLastName(lastName);

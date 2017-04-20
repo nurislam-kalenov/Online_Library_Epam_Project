@@ -9,7 +9,6 @@ import nuris.epam.entity.Transaction;
 import nuris.epam.services.CustomerService;
 import nuris.epam.services.TransactionService;
 import nuris.epam.services.exceptions.ServiceException;
-import nuris.epam.utils.TextParse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
@@ -31,7 +30,7 @@ public class PageAboutReaderAction implements Action {
         String id = req.getParameter(READER_ID);
 
         try {
-            customer = customerService.findCustomerById(TextParse.toInt(id));
+            customer = customerService.findCustomerById(Integer.parseInt(id));
             transaction.setCustomer(customer);
             List<Transaction> transactions = transactionService.findByCustomer(transaction);
             for(Transaction tran : transactions){

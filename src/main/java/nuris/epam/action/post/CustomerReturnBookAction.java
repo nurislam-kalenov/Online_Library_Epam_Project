@@ -5,10 +5,8 @@ import nuris.epam.action.manager.Action;
 import nuris.epam.action.manager.ActionResult;
 import nuris.epam.entity.Customer;
 import nuris.epam.entity.Transaction;
-import nuris.epam.services.ManagementService;
 import nuris.epam.services.TransactionService;
 import nuris.epam.services.exceptions.ServiceException;
-import nuris.epam.utils.TextParse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -30,7 +28,7 @@ public class CustomerReturnBookAction implements Action{
 
         String transactionId = req.getParameter(RETURN_BOOK);
 
-        transaction.setId(TextParse.toInt(transactionId));
+        transaction.setId(Integer.parseInt(transactionId));
         customer.setId(id);
 
         try {

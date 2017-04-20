@@ -9,7 +9,6 @@ import nuris.epam.entity.Transaction;
 import nuris.epam.services.BookService;
 import nuris.epam.services.TransactionService;
 import nuris.epam.services.exceptions.ServiceException;
-import nuris.epam.utils.TextParse;
 import static nuris.epam.action.constants.Constants.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -35,7 +34,7 @@ public class PageAboutBookAction implements Action {
         customer.setId(customerId);
         transaction.setCustomer(customer);
         try {
-            bookInfo = bookService.findByBook(TextParse.toInt(id));
+            bookInfo = bookService.findByBook(Integer.parseInt(id));
         } catch (ServiceException e) {
             e.printStackTrace();
         }

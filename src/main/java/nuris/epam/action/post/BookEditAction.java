@@ -10,7 +10,6 @@ import nuris.epam.entity.Genre;
 import nuris.epam.services.BookService;
 import nuris.epam.services.exceptions.ServiceException;
 import nuris.epam.utils.SqlDate;
-import nuris.epam.utils.TextParse;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -48,7 +47,7 @@ public class BookEditAction implements Action {
 
         try {
             req.setAttribute(GENRE_LIST, bookService.getAllGenre());
-            bookInfo = bookService.findByBook(TextParse.toInt(id));
+            bookInfo = bookService.findByBook(Integer.parseInt(id));
             book = bookInfo.getBook();
             author = book.getAuthor();
 
@@ -57,7 +56,7 @@ public class BookEditAction implements Action {
         }
 
         String genreName = req.getParameter(GENRE_NAME);
-        genre.setId(TextParse.toInt(genreName));
+        genre.setId(Integer.parseInt(genreName));
 
         if (availableParam(FIRST_NAME, req)) {
             String firstName = req.getParameter(FIRST_NAME);
@@ -97,12 +96,12 @@ public class BookEditAction implements Action {
         if (availableParam(BOOK_AMOUNT, req)) {
             String amount = req.getParameter(BOOK_AMOUNT);
             checkParamValid(amount, properties.getProperty(BOOK_COUNT_VALID), req);
-            bookInfo.setAmount(TextParse.toInt(amount));
+            bookInfo.setAmount(Integer.parseInt(amount));
         }
         if (availableParam(BOOK_PRICE, req)) {
             String price = req.getParameter(BOOK_PRICE);
             checkParamValid(price, properties.getProperty(BOOK_PRICE_VALID), req);
-            bookInfo.setPrice(TextParse.toInt(price));
+            bookInfo.setPrice(Integer.parseInt(price));
         }
 
         if (wrong) {

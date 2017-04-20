@@ -10,7 +10,6 @@ import nuris.epam.entity.Genre;
 import nuris.epam.services.BookService;
 import nuris.epam.services.exceptions.ServiceException;
 import nuris.epam.utils.SqlDate;
-import nuris.epam.utils.TextParse;
 
 import static nuris.epam.action.constants.Constants.*;
 
@@ -72,7 +71,7 @@ public class BookRegisterAction implements Action {
             e.printStackTrace();
         }
 
-        genre.setId(TextParse.toInt(genreName));
+        genre.setId(Integer.parseInt(genreName));
         author.setFirstName(firstName);
         author.setLastName(lastName);
         author.setMiddleName(middleName);
@@ -83,8 +82,8 @@ public class BookRegisterAction implements Action {
         book.setDescription(description);
         book.setName(name);
         bookInfo.setBook(book);
-        bookInfo.setAmount(TextParse.toInt(amount));
-        bookInfo.setPrice(TextParse.toInt(price));
+        bookInfo.setAmount(Integer.parseInt(amount));
+        bookInfo.setPrice(Integer.parseInt(price));
 
         checkParamValid(FIRST_NAME, firstName, properties.getProperty(NAME_VALID), request);
         checkParamValid(LAST_NAME, lastName, properties.getProperty(NAME_VALID), request);

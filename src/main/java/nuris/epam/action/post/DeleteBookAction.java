@@ -6,7 +6,6 @@ import nuris.epam.action.manager.ActionResult;
 import nuris.epam.entity.BookInfo;
 import nuris.epam.services.BookService;
 import nuris.epam.services.exceptions.ServiceException;
-import nuris.epam.utils.TextParse;
 
 import static nuris.epam.action.constants.Constants.*;
 
@@ -22,7 +21,7 @@ public class DeleteBookAction implements Action {
         BookService bookService = new BookService();
         BookInfo bookInfo = new BookInfo();
         String id = req.getParameter(DELETE_ID);
-        bookInfo.setId(TextParse.toInt(id));
+        bookInfo.setId(Integer.parseInt(id));
 
         try {
             bookService.deleteBook(bookInfo);

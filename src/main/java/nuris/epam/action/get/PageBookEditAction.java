@@ -6,7 +6,6 @@ import nuris.epam.action.manager.ActionResult;
 import nuris.epam.entity.BookInfo;
 import nuris.epam.services.BookService;
 import nuris.epam.services.exceptions.ServiceException;
-import nuris.epam.utils.TextParse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import static nuris.epam.action.constants.Constants.*;
@@ -22,7 +21,7 @@ public class PageBookEditAction implements Action {
         String id = req.getParameter(BOOK_ID);
         BookService bookService = new BookService();
         try {
-            BookInfo bookInfo = bookService.findByBook(TextParse.toInt(id));
+            BookInfo bookInfo = bookService.findByBook(Integer.parseInt(id));
             req.setAttribute(BOOK_INFO,bookInfo);
             req.setAttribute(GENRE_LIST , bookService.getAllGenre());
 

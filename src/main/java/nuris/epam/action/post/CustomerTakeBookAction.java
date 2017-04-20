@@ -8,7 +8,6 @@ import nuris.epam.entity.Customer;
 import nuris.epam.entity.Transaction;
 import nuris.epam.services.TransactionService;
 import nuris.epam.services.exceptions.ServiceException;
-import nuris.epam.utils.TextParse;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -35,7 +34,7 @@ public class CustomerTakeBookAction implements Action {
         String bookId = req.getParameter(BOOK_ID);
 
         customer.setId(id);
-        bookInfo.setId(TextParse.toInt(bookId));
+        bookInfo.setId(Integer.parseInt(bookId));
         transaction.setCustomer(customer);
         transaction.setBookInfo(bookInfo);
 

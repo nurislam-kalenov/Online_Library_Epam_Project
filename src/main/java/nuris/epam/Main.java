@@ -43,7 +43,7 @@ public class Main {
 
         CustomerService customerService = new CustomerService();
         customer = customerService.findCustomerById(391);
-        System.out.println(customer.getCustomerRole().getName());
+
 
     }
 

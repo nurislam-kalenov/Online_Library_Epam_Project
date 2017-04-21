@@ -31,6 +31,7 @@ public class ActionFactory {
         actions.put("GET/management", new PageManagementAction());
         actions.put("GET/readers", new PageReadersAction());
         actions.put("GET/aboutReader", new PageAboutReaderAction());
+        actions.put("GET/basket", new PageBasketAction());
 
         //post request
         actions.put("POST/login", new LoginAction());
@@ -46,6 +47,8 @@ public class ActionFactory {
         actions.put("POST/takeBook", new CustomerTakeBookAction());
         actions.put("POST/returnBook", new CustomerReturnBookAction());
         actions.put("POST/adminReturnBook", new AdminReturnBookAction());
+        actions.put("POST/basket", new PutBookIntoBasket());
+        actions.put("POST/basket-delete", new DeleteBookFromBasket());
 
     }
 

@@ -10,7 +10,7 @@
 </style>
 
 <head>
-    <title>403</title>
+    <title>500</title>
 </head>
 <body>
 <div class="error">

@@ -168,7 +168,10 @@
                     <button name="submit" class="btn btn-warning col-md-5">${button_take}</button>
                 </form>
 
-                <a href="#" class="btn btn-danger col-md-4" role="button">${button_card}</a>
+                <form action="basket" method="POST">
+                    <input type="hidden" name="book_id" value="${book_info.book.id}">
+                    <button name="submit"  class="btn btn-danger col-md-4" >${button_card}</button>
+                </form>
 
                 <c:if test="${not empty count_error}">
                     <p class="alert alert-danger ">${notif_count}</p>

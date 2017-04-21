@@ -58,7 +58,6 @@ public class SecurityFilter implements Filter {
         filterChain.doFilter(req, resp);
     }
 
-
     private void initGuest() {
         guestAccess.add("/welcome");
         guestAccess.add("/register");
@@ -67,38 +66,44 @@ public class SecurityFilter implements Filter {
     }
 
     private void initUser() {
-        userAccess.add("/books");
-        userAccess.add("/account");
-        userAccess.add("/profileEdit");
-        userAccess.add("/aboutReader");
-        userAccess.add("/aboutBook");
         userAccess.add("/deptCustomerBook");
-        userAccess.add("/deleteProfile");
-        userAccess.add("/password-edit");
-        userAccess.add("/deleteProfile");
-        userAccess.add("/returnCustomerBook");
         userAccess.add("/takeBook");
         userAccess.add("/returnBook");
-        userAccess.add("/set-language");
+        userAccess.add("/basket");
+        userAccess.add("/returnCustomerBook");
+        userAccess.add("/basket-delete");
+
+        userAccess.add("/profileEdit");
+        userAccess.add("/email-edit");
+        userAccess.add("/password-edit");
+        userAccess.add("/aboutBook");
+        userAccess.add("/books");
+        userAccess.add("/account");
+        userAccess.add("/login");
         userAccess.add("/logout");
+        userAccess.add("/set-language");
     }
 
     private void initAdmin() {
-        adminAccess.add("/books");
-        adminAccess.add("/account");
+
         adminAccess.add("/readers");
         adminAccess.add("/management");
-        adminAccess.add("/aboutBook");
         adminAccess.add("/returnCustomerBook");
         adminAccess.add("/registerBook");
         adminAccess.add("/personalDataEdit");
         adminAccess.add("/bookEdit");
         adminAccess.add("/aboutReader");
-        adminAccess.add("/aboutBook");
-        adminAccess.add("/profileEdit");
         adminAccess.add("/adminReturnBook");
         adminAccess.add("/deleteBook");
         adminAccess.add("/deleteProfile");
+
+        adminAccess.add("/profileEdit");
+        adminAccess.add("/email-edit");
+        adminAccess.add("/password-edit");
+        adminAccess.add("/aboutBook");
+        adminAccess.add("/books");
+        adminAccess.add("/account");
+        adminAccess.add("/login");
         adminAccess.add("/logout");
         adminAccess.add("/set-language");
     }

@@ -98,7 +98,7 @@
                     <div class="form-group">
                         <div class="col-sm-5">
                             <label>${book_count}</label>
-                            <input type="text" name="book_amount" class="form-control">
+                            <input type="text" name="book_amount" class="form-control"  minlength="1" maxlength="4">
                             <c:if test="${not empty book_amount_error}">
                                 <p class="alert alert-warning"
                                    style="height: 30px;padding: 5px">${error_data}</p>
@@ -107,7 +107,7 @@
 
                         <div class="col-sm-5">
                             <label>${book_price}</label>
-                            <input type="text" name="book_price" class="form-control">
+                            <input type="text" name="book_price" class="form-control" minlength="3" maxlength="6">
                             <c:if test="${not empty book_price_error}">
                                 <p class="alert alert-warning"
                                    style="height: 30px;padding: 5px">${error_data}</p>

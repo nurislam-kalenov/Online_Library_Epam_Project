@@ -9,6 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="my" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
+
 <fmt:bundle basename="i18n">
     <fmt:message key="register.firstname" var="loc_first_name"/>
     <fmt:message key="register.lastname" var="loc_last_name"/>
@@ -25,8 +26,8 @@
     <fmt:message key="register.button.home" var="loc_back"/>
     <fmt:message key="profile.button.delete" var="loc_delete"/>
     <fmt:message key="about.reader.onhand" var="loc_onhand"/>
-
 </fmt:bundle>
+
 <my:designPattern role="admin">
     <div class="col-md-12 column ">
         <div class="row clearfix ">

@@ -14,8 +14,8 @@ import java.util.List;
 
 public class SecurityFilter implements Filter {
 
-    public static final String ADMIN = "admin";
-    public static final String USER = "user";
+    private static final String ADMIN = "admin";
+    private static final String USER = "user";
 
     private List<String> guestAccess = new ArrayList<>();
     private List<String> userAccess = new ArrayList<>();
@@ -41,21 +41,17 @@ public class SecurityFilter implements Filter {
                 resp.sendRedirect(WELCOME);
                 return;
             }
-            filterChain.doFilter(req, resp);
-            return;
         } else if (req.getSession().getAttribute(ROLE).equals(USER)) {
             if (!userAccess.contains(path)) {
                 resp.sendError(HttpServletResponse.SC_FORBIDDEN);
                 return;
             }
-            filterChain.doFilter(req, resp);
-            return;
-
         } else if (req.getSession().getAttribute(ROLE).equals(ADMIN)) {
             if (!adminAccess.contains(path)) {
                 resp.sendError(HttpServletResponse.SC_FORBIDDEN);
                 return;
             }
+        } else {
             filterChain.doFilter(req, resp);
             return;
         }
@@ -77,13 +73,13 @@ public class SecurityFilter implements Filter {
         userAccess.add("/aboutReader");
         userAccess.add("/aboutBook");
         userAccess.add("/deptCustomerBook");
-        userAccess.add("/set-language");
         userAccess.add("/deleteProfile");
         userAccess.add("/password-edit");
         userAccess.add("/deleteProfile");
         userAccess.add("/returnCustomerBook");
         userAccess.add("/takeBook");
         userAccess.add("/returnBook");
+        userAccess.add("/set-language");
         userAccess.add("/logout");
     }
 
@@ -100,11 +96,11 @@ public class SecurityFilter implements Filter {
         adminAccess.add("/aboutReader");
         adminAccess.add("/aboutBook");
         adminAccess.add("/profileEdit");
-        adminAccess.add("/logout");
-        adminAccess.add("/set-language");
         adminAccess.add("/adminReturnBook");
         adminAccess.add("/deleteBook");
         adminAccess.add("/deleteProfile");
+        adminAccess.add("/logout");
+        adminAccess.add("/set-language");
     }
 
     @Override

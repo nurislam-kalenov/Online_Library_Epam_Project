@@ -20,7 +20,6 @@
     <fmt:message key="management.book.processed" var ="book_proccesed"/>
     <fmt:message key="management.book.button.active" var ="book_active"/>
     <fmt:message key="management.book.button.inactive" var ="book_inactive"/>
-    <fmt:message key="management.book.button.search" var ="book_search"/>
     <fmt:message key="management.book.button.confirmed" var ="book_conf"/>
     <fmt:message key="management.book.button.approve" var ="book_approve"/>
     <fmt:message key="customer.book.state" var ="book_state"/>

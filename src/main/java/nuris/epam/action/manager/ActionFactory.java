@@ -27,7 +27,7 @@ public class ActionFactory {
         actions.put("GET/aboutBook", new PageAboutBookAction());
         actions.put("GET/bookEdit", new PageBookEditAction());
         actions.put("GET/returnCustomerBook", new PageReturnCustomerBookAction());
-        actions.put("GET/deptCustomerBook", new PageDeptCustomerBook());
+        actions.put("GET/deptCustomerBook", new PageDeptCustomerBookAction());
         actions.put("GET/management", new PageManagementAction());
         actions.put("GET/readers", new PageReadersAction());
         actions.put("GET/aboutReader", new PageAboutReaderAction());
@@ -45,10 +45,11 @@ public class ActionFactory {
         actions.put("POST/deleteProfile", new DeleteProfileAction());
         actions.put("POST/deleteBook", new DeleteBookAction());
         actions.put("POST/takeBook", new CustomerTakeBookAction());
+        actions.put("POST/takeBookBasket", new TakeBookFromBasket());
         actions.put("POST/returnBook", new CustomerReturnBookAction());
         actions.put("POST/adminReturnBook", new AdminReturnBookAction());
         actions.put("POST/basket", new PutBookIntoBasket());
-        actions.put("POST/basket-delete", new DeleteBookFromBasket());
+        actions.put("POST/basket-delete", new DeleteBookFromBasketAction());
 
     }
 

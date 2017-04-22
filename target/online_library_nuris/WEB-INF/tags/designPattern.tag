@@ -12,6 +12,7 @@
 <c:url var="customer_book_url" value="/kz/deptCustomerBook"/>
 <c:url var="management_url" value="/kz/management"/>
 <c:url var="readers_url" value="/kz/readers"/>
+<c:url var="basket_url" value="/kz/basket"/>
 
 <html lang=en>
 <head>
@@ -79,6 +80,7 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">${hello}, ${sessionScope.name}!</a></li>
+                    <li><a href="${basket_url}">Корзина</a></li>
                     <li><a href="set-language?lang=en">English</a></li>
                     <li><a href="set-language?lang=ru">Руский</a></li>
                     <li><form action="${logout_url}"  class="button_header" method="post">

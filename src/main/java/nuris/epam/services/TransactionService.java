@@ -34,8 +34,6 @@ public class TransactionService {
                     bookInfoDao.update(bookInfo);
                     transaction = transactionDao.insert(transaction);
                     daoFactory.commitTransaction();
-                } else {
-                    System.out.println("Книг нет или уже он у пользователя");
                 }
                 return transaction;
 
@@ -71,8 +69,6 @@ public class TransactionService {
                     transactionDao.update(transaction);
                     managementDao.insert(management);
                     daoFactory.commitTransaction();
-                } else {
-                    System.out.println("Operation already executed");
                 }
                 return transaction;
             } catch (DaoException e) {

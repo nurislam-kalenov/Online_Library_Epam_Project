@@ -9,6 +9,7 @@ import nuris.epam.entity.Transaction;
 import nuris.epam.services.BookService;
 import nuris.epam.services.TransactionService;
 import nuris.epam.services.exceptions.ServiceException;
+
 import static nuris.epam.action.constants.Constants.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -35,18 +36,23 @@ public class PageAboutBookAction implements Action {
         transaction.setCustomer(customer);
         try {
             bookInfo = bookService.findByBook(Integer.parseInt(id));
+            transaction.setBookInfo(bookInfo);
         } catch (ServiceException e) {
             e.printStackTrace();
         }
-        if(transactionService.countActiveTransaction(transaction)>4){
-            req.setAttribute(ATT_COUNT_ERROR ,true);
+        if (transactionService.countActiveTransaction(transaction) > 4) {
+            req.setAttribute(ATT_COUNT_ERROR, true);
         }
-        if(bookInfo.getAmount() <= 0){
-            req.setAttribute(ATT_OVER_ERROR ,true);
+        if (bookInfo.getAmount() <= 0) {
+            req.setAttribute(ATT_OVER_ERROR, true);
 
         }
 
-        req.setAttribute(BOOK_INFO , bookInfo);
+        if (transactionService.isAlreadyTaken(transaction)) {
+            req.setAttribute("already_taken", true);
+        }
+
+        req.setAttribute(BOOK_INFO, bookInfo);
 
         return new ActionResult(ABOUT_BOOK);
     }

@@ -9,7 +9,13 @@ import nuris.epam.services.ManagementService;
 import nuris.epam.services.TransactionService;
 import nuris.epam.services.exceptions.ServiceException;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.jsp.jstl.core.Config;
 import java.util.List;
+import java.util.Locale;
+
+import static nuris.epam.action.constants.Constants.LANG;
 
 
 /**
@@ -37,12 +43,6 @@ public class Main {
         List<Management> managements = managementService.getListManagement(1 ,1,true);
         managementService.findByTransaction(managements.get(0).getTransaction());
         managements.add( managementService.findByTransaction(managements.get(0).getTransaction()));
-
-        MySqlCustomer mySqlCustomer = new MySqlCustomer();
-        mySqlCustomer.sql();
-
-        CustomerService customerService = new CustomerService();
-        customer = customerService.findCustomerById(391);
 
 
     }

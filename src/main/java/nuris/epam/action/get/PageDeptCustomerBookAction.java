@@ -21,7 +21,7 @@ import static nuris.epam.action.constants.Constants.DEPT_CUSTOMER_BOOK;
 /**
  * Created by User on 17.04.2017.
  */
-public class PageDeptCustomerBook implements Action {
+public class PageDeptCustomerBookAction implements Action {
 
     @Override
     public ActionResult execute(HttpServletRequest req, HttpServletResponse resp) throws ActionException {

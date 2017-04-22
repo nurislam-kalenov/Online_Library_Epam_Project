@@ -37,6 +37,7 @@ public class BookInfo extends BaseEntity {
         this.book = book;
     }
 
+
     @Override
     public String toString() {
         return getId()+"/"+amount+"/"+price+"/"+book;

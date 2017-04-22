@@ -1,12 +1,13 @@
 package nuris.epam.entity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by User on 21.04.2017.
  */
-public class Basket {
+public class Basket implements Serializable{
 
     public List<BookInfo> books = new ArrayList<>();
 
@@ -22,7 +23,9 @@ public class Basket {
             }
         }
     }
-
+    public void deleteAll(){
+        books.removeAll(books);
+    }
     public boolean isAvailable(int id) {
         for (BookInfo book : books) {
             if (book.getId() == id) {

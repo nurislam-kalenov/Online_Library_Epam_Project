@@ -16,7 +16,6 @@ public class PageBasketAction extends AbstractBasket implements Action {
     public ActionResult execute(HttpServletRequest req, HttpServletResponse resp) throws ActionException {
         Basket basket = getBasket(req.getSession());
         req.setAttribute("basket" , basket);
-        System.out.println(basket.getBooks().size());
         return new ActionResult("basket");
     }
 }

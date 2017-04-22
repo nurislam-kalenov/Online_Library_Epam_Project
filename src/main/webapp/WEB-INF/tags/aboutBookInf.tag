@@ -163,15 +163,21 @@
                 </div>
                 <a href="${books_url}" class="btn btn-info col-md-3" role="button">${button_back}</a>
 
-                <form action="takeBook" method="POST">
-                    <input type="hidden" name="book_id" value="${book_info.id}">
-                    <button name="submit" class="btn btn-warning col-md-5">${button_take}</button>
-                </form>
+                <c:if test="${not empty already_taken}">
+                    <button class="btn btn-disabled col-md-5">${button_take}</button>
+                    <button class="btn btn-disabled col-md-4">${button_card}</button>
+                </c:if>
 
-                <form action="basket" method="POST">
-                    <input type="hidden" name="book_id" value="${book_info.book.id}">
-                    <button name="submit"  class="btn btn-danger col-md-4" >${button_card}</button>
-                </form>
+                <c:if test="${empty already_taken}">
+                    <form action="takeBook" method="POST">
+                        <input type="hidden" name="book_id" value="${book_info.id}">
+                        <button name="submit" class="btn btn-warning col-md-5">${button_take}</button>
+                    </form>
+                    <form action="basket" method="POST">
+                        <input type="hidden" name="book_id" value="${book_info.book.id}">
+                        <button name="submit" class="btn btn-danger col-md-4">${button_card}</button>
+                    </form>
+                </c:if>
 
                 <c:if test="${not empty count_error}">
                     <p class="alert alert-danger ">${notif_count}</p>
@@ -180,6 +186,10 @@
                 <c:if test="${not empty over_error}">
                     <p class="alert alert-danger ">${notif_over}</p>
                 </c:if>
+                <c:if test="${not empty already_taken}">
+                    <p class="alert alert-danger ">${notif_already_taken}</p>
+                </c:if>
+
 
             </div>
         </div>

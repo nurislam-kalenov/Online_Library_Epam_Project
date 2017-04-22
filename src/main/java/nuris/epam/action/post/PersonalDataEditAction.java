@@ -25,7 +25,7 @@ import static nuris.epam.action.constants.Constants.*;
  * Created by User on 10.04.2017.
  */
 public class PersonalDataEditAction implements Action {
-    private boolean wrong;
+    private boolean wrong = false;
 
     @Override
     public ActionResult execute(HttpServletRequest req, HttpServletResponse resp) throws ActionException {
@@ -38,7 +38,7 @@ public class PersonalDataEditAction implements Action {
         Properties properties = new Properties();
 
         HttpSession session = req.getSession();
-        int id = (int) session.getAttribute(CUSTOMER_ID);
+        int id = (int) session.getAttribute(ATT_CUSTOMER_ID);
 
         try {
             properties.load(RegisterAction.class.getClassLoader().getResourceAsStream(VALIDATION_PROPERTIES));
@@ -54,32 +54,32 @@ public class PersonalDataEditAction implements Action {
 
         if (availableParam(FIRST_NAME, req)) {
             String firstName = req.getParameter(FIRST_NAME);
-            checkParamValid(firstName, properties.getProperty(NAME_VALID), req);
+            checkParamValid(firstName, properties.getProperty(NAME_VALID));
             person.setFirstName(firstName);
         }
         if (availableParam(LAST_NAME, req)) {
             String lastName = req.getParameter(LAST_NAME);
-            checkParamValid(lastName, properties.getProperty(NAME_VALID), req);
+            checkParamValid(lastName, properties.getProperty(NAME_VALID));
             person.setLastName(lastName);
         }
         if (availableParam(MIDDLE_NAME, req)) {
             String middleName = req.getParameter(MIDDLE_NAME);
-            checkParamValid(middleName, properties.getProperty(NAME_VALID), req);
+            checkParamValid(middleName, properties.getProperty(NAME_VALID));
             person.setMiddleName(middleName);
         }
         if (availableParam(PHONE, req)) {
             String phone = req.getParameter(PHONE);
-            checkParamValid(phone, properties.getProperty(LIMIT_NUMBER_VALID), req);
+            checkParamValid(phone, properties.getProperty(LIMIT_NUMBER_VALID));
             person.setPhone(phone);
         }
         if (availableParam(BIRTHDAY, req)) {
             String birthday = req.getParameter(BIRTHDAY);
-            checkParamValid(birthday, properties.getProperty(DATE_VALID), req);
+            checkParamValid(birthday, properties.getProperty(DATE_VALID));
             person.setBirthday(SqlDate.stringToDate(birthday));
         }
         if (availableParam(ADDRESS, req)) {
             String address = req.getParameter(ADDRESS);
-            checkParamValid(address, properties.getProperty(ADDRESS_VALID), req);
+            checkParamValid(address, properties.getProperty(ADDRESS_VALID));
             person.setAddress(address);
         }
 
@@ -101,7 +101,7 @@ public class PersonalDataEditAction implements Action {
         return new ActionResult(ACCOUNT, true);
     }
 
-    private void checkParamValid(String paramValue, String validator, HttpServletRequest request) {
+    private void checkParamValid(String paramValue, String validator) {
         Pattern pattern = Pattern.compile(validator);
         Matcher matcher = pattern.matcher(paramValue);
         if (!matcher.matches()) {

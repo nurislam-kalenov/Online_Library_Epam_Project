@@ -22,7 +22,7 @@ public class PageProfileEditAction implements Action{
     public ActionResult execute(HttpServletRequest request, HttpServletResponse response) throws ActionException {
         CustomerService customerService = new CustomerService();
         HttpSession session = request.getSession();
-        int id = (int) session.getAttribute(CUSTOMER_ID);
+        int id = (int) session.getAttribute(ATT_CUSTOMER_ID);
         try {
             Customer customer = customerService.findCustomerById(id);
             request.setAttribute(EMAIL , customer.getEmail());

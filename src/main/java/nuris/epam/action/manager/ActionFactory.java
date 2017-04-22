@@ -45,7 +45,7 @@ public class ActionFactory {
         actions.put("POST/deleteProfile", new DeleteProfileAction());
         actions.put("POST/deleteBook", new DeleteBookAction());
         actions.put("POST/takeBook", new CustomerTakeBookAction());
-        actions.put("POST/takeBookBasket", new TakeBookFromBasket());
+        actions.put("POST/takeBookBasket", new CustomerTakeBookFromBasket());
         actions.put("POST/returnBook", new CustomerReturnBookAction());
         actions.put("POST/adminReturnBook", new AdminReturnBookAction());
         actions.put("POST/basket", new PutBookIntoBasket());

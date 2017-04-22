@@ -32,7 +32,7 @@ public class EmailEditAction implements Action {
         Properties properties = new Properties();
 
         HttpSession session = request.getSession();
-        int id = (int) session.getAttribute(CUSTOMER_ID);
+        int id = (int) session.getAttribute(ATT_CUSTOMER_ID);
 
         try {
             properties.load(RegisterAction.class.getClassLoader().getResourceAsStream(VALIDATION_PROPERTIES));

@@ -39,7 +39,7 @@ public class PageManagementAction implements Action {
             List<Management> managements = managementService.getListManagement(page, recordPerPage, isActiveState);
 
             int noOfRecords = managementService.getManagementCount(isActiveState);
-            int noOfPages = (int) Math.ceil(noOfRecords * 1.0 / recordPerPage);
+            int noOfPages = (int) Math.ceil(noOfRecords *CONVERT_TO_DOUBLE/ recordPerPage);
 
             req.setAttribute(ATT_MANAGEMENTS, managements);
             req.setAttribute(ATT_NO_PAGES, noOfPages);

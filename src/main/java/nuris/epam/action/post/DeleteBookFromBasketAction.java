@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import static nuris.epam.action.constants.Constants.*;
+
 /**
  * Created by User on 21.04.2017.
  */
@@ -19,14 +21,14 @@ public class DeleteBookFromBasketAction extends AbstractBasket implements Action
         HttpSession session = req.getSession();
         Basket basket = getBasket(session);
 
-        if(req.getParameter("book_id_delete")!=null) {
-            int bookId = Integer.parseInt(req.getParameter("book_id_delete"));
+        if (req.getParameter(ATT_DELETE_BOOK_ID) != null) {
+            int bookId = Integer.parseInt(req.getParameter(ATT_DELETE_BOOK_ID));
             basket.delete(bookId);
         }
-        if(req.getParameter("book_id_delete_all")!=null) {
+        if (req.getParameter(ATT_ALL_DELETE_BOOK_ID) != null) {
             basket.deleteAll();
         }
 
-        return new ActionResult("basket" , true);
+        return new ActionResult(BASKET, true);
     }
 }

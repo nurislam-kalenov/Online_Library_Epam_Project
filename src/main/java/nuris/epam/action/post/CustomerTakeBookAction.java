@@ -13,9 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import static nuris.epam.action.constants.Constants.BOOKS;
-import static nuris.epam.action.constants.Constants.BOOK_ID;
-import static nuris.epam.action.constants.Constants.CUSTOMER_ID;
+import static nuris.epam.action.constants.Constants.*;
 
 /**
  * Created by User on 13.04.2017.
@@ -30,7 +28,7 @@ public class CustomerTakeBookAction implements Action {
         Customer customer = new Customer();
 
         HttpSession session = req.getSession();
-        int id = (int) session.getAttribute(CUSTOMER_ID);
+        int id = (int) session.getAttribute(ATT_CUSTOMER_ID);
         String bookId = req.getParameter(BOOK_ID);
 
         customer.setId(id);

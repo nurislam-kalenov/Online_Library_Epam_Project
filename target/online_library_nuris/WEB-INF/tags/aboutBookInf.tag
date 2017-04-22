@@ -165,7 +165,6 @@
 
                 <c:if test="${not empty already_taken}">
                     <button class="btn btn-disabled col-md-5">${button_take}</button>
-
                     <button class="btn btn-disabled col-md-4">${button_card}</button>
                 </c:if>
 
@@ -174,7 +173,6 @@
                         <input type="hidden" name="book_id" value="${book_info.id}">
                         <button name="submit" class="btn btn-warning col-md-5">${button_take}</button>
                     </form>
-
                     <form action="basket" method="POST">
                         <input type="hidden" name="book_id" value="${book_info.book.id}">
                         <button name="submit" class="btn btn-danger col-md-4">${button_card}</button>
@@ -188,6 +186,7 @@
                 <c:if test="${not empty over_error}">
                     <p class="alert alert-danger ">${notif_over}</p>
                 </c:if>
+
                 <c:if test="${not empty already_taken}">
                     <p class="alert alert-danger ">${notif_already_taken}</p>
                 </c:if>

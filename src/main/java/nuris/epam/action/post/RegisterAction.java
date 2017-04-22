@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
  * Created by User on 30.03.2017.
  */
 public class RegisterAction implements Action {
-    private boolean wrong;
+    private boolean wrong= false;
 
     @Override
     public ActionResult execute(HttpServletRequest request, HttpServletResponse resp) throws ActionException {

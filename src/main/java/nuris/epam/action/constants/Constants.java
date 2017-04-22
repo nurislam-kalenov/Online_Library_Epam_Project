@@ -19,6 +19,7 @@ public final class Constants {
     public static final String MANAGEMENT = "management";
     public static final String ABOUT_READER = "aboutReader";
     public static final String READERS = "readers";
+    public static final String BASKET = "basket";
 
     //Validation regular expressions
     public static final String VALIDATION_PROPERTIES = "validation.properties";
@@ -83,6 +84,7 @@ public final class Constants {
     public static final String ATT_GENRES = "genres";
     public static final String SEARCH = "search";
 
+
     //PageCustomerAccountAction
     public static final String ATT_CUSTOMER_INFO = "customer_info";
 
@@ -91,6 +93,8 @@ public final class Constants {
     public static final String BOOK_INFO = "book_info";
     public static final String ATT_COUNT_ERROR = "count_error";
     public static final String ATT_OVER_ERROR = "over_error";
+    public static final String ATT_TAKE_ERROR = "c";
+
 
     //PasswordEditAction
     public static final String OLD_PASSWORD = "old_pass";
@@ -111,7 +115,7 @@ public final class Constants {
     public static final String ATT_IS_ACTIVE_STATE = "isActiveState";
 
     //AdminReturnBookAction
-    public static final String MANAGEMENT_ID= "management_id";
+    public static final String MANAGEMENT_ID = "management_id";
 
     //PageAboutReaderAction
     public static final String READER_ID = "customer_id";
@@ -123,14 +127,39 @@ public final class Constants {
     //DeleteProfileAction
     public static final String ADMIN = "admin";
 
+    //AbstractBasket
+    public static final String ATT_BASKET = "basket";
+
+    //CustomerTakeBookFromBasket
+    public static final String ATT_BOOK_INFO_ID = "book_info_id";
+
+    //DeleteBookFromBasketAction
+    public static final String ATT_DELETE_BOOK_ID="book_id_delete";
+    public static final String ATT_ALL_DELETE_BOOK_ID="book_id_delete_all";
+
     //Session
-    public static final String CUSTOMER_ID = "customerId";
-    public static final String ROLE = "role";
-    public static final String NAME = "name";
+    public static final String ATT_CUSTOMER_ID = "customerId";
+    public static final String ATT_ROLE = "role";
+    public static final String ATT_ROLE_ID = "role_id";
+    public static final String ATT_NAME = "name";
 
     //View
     public static final String PATH_TO_JSP = "/WEB-INF/jsp/";
     public static final String JSP_FORMAT = ".jsp";
+
+    //Service variables
+    /**
+     * The maximum number of books that can be taken by the client
+     */
+    public static final int MAX_COUNT_BOOKS = 4;
+    /**
+     * The minimum number of books that can be taken by the client
+     */
+    public static final int MIN_COUNT_BOOKS = 0;
+    /**
+     * Converts the Int variable to the Double variable.
+     */
+    public static final double CONVERT_TO_DOUBLE = 1.0;
 
 
     private Constants() {

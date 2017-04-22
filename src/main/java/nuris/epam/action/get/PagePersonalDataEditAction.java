@@ -21,7 +21,7 @@ public class PagePersonalDataEditAction implements Action {
         CustomerService customerService = new CustomerService();
 
         HttpSession session = req.getSession();
-        int id = (int) session.getAttribute(CUSTOMER_ID);
+        int id = (int) session.getAttribute(ATT_CUSTOMER_ID);
 
         try {
             Customer customer = customerService.findCustomerById(id);

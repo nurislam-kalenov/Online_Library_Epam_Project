@@ -19,7 +19,7 @@ public class PageCustomerAccountAction implements Action {
         CustomerService customerService = new CustomerService();
         Customer customer = null;
         HttpSession session = request.getSession();
-        int id = (int) session.getAttribute(CUSTOMER_ID);
+        int id = (int) session.getAttribute(ATT_CUSTOMER_ID);
         try {
             customer = customerService.findCustomerById(id);
         } catch (ServiceException e) {

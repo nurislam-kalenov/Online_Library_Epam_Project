@@ -36,17 +36,17 @@ public class SecurityFilter implements Filter {
 
         String path = req.getPathInfo();
 
-        if (req.getSession().getAttribute(ROLE) == null) {
+        if (req.getSession().getAttribute(ATT_ROLE) == null) {
             if (!guestAccess.contains(path)) {
                 resp.sendRedirect(WELCOME);
                 return;
             }
-        } else if (req.getSession().getAttribute(ROLE).equals(USER)) {
+        } else if (req.getSession().getAttribute(ATT_ROLE).equals(USER)) {
             if (!userAccess.contains(path)) {
                 resp.sendError(HttpServletResponse.SC_FORBIDDEN);
                 return;
             }
-        } else if (req.getSession().getAttribute(ROLE).equals(ADMIN)) {
+        } else if (req.getSession().getAttribute(ATT_ROLE).equals(ADMIN)) {
             if (!adminAccess.contains(path)) {
                 resp.sendError(HttpServletResponse.SC_FORBIDDEN);
                 return;
@@ -68,6 +68,7 @@ public class SecurityFilter implements Filter {
     private void initUser() {
         userAccess.add("/deptCustomerBook");
         userAccess.add("/takeBook");
+        userAccess.add("/takeBookBasket");
         userAccess.add("/returnBook");
         userAccess.add("/basket");
         userAccess.add("/returnCustomerBook");

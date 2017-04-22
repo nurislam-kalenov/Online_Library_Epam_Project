@@ -50,16 +50,17 @@ public class PageBookAction implements Action {
             List<Book> book = bookService.getBookByName(name);
 
             int noOfRecords = bookService.getBookCountByGenre(genre);
-            int noOfPages = (int) Math.ceil(noOfRecords * 1.0 / recordPerPage);
+            int noOfPages = (int) Math.ceil(noOfRecords * CONVERT_TO_DOUBLE / recordPerPage);
 
-            if (book.size() > 0) {
+            if (book.size() > MIN_COUNT_BOOKS) {
                 request.setAttribute(ATT_BOOKS, book);
                 request.setAttribute(ATT_GENRES, genres);
             } else {
                 request.setAttribute(ATT_BOOKS, books);
+                request.setAttribute(ATT_GENRES, genres);
                 request.setAttribute(ATT_NO_PAGES, noOfPages);
                 request.setAttribute(ATT_CURRENT_PAGE, page);
-                request.setAttribute(ATT_GENRES, genres);
+
             }
 
         } catch (ServiceException e) {

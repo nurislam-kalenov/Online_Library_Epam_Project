@@ -14,9 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import java.util.List;
 
-import static nuris.epam.action.constants.Constants.ATT_CUSTOMER_BOOK;
-import static nuris.epam.action.constants.Constants.CUSTOMER_ID;
-import static nuris.epam.action.constants.Constants.DEPT_CUSTOMER_BOOK;
+import static nuris.epam.action.constants.Constants.*;
 
 /**
  * Created by User on 17.04.2017.
@@ -26,7 +24,7 @@ public class PageDeptCustomerBookAction implements Action {
     @Override
     public ActionResult execute(HttpServletRequest req, HttpServletResponse resp) throws ActionException {
         HttpSession session = req.getSession();
-        int id = (int) session.getAttribute(CUSTOMER_ID);
+        int id = (int) session.getAttribute(ATT_CUSTOMER_ID);
 
         TransactionService transactionService = new TransactionService();
         Transaction transaction = new Transaction();

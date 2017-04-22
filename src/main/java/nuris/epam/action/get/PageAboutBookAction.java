@@ -31,7 +31,7 @@ public class PageAboutBookAction implements Action {
         String id = req.getParameter(BOOK_ID);
 
         HttpSession session = req.getSession();
-        int customerId = (int) session.getAttribute(CUSTOMER_ID);
+        int customerId = (int) session.getAttribute(ATT_CUSTOMER_ID);
         customer.setId(customerId);
         transaction.setCustomer(customer);
         try {
@@ -40,16 +40,16 @@ public class PageAboutBookAction implements Action {
         } catch (ServiceException e) {
             e.printStackTrace();
         }
-        if (transactionService.countActiveTransaction(transaction) > 4) {
+        if (transactionService.countActiveTransaction(transaction) > MAX_COUNT_BOOKS) {
             req.setAttribute(ATT_COUNT_ERROR, true);
         }
-        if (bookInfo.getAmount() <= 0) {
+        if (bookInfo.getAmount() <= MIN_COUNT_BOOKS) {
             req.setAttribute(ATT_OVER_ERROR, true);
 
         }
 
         if (transactionService.isAlreadyTaken(transaction)) {
-            req.setAttribute("already_taken", true);
+            req.setAttribute(ATT_TAKE_ERROR, true);
         }
 
         req.setAttribute(BOOK_INFO, bookInfo);

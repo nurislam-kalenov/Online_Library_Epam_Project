@@ -26,9 +26,7 @@ public class View {
                 String path =  String.format(PATH_TO_JSP+ result.getView() + JSP_FORMAT);
                 request.getRequestDispatcher(path).forward(request, response);
             }
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (ServletException | IOException e) {
             e.printStackTrace();
         }
     }

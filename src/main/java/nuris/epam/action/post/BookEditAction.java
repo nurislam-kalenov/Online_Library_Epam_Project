@@ -25,7 +25,7 @@ import static nuris.epam.action.constants.Constants.*;
  * Created by User on 12.04.2017.
  */
 public class BookEditAction implements Action {
-    private boolean wrong;
+    private boolean wrong = false;
 
     @Override
     public ActionResult execute(HttpServletRequest req, HttpServletResponse resp) throws ActionException {
@@ -60,47 +60,47 @@ public class BookEditAction implements Action {
 
         if (availableParam(FIRST_NAME, req)) {
             String firstName = req.getParameter(FIRST_NAME);
-            checkParamValid(firstName, properties.getProperty(NAME_VALID), req);
+            checkParamValid(firstName, properties.getProperty(NAME_VALID));
             author.setFirstName(firstName);
         }
         if (availableParam(LAST_NAME, req)) {
             String lastName = req.getParameter(LAST_NAME);
-            checkParamValid(lastName, properties.getProperty(NAME_VALID), req);
+            checkParamValid(lastName, properties.getProperty(NAME_VALID));
             author.setLastName(lastName);
         }
         if (availableParam(MIDDLE_NAME, req)) {
             String middleName = req.getParameter(MIDDLE_NAME);
-            checkParamValid(middleName, properties.getProperty(NAME_VALID), req);
+            checkParamValid(middleName, properties.getProperty(NAME_VALID));
             author.setMiddleName(middleName);
         }
         if (availableParam(DESCRIPTION, req)) {
             String descript = req.getParameter(DESCRIPTION);
-            checkParamValid(descript, properties.getProperty(DESCRIPTION_VALID), req);
+            checkParamValid(descript, properties.getProperty(DESCRIPTION_VALID));
             book.setDescription(descript);
         }
         if (availableParam(BOOK_NAME, req)) {
             String name = req.getParameter(BOOK_NAME);
-            checkParamValid(name, properties.getProperty(BOOK_NAME_VALID), req);
+            checkParamValid(name, properties.getProperty(BOOK_NAME_VALID));
             book.setName(name);
         }
         if (availableParam(ISBN, req)) {
             String name = req.getParameter(ISBN);
-            checkParamValid(name, properties.getProperty(ISBN_VALID), req);
+            checkParamValid(name, properties.getProperty(ISBN_VALID));
             book.setIsbn(name);
         }
         if (availableParam(YEAR, req)) {
             String year = req.getParameter(YEAR);
-            checkParamValid(year, properties.getProperty(DATE_VALID), req);
+            checkParamValid(year, properties.getProperty(DATE_VALID));
             book.setDate(SqlDate.stringToDate(year));
         }
         if (availableParam(BOOK_AMOUNT, req)) {
             String amount = req.getParameter(BOOK_AMOUNT);
-            checkParamValid(amount, properties.getProperty(BOOK_COUNT_VALID), req);
+            checkParamValid(amount, properties.getProperty(BOOK_COUNT_VALID));
             bookInfo.setAmount(Integer.parseInt(amount));
         }
         if (availableParam(BOOK_PRICE, req)) {
             String price = req.getParameter(BOOK_PRICE);
-            checkParamValid(price, properties.getProperty(BOOK_PRICE_VALID), req);
+            checkParamValid(price, properties.getProperty(BOOK_PRICE_VALID));
             bookInfo.setPrice(Integer.parseInt(price));
         }
 
@@ -119,7 +119,7 @@ public class BookEditAction implements Action {
         return new ActionResult(req.getHeader(REFERER), true);
     }
 
-    private void checkParamValid(String paramValue, String validator, HttpServletRequest request) {
+    private void checkParamValid(String paramValue, String validator) {
         Pattern pattern = Pattern.compile(validator);
         Matcher matcher = pattern.matcher(paramValue);
         if (!matcher.matches()) {

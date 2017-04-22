@@ -186,6 +186,7 @@
                 <c:if test="${not empty over_error}">
                     <p class="alert alert-danger ">${notif_over}</p>
                 </c:if>
+
                 <c:if test="${not empty already_taken}">
                     <p class="alert alert-danger ">${notif_already_taken}</p>
                 </c:if>

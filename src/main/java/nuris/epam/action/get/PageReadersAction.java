@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 import static nuris.epam.action.constants.Constants.*;
-import static nuris.epam.action.constants.Constants.PAGE;
 
 /**
  * Created by User on 18.04.2017.
@@ -31,7 +30,7 @@ public class PageReadersAction implements Action{
             List<Customer> readers = customerService.getListCustomers(page , recordPerPage);
 
             int noOfRecords = customerService.customerCount();
-            int noOfPages = (int) Math.ceil(noOfRecords * 1.0 / recordPerPage);
+            int noOfPages = (int) Math.ceil(noOfRecords *CONVERT_TO_DOUBLE / recordPerPage);
 
             req.setAttribute(ATT_READERS, readers);
             req.setAttribute(ATT_NO_PAGES, noOfPages);

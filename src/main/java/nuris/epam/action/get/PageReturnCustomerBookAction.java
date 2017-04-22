@@ -4,16 +4,13 @@ import nuris.epam.action.exception.ActionException;
 import nuris.epam.action.manager.Action;
 import nuris.epam.action.manager.ActionResult;
 import nuris.epam.entity.Customer;
-import nuris.epam.entity.Management;
 import nuris.epam.entity.Transaction;
-import nuris.epam.services.ManagementService;
 import nuris.epam.services.TransactionService;
 import nuris.epam.services.exceptions.ServiceException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 import java.util.List;
 
 import static nuris.epam.action.constants.Constants.*;
@@ -34,13 +31,13 @@ public class PageReturnCustomerBookAction implements Action {
             page = Integer.parseInt(req.getParameter(PAGE));
         }
 
-        if(req.getParameter(ACTIVE)!=null){
+        if (req.getParameter(ACTIVE) != null) {
             isActive = Boolean.valueOf(req.getParameter(ACTIVE));
             isActiveState = isActive;
         }
 
         HttpSession session = req.getSession();
-        int id = (int) session.getAttribute(CUSTOMER_ID);
+        int id = (int) session.getAttribute(ATT_CUSTOMER_ID);
 
         TransactionService transactionService = new TransactionService();
         Transaction transaction = new Transaction();
@@ -49,9 +46,9 @@ public class PageReturnCustomerBookAction implements Action {
         transaction.setCustomer(customer);
 
         try {
-            List<Transaction> list = transactionService.getListTransaction(transaction , page , recordPerPage , isActiveState);
-            int noOfRecords = transactionService.getTransactionCount(transaction ,isActiveState);
-            int noOfPages = (int) Math.ceil(noOfRecords * 1.0 / recordPerPage);
+            List<Transaction> list = transactionService.getListTransaction(transaction, page, recordPerPage, isActiveState);
+            int noOfRecords = transactionService.getTransactionCount(transaction, isActiveState);
+            int noOfPages = (int) Math.ceil(noOfRecords * CONVERT_TO_DOUBLE / recordPerPage);
 
             req.setAttribute(ATT_NO_PAGES, noOfPages);
             req.setAttribute(ATT_CURRENT_PAGE, page);

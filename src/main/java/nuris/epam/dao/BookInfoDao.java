@@ -1,7 +1,6 @@
 package nuris.epam.dao;
 
 import nuris.epam.dao.exception.DaoException;
-import nuris.epam.entity.Book;
 import nuris.epam.entity.BookInfo;
 import nuris.epam.entity.Transaction;
 

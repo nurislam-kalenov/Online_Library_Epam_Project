@@ -2,7 +2,6 @@ package nuris.epam.dao.mysql;
 
 import nuris.epam.dao.BookInfoDao;
 import nuris.epam.dao.exception.DaoException;
-import nuris.epam.entity.Book;
 import nuris.epam.entity.BookInfo;
 import nuris.epam.entity.Transaction;
 
@@ -32,9 +31,6 @@ public class MySqlBookInfo extends BookInfoDao {
     private static final String FIND_BY_BOOK = Sql.create().select().varS(BOOK_INFO, ID_BOOK_INFO).c().varS(BOOK_INFO, AMOUNT).c().varS(BOOK_INFO ,PRICE).from().var(BOOK_INFO).join(BOOK).varS(BOOK, ID_BOOK).eq().varS(BOOK_INFO, ID_BOOK).whereQs(BOOK, ID_BOOK).build();
     private static final String FIND_BY_TRANSACTION = Sql.create().select().varS(BOOK_INFO, ID_BOOK_INFO).c().varS(BOOK_INFO, AMOUNT).c().varS(BOOK_INFO, PRICE).from().var(BOOK_INFO).join(TRANSACTION).varS(TRANSACTION, ID_BOOK_INFO).eq().varS(BOOK_INFO, ID_BOOK_INFO).whereQs(TRANSACTION, ID_TRANSACTION).build();
 
-    public void sql(){
-        System.out.println(FIND_BY_BOOK);
-    }
     @Override
     public BookInfo insert(BookInfo item) throws DaoException {
         try {
@@ -60,7 +56,7 @@ public class MySqlBookInfo extends BookInfoDao {
                 statement.setInt(1, id);
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
-                        bookInfo = itemBookInfo(bookInfo, resultSet);
+                        bookInfo = itemBookInfo(resultSet);
                     }
                 }
             }
@@ -95,8 +91,8 @@ public class MySqlBookInfo extends BookInfoDao {
         }
     }
 
-    private BookInfo itemBookInfo(BookInfo bookInfo, ResultSet resultSet) throws SQLException {
-        bookInfo = new BookInfo();
+    private BookInfo itemBookInfo(ResultSet resultSet) throws SQLException {
+        BookInfo bookInfo = new BookInfo();
         bookInfo.setId(resultSet.getInt(1));
         bookInfo.setAmount(resultSet.getInt(2));
         bookInfo.setPrice(resultSet.getInt(3));
@@ -118,7 +114,7 @@ public class MySqlBookInfo extends BookInfoDao {
                 statement.setInt(1, id);
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
-                        bookInfo = itemBookInfo(bookInfo , resultSet);
+                        bookInfo = itemBookInfo(resultSet);
                     }
                 }
             }
@@ -136,7 +132,7 @@ public class MySqlBookInfo extends BookInfoDao {
                 statement.setInt(1, transaction.getId());
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
-                        bookInfo = itemBookInfo(bookInfo, resultSet);
+                        bookInfo = itemBookInfo(resultSet);
                     }
                 }
             }

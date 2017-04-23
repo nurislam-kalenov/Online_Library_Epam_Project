@@ -47,8 +47,7 @@ public class ResourcesQueue<T> {
     public T takeResource() throws ResourcesException {
         try {
             if (semaphore.tryAcquire(timeOut, TimeUnit.SECONDS)) {
-                T res = resource.poll();
-                return res;
+                return resource.poll();
             }
         } catch (InterruptedException e) {
             throw new ResourcesException("You didn't wait for connect", e);

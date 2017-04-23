@@ -12,8 +12,7 @@ import java.util.Calendar;
 public class SqlDate {
 
     public static Date currentDateAndTime() {
-        Date date = new Date(Calendar.getInstance().getTime().getTime());
-        return date;
+        return new Date(Calendar.getInstance().getTime().getTime());
     }
 
     public static Date stringToDate(String date) {

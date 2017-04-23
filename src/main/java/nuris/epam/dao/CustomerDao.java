@@ -59,13 +59,4 @@ public abstract class CustomerDao extends BaseDao<Customer> {
      */
     public abstract List<Customer> getLimitCustomers(int start, int count) throws DaoException;
 
-    /**
-     * Метод, ищет пользователе по его firstName и lastName.
-     *
-     * @param customer - сущность
-     * @return Возвращяает конкретного пользователя.
-     * @throws DaoException
-     */
-    public abstract Customer findByFirstNameAndLastName(Customer customer) throws DaoException;
-
 }

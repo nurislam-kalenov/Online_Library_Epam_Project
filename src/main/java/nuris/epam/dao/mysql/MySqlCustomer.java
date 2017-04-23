@@ -45,9 +45,6 @@ public class MySqlCustomer extends CustomerDao{
     private static final String FIND_BY_MANAGEMENT = Sql.create().select().varS(CUSTOMER, ID_CUSTOMER).c().varS(CUSTOMER, EMAIL).from().var(CUSTOMER).join(TRANSACTION).varS(CUSTOMER, ID_CUSTOMER).eq().varS(TRANSACTION, ID_CUSTOMER).join(MANAGEMENT).varS(MANAGEMENT, ID_TRANSACTION).eq().varS(TRANSACTION, ID_TRANSACTION).whereQs(MANAGEMENT, ID_MANAGEMENT).build();
     private static final String LIMIT_CUSTOMER = Sql.create().select().allFrom().var(CUSTOMER).limit().build();
 
-    public void sql(){
-        System.out.println(FIND_BY_FIRST_NAME_AND_LAST_NAME);
-    }
     @Override
     public Customer insert(Customer item) throws DaoException {
         try {
@@ -73,7 +70,7 @@ public class MySqlCustomer extends CustomerDao{
                 statement.setInt(1, id);
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
-                        customer = itemCustomer(customer , resultSet);
+                        customer = itemCustomer(resultSet);
                     }
                 }
             }
@@ -132,7 +129,7 @@ public class MySqlCustomer extends CustomerDao{
                 statement.setString(1, login);
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
-                        customer = itemCustomer(customer , resultSet);
+                        customer = itemCustomer(resultSet);
                     }
                 }
             }
@@ -151,7 +148,7 @@ public class MySqlCustomer extends CustomerDao{
                 statement.setString(2, password);
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
-                        customer = itemCustomer(customer , resultSet);
+                        customer = itemCustomer(resultSet);
                     }
                 }
             }
@@ -190,7 +187,7 @@ public class MySqlCustomer extends CustomerDao{
                 statement.setInt(2, count);
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
-                        customer = itemCustomer(customer, resultSet);
+                        customer = itemCustomer(resultSet);
                         list.add(customer);
                     }
                 }
@@ -199,26 +196,6 @@ public class MySqlCustomer extends CustomerDao{
             throw new DaoException("can't get list of customer " + this.getClass().getSimpleName(), e);
         }
         return list;
-    }
-
-    @Override
-    public Customer findByFirstNameAndLastName(Customer customer) throws DaoException {
-        try {
-            try (PreparedStatement statement = getConnection().prepareStatement(FIND_BY_FIRST_NAME_AND_LAST_NAME)) {
-                statement.setString(1 , customer.getPerson().getFirstName());
-                statement.setString(2,  customer.getPerson().getLastName());
-                try (ResultSet resultSet = statement.executeQuery()) {
-                    while (resultSet.next()) {
-                        customer.setId(resultSet.getInt(1));
-                        customer.setEmail(resultSet.getString(2));
-
-                    }
-                }
-            }
-        } catch (SQLException e) {
-            throw new DaoException("can't get list of customer by first name and second name " + this.getClass().getSimpleName(), e);
-        }
-        return customer;
     }
 
     private PreparedStatement statementCustomer(PreparedStatement statement, Customer item) throws SQLException {
@@ -230,8 +207,8 @@ public class MySqlCustomer extends CustomerDao{
         return statement;
     }
 
-    private Customer itemCustomer(Customer customer, ResultSet resultSet) throws SQLException {
-        customer = new Customer();
+    private Customer itemCustomer(ResultSet resultSet) throws SQLException {
+        Customer customer = new Customer();
         customer.setId(resultSet.getInt(1));
         customer.setRegisterDate(resultSet.getDate(2));
         customer.setPassword(resultSet.getString(3));

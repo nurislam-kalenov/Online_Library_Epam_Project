@@ -68,7 +68,7 @@ public class SecurityFilter implements Filter {
     private void initUser() {
         userAccess.add("/deptCustomerBook");
         userAccess.add("/takeBook");
-        userAccess.add("/takeBookBasket");
+        userAccess.add("/takeBook");
         userAccess.add("/returnBook");
         userAccess.add("/basket");
         userAccess.add("/returnCustomerBook");

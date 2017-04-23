@@ -97,17 +97,6 @@ public class TransactionService {
         }
     }
 
-    public void deleteTransaction(Transaction transaction) throws ServiceException {
-        try (DaoFactory daoFactory = new DaoFactory()) {
-            try {
-                TransactionDao transactionDao = (TransactionDao) daoFactory.getDao(daoFactory.typeDao().getTransactionDao());
-                transactionDao.delete(transaction);
-            } catch (DaoException e) {
-                throw new ServiceException("can't delete transaction", e);
-            }
-        }
-    }
-
     public List<Transaction> getActiveCustomerTransaction(Transaction transaction) throws ServiceException {
         List<Transaction> transactions = new ArrayList<>();
         List<Transaction> list = findByCustomer(transaction);
@@ -139,8 +128,7 @@ public class TransactionService {
         try (DaoFactory daoFactory = new DaoFactory()) {
             try {
                 TransactionDao transactionDao = (TransactionDao) daoFactory.getDao(daoFactory.typeDao().getTransactionDao());
-                int count = transactionDao.getTransactionCountByCustomer(transaction, isActive);
-                return count;
+                return transactionDao.getTransactionCountByCustomer(transaction, isActive);
             } catch (DaoException e) {
                 throw new ServiceException("can't get count transaction by customer", e);
             }

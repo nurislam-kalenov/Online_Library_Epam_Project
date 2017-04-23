@@ -13,13 +13,6 @@ import java.util.List;
  * @author Kalenonov Nurislam
  */
 public abstract class BookDao extends BaseDao<Book> {
-    /**
-     * Метод, определяет количество книг в таблице.
-     *
-     * @return Возвращает конкретное число книг
-     * @throws DaoException
-     */
-    public abstract int getBookCount() throws DaoException;
 
     /**
      * Метод, определяет количество книг с учетоа жанра в таблице.
@@ -29,16 +22,6 @@ public abstract class BookDao extends BaseDao<Book> {
      * @throws DaoException
      */
     public abstract int getBookCountByGenre(Genre genre) throws DaoException;
-
-    /**
-     * Метод, возвращяет n-ое количество книг.
-     *
-     * @param start - начало поле в талице в БД
-     * @param count - количесвто поле в БД, которую необходимо прогрузить.
-     * @return Возвращает конкретное число книг
-     * @throws DaoException
-     */
-    public abstract List<Book> getLimitBooks(int start, int count) throws DaoException;
 
     /**
      * Метод, возвращяет n-ое количество с учетом жанра книг.

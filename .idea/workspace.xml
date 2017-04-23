@@ -1,53 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+    <option name="CUSTOM_SCOPE_NAME" value="Project Files" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b6472644-ffba-4160-a15d-efe07d03f84e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/admin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/user.png" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/book.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/images/book.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/images/en.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/images/ru.png" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/en.png" afterPath="$PROJECT_DIR$/src/main/webapp/images/en.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/ru.png" afterPath="$PROJECT_DIR$/src/main/webapp/images/ru.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/action/manager/View.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/action/manager/View.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/action/post/BookRegisterAction.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/action/post/BookRegisterAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/action/post/PersonalDataEditAction.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/action/post/PersonalDataEditAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/constants/Constants.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/constants/Constants.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/get/AbstractBasket.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/get/AbstractBasket.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/get/PageAboutBookAction.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/get/PageAboutBookAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/get/PageBasketAction.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/get/PageBasketAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/get/PageBookAction.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/get/PageBookAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/get/PageDeptCustomerBookAction.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/get/PageDeptCustomerBookAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/get/PageReadersAction.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/get/PageReadersAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/get/PageReturnCustomerBookAction.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/get/PageReturnCustomerBookAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/manager/View.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/manager/View.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/post/BookEditAction.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/post/BookEditAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/post/BookRegisterAction.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/post/BookRegisterAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/post/CustomerReturnBookAction.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/post/CustomerReturnBookAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/post/CustomerTakeBookAction.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/post/CustomerTakeBookAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/post/CustomerTakeBookFromBasket.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/post/CustomerTakeBookFromBasket.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/post/DeleteBookFromBasketAction.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/post/DeleteBookFromBasketAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/post/PersonalDataEditAction.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/post/PersonalDataEditAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/post/PutBookIntoBasket.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/post/PutBookIntoBasket.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/post/RegisterAction.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/post/RegisterAction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/Main.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/action/get/PageAboutReaderAction.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/action/get/PageAboutReaderAction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/action/get/PageRegisterAction.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/action/get/PageRegisterAction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/connection/ResourcesQueue.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/connection/ResourcesQueue.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/AuthorDao.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/AuthorDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/BookDao.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/BookDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/BookInfoDao.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/BookInfoDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/CustomerDao.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/CustomerDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/ManagementDao.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/ManagementDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/mysql/MySqlAuthor.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/mysql/MySqlAuthor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/mysql/MySqlBook.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/mysql/MySqlBook.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/mysql/MySqlBookInfo.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/mysql/MySqlBookInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/mysql/MySqlCity.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/mysql/MySqlCity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/mysql/MySqlCustomer.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/mysql/MySqlCustomer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/mysql/MySqlCustomerRole.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/mysql/MySqlCustomerRole.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/mysql/MySqlGenre.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/mysql/MySqlGenre.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/dao/mysql/MySqlManagement.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/dao/mysql/MySqlManagement.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/entity/Basket.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/entity/Basket.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/entity/City.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/entity/City.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/entity/Genre.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/entity/Genre.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/entity/Management.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/entity/Management.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/entity/Transaction.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/entity/Transaction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/services/BookService.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/services/BookService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/services/CustomerService.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/services/CustomerService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/services/ManagementService.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/services/ManagementService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/services/TransactionService.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/services/TransactionService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/services/exceptions/ServiceException.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/services/exceptions/ServiceException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/utils/SqlDate.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/utils/SqlDate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/web/filters/SecurityFilter.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/web/filters/SecurityFilter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nuris/epam/web/servlets/ControllerServlet.class" afterPath="$PROJECT_DIR$/target/classes/nuris/epam/web/servlets/ControllerServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/Main.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/get/PageAboutReaderAction.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/get/PageAboutReaderAction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/get/PageRegisterAction.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/action/get/PageRegisterAction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/connection/ResourcesQueue.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/connection/ResourcesQueue.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/AuthorDao.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/AuthorDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/BookDao.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/BookDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/BookInfoDao.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/BookInfoDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/CustomerDao.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/CustomerDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/ManagementDao.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/ManagementDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlAuthor.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlAuthor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlBook.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlBook.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlBookInfo.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlBookInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlCity.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlCity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlCustomer.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlCustomer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlCustomerRole.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlCustomerRole.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlGenre.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlGenre.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlManagement.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/dao/mysql/MySqlManagement.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/entity/Basket.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/entity/Basket.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/entity/City.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/entity/City.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/entity/Genre.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/entity/Genre.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/entity/Management.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/entity/Management.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/entity/Transaction.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/entity/Transaction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/services/BookService.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/services/BookService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/services/CustomerService.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/services/CustomerService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/services/ManagementService.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/services/ManagementService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/services/TransactionService.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/services/TransactionService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/services/exceptions/ServiceException.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/services/exceptions/ServiceException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/utils/SqlDate.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/utils/SqlDate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/web/filters/SecurityFilter.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/web/filters/SecurityFilter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/web/servlets/ControllerServlet.class" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/nuris/epam/web/servlets/ControllerServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/action/constants/Constants.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/action/constants/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/BookRegisterAction.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/BookRegisterAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/CustomerTakeBookFromBasket.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/CustomerTakeBookFromBasket.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/i18n.properties" afterPath="$PROJECT_DIR$/src/main/resources/i18n.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/i18n_ru.properties" afterPath="$PROJECT_DIR$/src/main/resources/i18n_ru.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/basket.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/basket.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/designPattern.tag" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/designPattern.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/userAccount.tag" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/userAccount.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/i18n.properties" afterPath="$PROJECT_DIR$/target/classes/i18n.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/i18n_ru.properties" afterPath="$PROJECT_DIR$/target/classes/i18n_ru.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/i18n.properties" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/i18n.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/i18n_ru.properties" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/classes/i18n_ru.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/jsp/basket.jsp" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/jsp/basket.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/tags/aboutBookInf.tag" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/tags/aboutBookInf.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/tags/designPattern.tag" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/tags/designPattern.tag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/tags/userAccount.tag" afterPath="$PROJECT_DIR$/target/online_library_nuris/WEB-INF/tags/userAccount.tag" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/Main.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageAboutReaderAction.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageAboutReaderAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageRegisterAction.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageRegisterAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/connection/ResourcesQueue.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/connection/ResourcesQueue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/AuthorDao.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/AuthorDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/BookDao.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/BookDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/BookInfoDao.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/BookInfoDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/CustomerDao.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/CustomerDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/ManagementDao.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/ManagementDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlAuthor.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlAuthor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlBook.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlBook.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlBookInfo.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlBookInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlCity.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlCity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlCustomer.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlCustomer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlCustomerRole.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlCustomerRole.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlGenre.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlGenre.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlManagement.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/dao/mysql/MySqlManagement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/entity/Basket.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/entity/Basket.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/entity/City.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/entity/City.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/entity/Genre.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/entity/Genre.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/entity/Management.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/entity/Management.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/entity/Transaction.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/entity/Transaction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/services/BookService.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/services/BookService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/services/CustomerService.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/services/CustomerService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/services/ManagementService.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/services/ManagementService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/services/TransactionService.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/services/TransactionService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/services/exceptions/ServiceException.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/services/exceptions/ServiceException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/utils/SqlDate.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/utils/SqlDate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/web/filters/SecurityFilter.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/web/filters/SecurityFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nuris/epam/web/servlets/ControllerServlet.java" afterPath="$PROJECT_DIR$/src/main/java/nuris/epam/web/servlets/ControllerServlet.java" />
     </list>
     <ignored path="Online_Library_Project_Epam.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,108 +127,145 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="bookEdit.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/bookEdit.jsp">
+      <file leaf-file-name="BookService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/services/BookService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-164">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="254">
+              <caret line="157" column="0" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
+              <folding>
+                <element signature="method#registerBook#0;class#BookService#0" expanded="false" />
+                <element signature="method#findById#0;class#BookService#0" expanded="false" />
+                <element signature="method#findByBook#0;class#BookService#0" expanded="false" />
+                <element signature="method#deleteBook#0;class#BookService#0" expanded="false" />
+                <element signature="method#updateBook#0;class#BookService#0" expanded="false" />
+                <element signature="method#updateBookInfo#0;class#BookService#0" expanded="false" />
+                <element signature="method#fillBook#0;class#BookService#0" expanded="false" />
+                <element signature="method#getAllGenre#0;class#BookService#0" expanded="false" />
+                <element signature="method#getBookCountByGenre#0;class#BookService#0" expanded="false" />
+                <element signature="method#getBookByName#0;class#BookService#0" expanded="false" />
+                <element signature="method#getListBook#0;class#BookService#0" expanded="false" />
+                <element signature="method#getBookByIsbn#0;class#BookService#0" expanded="false" />
+                <element signature="method#isBookIsbnAvailable#0;class#BookService#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Action.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/manager/Action.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="basket.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/basket.jsp">
+      <file leaf-file-name="ActionFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/manager/ActionFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="768">
-              <caret line="82" column="74" selection-start-line="82" selection-start-column="74" selection-end-line="82" selection-end-column="74" />
+            <state relative-caret-position="119">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="aboutBook.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/aboutBook.jsp">
+      <file leaf-file-name="View.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/manager/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="52">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="aboutBookInf.tag" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/aboutBookInf.tag">
+      <file leaf-file-name="EncodingFilter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/web/filters/EncodingFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="165" column="53" selection-start-line="165" selection-start-column="40" selection-end-line="165" selection-end-column="53" />
+            <state relative-caret-position="60">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BookRegisterAction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/post/BookRegisterAction.java">
+      <file leaf-file-name="SecurityFilter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/web/filters/SecurityFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+            <state relative-caret-position="-755">
+              <caret line="48" column="57" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PageAboutBookAction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageAboutBookAction.java">
+      <file leaf-file-name="books.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/books.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+            <state relative-caret-position="144">
+              <caret line="29" column="48" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/constants/Constants.java">
+      <file leaf-file-name="TransactionService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/services/TransactionService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="100" column="28" selection-start-line="100" selection-start-column="28" selection-end-line="100" selection-end-column="28" />
-              <folding />
+            <state relative-caret-position="283">
+              <caret line="137" column="22" selection-start-line="137" selection-start-column="22" selection-end-line="137" selection-end-column="22" />
+              <folding>
+                <element signature="method#takeBook#0;class#TransactionService#0" expanded="false" />
+                <element signature="method#returnBook#0;class#TransactionService#0" expanded="false" />
+                <element signature="method#findByCustomer#0;class#TransactionService#0" expanded="false" />
+                <element signature="method#getActiveCustomerTransaction#0;class#TransactionService#0" expanded="false" />
+                <element signature="method#getListTransaction#0;class#TransactionService#0" expanded="false" />
+                <element signature="method#getTransactionCount#0;class#TransactionService#0" expanded="false" />
+                <element signature="method#fillTransaction#0;class#TransactionService#0" expanded="false" />
+                <element signature="method#isAlreadyTaken#0;class#TransactionService#0" expanded="false" />
+                <element signature="method#countActiveTransaction#0;class#TransactionService#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractBasket.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/get/AbstractBasket.java">
+      <file leaf-file-name="CustomerService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/services/CustomerService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="164">
+              <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+              <folding>
+                <element signature="method#registerCustomer#0;class#CustomerService#0" expanded="false" />
+                <element signature="method#findByLogin#0;class#CustomerService#0" expanded="false" />
+                <element signature="method#findCustomerById#0;class#CustomerService#0" expanded="false" />
+                <element signature="method#findByLoginPassword#0;class#CustomerService#0" expanded="false" />
+                <element signature="method#updateCustomer#0;class#CustomerService#0" expanded="false" />
+                <element signature="method#updatePerson#0;class#CustomerService#0" expanded="false" />
+                <element signature="method#deleteCustomer#0;class#CustomerService#0" expanded="false" />
+                <element signature="method#getAllCity#0;class#CustomerService#0" expanded="false" />
+                <element signature="method#customerCount#0;class#CustomerService#0" expanded="false" />
+                <element signature="method#getListCustomers#0;class#CustomerService#0" expanded="false" />
+                <element signature="method#isLoginAvailable#0;class#CustomerService#0" expanded="false" />
+                <element signature="method#findByManagement#0;class#CustomerService#0" expanded="false" />
+                <element signature="method#fillCustomer#0;class#CustomerService#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="i18n.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/i18n.properties">
-          <provider editor-type-id="ResourceBundle">
-            <state />
-          </provider>
+      <file leaf-file-name="ManagementService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/services/ManagementService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="107" column="28" selection-start-line="107" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="i18n_ru.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/i18n_ru.properties">
-          <provider editor-type-id="ResourceBundle">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="74" column="400" selection-start-line="74" selection-start-column="400" selection-end-line="74" selection-end-column="400" />
-              <folding />
+            <state relative-caret-position="241">
+              <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+              <folding>
+                <element signature="method#returnBook#0;class#ManagementService#0" expanded="false" />
+                <element signature="method#getListManagement#0;class#ManagementService#0" expanded="false" />
+                <element signature="method#findByTransaction#0;class#ManagementService#0" expanded="false" />
+                <element signature="method#fillManagement#0;class#ManagementService#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -208,9 +294,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/errors/error-404.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/errors/error-403.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/welcome.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/errors/error-500.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/validation.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/registerBook.jsp" />
@@ -242,7 +325,6 @@
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageDeptCustomerBookAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/CustomerReturnBookAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageProfileEditAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/web/filters/SecurityFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/CustomerTakeBookAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/post/PasswordEditAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageCustomerAccountAction.java" />
@@ -259,6 +341,10 @@
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageAboutBookAction.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/aboutBookInf.tag" />
         <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/constants/Constants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/dao/AuthorDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/services/BookService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/action/manager/ActionResult.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nuris/epam/web/filters/SecurityFilter.java" />
       </list>
     </option>
   </component>
@@ -409,36 +495,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tags" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Online_Library_Project_Epam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Online_Library_Project_Epam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="jsp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -459,62 +515,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Online_Library_Project_Epam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Online_Library_Project_Epam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Online_Library_Project_Epam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Online_Library_Project_Epam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resource Bundle 'i18n'" />
-              <option name="myItemType" value="com.intellij.lang.properties.projectView.ResourceBundleNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -540,6 +540,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="epam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Online_Library_Project_Epam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Online_Library_Project_Epam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="epam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -570,6 +600,74 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="action" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Online_Library_Project_Epam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Online_Library_Project_Epam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="epam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="action" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Online_Library_Project_Epam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Online_Library_Project_Epam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="epam" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="action" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="get" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1203,12 +1301,12 @@
       <workItem from="1492575224048" duration="5074000" />
       <workItem from="1492580362238" duration="19992000" />
       <workItem from="1492659812037" duration="79386000" />
-      <workItem from="1492832051642" duration="29326000" />
+      <workItem from="1492832051642" duration="32394000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="725186000" />
+    <option name="totallyTimeSpent" value="728254000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1220,7 +1318,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1231,17 +1329,19 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.04411765" sideWeight="0.290469" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.07026144" sideWeight="0.49394855" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09477124" sideWeight="0.709531" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20751634" sideWeight="0.709531" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.4969743" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30484116" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30484116" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.92156863" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39869282" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -1249,9 +1349,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1307,93 +1405,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/management.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/profileEdit.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/registerBook.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/register.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="151" column="52" selection-start-line="151" selection-start-column="52" selection-end-line="151" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/en.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/ru.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/basket.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/services/CustomerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/services/BookService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-646">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageBasketAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageBookAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageBookEditAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/get/PageBookRegisterAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1599,26 +1610,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/designPattern.tag">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="52" column="21" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/books.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1705,6 +1700,161 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/dao/AuthorDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/connection/ConnectionPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="151" column="16" selection-start-line="151" selection-start-column="16" selection-end-line="151" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/manager/ActionResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/services/TransactionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="137" column="22" selection-start-line="137" selection-start-column="22" selection-end-line="137" selection-end-column="22" />
+          <folding>
+            <element signature="method#takeBook#0;class#TransactionService#0" expanded="false" />
+            <element signature="method#returnBook#0;class#TransactionService#0" expanded="false" />
+            <element signature="method#findByCustomer#0;class#TransactionService#0" expanded="false" />
+            <element signature="method#getActiveCustomerTransaction#0;class#TransactionService#0" expanded="false" />
+            <element signature="method#getListTransaction#0;class#TransactionService#0" expanded="false" />
+            <element signature="method#getTransactionCount#0;class#TransactionService#0" expanded="false" />
+            <element signature="method#fillTransaction#0;class#TransactionService#0" expanded="false" />
+            <element signature="method#isAlreadyTaken#0;class#TransactionService#0" expanded="false" />
+            <element signature="method#countActiveTransaction#0;class#TransactionService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/services/ManagementService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding>
+            <element signature="method#returnBook#0;class#ManagementService#0" expanded="false" />
+            <element signature="method#getListManagement#0;class#ManagementService#0" expanded="false" />
+            <element signature="method#findByTransaction#0;class#ManagementService#0" expanded="false" />
+            <element signature="method#fillManagement#0;class#ManagementService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/services/CustomerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+          <folding>
+            <element signature="method#registerCustomer#0;class#CustomerService#0" expanded="false" />
+            <element signature="method#findByLogin#0;class#CustomerService#0" expanded="false" />
+            <element signature="method#findCustomerById#0;class#CustomerService#0" expanded="false" />
+            <element signature="method#findByLoginPassword#0;class#CustomerService#0" expanded="false" />
+            <element signature="method#updateCustomer#0;class#CustomerService#0" expanded="false" />
+            <element signature="method#updatePerson#0;class#CustomerService#0" expanded="false" />
+            <element signature="method#deleteCustomer#0;class#CustomerService#0" expanded="false" />
+            <element signature="method#getAllCity#0;class#CustomerService#0" expanded="false" />
+            <element signature="method#customerCount#0;class#CustomerService#0" expanded="false" />
+            <element signature="method#getListCustomers#0;class#CustomerService#0" expanded="false" />
+            <element signature="method#isLoginAvailable#0;class#CustomerService#0" expanded="false" />
+            <element signature="method#findByManagement#0;class#CustomerService#0" expanded="false" />
+            <element signature="method#fillCustomer#0;class#CustomerService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/manager/Action.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/manager/ActionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/action/manager/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/web/filters/EncodingFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/web/filters/SecurityFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-755">
+          <caret line="48" column="57" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nuris/epam/services/BookService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="157" column="0" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
+          <folding>
+            <element signature="method#registerBook#0;class#BookService#0" expanded="false" />
+            <element signature="method#findById#0;class#BookService#0" expanded="false" />
+            <element signature="method#findByBook#0;class#BookService#0" expanded="false" />
+            <element signature="method#deleteBook#0;class#BookService#0" expanded="false" />
+            <element signature="method#updateBook#0;class#BookService#0" expanded="false" />
+            <element signature="method#updateBookInfo#0;class#BookService#0" expanded="false" />
+            <element signature="method#fillBook#0;class#BookService#0" expanded="false" />
+            <element signature="method#getAllGenre#0;class#BookService#0" expanded="false" />
+            <element signature="method#getBookCountByGenre#0;class#BookService#0" expanded="false" />
+            <element signature="method#getBookByName#0;class#BookService#0" expanded="false" />
+            <element signature="method#getListBook#0;class#BookService#0" expanded="false" />
+            <element signature="method#getBookByIsbn#0;class#BookService#0" expanded="false" />
+            <element signature="method#isBookIsbnAvailable#0;class#BookService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/books.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="29" column="48" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
           <folding />
         </state>
       </provider>

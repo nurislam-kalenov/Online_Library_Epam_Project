@@ -4,18 +4,11 @@ import nuris.epam.connection.ConnectionPool;
 import nuris.epam.dao.mysql.*;
 import nuris.epam.entity.*;
 import nuris.epam.services.BookService;
-import nuris.epam.services.CustomerService;
 import nuris.epam.services.ManagementService;
 import nuris.epam.services.TransactionService;
 import nuris.epam.services.exceptions.ServiceException;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.jsp.jstl.core.Config;
 import java.util.List;
-import java.util.Locale;
-
-import static nuris.epam.action.constants.Constants.LANG;
 
 
 /**

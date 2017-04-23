@@ -65,7 +65,7 @@ public class MySqlManagement extends ManagementDao {
                 statement.setInt(1, id);
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
-                        management = itemManagement(management, resultSet);
+                        management = itemManagement(resultSet);
                     }
                 }
             }
@@ -102,33 +102,13 @@ public class MySqlManagement extends ManagementDao {
                 statement.setInt(2, count);
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
-                        management = itemManagement(management, resultSet);
+                        management = itemManagement(resultSet);
                         list.add(management);
                     }
                 }
             }
         } catch (SQLException e) {
             throw new DaoException("can't get list of management " + this.getClass().getSimpleName(), e);
-        }
-        return list;
-    }
-
-    @Override
-    public List<Management> findByCustomer(int id) throws DaoException {
-        List<Management> list = new ArrayList<>();
-        Management management = null;
-        try {
-            try (PreparedStatement statement = getConnection().prepareStatement(FIND_BY_CUSTOMER)) {
-                statement.setInt(1, id);
-                try (ResultSet resultSet = statement.executeQuery()) {
-                    while (resultSet.next()) {
-                        management = itemManagement(management, resultSet);
-                        list.add(management);
-                    }
-                }
-            }
-        } catch (SQLException e) {
-            throw new DaoException("Can find by id " + this.getClass().getSimpleName(), e);
         }
         return list;
     }
@@ -141,7 +121,7 @@ public class MySqlManagement extends ManagementDao {
                 statement.setInt(1, transaction.getId());
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
-                        management = itemManagement(management, resultSet);
+                        management = itemManagement(resultSet);
                     }
                 }
             }
@@ -149,29 +129,6 @@ public class MySqlManagement extends ManagementDao {
             throw new DaoException("Can find by transaction " + this.getClass().getSimpleName(), e);
         }
         return management;
-    }
-
-    @Override
-    public List<Management> getListManagementByDateRange(String startDate, String endDate, int start, int count, boolean isActive) throws DaoException {
-        List<Management> list = new ArrayList<>();
-        Management management = null;
-        try {
-            try (PreparedStatement statement = getConnection().prepareStatement(isActive ? RANGE_DATE_ACTIVE : RANGE_DATE_INACTIVE)) {
-                statement.setString(1, startDate);
-                statement.setString(2, endDate);
-                statement.setInt(3, ((start - 1) * count));
-                statement.setInt(4, count);
-                try (ResultSet resultSet = statement.executeQuery()) {
-                    while (resultSet.next()) {
-                        management = itemManagement(management, resultSet);
-                        list.add(management);
-                    }
-                }
-            }
-        } catch (SQLException e) {
-            throw new DaoException("can't get list of management by date " + this.getClass().getSimpleName(), e);
-        }
-        return list;
     }
 
     @Override
@@ -191,8 +148,8 @@ public class MySqlManagement extends ManagementDao {
         return count;
     }
 
-    private Management itemManagement(Management management, ResultSet resultSet) throws SQLException {
-        management = new Management();
+    private Management itemManagement(ResultSet resultSet) throws SQLException {
+        Management management = new Management();
         management.setId(resultSet.getInt(1));
         management.setReturnDate(resultSet.getTimestamp(2));
         return management;

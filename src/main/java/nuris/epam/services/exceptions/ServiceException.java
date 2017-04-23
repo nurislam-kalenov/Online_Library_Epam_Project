@@ -5,10 +5,6 @@ package nuris.epam.services.exceptions;
  */
 public class ServiceException extends Exception {
 
-    public ServiceException(Exception e) {
-        super(e);
-    }
-
     public ServiceException(String message, Throwable cause) {
         super(message, cause);
     }

@@ -8,8 +8,6 @@ import nuris.epam.entity.Book;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class MySqlAuthor extends AuthorDao {
 
@@ -26,7 +24,6 @@ public class MySqlAuthor extends AuthorDao {
     private static final String INSERT = Sql.create().insert().var(AUTHOR).values(ID_AUTHOR, 3).build();
     private static final String UPDATE = Sql.create().update().var(AUTHOR).set().varQs(FIRST_NAME).c().varQs(LAST_NAME).c().varQs(MIDDLE_NAME).whereQs(ID_AUTHOR).build();
     private static final String DELETE = Sql.create().delete().var(AUTHOR).whereQs(ID_AUTHOR).build();
-    private static final String SELECT_ALL = Sql.create().select().allFrom().var(AUTHOR).build();
     private static final String FIND_BY_BOOK = Sql.create().select().varS(AUTHOR, ID_AUTHOR).c().varS(AUTHOR, FIRST_NAME).c().varS(AUTHOR, LAST_NAME).c().varS(AUTHOR, MIDDLE_NAME).from().var(AUTHOR).join(BOOK).varS(BOOK, ID_AUTHOR).eq().varS(AUTHOR, ID_AUTHOR).whereQs(BOOK, ID_BOOK).build();
 
     @Override
@@ -53,7 +50,7 @@ public class MySqlAuthor extends AuthorDao {
                 statement.setInt(1, id);
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
-                        author = itemAuthor(author, resultSet);
+                        author = itemAuthor(resultSet);
                     }
                 }
             }
@@ -77,24 +74,6 @@ public class MySqlAuthor extends AuthorDao {
     }
 
     @Override
-    public List<Author> getAll() throws DaoException {
-        List<Author> list = new ArrayList<>();
-        Author author = null;
-        try {
-            try (PreparedStatement statement = getConnection().prepareStatement(SELECT_ALL)) {
-                try (ResultSet resultSet = statement.executeQuery()) {
-                    while (resultSet.next()) {
-                        list.add(itemAuthor(author, resultSet));
-                    }
-                }
-            }
-        } catch (SQLException e) {
-            throw new DaoException("can't get all author " + this.getClass().getSimpleName(), e);
-        }
-        return list;
-    }
-
-    @Override
     public void delete(Author item) throws DaoException {
         try {
             try (PreparedStatement statement = getConnection().prepareStatement(DELETE)) {
@@ -114,7 +93,7 @@ public class MySqlAuthor extends AuthorDao {
                 statement.setInt(1, book.getId());
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
-                        author = itemAuthor(author, resultSet);
+                        author = itemAuthor(resultSet);
                     }
                 }
             }
@@ -131,8 +110,8 @@ public class MySqlAuthor extends AuthorDao {
         return statement;
     }
 
-    private Author itemAuthor(Author author, ResultSet resultSet) throws SQLException {
-        author = new Author();
+    private Author itemAuthor(ResultSet resultSet) throws SQLException {
+        Author author = new Author();
         author.setId(resultSet.getInt(1));
         author.setFirstName(resultSet.getString(2));
         author.setLastName(resultSet.getString(3));

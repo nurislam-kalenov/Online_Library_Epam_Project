@@ -26,14 +26,6 @@ public class Basket implements Serializable{
     public void deleteAll(){
         books.removeAll(books);
     }
-    public boolean isAvailable(int id) {
-        for (BookInfo book : books) {
-            if (book.getId() == id) {
-                return true;
-            }
-        }
-        return false;
-    }
 
     public List<BookInfo> getBooks() {
         return books;

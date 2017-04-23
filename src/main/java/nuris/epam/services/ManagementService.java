@@ -71,21 +71,6 @@ public class ManagementService {
         }
     }
 
-    public List<Management> getListManagementByDate(String startDate, String endDate, int start, int end, boolean isActive) throws ServiceException {
-        try (DaoFactory daoFactory = new DaoFactory()) {
-            try {
-                ManagementDao managementDao = (ManagementDao) daoFactory.getDao(daoFactory.typeDao().getManagementDao());
-                List<Management> list = managementDao.getListManagementByDateRange(startDate, endDate, start, end, isActive);
-                for (Management management : list) {
-                    fillManagement(management);
-                }
-                return list;
-            } catch (DaoException e) {
-                throw new ServiceException("can't get list management by date", e);
-            }
-        }
-    }
-
     public Management findByTransaction(Transaction transaction) throws ServiceException {
         Management management = null;
         try (DaoFactory daoFactory = new DaoFactory()) {
@@ -98,22 +83,6 @@ public class ManagementService {
             }
             return management;
         }
-    }
-
-    public List<Management> findByCustomer(int id) throws ServiceException {
-        List<Management> list = null;
-        try (DaoFactory daoFactory = new DaoFactory()) {
-            try {
-                ManagementDao managementDao = (ManagementDao) daoFactory.getDao(daoFactory.typeDao().getManagementDao());
-                list = managementDao.findByCustomer(id);
-                for (Management management : list) {
-                    fillManagement(management);
-                }
-            } catch (DaoException e) {
-                e.printStackTrace();
-            }
-        }
-        return list;
     }
 
     public int getManagementCount(boolean isActive) throws ServiceException {

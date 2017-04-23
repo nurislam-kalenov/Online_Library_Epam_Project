@@ -169,18 +169,6 @@ public class BookService {
         }
     }
 
-    public int getBookCount() throws ServiceException {
-        try (DaoFactory daoFactory = new DaoFactory()) {
-            try {
-                BookDao bookDao = (BookDao) daoFactory.getDao(daoFactory.typeDao().getBookDao());
-                int count = bookDao.getBookCount();
-                return count;
-            } catch (DaoException e) {
-                throw new ServiceException("can't get count book", e);
-            }
-        }
-    }
-
     public int getBookCountByGenre(Genre genre) throws ServiceException {
         try (DaoFactory daoFactory = new DaoFactory()) {
             try {
@@ -202,21 +190,6 @@ public class BookService {
                 return books;
             } catch (DaoException e) {
                 throw new ServiceException("can't find book by name", e);
-            }
-        }
-    }
-
-    public List<Book> getListBook(int start, int end) throws ServiceException {
-        try (DaoFactory daoFactory = new DaoFactory()) {
-            try {
-                BookDao bookDao = (BookDao) daoFactory.getDao(daoFactory.typeDao().getBookDao());
-                List<Book> list = bookDao.getLimitBooks(start, end);
-                for (Book book : list) {
-                    fillBook(book);
-                }
-                return list;
-            } catch (DaoException e) {
-                throw new ServiceException("can't get list book", e);
             }
         }
     }
@@ -250,10 +223,6 @@ public class BookService {
     }
 
     public boolean isBookIsbnAvailable(String isbn) throws ServiceException {
-        if (getBookByIsbn(isbn) != null) {
-            return true;
-        } else {
-            return false;
-        }
+        return getBookByIsbn(isbn) != null;
     }
 }

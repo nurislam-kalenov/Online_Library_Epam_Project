@@ -149,8 +149,7 @@ public class CustomerService {
         try (DaoFactory daoFactory = new DaoFactory()) {
             try {
                 CustomerDao customerDao = (CustomerDao) daoFactory.getDao(daoFactory.typeDao().getCustomerDao());
-                int count = customerDao.getCustomerCount();
-                return count;
+                return customerDao.getCustomerCount();
             } catch (DaoException e) {
                 throw new ServiceException("can't get count customer", e);
             }
@@ -168,24 +167,6 @@ public class CustomerService {
                 return list;
             } catch (DaoException e) {
                 throw new ServiceException("can't get list of customer ", e);
-            }
-        }
-    }
-
-    public Customer getCustomersByFirstNameAndLastName(String firstName , String lastName) throws ServiceException {
-        Customer customer = new Customer();
-        Person person = new Person();
-        person.setFirstName(firstName);
-        person.setLastName(lastName);
-        customer.setPerson(person);
-        try (DaoFactory daoFactory = new DaoFactory()) {
-            try {
-                CustomerDao customerDao = (CustomerDao) daoFactory.getDao(daoFactory.typeDao().getCustomerDao());
-                Customer onePerson = customerDao.findByFirstNameAndLastName(customer);
-                    fillCustomer(onePerson);
-                return onePerson;
-            } catch (DaoException e) {
-                throw new ServiceException("can't get customer by firstName and lastName ", e);
             }
         }
     }

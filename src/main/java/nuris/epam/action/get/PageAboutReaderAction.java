@@ -1,6 +1,5 @@
 package nuris.epam.action.get;
 
-import javafx.collections.transformation.TransformationList;
 import nuris.epam.action.exception.ActionException;
 import nuris.epam.action.manager.Action;
 import nuris.epam.action.manager.ActionResult;

@@ -6,7 +6,6 @@ import nuris.epam.services.CustomerService;
 import nuris.epam.services.exceptions.ServiceException;
 import static nuris.epam.action.constants.Constants.*;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 

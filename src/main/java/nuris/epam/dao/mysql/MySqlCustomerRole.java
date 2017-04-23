@@ -32,7 +32,7 @@ public class MySqlCustomerRole  extends CustomerRoleDao{
                 statement.setInt(1, customer.getId());
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
-                        customerRole = itemRole(customerRole, resultSet);
+                        customerRole = itemRole(resultSet);
                     }
                 }
             }
@@ -50,7 +50,7 @@ public class MySqlCustomerRole  extends CustomerRoleDao{
                 statement.setString(1, nameRole);
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
-                        customerRole = itemRole(customerRole, resultSet);
+                        customerRole = itemRole(resultSet);
                     }
                 }
             }
@@ -60,8 +60,8 @@ public class MySqlCustomerRole  extends CustomerRoleDao{
         return customerRole;
     }
 
-    private CustomerRole itemRole(CustomerRole customerRole, ResultSet resultSet) throws SQLException {
-        customerRole = new CustomerRole();
+    private CustomerRole itemRole(ResultSet resultSet) throws SQLException {
+        CustomerRole customerRole = new CustomerRole();
         customerRole.setId(resultSet.getInt(1));
         customerRole.setName(resultSet.getString(2));
         return customerRole;

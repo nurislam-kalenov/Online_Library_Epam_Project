@@ -22,10 +22,6 @@ public class Transaction extends BaseEntity {
     }
 
 
-    public Date getStartDate() {
-        return startDate;
-    }
-
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }

@@ -93,7 +93,7 @@ public final class Constants {
     public static final String BOOK_INFO = "book_info";
     public static final String ATT_COUNT_ERROR = "count_error";
     public static final String ATT_OVER_ERROR = "over_error";
-    public static final String ATT_TAKE_ERROR = "c";
+    public static final String ATT_TAKE_ERROR = "already_taken";
 
 
     //PasswordEditAction

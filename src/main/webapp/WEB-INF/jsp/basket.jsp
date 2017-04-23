@@ -9,6 +9,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="my" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
+<fmt:bundle basename="i18n">
+    <fmt:message key="basket.book.title" var="book_title"/>
+    <fmt:message key="basket.book.genre" var="book_genre"/>
+    <fmt:message key="basket.action" var="basket_action"/>
+    <fmt:message key="basket.name" var="basket_name"/>
+    <fmt:message key="basket.choose" var="basket_choose"/>
+    <fmt:message key="basket.delete" var="basket_delete"/>
+    <fmt:message key="basket.delete.all" var="basket_delete_all"/>
+    <fmt:message key="basket.error" var="basket_error"/>
+
+</fmt:bundle>
 
 <my:designPattern role="user">
     <style>
@@ -16,14 +27,14 @@
     </style>
     <div class="row">
         <div class="table-title">
-            <h3>Корзина</h3>
+            <h3>${basket_name}</h3>
         </div>
         <table class="table-fill">
             <thead>
             <tr>
-                <th class="text-left">Название книги</th>
-                <th class="text-left">Жанр</th>
-                <th class="text-left">Действие</th>
+                <th class="text-left">${book_title}</th>
+                <th class="text-left">${book_genre}</th>
+                <th class="text-left">${basket_action}</th>
             </tr>
             </thead>
             <tbody class="table-hover">
@@ -37,13 +48,13 @@
                                 <form action="takeBookBasket" method="POST">
                                     <input type="hidden" name="book_info_id" value="${bookInfo.id}">
                                     <input type="hidden" name="book_id" value="${bookInfo.book.id}">
-                                    <button name="submit" class="btn btn-warning ">Взять</button>
+                                    <button name="submit" class="btn btn-warning ">${basket_choose}</button>
                                 </form>
                             </div>
                             <div class="col-md-4 column ">
                                 <form action="basket-delete" method="POST">
                                     <input type="hidden" name="book_id_delete" value="${bookInfo.id}">
-                                    <button name="submit" class="btn btn-danger ">Удалить</button>
+                                    <button name="submit" class="btn btn-danger ">${basket_delete}</button>
                                 </form>
                             </div>
                         </div>
@@ -62,14 +73,14 @@
         </div>
         <form action="basket-delete" method="POST">
             <input type="hidden" name="book_id_delete_all" value="${bookInfo.id}">
-            <button name="submit" class="btn btn-danger">Удалить все</button>
+            <button name="submit" class="btn btn-danger">${basket_delete_all}</button>
         </form>
     </div>
     <div class="row">
         <div class="col-md-6"></div>
         <div class="col-md-3">
             <c:if test="${not empty already_taken}">
-                <div class="alert alert-danger fade in"><p>Книга уже на руках , либк у вас достаточно книг</p></div>
+                <div class="alert alert-danger fade in"><p>${basket_error}</p></div>
             </c:if>
         </div>
 

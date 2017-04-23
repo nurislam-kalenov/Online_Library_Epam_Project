@@ -54,8 +54,10 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">${hello}, ${sessionScope.name}!</a></li>
-                    <li><a href="set-language?lang=en">English</a></li>
-                    <li><a href="set-language?lang=ru">Руский</a></li>
+                    <li><a href="set-language?lang=en"><img src="../../images/en.png"
+                                                            width="21" height="21" alt="lorem"></a></li>
+                    <li><a href="set-language?lang=ru"><img src="../../images/ru.png"
+                                                            width="21" height="21" alt="lorem"></a></li>
                     <li><form action="${logout_url}"  class="button_header" method="post">
                         <input type="submit" value="${logout}" />
                     </form></li>
@@ -67,7 +69,7 @@
     <c:if test="${role.equals('user')}">
         <div class="container">
             <div class="navbar-header">
-                <div class="navbar-brand navbar-brand-centered">Онлайн LIB</div>
+                <div class="navbar-brand navbar-brand-centered">Online LIB</div>
             </div>
             <div class="collapse navbar-collapse" id="navbar-brand-customer">
 
@@ -79,10 +81,14 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="${basket_url}"><img src="../../images/basket.png"
+                                                     width="21" height="21" alt="lorem"></a></li>
                     <li><a href="#">${hello}, ${sessionScope.name}!</a></li>
-                    <li><a href="${basket_url}">Корзина</a></li>
-                    <li><a href="set-language?lang=en">English</a></li>
-                    <li><a href="set-language?lang=ru">Руский</a></li>
+
+                    <li><a href="set-language?lang=en"><img src="../../images/en.png"
+                                                            width="21" height="21" alt="lorem"></a></li>
+                    <li><a href="set-language?lang=ru"><img src="../../images/ru.png"
+                                                            width="21" height="21" alt="lorem"></a></li>
                     <li><form action="${logout_url}"  class="button_header" method="post">
                         <input type="submit" value="${logout}" />
                     </form></li>
@@ -100,8 +106,10 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar-brand-centered">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="set-language?lang=en">English</a></li>
-                    <li><a href="set-language?lang=ru">Руский</a></li>
+                    <li><a href="set-language?lang=en"><img src="../../images/en.png"
+                                                            width="21" height="21" alt="lorem"></a></li>
+                    <li><a href="set-language?lang=ru"><img src="../../images/ru.png"
+                                                            width="21" height="21" alt="lorem"></a></li>
                 </ul>
             </div>
 

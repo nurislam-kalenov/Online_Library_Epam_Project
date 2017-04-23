@@ -22,9 +22,9 @@ import static nuris.epam.action.constants.Constants.*;
  * Created by User on 21.04.2017.
  */
 public class CustomerTakeBookFromBasket extends AbstractBasket implements Action {
+
     @Override
     public ActionResult execute(HttpServletRequest req, HttpServletResponse resp) throws ActionException {
-
         TransactionService transactionService = new TransactionService();
         BookService bookService = new BookService();
         Transaction transaction = new Transaction();

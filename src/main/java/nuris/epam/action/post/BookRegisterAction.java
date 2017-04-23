@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
  * Created by User on 07.04.2017.
  */
 public class BookRegisterAction implements Action {
-    private boolean wrong;
+    private boolean wrong = false;
 
     @Override
     public ActionResult execute(HttpServletRequest request, HttpServletResponse response) throws ActionException {

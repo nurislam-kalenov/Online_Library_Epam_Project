@@ -67,7 +67,8 @@
                             <div class="col-md-12 column libreStatsPanelValueColumn">
                                 <p>${loc_email} : ${customer_info.email}</p>
                                 <p>${loc_register_date}: ${customer_info.registerDate} </p>
-                                <p>${loc_status} : ${customer_info.customerRole.name}</p>
+                                <p>${loc_status} : ${customer_info.customerRole.name} <img src="../../images/user.png"
+                                                                                           width="40" height="40" alt="lorem"></p>
                             </div>
 
                         </div>
@@ -130,7 +131,8 @@
                             <div class="col-md-12 column libreStatsPanelValueColumn">
                                 <p>${loc_email} : ${customer_info.email}</p>
                                 <p>${loc_register_date}: ${customer_info.registerDate} </p>
-                                <p>${loc_status} : ${customer_info.customerRole.name}</p>
+                                <p>${loc_status} : ${customer_info.customerRole.name} <img src="../../images/admin.png"
+                                                                                           width="40" height="40" alt="lorem"></p>
                             </div>
                         </div>
                     </div>
